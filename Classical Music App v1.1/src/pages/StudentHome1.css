@@ -1,0 +1,409 @@
+.ellipse-div,
+.student-home-child,
+.student-home-inner,
+.student-home-item {
+  position: absolute;
+  top: 704px;
+  left: 43px;
+  border-radius: 50%;
+  background-color: var(--color-chocolate-200);
+  filter: blur(27px);
+  width: 327px;
+  height: 216px;
+}
+.ellipse-div,
+.student-home-inner,
+.student-home-item {
+  top: 1005px;
+  background-color: var(--color-deepskyblue-300);
+}
+.ellipse-div,
+.student-home-inner {
+  top: 705px;
+  background-color: var(--color-chocolate-200);
+}
+.ellipse-div {
+  top: 1006px;
+  background-color: var(--color-deepskyblue-300);
+}
+.lunch-shadow1,
+.rectangle-div {
+  position: absolute;
+  background-color: var(--color-goldenrod-100);
+}
+.lunch-shadow1 {
+  top: 605px;
+  left: 66px;
+  border-radius: 50%;
+  filter: blur(42px);
+  width: 281px;
+  height: 43px;
+  opacity: 0.6;
+}
+.rectangle-div {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 250px;
+}
+.plate-with-vegetables3 {
+  position: absolute;
+  top: 125px;
+  left: 147px;
+  width: 100.5px;
+  height: 68px;
+}
+.lunch-menu-icon1,
+.lunch-menu3 {
+  position: absolute;
+  top: 368px;
+  left: 32px;
+  width: 350px;
+  height: 250px;
+  cursor: pointer;
+}
+.lunch-menu-icon1 {
+  top: 648px;
+  left: 28px;
+  width: 358px;
+  height: 258px;
+}
+.lunch-menu-child1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 142px;
+}
+.lunch-menu4,
+.plate-with-vegetables4 {
+  position: absolute;
+  top: 71px;
+  left: 147px;
+  width: 100.5px;
+  height: 38.6px;
+}
+.lunch-menu4 {
+  top: 195px;
+  left: 32px;
+  width: 350px;
+  height: 142px;
+}
+.lunch-menu-child2,
+.lunch-menu5 {
+  position: absolute;
+  width: 350px;
+  height: 250px;
+}
+.lunch-menu-child2 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-darkslateblue-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.lunch-menu5 {
+  top: 935px;
+  left: 32px;
+  cursor: pointer;
+}
+.happy-music-monday1,
+.where-words-fail1 {
+  position: absolute;
+  color: var(--color-dimgray-100);
+  display: inline-block;
+}
+.happy-music-monday1 {
+  top: 156px;
+  left: 33px;
+  font-size: var(--font-size-base);
+  text-align: left;
+  width: 215px;
+  height: 20px;
+}
+.where-words-fail1 {
+  top: 238px;
+  left: 137px;
+  font-size: var(--font-size-6xl);
+  font-weight: 500;
+  width: 237px;
+  height: 31px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.julie-smith2 {
+  position: absolute;
+  top: 112px;
+  left: 32px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-orangered-200);
+}
+.girl-playing-cello-1-icon1 {
+  position: absolute;
+  top: 201px;
+  left: 19px;
+  width: 163px;
+  height: 136px;
+  overflow: hidden;
+}
+.learn1,
+.listen1,
+.quizzes1 {
+  position: absolute;
+  top: 985px;
+  left: 66px;
+  font-size: var(--font-size-21xl);
+  text-align: left;
+}
+.learn1,
+.listen1 {
+  top: 683px;
+}
+.learn1 {
+  top: 394px;
+}
+.teaching-1-icon1 {
+  position: absolute;
+  top: 432px;
+  left: 158px;
+  width: 209px;
+  height: 186px;
+  object-fit: cover;
+}
+.to-do-list-1-icon1 {
+  position: absolute;
+  top: 1035px;
+  left: 188px;
+  width: 166px;
+  height: 115px;
+  overflow: hidden;
+}
+.rectangle {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-gainsboro-200);
+}
+.rectangle-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 414px;
+  height: 41.3px;
+  overflow: hidden;
+}
+.nav-bar-background {
+  position: absolute;
+  height: 99.88%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0.12%;
+  left: 0;
+  background-color: var(--color-orangered-200);
+  box-shadow: 0 2px 10px 1px rgba(51, 51, 51, 0.14);
+}
+.home-indicator1 {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 67.1px);
+  border-radius: var(--br-81xl);
+  background-color: var(--color-white);
+  width: 134px;
+  height: 5px;
+}
+.barshome-indicatorsiphoneli {
+  position: absolute;
+  height: 42.5%;
+  width: 34.35%;
+  top: 57.5%;
+  right: 32.58%;
+  bottom: 0;
+  left: 33.07%;
+}
+.nav-bar {
+  position: absolute;
+  top: 1220px;
+  left: 0;
+  width: 414px;
+  height: 80px;
+}
+.pay-transfer {
+  position: absolute;
+  width: 76.27%;
+  top: calc(50% + 9px);
+  left: 11.86%;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.vector-icon {
+  position: absolute;
+  height: 45.6%;
+  width: 36.95%;
+  top: 14%;
+  right: 32.54%;
+  bottom: 40.4%;
+  left: 30.51%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab {
+  position: absolute;
+  height: 3.88%;
+  width: 14.25%;
+  top: 95.57%;
+  right: 63.29%;
+  bottom: 0.54%;
+  left: 22.46%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.pay-transfer1 {
+  position: absolute;
+  width: 123.33%;
+  top: calc(50% + 9px);
+  left: -11.67%;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.vector-icon1 {
+  position: absolute;
+  height: 45.6%;
+  width: 41.33%;
+  top: 12%;
+  right: 28.67%;
+  bottom: 42.4%;
+  left: 30%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab1 {
+  position: absolute;
+  height: 3.88%;
+  width: 14.49%;
+  top: 95.57%;
+  right: 42.51%;
+  bottom: 0.54%;
+  left: 43%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.vector-icon2 {
+  position: absolute;
+  height: 40%;
+  width: 45%;
+  top: 16%;
+  right: 26.67%;
+  bottom: 44%;
+  left: 28.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab2 {
+  position: absolute;
+  height: 3.88%;
+  width: 14.49%;
+  top: 95.5%;
+  right: 21.98%;
+  bottom: 0.62%;
+  left: 63.53%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.tap-area {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.accounts-label {
+  position: absolute;
+  top: calc(50% + 9px);
+  left: 21.57%;
+  font-weight: 300;
+}
+.iconboundingbox,
+.path-icon {
+  position: absolute;
+  height: 48%;
+  width: 50%;
+  top: 14%;
+  right: 25.1%;
+  bottom: 38%;
+  left: 24.9%;
+}
+.path-icon {
+  height: 44%;
+  top: 16%;
+  bottom: 40%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.accounts-selected-tab {
+  position: absolute;
+  height: 3.88%;
+  width: 12.32%;
+  top: 95.5%;
+  right: 83.57%;
+  bottom: 0.62%;
+  left: 4.11%;
+  overflow: hidden;
+}
+.zelle-label {
+  position: absolute;
+  height: 32.98%;
+  width: 100%;
+  top: 67.02%;
+  left: 0;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.iconsactionableedit1 {
+  position: absolute;
+  height: 59.57%;
+  width: 76.32%;
+  top: 0;
+  right: 10.53%;
+  bottom: 40.43%;
+  left: 13.16%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.zelle-label-parent {
+  position: absolute;
+  top: 1233px;
+  left: 348px;
+  width: 38px;
+  height: 47px;
+  cursor: pointer;
+}
+.student-home1 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1288px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-3xs);
+  color: var(--color-white);
+  font-family: var(--font-lexend);
+}

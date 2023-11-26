@@ -1,0 +1,326 @@
+.entypodots-two-horizontal-icon4,
+.evaarrow-ios-back-fill-icon8 {
+  position: absolute;
+  top: 15px;
+  left: 341px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.evaarrow-ios-back-fill-icon8 {
+  top: 20px;
+  left: 14px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.frdric-chopin6 {
+  position: absolute;
+  top: 17px;
+  left: 79px;
+  font-size: var(--font-size-11xl);
+  font-weight: 600;
+  color: var(--color-darkslateblue-100);
+}
+.question-2-child {
+  position: absolute;
+  top: 74px;
+  left: 12px;
+  border-radius: var(--br-21xl) var(--br-21xl) 0 0;
+  background-color: var(--color-gray-100);
+  width: 390px;
+  height: 410px;
+}
+.question-21,
+.what-was-chopins {
+  position: absolute;
+  display: inline-block;
+}
+.what-was-chopins {
+  top: 207px;
+  left: 87px;
+  font-size: var(--font-size-13xl);
+  text-align: center;
+  width: 239px;
+}
+.question-21 {
+  top: 112px;
+  left: 134px;
+  width: 145px;
+}
+.question-2-inner,
+.question-2-item {
+  position: absolute;
+  top: 159px;
+  left: 76px;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+  width: 261px;
+  height: 10px;
+}
+.question-2-inner {
+  background-color: var(--color-limegreen);
+  width: 48px;
+}
+.course-2-child2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-orangered-200);
+  width: 390px;
+  height: 83px;
+  cursor: pointer;
+}
+.a-the-piano {
+  position: absolute;
+  top: 25px;
+  left: 49px;
+  display: inline-block;
+  width: 265px;
+}
+.course-24 {
+  position: absolute;
+  top: 448px;
+  left: 12px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  width: 390px;
+  height: 83px;
+}
+.rectangle8 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-gainsboro-200);
+}
+.rectangle-wrapper5 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 414px;
+  height: 41.3px;
+  overflow: hidden;
+}
+.nav-bar-background8 {
+  position: absolute;
+  height: 99.88%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0.12%;
+  left: 0;
+  background-color: var(--color-orangered-200);
+  box-shadow: 0 2px 10px 1px rgba(51, 51, 51, 0.14);
+}
+.home-indicator9 {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 67.1px);
+  border-radius: var(--br-81xl);
+  background-color: var(--color-white);
+  width: 134px;
+  height: 5px;
+}
+.barshome-indicatorsiphoneli8 {
+  position: absolute;
+  height: 42.5%;
+  width: 34.35%;
+  top: 57.5%;
+  right: 32.58%;
+  bottom: 0;
+  left: 33.07%;
+}
+.nav-bar8 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 414px;
+  height: 80px;
+}
+.pay-transfer24 {
+  position: absolute;
+  width: 76.27%;
+  top: calc(50% + 9px);
+  left: 11.86%;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.vector-icon25 {
+  position: absolute;
+  height: 45.6%;
+  width: 36.95%;
+  top: 14%;
+  right: 32.54%;
+  bottom: 40.4%;
+  left: 30.51%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab24 {
+  position: absolute;
+  height: 62.5%;
+  width: 14.25%;
+  top: 13.75%;
+  right: 63.29%;
+  bottom: 23.75%;
+  left: 22.46%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.pay-transfer25 {
+  position: absolute;
+  width: 123.33%;
+  top: calc(50% + 9px);
+  left: -11.67%;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.vector-icon26 {
+  position: absolute;
+  height: 45.6%;
+  width: 41.33%;
+  top: 12%;
+  right: 28.67%;
+  bottom: 42.4%;
+  left: 30%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab25 {
+  position: absolute;
+  height: 62.5%;
+  width: 14.49%;
+  top: 13.75%;
+  right: 42.51%;
+  bottom: 23.75%;
+  left: 43%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.vector-icon27 {
+  position: absolute;
+  height: 40%;
+  width: 45%;
+  top: 16%;
+  right: 26.67%;
+  bottom: 44%;
+  left: 28.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab26 {
+  position: absolute;
+  height: 62.5%;
+  width: 14.49%;
+  top: 12.5%;
+  right: 21.98%;
+  bottom: 25%;
+  left: 63.53%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.tap-area8 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.accounts-label8 {
+  position: absolute;
+  top: calc(50% + 9px);
+  left: 21.57%;
+  font-weight: 300;
+}
+.iconboundingbox8,
+.path-icon8 {
+  position: absolute;
+  height: 48%;
+  width: 50%;
+  top: 14%;
+  right: 25.1%;
+  bottom: 38%;
+  left: 24.9%;
+}
+.path-icon8 {
+  height: 44%;
+  top: 16%;
+  bottom: 40%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.accounts-selected-tab8 {
+  position: absolute;
+  height: 62.5%;
+  width: 12.32%;
+  top: 12.5%;
+  right: 83.57%;
+  bottom: 25%;
+  left: 4.11%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.zelle-label8 {
+  position: absolute;
+  height: 32.98%;
+  width: 100%;
+  top: 67.02%;
+  left: 0;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.iconsactionableedit9 {
+  position: absolute;
+  height: 59.57%;
+  width: 76.32%;
+  top: 0;
+  right: 10.53%;
+  bottom: 40.43%;
+  left: 13.16%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.zelle-label-parent5 {
+  position: absolute;
+  top: 13px;
+  left: 348px;
+  width: 38px;
+  height: 47px;
+  cursor: pointer;
+}
+.nav7 {
+  position: absolute;
+  top: 816px;
+  left: 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 414px;
+  height: 80px;
+  text-align: center;
+  font-size: var(--font-size-3xs);
+}
+.question-2 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 896px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-7xl);
+  color: var(--color-white);
+  font-family: var(--font-lexend);
+}

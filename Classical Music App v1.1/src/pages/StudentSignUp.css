@@ -1,0 +1,119 @@
+.student-sign-up-child {
+  position: absolute;
+  top: 415px;
+  left: -1px;
+  background: linear-gradient(180deg, #2d6f9a, rgba(255, 255, 255, 0));
+  width: 415px;
+  height: 186px;
+  display: none;
+}
+.create-account,
+.sign-up {
+  position: absolute;
+  display: inline-block;
+}
+.create-account {
+  top: 210px;
+  left: 25px;
+  width: 351px;
+  height: 47px;
+}
+.sign-up {
+  top: 12px;
+  left: 39.8px;
+  width: 110.9px;
+}
+.login1 {
+  position: absolute;
+  top: 593px;
+  left: 176px;
+  border-radius: var(--br-5xl);
+  background: linear-gradient(90.15deg, #00347f, #095689);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 191px;
+  height: 55px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+}
+.icon-heart,
+.vector-icon40 {
+  position: absolute;
+  height: 29.01%;
+  width: 50.48%;
+  top: 0;
+  right: 0;
+  bottom: 70.99%;
+  left: 49.52%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.vector-icon40 {
+  height: 24.79%;
+  width: 69.98%;
+  top: 75.21%;
+  right: 30.02%;
+  bottom: 0;
+  left: 0;
+}
+.girl-playing-cello-2-icon {
+  position: absolute;
+  top: 635px;
+  left: 25px;
+  width: 353px;
+  height: 284px;
+  overflow: hidden;
+}
+.student-sign-up-inner,
+.student-sign-up-item {
+  position: absolute;
+  top: 350px;
+  left: 49px;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 314px;
+  height: 67px;
+}
+.student-sign-up-inner {
+  top: 427px;
+  left: 51px;
+}
+.juliesmithgmailcom {
+  position: absolute;
+  top: 383px;
+  left: 107px;
+  font-size: var(--font-size-mini);
+  font-weight: 600;
+  color: var(--color-black);
+  text-align: left;
+  display: inline-block;
+  width: 191px;
+  height: 24px;
+}
+.student-sign-up-child1,
+.student-sign-up-child5 {
+  position: absolute;
+  top: 509px;
+  left: 51px;
+  border-radius: var(--br-4xs);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 314px;
+  height: 67px;
+}
+.student-sign-up-child5 {
+  top: 269px;
+  left: 49px;
+}
+.student-sign-up {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 896px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-21xl);
+  color: var(--color-darkslateblue-100);
+  font-family: var(--font-lexend);
+}

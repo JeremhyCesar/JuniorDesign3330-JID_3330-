@@ -1,0 +1,164 @@
+.julie3 {
+  font-weight: 600;
+}
+.span2 {
+  font-family: var(--font-lexend);
+}
+.julie2 {
+  color: var(--color-orangered-200);
+}
+.lets-get-to-container1 {
+  position: absolute;
+  top: 101px;
+  left: 50px;
+  display: inline-block;
+  width: 269px;
+  height: 23px;
+  filter: blur(4px);
+}
+.evaarrow-ios-back-fill-icon3 {
+  position: absolute;
+  top: 61px;
+  left: 15px;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+.frdric-chopin1 {
+  position: absolute;
+  top: 56px;
+  left: 50px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkslategray);
+  text-align: center;
+  filter: blur(4px);
+  cursor: pointer;
+}
+.span3 {
+  color: var(--color-chocolate-100);
+}
+.my-tasks-05-container1 {
+  position: absolute;
+  top: 443px;
+  left: 36px;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  filter: blur(4px);
+  color: var(--color-darkslategray);
+}
+.complete-them-all-container1 {
+  position: absolute;
+  top: 478px;
+  left: 36px;
+  display: inline-block;
+  width: 343px;
+  filter: blur(4px);
+}
+.frame-item {
+  position: absolute;
+  top: 609px;
+  left: 207px;
+  filter: blur(4px);
+  width: 100px;
+  height: 100px;
+  overflow: hidden;
+}
+.man-watching-online-video-1-icon1,
+.man-watching-online-video-2-icon1,
+.to-do-list-1-icon3 {
+  position: absolute;
+  top: 534px;
+  left: 26.7px;
+  width: 152.5px;
+  height: 130px;
+  overflow: hidden;
+}
+.man-watching-online-video-2-icon1,
+.to-do-list-1-icon3 {
+  top: 669px;
+  left: 27.7px;
+}
+.to-do-list-1-icon3 {
+  top: 1090.7px;
+  left: 38px;
+  width: 131px;
+  height: 97.3px;
+}
+.teaching-1-icon5,
+.teaching-2-icon2 {
+  position: absolute;
+  top: 940px;
+  left: 38px;
+  width: 131px;
+  height: 135px;
+  object-fit: cover;
+}
+.teaching-2-icon2 {
+  top: 805px;
+}
+.course-inner,
+.course2 {
+  position: absolute;
+  width: 475px;
+  height: 294px;
+}
+.course-inner {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-orangered-200);
+}
+.course2 {
+  top: 478px;
+  left: -30px;
+  cursor: pointer;
+}
+.course-child1,
+.course3 {
+  position: absolute;
+  width: 350px;
+  height: 249px;
+}
+.course-child1 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-goldenrod-100);
+}
+.course3 {
+  top: 159px;
+  left: 32px;
+  filter: blur(4px);
+}
+.chopin-1-icon1,
+.image-3-icon {
+  position: absolute;
+  top: 163px;
+  left: 97px;
+  width: 216px;
+  height: 298px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.image-3-icon {
+  height: 16.86%;
+  width: 94.93%;
+  top: 39.41%;
+  right: 2.66%;
+  bottom: 43.73%;
+  left: 2.42%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.lets-get-to-work-julie-root {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1299px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-lexend);
+}

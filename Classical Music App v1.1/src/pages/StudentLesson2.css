@@ -1,0 +1,99 @@
+.student-lesson-2-child,
+.student-lesson-2-inner,
+.student-lesson-2-item {
+  position: absolute;
+  top: 237px;
+  left: 43px;
+  border-radius: 50%;
+  background-color: var(--color-goldenrod-100);
+  filter: blur(27px);
+  width: 327px;
+  height: 216px;
+}
+.student-lesson-2-inner,
+.student-lesson-2-item {
+  top: 818px;
+  background-color: var(--color-deepskyblue-300);
+}
+.student-lesson-2-inner {
+  top: 526px;
+  background-color: var(--color-chocolate-200);
+}
+.glass3 {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  background: linear-gradient(
+    177.01deg,
+    rgba(227, 227, 227, 0.6),
+    rgba(217, 217, 217, 0.41)
+  );
+  backdrop-filter: blur(14px);
+  width: 524px;
+  height: 1011px;
+}
+.what-should-we {
+  position: absolute;
+  top: 49px;
+  left: 38px;
+  display: inline-block;
+  width: 269px;
+  height: 23px;
+}
+.my-lessons {
+  position: absolute;
+  top: 0;
+  left: 34px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkslategray);
+  text-align: center;
+}
+.evaarrow-ios-back-fill-icon11 {
+  position: absolute;
+  top: 5px;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+.heading2 {
+  position: absolute;
+  top: 51px;
+  left: 25px;
+  width: 307px;
+  height: 72px;
+}
+.man-playing-piano-1-icon {
+  position: absolute;
+  top: 183px;
+  left: 136px;
+  width: 246px;
+  height: 198px;
+  overflow: hidden;
+}
+.girl-enjoying-music-icon,
+.musical-band-performing-1-icon {
+  position: absolute;
+  top: 764px;
+  left: 138px;
+  width: 242px;
+  height: 216px;
+  overflow: hidden;
+}
+.girl-enjoying-music-icon {
+  top: 506px;
+  left: 142px;
+  width: 238px;
+  height: 140px;
+}
+.student-lesson-2 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1090px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-lexend);
+}

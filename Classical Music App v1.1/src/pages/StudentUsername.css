@@ -1,0 +1,204 @@
+.student-username-child {
+  position: absolute;
+  top: 415px;
+  left: -1px;
+  background: linear-gradient(180deg, #2d6f9a, rgba(255, 255, 255, 0));
+  width: 415px;
+  height: 186px;
+  display: none;
+}
+.login10,
+.please-sign-in2 {
+  position: absolute;
+  display: inline-block;
+}
+.please-sign-in2 {
+  top: 331px;
+  left: 46px;
+  font-size: var(--font-size-5xl);
+  font-weight: 600;
+  color: var(--color-darkslateblue-100);
+  width: 327px;
+  height: 32px;
+}
+.login10 {
+  top: 254px;
+  left: 40px;
+  font-size: var(--font-size-41xl);
+  color: var(--color-orangered-100);
+  text-align: center;
+  width: 177px;
+  height: 79px;
+}
+.student-username-item {
+  position: absolute;
+  top: 525px;
+  left: 47px;
+  border-top: 2px solid var(--color-dimgray-200);
+  box-sizing: border-box;
+  width: 314px;
+  height: 2px;
+}
+.vector-icon49 {
+  position: absolute;
+  height: 26.13%;
+  width: 72.39%;
+  top: 73.87%;
+  right: 27.61%;
+  bottom: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.girl-playing-cello-2-icon3,
+.vector-icon50 {
+  position: absolute;
+  top: 623px;
+  left: 35px;
+  width: 353px;
+  height: 284px;
+  overflow: hidden;
+}
+.vector-icon50 {
+  height: 27.91%;
+  width: 70.51%;
+  top: 0;
+  right: 0;
+  bottom: 72.09%;
+  left: 29.49%;
+  max-width: 100%;
+  max-height: 100%;
+}
+.login-child2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-5xl);
+  background: linear-gradient(90.15deg, #00347f, #095689);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 191px;
+  height: 55px;
+}
+.login12 {
+  position: absolute;
+  top: 12px;
+  left: 39.8px;
+  display: inline-block;
+  width: 110.9px;
+}
+.login11 {
+  position: absolute;
+  top: 558px;
+  left: 169px;
+  width: 191px;
+  height: 55px;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+}
+.student-username-inner {
+  position: absolute;
+  top: 492px;
+  left: 71px;
+  background-color: var(--color-white);
+  width: 266px;
+  height: 24px;
+}
+.forgot,
+.password2 {
+  position: absolute;
+  top: 499px;
+  left: 106px;
+  font-weight: 600;
+  display: inline-block;
+  width: 61px;
+  height: 13px;
+}
+.forgot {
+  top: 502px;
+  left: 319px;
+  color: var(--color-goldenrod-100);
+  width: 43px;
+}
+.vector-icon51 {
+  position: absolute;
+  height: 2.77%;
+  width: 5.46%;
+  top: 54.35%;
+  right: 78.12%;
+  bottom: 42.88%;
+  left: 16.43%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.student-username-child1 {
+  position: absolute;
+  top: 525px;
+  left: 49px;
+  border-top: 2px solid var(--color-dimgray-200);
+  box-sizing: border-box;
+  width: 314px;
+  height: 2px;
+}
+.student-username-child2,
+.student-username-child3 {
+  position: absolute;
+  top: 492px;
+  left: 73px;
+  background-color: var(--color-white);
+  width: 266px;
+  height: 24px;
+}
+.student-username-child3 {
+  top: 388px;
+  left: 46px;
+  border-radius: var(--br-4xs);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 314px;
+  height: 67px;
+  cursor: pointer;
+}
+.juliesmithgmailcom3,
+.username10 {
+  position: absolute;
+  left: 94px;
+  font-weight: 600;
+  display: inline-block;
+}
+.juliesmithgmailcom3 {
+  top: 424px;
+  font-size: var(--font-size-mini);
+  color: var(--color-black);
+  width: 191px;
+  height: 24px;
+}
+.username10 {
+  top: 411px;
+  width: 61px;
+  height: 13px;
+}
+.vector-icon53 {
+  position: absolute;
+  height: 2.86%;
+  width: 5.46%;
+  top: 46.32%;
+  right: 79.08%;
+  bottom: 50.83%;
+  left: 15.46%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.student-username {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 896px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-3xs);
+  color: var(--color-darkgray-300);
+  font-family: var(--font-lexend);
+}

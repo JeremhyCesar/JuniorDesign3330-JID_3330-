@@ -1,0 +1,369 @@
+.entypodots-two-horizontal-icon,
+.evaarrow-ios-back-fill-icon4 {
+  position: absolute;
+  top: 15px;
+  left: 341px;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+}
+.evaarrow-ios-back-fill-icon4 {
+  top: 20px;
+  left: 14px;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+.frdric-chopin2 {
+  position: absolute;
+  top: 17px;
+  left: 79px;
+  font-weight: 600;
+  color: var(--color-darkslateblue-100);
+}
+.end-screen-child {
+  position: absolute;
+  top: 74px;
+  left: 12px;
+  border-radius: var(--br-21xl) var(--br-21xl) 0 0;
+  background: linear-gradient(180deg, #1e2237 68.75%, rgba(30, 34, 55, 0));
+  width: 390px;
+  height: 758px;
+}
+.congrats,
+.you-unlocked-the {
+  position: absolute;
+  top: 112px;
+  left: 134px;
+  font-size: var(--font-size-7xl);
+  display: inline-block;
+  width: 145px;
+}
+.you-unlocked-the {
+  top: 448px;
+  left: 115px;
+  font-size: var(--font-size-xs);
+  font-weight: 500;
+  width: 183px;
+}
+.correct,
+.quiz-complete {
+  position: absolute;
+  left: 91px;
+  display: inline-block;
+  text-align: center;
+  width: 216px;
+}
+.quiz-complete {
+  top: 210px;
+  font-size: var(--font-size-21xl);
+  font-weight: 800;
+}
+.correct {
+  top: 408px;
+  font-size: var(--font-size-13xl);
+}
+.end-screen-inner,
+.end-screen-item {
+  position: absolute;
+  top: 168px;
+  left: 77px;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+  width: 261px;
+  height: 10px;
+}
+.end-screen-inner {
+  left: 76px;
+  background-color: var(--color-limegreen);
+  width: 262px;
+}
+.chopin-2-icon {
+  position: absolute;
+  top: 529px;
+  left: 85px;
+  width: 245px;
+  height: 317px;
+  object-fit: cover;
+}
+.course-2-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-orangered-200);
+  width: 194px;
+  height: 33px;
+}
+.back-to-quizzes {
+  position: absolute;
+  top: 6px;
+  left: 30px;
+  display: inline-block;
+  width: 134.8px;
+  height: 13.1px;
+}
+.course-2 {
+  position: absolute;
+  top: 479px;
+  left: 102px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  width: 194px;
+  height: 33px;
+  font-size: var(--font-size-base);
+}
+.icon-star,
+.vector-icon12 {
+  position: absolute;
+  height: 5.58%;
+  width: 13.29%;
+  top: 37.28%;
+  right: 74.88%;
+  bottom: 57.14%;
+  left: 11.84%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.icon-star {
+  width: 57.25%;
+  right: 15.7%;
+  left: 27.05%;
+}
+.rectangle4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: var(--color-gainsboro-200);
+}
+.rectangle-wrapper1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 414px;
+  height: 41.3px;
+  overflow: hidden;
+}
+.nav-bar-background4 {
+  position: absolute;
+  height: 99.88%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0.12%;
+  left: 0;
+  background-color: var(--color-orangered-200);
+  box-shadow: 0 2px 10px 1px rgba(51, 51, 51, 0.14);
+}
+.home-indicator5 {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 67.1px);
+  border-radius: var(--br-81xl);
+  background-color: var(--color-white);
+  width: 134px;
+  height: 5px;
+}
+.barshome-indicatorsiphoneli4 {
+  position: absolute;
+  height: 42.5%;
+  width: 34.35%;
+  top: 57.5%;
+  right: 32.58%;
+  bottom: 0;
+  left: 33.07%;
+}
+.nav-bar4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 414px;
+  height: 80px;
+}
+.pay-transfer12 {
+  position: absolute;
+  width: 76.27%;
+  top: calc(50% + 9px);
+  left: 11.86%;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.vector-icon13 {
+  position: absolute;
+  height: 45.6%;
+  width: 36.95%;
+  top: 14%;
+  right: 32.54%;
+  bottom: 40.4%;
+  left: 30.51%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab12 {
+  position: absolute;
+  height: 62.5%;
+  width: 14.25%;
+  top: 13.75%;
+  right: 63.29%;
+  bottom: 23.75%;
+  left: 22.46%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.pay-transfer13 {
+  position: absolute;
+  width: 123.33%;
+  top: calc(50% + 9px);
+  left: -11.67%;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.vector-icon14 {
+  position: absolute;
+  height: 45.6%;
+  width: 41.33%;
+  top: 12%;
+  right: 28.67%;
+  bottom: 42.4%;
+  left: 30%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab13 {
+  position: absolute;
+  height: 62.5%;
+  width: 14.49%;
+  top: 13.75%;
+  right: 42.51%;
+  bottom: 23.75%;
+  left: 43%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.vector-icon15 {
+  position: absolute;
+  height: 40%;
+  width: 45%;
+  top: 16%;
+  right: 26.67%;
+  bottom: 44%;
+  left: 28.33%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.payandtransfer-unselected-tab14 {
+  position: absolute;
+  height: 62.5%;
+  width: 14.49%;
+  top: 12.5%;
+  right: 21.98%;
+  bottom: 25%;
+  left: 63.53%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.tap-area4 {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.accounts-label4 {
+  position: absolute;
+  top: calc(50% + 9px);
+  left: 21.57%;
+  font-weight: 300;
+}
+.iconboundingbox4,
+.path-icon4 {
+  position: absolute;
+  height: 48%;
+  width: 50%;
+  top: 14%;
+  right: 25.1%;
+  bottom: 38%;
+  left: 24.9%;
+}
+.path-icon4 {
+  height: 44%;
+  top: 16%;
+  bottom: 40%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.accounts-selected-tab4 {
+  position: absolute;
+  height: 62.5%;
+  width: 12.32%;
+  top: 12.5%;
+  right: 83.57%;
+  bottom: 25%;
+  left: 4.11%;
+  overflow: hidden;
+  cursor: pointer;
+}
+.zelle-label4 {
+  position: absolute;
+  height: 32.98%;
+  width: 100%;
+  top: 67.02%;
+  left: 0;
+  font-weight: 300;
+  display: inline-block;
+  mix-blend-mode: normal;
+}
+.iconsactionableedit5 {
+  position: absolute;
+  height: 59.57%;
+  width: 76.32%;
+  top: 0;
+  right: 10.53%;
+  bottom: 40.43%;
+  left: 13.16%;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.zelle-label-parent1 {
+  position: absolute;
+  top: 13px;
+  left: 348px;
+  width: 38px;
+  height: 47px;
+  cursor: pointer;
+}
+.nav3 {
+  position: absolute;
+  top: 816px;
+  left: 0;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 414px;
+  height: 80px;
+  text-align: center;
+  font-size: var(--font-size-3xs);
+}
+.end-screen {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 896px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-11xl);
+  color: var(--color-white);
+  font-family: var(--font-lexend);
+}

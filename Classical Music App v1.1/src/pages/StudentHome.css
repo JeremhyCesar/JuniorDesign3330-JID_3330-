@@ -1,0 +1,277 @@
+.lunch-shadow,
+.pfp-shadow {
+  position: absolute;
+  top: 119px;
+  left: 276px;
+  border-radius: 50%;
+  background-color: var(--color-goldenrod-100);
+  filter: blur(42px);
+  width: 112px;
+  height: 43px;
+  opacity: 0.6;
+}
+.lunch-shadow {
+  top: 594px;
+  left: 66px;
+  width: 281px;
+}
+.glass {
+  position: absolute;
+  top: -55px;
+  left: 0;
+  border-radius: 62px;
+  background: linear-gradient(
+    171.24deg,
+    rgba(225, 229, 230, 0.6),
+    rgba(236, 238, 239, 0.6)
+  );
+  box-shadow: -2px 1px 4px rgba(255, 255, 255, 0.25) inset,
+    0-11px 17px -7px rgba(103, 103, 103, 0.25);
+  backdrop-filter: blur(62px);
+  width: 414px;
+  height: 1073px;
+  mix-blend-mode: multiply;
+}
+.profile-icon {
+  position: absolute;
+  top: 47px;
+  left: 269px;
+  width: 123px;
+  height: 123px;
+  object-fit: cover;
+}
+.julie-smith {
+  top: 31px;
+  left: 0;
+}
+.heading,
+.hello,
+.julie-smith {
+  position: absolute;
+}
+.hello {
+  top: 0;
+  left: 0;
+  font-size: 28px;
+  color: var(--color-darkslategray);
+  text-align: center;
+}
+.heading {
+  top: 53px;
+  left: 36px;
+  width: 207px;
+  height: 76px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkorange);
+}
+.lunch-menu-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-goldenrod-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 250px;
+}
+.plate-with-vegetables {
+  position: absolute;
+  top: 125px;
+  left: 147px;
+  width: 100.5px;
+  height: 68px;
+}
+.lunch-menu,
+.lunch-menu-icon {
+  position: absolute;
+  top: 367px;
+  left: 32px;
+  width: 350px;
+  height: 250px;
+  cursor: pointer;
+}
+.lunch-menu-icon {
+  top: 657px;
+  left: 28px;
+  width: 358px;
+  height: 258px;
+}
+.reminder-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 136px;
+}
+.dad {
+  color: var(--color-darkorange);
+}
+.do-all-of,
+.note-from-dad-container {
+  position: absolute;
+  left: 117px;
+  display: inline-block;
+}
+.note-from-dad-container {
+  top: 12px;
+  width: 246px;
+  height: 30px;
+}
+.do-all-of {
+  top: 42px;
+  font-size: var(--font-size-base);
+  width: 182px;
+}
+.reminder-item {
+  position: absolute;
+  top: 19px;
+  left: 11px;
+  border-radius: 50%;
+  background-color: var(--color-goldenrod-100);
+  width: 98px;
+  height: 98px;
+}
+.seated-man-driving {
+  position: absolute;
+  top: 33px;
+  left: 11px;
+  width: 211px;
+  height: 260px;
+  object-fit: cover;
+}
+.reminder {
+  position: absolute;
+  top: 198px;
+  left: 32px;
+  width: 363px;
+  height: 136px;
+  font-size: var(--font-size-5xl);
+  color: var(--color-darkslategray);
+}
+.lunch-menu-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 142px;
+}
+.lunch-menu1,
+.plate-with-vegetables1 {
+  position: absolute;
+  top: 71px;
+  left: 147px;
+  width: 100.5px;
+  height: 38.6px;
+}
+.lunch-menu1 {
+  top: 194px;
+  left: 32px;
+  width: 350px;
+  height: 142px;
+}
+.lunch-menu-inner,
+.lunch-menu2 {
+  position: absolute;
+  width: 350px;
+  height: 250px;
+}
+.lunch-menu-inner {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-darkslateblue-100);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.lunch-menu2 {
+  top: 934px;
+  left: 32px;
+  cursor: pointer;
+}
+.happy-music-monday {
+  position: absolute;
+  top: 128px;
+  left: 37px;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+  display: inline-block;
+  width: 215px;
+  height: 20px;
+}
+.julie-smith1,
+.where-words-fail {
+  position: absolute;
+  text-align: center;
+}
+.where-words-fail {
+  top: 237px;
+  left: 137px;
+  font-size: var(--font-size-6xl);
+  font-weight: 500;
+  color: var(--color-dimgray-100);
+  display: inline-block;
+  width: 237px;
+  height: 31px;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+.julie-smith1 {
+  top: 84px;
+  left: 36px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-orangered-200);
+}
+.girl-playing-cello-1-icon {
+  position: absolute;
+  top: 200px;
+  left: 19px;
+  width: 163px;
+  height: 136px;
+  overflow: hidden;
+}
+.quizzes {
+  position: absolute;
+  top: 984px;
+  left: 66px;
+}
+.learn,
+.listen,
+.teaching-1-icon {
+  position: absolute;
+  top: 682px;
+  left: 66px;
+}
+.learn,
+.teaching-1-icon {
+  top: 393px;
+}
+.teaching-1-icon {
+  top: 431px;
+  left: 158px;
+  width: 209px;
+  height: 186px;
+  object-fit: cover;
+}
+.to-do-list-1-icon {
+  position: absolute;
+  top: 1034px;
+  left: 188px;
+  width: 166px;
+  height: 115px;
+  overflow: hidden;
+}
+.student-home {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1303px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-21xl);
+  color: var(--color-white);
+  font-family: var(--font-lexend);
+}
