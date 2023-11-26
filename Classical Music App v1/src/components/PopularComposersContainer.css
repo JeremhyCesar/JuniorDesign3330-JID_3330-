@@ -1,0 +1,71 @@
+.popular-composers,
+.see-all1 {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 130%;
+  font-weight: 600;
+}
+.popular-composers {
+  flex: 1;
+}
+.see-all1 {
+  font-size: var(--font-size-xs);
+  color: var(--color-darkslateblue-100);
+}
+.headline1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-xs);
+}
+.photo-icon {
+  position: relative;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+}
+.james-adam {
+  align-self: stretch;
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 130%;
+  font-weight: 500;
+}
+.container,
+.headline-group,
+.singer {
+  display: flex;
+  justify-content: flex-start;
+}
+.singer {
+  border-radius: var(--br-xs);
+  background-color: var(--color-white);
+  width: 100px;
+  overflow: hidden;
+  flex-shrink: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--padding-xs) var(--padding-5xs);
+  box-sizing: border-box;
+  gap: var(--gap-xs);
+}
+.container,
+.headline-group {
+  flex-direction: row;
+  align-items: flex-start;
+  gap: var(--gap-5xs);
+  text-align: center;
+  font-size: var(--font-size-sm);
+}
+.headline-group {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-200);
+  font-family: var(--font-poppins);
+}

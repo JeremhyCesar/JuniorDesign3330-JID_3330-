@@ -1,0 +1,150 @@
+.student-lessons-expanded-2-child {
+  position: absolute;
+  top: 227px;
+  left: 36px;
+  border-radius: 50%;
+  background-color: var(--color-goldenrod-100);
+  filter: blur(27px);
+  width: 327px;
+  height: 216px;
+}
+.glass1 {
+  position: absolute;
+  top: -4px;
+  left: 0;
+  background: linear-gradient(
+    177.01deg,
+    rgba(227, 227, 227, 0.6),
+    rgba(217, 217, 217, 0.41)
+  );
+  backdrop-filter: blur(14px);
+  width: 414px;
+  height: 1219px;
+}
+.julie5 {
+  font-weight: 600;
+}
+.span4 {
+  font-family: var(--font-lexend);
+}
+.julie4 {
+  color: var(--color-orangered-200);
+}
+.lets-get-to-container2 {
+  position: absolute;
+  top: 101px;
+  left: 50px;
+  display: inline-block;
+  width: 269px;
+  height: 23px;
+}
+.evaarrow-ios-back-fill-icon11 {
+  position: absolute;
+  top: 61px;
+  left: 15px;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+.frdric-chopin8 {
+  position: absolute;
+  top: 56px;
+  left: 50px;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkslategray);
+  text-align: center;
+}
+.span5 {
+  color: var(--color-chocolate-100);
+}
+.my-tasks-05-container2 {
+  position: absolute;
+  top: 443px;
+  left: 36px;
+  font-size: var(--font-size-5xl);
+  font-weight: 500;
+  color: var(--color-darkslategray);
+}
+.complete-them-all-container2 {
+  position: absolute;
+  top: 478px;
+  left: 36px;
+  display: inline-block;
+  width: 343px;
+}
+.course-child1,
+.course4 {
+  position: absolute;
+  width: 350px;
+  height: 249px;
+}
+.course-child1 {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-goldenrod-100);
+}
+.course4 {
+  top: 159px;
+  left: 32px;
+}
+.chopin-1-icon2,
+.mini-quiz-1 {
+  position: absolute;
+  top: 167px;
+  left: 97px;
+  width: 208px;
+  height: 290px;
+  object-fit: cover;
+}
+.mini-quiz-1 {
+  top: 1080px;
+  left: 39px;
+  width: 343px;
+  height: 115px;
+  cursor: pointer;
+}
+.review-1-icon,
+.video-1-1,
+.video-2-1,
+.worksheet-1-icon {
+  position: absolute;
+  top: 537px;
+  left: 32px;
+  width: 349px;
+  height: 128px;
+  object-fit: cover;
+  cursor: pointer;
+}
+.review-1-icon,
+.video-2-1,
+.worksheet-1-icon {
+  top: 679px;
+  left: 36px;
+  width: 339px;
+  height: 119px;
+}
+.review-1-icon,
+.worksheet-1-icon {
+  top: 819px;
+  left: 37px;
+  width: 342px;
+  height: 120px;
+}
+.review-1-icon {
+  top: 952px;
+  left: 38px;
+  width: 348px;
+  height: 114px;
+}
+.student-lessons-expanded-2 {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1299px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+  font-family: var(--font-lexend);
+}

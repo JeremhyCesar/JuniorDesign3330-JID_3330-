@@ -1,0 +1,112 @@
+.first-screen-child {
+  position: absolute;
+  top: 415px;
+  left: -1px;
+  background: linear-gradient(180deg, #2d6f9a, rgba(255, 255, 255, 0));
+  width: 415px;
+  height: 186px;
+  display: none;
+}
+.ready-to-learn1 {
+  position: absolute;
+  top: 197px;
+  left: 41px;
+  text-align: left;
+  display: inline-block;
+  width: 318px;
+  height: 28px;
+}
+.login-child3 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-5xl);
+  background: linear-gradient(90.15deg, #00347f, #095689);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 317px;
+  height: 55px;
+}
+.login14 {
+  position: absolute;
+  top: 12px;
+  left: 66px;
+  display: inline-block;
+  width: 184px;
+  cursor: pointer;
+}
+.login13,
+.sign-in-item {
+  position: absolute;
+  width: 317px;
+  height: 55px;
+}
+.login13 {
+  top: 648px;
+  left: 49px;
+  color: var(--color-white);
+}
+.sign-in-item {
+  top: 0;
+  left: 0;
+  border-radius: var(--br-5xl);
+  background-color: var(--color-white);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  border: 3px solid var(--color-darkslateblue-100);
+  box-sizing: border-box;
+}
+.sign-up1 {
+  position: absolute;
+  top: 12px;
+  left: 67px;
+  display: inline-block;
+  width: 184px;
+}
+.notemakers1,
+.sign-in1 {
+  position: absolute;
+  top: 723px;
+  left: 49px;
+  width: 317px;
+  height: 55px;
+  color: var(--color-steelblue-200);
+}
+.notemakers1 {
+  top: 138px;
+  left: 15px;
+  font-size: var(--font-size-36xl);
+  display: inline-block;
+  color: var(--color-orangered-100);
+  width: 383px;
+  height: 58px;
+}
+.vector-icon18 {
+  position: absolute;
+  height: 28.05%;
+  width: 100%;
+  top: 36.12%;
+  right: 0;
+  bottom: 35.84%;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+}
+.girl-playing-cello-1-icon2 {
+  position: absolute;
+  top: 184px;
+  left: 0;
+  width: 631px;
+  height: 500px;
+  overflow: hidden;
+}
+.first-screen {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 896px;
+  overflow: hidden;
+  text-align: center;
+  font-size: var(--font-size-5xl);
+  color: var(--color-steelblue-100);
+  font-family: var(--font-lexend);
+}

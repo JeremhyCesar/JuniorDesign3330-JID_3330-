@@ -1,0 +1,46 @@
+.task-5-child1,
+.task-5-inner {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-white);
+  width: 369px;
+  height: 120px;
+}
+.task-5-child1 {
+  top: 11px;
+  left: 8.4px;
+  border-radius: var(--br-7xl);
+  background-color: var(--color-gainsboro-100);
+  width: 145.5px;
+  height: 97px;
+}
+.mini-quiz1,
+.test-your-knowledge3 {
+  position: absolute;
+  top: 22px;
+  left: 178.2px;
+  font-weight: 600;
+  display: inline-block;
+  width: 99.1px;
+}
+.test-your-knowledge3 {
+  top: 52px;
+  font-size: var(--font-size-base);
+  font-weight: 300;
+  color: var(--color-dimgray-100);
+  width: 157.1px;
+  height: 46px;
+}
+.task-51 {
+  position: absolute;
+  top: 680px;
+  left: 29px;
+  width: 369px;
+  height: 120px;
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-goldenrod-100);
+  font-family: var(--font-lexend);
+}

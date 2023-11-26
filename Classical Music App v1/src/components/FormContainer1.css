@@ -1,0 +1,72 @@
+.dinner-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-deepskyblue-100);
+  width: 350px;
+  height: 250px;
+}
+.todays-dinner {
+  position: absolute;
+  top: 22px;
+  left: 32px;
+  color: var(--color-white);
+}
+.burger-icon,
+.french-fries-icon {
+  position: absolute;
+  top: 125px;
+  left: 0;
+  width: 246.1px;
+  height: 158px;
+  object-fit: cover;
+}
+.french-fries-icon {
+  top: 98px;
+  left: 155px;
+  width: 74.6px;
+  height: 101px;
+}
+.can-of-cola {
+  top: 114px;
+  left: 266px;
+  width: 51.8px;
+  height: 85px;
+  object-fit: cover;
+}
+.burger,
+.can-of-cola,
+.fries {
+  position: absolute;
+}
+.burger {
+  top: 80px;
+  left: 10px;
+  font-size: var(--font-size-17xl);
+}
+.fries {
+  top: 66px;
+  left: 160px;
+  display: inline-block;
+  width: 67px;
+  height: 25px;
+}
+.dinner,
+.soda {
+  position: absolute;
+  top: 67px;
+  left: 258px;
+  color: var(--color-indianred);
+}
+.dinner {
+  top: 657px;
+  left: 32px;
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 250px;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-goldenrod-100);
+  font-family: var(--font-lexend);
+}

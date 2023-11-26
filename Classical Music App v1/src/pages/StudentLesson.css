@@ -1,0 +1,184 @@
+.student-lesson-child,
+.student-lesson-inner,
+.student-lesson-item {
+  position: absolute;
+  top: 237px;
+  left: 43px;
+  border-radius: 50%;
+  background-color: var(--color-goldenrod-100);
+  filter: blur(27px);
+  width: 327px;
+  height: 216px;
+}
+.student-lesson-inner,
+.student-lesson-item {
+  top: 818px;
+  background-color: var(--color-deepskyblue-300);
+}
+.student-lesson-inner {
+  top: 526px;
+  background-color: var(--color-chocolate-200);
+}
+.course-3-inner {
+  position: absolute;
+  top: 4px;
+  left: 0;
+  border-radius: var(--br-12xl);
+  background-color: var(--color-darkslateblue-100);
+  width: 350px;
+  height: 249px;
+}
+.compare {
+  margin: 0;
+}
+.compare-contrast-container {
+  position: absolute;
+  top: 28px;
+  left: 28px;
+}
+.saxophonist-playing-saxophone1 {
+  position: absolute;
+  top: 0;
+  left: 167px;
+  width: 180px;
+  height: 233px;
+  object-fit: cover;
+}
+.progress-item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: var(--br-6xs);
+  background-color: var(--color-white);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25) inset;
+  width: 165px;
+  height: 10px;
+}
+.completed1,
+.progress1 {
+  position: absolute;
+  top: 11px;
+  left: 41px;
+}
+.progress1 {
+  top: 222px;
+  left: 92px;
+  width: 165px;
+  height: 26px;
+  font-size: var(--font-size-xs);
+}
+.course-32 {
+  position: absolute;
+  top: 736px;
+  left: 32px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 253px;
+}
+.contemporary-music,
+.progress2 {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+}
+.progress2 {
+  top: 216px;
+  left: 92px;
+  width: 165px;
+  height: 26px;
+  font-size: var(--font-size-xs);
+}
+.course-1-child,
+.course-28 {
+  position: absolute;
+  border-radius: var(--br-12xl);
+  width: 350px;
+  height: 249px;
+}
+.course-28 {
+  top: 448px;
+  left: 32px;
+  background-color: var(--color-orangered-200);
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+}
+.course-1-child {
+  top: 0;
+  left: 0;
+  background-color: var(--color-goldenrod-100);
+}
+.classical-music {
+  position: absolute;
+  top: 24px;
+  left: 28px;
+  display: inline-block;
+  width: 167px;
+}
+.course-1,
+.progress3 {
+  position: absolute;
+  top: 218px;
+  left: 92px;
+  width: 165px;
+  height: 26px;
+  font-size: var(--font-size-xs);
+}
+.course-1 {
+  top: 159px;
+  left: 32px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+  width: 350px;
+  height: 249px;
+  cursor: pointer;
+  font-size: var(--font-size-7xl);
+}
+.what-should-we1 {
+  position: absolute;
+  top: 49px;
+  left: 4px;
+  display: inline-block;
+  width: 269px;
+  height: 23px;
+}
+.my-lessons1 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: var(--font-size-17xl);
+  color: var(--color-darkslategray);
+  text-align: center;
+}
+.heading3 {
+  position: absolute;
+  top: 51px;
+  left: 36px;
+  width: 273px;
+  height: 72px;
+  font-size: var(--font-size-base);
+  color: var(--color-dimgray-100);
+}
+.couple-dance-party-1-icon1,
+.girl-playing-violin-1-icon1 {
+  position: absolute;
+  top: 144px;
+  left: 102px;
+  width: 312px;
+  height: 259px;
+  overflow: hidden;
+}
+.couple-dance-party-1-icon1 {
+  top: 484px;
+  left: 147px;
+  width: 219px;
+  height: 190px;
+}
+.student-lesson {
+  position: relative;
+  background-color: var(--color-white);
+  width: 100%;
+  height: 1090px;
+  overflow: hidden;
+  text-align: left;
+  font-size: var(--font-size-5xl);
+  color: var(--color-white);
+  font-family: var(--font-lexend);
+}

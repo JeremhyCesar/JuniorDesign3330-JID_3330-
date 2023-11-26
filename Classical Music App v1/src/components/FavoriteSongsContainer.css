@@ -1,0 +1,40 @@
+.favorite-songs,
+.see-all2 {
+  position: relative;
+  letter-spacing: -0.02em;
+  line-height: 130%;
+  font-weight: 600;
+}
+.favorite-songs {
+  flex: 1;
+}
+.see-all2 {
+  font-size: var(--font-size-xs);
+  color: var(--color-darkslateblue-100);
+}
+.container1,
+.headline-container,
+.headline2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+.headline2 {
+  align-self: stretch;
+  align-items: center;
+  gap: var(--gap-xs);
+}
+.container1,
+.headline-container {
+  align-items: flex-start;
+  gap: var(--gap-5xs);
+}
+.headline-container {
+  align-self: stretch;
+  flex-direction: column;
+  gap: var(--gap-xs);
+  text-align: left;
+  font-size: var(--font-size-xl);
+  color: var(--color-gray-200);
+  font-family: var(--font-poppins);
+}

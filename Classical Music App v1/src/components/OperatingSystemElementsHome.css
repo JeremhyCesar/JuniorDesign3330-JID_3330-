@@ -1,0 +1,14 @@
+.home-indicator {
+  position: absolute;
+  bottom: 8px;
+  left: calc(50% - 67px);
+  border-radius: var(--br-81xl);
+  background-color: var(--color-white);
+  width: 134px;
+  height: 5px;
+}
+.operating-system-elementshome {
+  background-color: var(--color-black);
+  width: 134px;
+  height: 34px;
+}
