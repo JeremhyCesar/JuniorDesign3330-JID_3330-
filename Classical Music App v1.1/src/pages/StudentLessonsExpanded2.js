@@ -1,6 +1,6 @@
 import { useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import BottomFooter from "../components/BottomFooter";
+import { BottomFooter, addProgress } from "../components/BottomFooter";
 import "./StudentLessonsExpanded2.css";
 
 const StudentLessonsExpanded2 = () => {
@@ -27,10 +27,11 @@ const StudentLessonsExpanded2 = () => {
   }, [navigate]);
 
   const onMiniQuiz1Click = useCallback(() => {
-    navigate("/lessons/chopin/quiz/question-1");
+    navigate("/quizzes/chopin/question-1");
   }, [navigate]);
 
   const onVideo11Click = useCallback(() => {
+    addProgress("chopin");
     navigate("/lessons/chopin/video-1");
   }, [navigate]);
 

@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import ReviewContainer from "../components/ReviewContainer";
 import "./Worksheet.css";
+import BottomFooter from "../components/BottomFooter";
 
 const Worksheet = () => {
   const navigate = useNavigate();
@@ -167,55 +168,26 @@ const Worksheet = () => {
         Answer these questions on your own paper!
       </div>
       <img className="teaching-2-icon" alt="" src="/teaching-11@2x.png" />
-      <div className="nav">
-        <div className="nav-bar1">
-          <div className="rectangle-container">
-            <div className="rectangle1" />
-          </div>
-          <div className="nav-bar-background1" />
-          <div className="barshome-indicatorsiphoneli1">
-            <div className="home-indicator2" />
-          </div>
-        </div>
-        <div
-          className="payandtransfer-unselected-tab3"
-          onClick={onPayAndTransferUnselectedTabContainerClick}
-        >
-          <div className="pay-transfer3">Quizzes</div>
-          <img className="vector-icon3" alt="" src="/vector.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab4"
-          onClick={onPayAndTransferUnselectedTabContainer1Click}
-        >
-          <div className="pay-transfer4">Social</div>
-          <img className="vector-icon4" alt="" src="/vector1.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab5"
-          onClick={onPayAndTransferUnselectedTabContainer2Click}
-        >
-          <div className="pay-transfer4">Listen</div>
-          <img className="vector-icon5" alt="" src="/vector2.svg" />
-        </div>
-        <div
-          className="accounts-selected-tab1"
-          onClick={onAccountsSelectedTabContainerClick}
-        >
-          <div className="tap-area1" />
-          <div className="accounts-label1">Home</div>
-          <div className="iconboundingbox1" />
-          <img className="path-icon1" alt="" src="/path.svg" />
-        </div>
-        <div className="zelle-label-group" onClick={onFrameContainerClick}>
-          <div className="zelle-label1">Lessons</div>
-          <img
-            className="iconsactionableedit2"
-            alt=""
-            src="/iconsactionableedit.svg"
-          />
-        </div>
-      </div>
+      <BottomFooter
+        propBoxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+        propTop="1010px"
+        propFilter="unset"
+        propCursor="pointer"
+        onPayAndTransferUnselectedTabContainerClick={
+          onPayAndTransferUnselectedTabContainerClick
+        }
+        onPayAndTransferUnselectedTabContainer1Click={
+          onPayAndTransferUnselectedTabContainer1Click
+        }
+        onPayAndTransferUnselectedTabContainer2Click={
+          onPayAndTransferUnselectedTabContainer2Click
+        }
+        onAccountsSelectedTabContainerClick={
+          onAccountsSelectedTabContainerClick
+        }
+        onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
+      />
     </div>
   );
 };

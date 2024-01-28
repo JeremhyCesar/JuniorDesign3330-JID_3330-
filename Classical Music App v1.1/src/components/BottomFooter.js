@@ -3,7 +3,10 @@ import OperatingSystemElementsHome from "./OperatingSystemElementsHome";
 import "./BottomFooter.css";
 
 let progressDict = {};
-const BottomFooter = ({
+export const addProgress = (topic) => {
+  progressDict[topic] += 1;
+};
+export const BottomFooter = ({
   propBoxShadow,
   propTop,
   propFilter,
@@ -29,11 +32,11 @@ const BottomFooter = ({
     };
   }, [propCursor]);
   
-  let progressVisibility = "false";
+  let progressVisibility = "hidden";
   let splitPath = path.split("/")
   // if the content is a learning module (i.e. needs progress tracked) then url will start with "/lessons/"
   if (splitPath[1] == "lessons") {
-    progressVisibility = "true";
+    progressVisibility = "visible";
     // second part of url will represent topic
     if (!progressDict.hasOwnProperty(splitPath[2])) {
       progressDict[splitPath[2]] = 0;
@@ -42,7 +45,7 @@ const BottomFooter = ({
 
   return (
     <div className="nav11">
-      <div className="progress" visibility={progressVisibility}>
+      <div className="progress" style={{visibility: progressVisibility}}>
         <div className="progress-done"></div>
       </div>
       <div className="nav-bar12">

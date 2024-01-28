@@ -8,7 +8,7 @@ const Question3 = () => {
   const navigate = useNavigate();
 
   const onEvaarrowIosBackFillIconClick = useCallback(() => {
-    navigate("/lessons/chopin/quiz/question-2");
+    navigate("/quizzes/chopin/question-2");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {

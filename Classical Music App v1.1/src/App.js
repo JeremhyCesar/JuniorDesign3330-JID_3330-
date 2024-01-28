@@ -176,12 +176,12 @@ function App() {
       <Route path="/lessons/chopin/review" element={<Review />} />
       <Route path="/lessons/chopin/video-2" element={<VideoFrame1 />} />
       <Route path="/lessons/chopin/video-1" element={<VideoFrame2 />} />
-      <Route path="/lessons/chopin/quiz/end-screen" element={<EndScreen />} />
-      <Route path="/lessons/chopin/quiz/question-5" element={<Question5 />} />
-      <Route path="/lessons/chopin/quiz/question-4" element={<Question4 />} />
-      <Route path="/lessons/chopin/quiz/question-3" element={<Question3 />} />
-      <Route path="/lessons/chopin/quiz/question-2" element={<Question2 />} />
-      <Route path="/lessons/chopin/quiz/question-1" element={<Question1 />} />
+      <Route path="/quizzes/chopin/end-screen" element={<EndScreen />} />
+      <Route path="/quizzes/chopin/question-5" element={<Question5 />} />
+      <Route path="/quizzes/chopin/question-4" element={<Question4 />} />
+      <Route path="/quizzes/chopin/question-3" element={<Question3 />} />
+      <Route path="/quizzes/chopin/question-2" element={<Question2 />} />
+      <Route path="/quizzes/chopin/question-1" element={<Question1 />} />
       <Route path="/quizzes-expanded" element={<QuizzesExpanded />} />
       <Route path="/quizzes" element={<Quizzes />} />
       <Route path="/social" element={<Social />} />

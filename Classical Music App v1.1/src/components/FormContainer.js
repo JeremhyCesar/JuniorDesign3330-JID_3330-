@@ -6,7 +6,7 @@ const FormContainer = () => {
   const navigate = useNavigate();
 
   const onRectangle3Click = useCallback(() => {
-    navigate("/lessons/chopin/quiz/question-4");
+    navigate("/quizzes/chopin/question-4");
   }, [navigate]);
 
   return (
