@@ -128,6 +128,7 @@ const StudentLessonsExpanded2 = () => {
         src="/review-1@2x.png"
         onClick={onReview1ImageClick}
       />
+      path = {useLocation().pathname}
     </div>
   );
 };

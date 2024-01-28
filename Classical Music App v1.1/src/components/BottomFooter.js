@@ -2,6 +2,7 @@ import { useMemo } from "react";
 import OperatingSystemElementsHome from "./OperatingSystemElementsHome";
 import "./BottomFooter.css";
 
+let progressDict;
 const BottomFooter = ({
   propBoxShadow,
   propTop,
@@ -12,6 +13,7 @@ const BottomFooter = ({
   onPayAndTransferUnselectedTabContainer2Click,
   onAccountsSelectedTabContainerClick,
   onFrameContainerClick,
+  path
 }) => {
   const navStyle = useMemo(() => {
     return {
@@ -26,6 +28,17 @@ const BottomFooter = ({
       cursor: propCursor,
     };
   }, [propCursor]);
+  
+  if (localStorage.getItem("progress") != null) {
+    progressDict = localStorage.getItem("progress");
+  } else {
+    localStorage.setItem("progress", {});
+    progressDict = localStorage.getItem("progress");
+  }
+  
+  if (!progress.hasOwnProperty("chopin")) {
+    progress["chopin"] = 0;
+  }
 
   return (
     <div className="nav11" style={navStyle}>

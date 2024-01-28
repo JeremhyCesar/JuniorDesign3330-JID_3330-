@@ -90,6 +90,7 @@ const StudentLesson2 = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
     </div>
   );

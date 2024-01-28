@@ -133,6 +133,7 @@ const VideoFrame2 = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
       <img
         className="image-3-icon"

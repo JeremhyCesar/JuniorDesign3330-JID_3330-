@@ -111,6 +111,7 @@ const StudentHome = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
     </div>
   );

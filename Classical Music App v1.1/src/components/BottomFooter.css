@@ -207,3 +207,18 @@
   color: var(--color-white);
   font-family: var(--font-lexend);
 }
+.progress {
+  background-color: grey;
+  height: 10px;
+  width: 100%;
+}
+
+.progress-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: greenyellow;
+  height: 100%;
+  width: 0;
+  transition: 1s ease 0.3s
+}

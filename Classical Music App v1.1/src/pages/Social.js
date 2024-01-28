@@ -107,6 +107,7 @@ const Social = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
     </div>
   );
