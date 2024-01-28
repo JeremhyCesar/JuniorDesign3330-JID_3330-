@@ -197,7 +197,7 @@
 }
 .nav11 {
   position: absolute;
-  top: 1219px;
+  bottom: 0px;
   left: 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 414px;
@@ -209,7 +209,8 @@
 }
 .progress {
   top: 0px;
-  background-color: grey;
+  left: 0px;
+  background-color: black;
   height: 10px;
   width: 100%;
 }

@@ -41,7 +41,7 @@ const BottomFooter = ({
   }
 
   return (
-    <div className="nav11" style={navStyle}>
+    <div className="nav11">
       <div className="progress" visibility={progressVisibility}>
         <div className="progress-done"></div>
       </div>

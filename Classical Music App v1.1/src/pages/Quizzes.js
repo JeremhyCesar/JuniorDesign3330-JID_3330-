@@ -45,7 +45,7 @@ const Quizzes = () => {
           alt=""
           src="/saxophonist-playing-saxophone-wearing-golden-glasses@2x.png"
         />
-        <div className="progress">
+        <div className="quiz-progress">
           <div className="progress-child" />
           <div className="completed">0% completed</div>
         </div>

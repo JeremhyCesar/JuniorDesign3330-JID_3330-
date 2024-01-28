@@ -52,12 +52,12 @@
   height: 10px;
 }
 .completed,
-.progress {
+.quiz-progress {
   position: absolute;
   top: 11px;
   left: 41px;
 }
-.progress {
+.quiz-progress {
   top: 222px;
   left: 92px;
   width: 165px;

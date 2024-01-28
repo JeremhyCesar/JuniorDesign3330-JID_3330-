@@ -2,6 +2,7 @@ import { useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import CourseCard from "../components/CourseCard";
 import "./Question5.css";
+import BottomFooter from "../components/BottomFooter";
 
 const Question5 = () => {
   const navigate = useNavigate();
@@ -32,6 +33,26 @@ const Question5 = () => {
 
   return (
     <div className="question-5">
+      <BottomFooter
+        propBoxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+        propTop="1010px"
+        propFilter="unset"
+        propCursor="pointer"
+        onPayAndTransferUnselectedTabContainerClick={
+          onPayAndTransferUnselectedTabContainerClick
+        }
+        onPayAndTransferUnselectedTabContainer1Click={
+          onPayAndTransferUnselectedTabContainer1Click
+        }
+        onPayAndTransferUnselectedTabContainer2Click={
+          onPayAndTransferUnselectedTabContainer2Click
+        }
+        onAccountsSelectedTabContainerClick={
+          onAccountsSelectedTabContainerClick
+        }
+        onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
+      />
       <img
         className="entypodots-two-horizontal-icon1"
         alt=""
@@ -58,55 +79,6 @@ const Question5 = () => {
       />
       <div className="question-5-item" />
       <div className="question-5-inner" />
-      <div className="nav4">
-        <div className="nav-bar5">
-          <div className="rectangle-wrapper2">
-            <div className="rectangle5" />
-          </div>
-          <div className="nav-bar-background5" />
-          <div className="barshome-indicatorsiphoneli5">
-            <div className="home-indicator6" />
-          </div>
-        </div>
-        <div
-          className="payandtransfer-unselected-tab15"
-          onClick={onPayAndTransferUnselectedTabContainerClick}
-        >
-          <div className="pay-transfer15">Quizzes</div>
-          <img className="vector-icon16" alt="" src="/vector.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab16"
-          onClick={onPayAndTransferUnselectedTabContainer1Click}
-        >
-          <div className="pay-transfer16">Social</div>
-          <img className="vector-icon17" alt="" src="/vector1.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab17"
-          onClick={onPayAndTransferUnselectedTabContainer2Click}
-        >
-          <div className="pay-transfer16">Listen</div>
-          <img className="vector-icon18" alt="" src="/vector2.svg" />
-        </div>
-        <div
-          className="accounts-selected-tab5"
-          onClick={onAccountsSelectedTabContainerClick}
-        >
-          <div className="tap-area5" />
-          <div className="accounts-label5">Home</div>
-          <div className="iconboundingbox5" />
-          <img className="path-icon5" alt="" src="/path.svg" />
-        </div>
-        <div className="zelle-label-parent2" onClick={onFrameContainerClick}>
-          <div className="zelle-label5">Lessons</div>
-          <img
-            className="iconsactionableedit6"
-            alt=""
-            src="/iconsactionableedit.svg"
-          />
-        </div>
-      </div>
     </div>
   );
 };
