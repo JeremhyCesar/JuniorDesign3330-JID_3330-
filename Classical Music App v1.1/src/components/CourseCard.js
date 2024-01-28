@@ -1,5 +1,5 @@
 import { useMemo, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./CourseCard.css";
 
 const CourseCard = ({
@@ -46,7 +46,7 @@ const CourseCard = ({
   const navigate = useNavigate();
 
   const onCourse2ContainerClick = useCallback(() => {
-    navigate("/chopin/quiz/end-screen");
+    navigate("/lessons/chopin/quiz/end-screen");
   }, [navigate]);
 
   return (

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import QuizContainer from "../components/QuizContainer";
 import "./VideoFrame1.css";
 
@@ -7,19 +7,19 @@ const VideoFrame1 = () => {
   const navigate = useNavigate();
 
   const onTasksContainerClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onTask4ContainerClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onFrdricChopinTextClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onChopin1ImageClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onImage2Click = useCallback(() => {

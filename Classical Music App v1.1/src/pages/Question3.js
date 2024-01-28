@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import FormContainer from "../components/FormContainer";
 import "./Question3.css";
 
@@ -7,7 +7,7 @@ const Question3 = () => {
   const navigate = useNavigate();
 
   const onEvaarrowIosBackFillIconClick = useCallback(() => {
-    navigate("/chopin/quiz/question-2");
+    navigate("/lessons/chopin/quiz/question-2");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {

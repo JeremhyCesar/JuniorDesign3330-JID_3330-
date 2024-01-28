@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import FormComposerCard from "../components/FormComposerCard";
 import QuizForm from "../components/QuizForm";
 import BottomFooter from "../components/BottomFooter";
@@ -9,7 +9,7 @@ const StudentLessonsExpanded = () => {
   const navigate = useNavigate();
 
   const onRectangle4Click = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {

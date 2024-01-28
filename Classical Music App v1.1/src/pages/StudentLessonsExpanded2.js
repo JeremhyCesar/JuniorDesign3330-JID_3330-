@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import BottomFooter from "../components/BottomFooter";
 import "./StudentLessonsExpanded2.css";
 
@@ -27,23 +27,23 @@ const StudentLessonsExpanded2 = () => {
   }, [navigate]);
 
   const onMiniQuiz1Click = useCallback(() => {
-    navigate("/chopin/quiz/question-1");
+    navigate("/lessons/chopin/quiz/question-1");
   }, [navigate]);
 
   const onVideo11Click = useCallback(() => {
-    navigate("/chopin/video-1");
+    navigate("/lessons/chopin/video-1");
   }, [navigate]);
 
   const onVideo21Click = useCallback(() => {
-    navigate("/chopin/video-2");
+    navigate("/lessons/chopin/video-2");
   }, [navigate]);
 
   const onWorksheet1ImageClick = useCallback(() => {
-    navigate("/chopin/worksheet");
+    navigate("/lessons/chopin/worksheet");
   }, [navigate]);
 
   const onReview1ImageClick = useCallback(() => {
-    navigate("/chopin/review");
+    navigate("/lessons/chopin/review");
   }, [navigate]);
 
   return (
@@ -76,9 +76,6 @@ const StudentLessonsExpanded2 = () => {
         <div className="course-child2" />
       </div>
       <img className="chopin-1-icon2" alt="" src="/chopin-11@2x.png" />
-      <div class="progress">
-        <div class="progress-done"></div>
-      </div>
       <BottomFooter
         propBoxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         propTop="1219px"
@@ -97,6 +94,7 @@ const StudentLessonsExpanded2 = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
       <img
         className="mini-quiz-1"
@@ -128,7 +126,6 @@ const StudentLessonsExpanded2 = () => {
         src="/review-1@2x.png"
         onClick={onReview1ImageClick}
       />
-      path = {useLocation().pathname}
     </div>
   );
 };

@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import OperatingSystemElementsHome from "./OperatingSystemElementsHome";
 import "./BottomFooter.css";
 
-let progressDict;
+let progressDict = {};
 const BottomFooter = ({
   propBoxShadow,
   propTop,
@@ -29,19 +29,22 @@ const BottomFooter = ({
     };
   }, [propCursor]);
   
-  if (localStorage.getItem("progress") != null) {
-    progressDict = localStorage.getItem("progress");
-  } else {
-    localStorage.setItem("progress", {});
-    progressDict = localStorage.getItem("progress");
-  }
-  
-  if (!progress.hasOwnProperty("chopin")) {
-    progress["chopin"] = 0;
+  let progressVisibility = "false";
+  let splitPath = path.split("/")
+  // if the content is a learning module (i.e. needs progress tracked) then url will start with "/lessons/"
+  if (splitPath[1] == "lessons") {
+    progressVisibility = "true";
+    // second part of url will represent topic
+    if (!progressDict.hasOwnProperty(splitPath[2])) {
+      progressDict[splitPath[2]] = 0;
+    }
   }
 
   return (
     <div className="nav11" style={navStyle}>
+      <div className="progress" visibility={progressVisibility}>
+        <div className="progress-done"></div>
+      </div>
       <div className="nav-bar12">
         <div className="rectangle-wrapper8">
           <div className="rectangle11" />

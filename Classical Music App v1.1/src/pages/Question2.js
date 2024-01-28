@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import CourseCard from "../components/CourseCard";
 import "./Question2.css";
 
@@ -7,11 +7,11 @@ const Question2 = () => {
   const navigate = useNavigate();
 
   const onEvaarrowIosBackFillIconClick = useCallback(() => {
-    navigate("/chopin/quiz/question-1");
+    navigate("/lessons/chopin/quiz/question-1");
   }, [navigate]);
 
   const onRectangle3Click = useCallback(() => {
-    navigate("/chopin/quiz/question-3");
+    navigate("/lessons/chopin/quiz/question-3");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {

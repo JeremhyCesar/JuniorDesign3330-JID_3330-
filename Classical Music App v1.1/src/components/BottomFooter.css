@@ -208,6 +208,7 @@
   font-family: var(--font-lexend);
 }
 .progress {
+  top: 0px;
   background-color: grey;
   height: 10px;
   width: 100%;

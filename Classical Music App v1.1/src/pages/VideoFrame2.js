@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import QuizContainer from "../components/QuizContainer";
 import BottomFooter from "../components/BottomFooter";
 import "./VideoFrame2.css";
@@ -8,11 +8,11 @@ const VideoFrame2 = () => {
   const navigate = useNavigate();
 
   const onTasksContainerClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onTask4ContainerClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {
@@ -36,7 +36,7 @@ const VideoFrame2 = () => {
   }, [navigate]);
 
   const onFrdricChopinTextClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onCourseContainerClick = useCallback(() => {
@@ -44,7 +44,7 @@ const VideoFrame2 = () => {
   }, []);
 
   const onChopin1ImageClick = useCallback(() => {
-    navigate("/chopin");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onImage3Click = useCallback(() => {

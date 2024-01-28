@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Question1.css";
 
 const Question1 = () => {
@@ -10,7 +10,7 @@ const Question1 = () => {
   }, [navigate]);
 
   const onRectangle3Click = useCallback(() => {
-    navigate("/chopin/quiz/question-2");
+    navigate("/lessons/chopin/quiz/question-2");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {
