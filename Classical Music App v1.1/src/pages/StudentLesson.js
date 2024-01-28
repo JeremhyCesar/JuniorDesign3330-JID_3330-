@@ -4,7 +4,8 @@ import "./StudentLesson.css";
 
 const StudentLesson = () => {
   const navigate = useNavigate();
-
+  
+  
   const onCourse1ContainerClick = useCallback(() => {
     navigate("/student-lesson-2");
   }, [navigate]);

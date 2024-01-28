@@ -50,11 +50,11 @@ const QuizContainer = ({
   const navigate = useNavigate();
 
   const onTask5ContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/chopin");
   }, [navigate]);
 
   const onRectangle4Click = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/chopin");
   }, [navigate]);
 
   return (

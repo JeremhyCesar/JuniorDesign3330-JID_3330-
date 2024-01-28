@@ -8,7 +8,7 @@ const QuizzesExpanded = () => {
   const navigate = useNavigate();
 
   const onRectangle4Click = useCallback(() => {
-    navigate("/question-1");
+    navigate("/chopin/quiz/question-1");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {

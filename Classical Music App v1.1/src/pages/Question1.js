@@ -10,7 +10,7 @@ const Question1 = () => {
   }, [navigate]);
 
   const onRectangle3Click = useCallback(() => {
-    navigate("/question-2");
+    navigate("/chopin/quiz/question-2");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {

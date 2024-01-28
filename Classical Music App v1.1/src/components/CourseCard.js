@@ -46,7 +46,7 @@ const CourseCard = ({
   const navigate = useNavigate();
 
   const onCourse2ContainerClick = useCallback(() => {
-    navigate("/end-screen");
+    navigate("/chopin/quiz/end-screen");
   }, [navigate]);
 
   return (

@@ -9,7 +9,7 @@ const StudentLessonsExpanded = () => {
   const navigate = useNavigate();
 
   const onRectangle4Click = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/chopin");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {

@@ -1,4 +1,4 @@
-.student-lessons-expanded-2-child {
+.chopin-child {
   position: absolute;
   top: 227px;
   left: 36px;
@@ -137,7 +137,7 @@
   width: 348px;
   height: 114px;
 }
-.student-lessons-expanded-2 {
+.chopin {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
@@ -147,4 +147,19 @@
   font-size: var(--font-size-base);
   color: var(--color-dimgray-100);
   font-family: var(--font-lexend);
+}
+.progress {
+  background-color: grey;
+  height: 10px;
+  width: 100%;
+}
+
+.progress-done {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: greenyellow;
+  height: 100%;
+  width: 0;
+  transition: 1s ease 0.3s
 }

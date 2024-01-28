@@ -8,11 +8,11 @@ const VideoFrame2 = () => {
   const navigate = useNavigate();
 
   const onTasksContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/chopin");
   }, [navigate]);
 
   const onTask4ContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/chopin");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {
@@ -36,7 +36,7 @@ const VideoFrame2 = () => {
   }, [navigate]);
 
   const onFrdricChopinTextClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/chopin");
   }, [navigate]);
 
   const onCourseContainerClick = useCallback(() => {
@@ -44,7 +44,7 @@ const VideoFrame2 = () => {
   }, []);
 
   const onChopin1ImageClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/chopin");
   }, [navigate]);
 
   const onImage3Click = useCallback(() => {

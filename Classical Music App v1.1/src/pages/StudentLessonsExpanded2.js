@@ -27,28 +27,28 @@ const StudentLessonsExpanded2 = () => {
   }, [navigate]);
 
   const onMiniQuiz1Click = useCallback(() => {
-    navigate("/question-1");
+    navigate("/chopin/quiz/question-1");
   }, [navigate]);
 
   const onVideo11Click = useCallback(() => {
-    navigate("/video-1");
+    navigate("/chopin/video-1");
   }, [navigate]);
 
   const onVideo21Click = useCallback(() => {
-    navigate("/video-2");
+    navigate("/chopin/video-2");
   }, [navigate]);
 
   const onWorksheet1ImageClick = useCallback(() => {
-    navigate("/worksheet");
+    navigate("/chopin/worksheet");
   }, [navigate]);
 
   const onReview1ImageClick = useCallback(() => {
-    navigate("/review");
+    navigate("/chopin/review");
   }, [navigate]);
 
   return (
-    <div className="student-lessons-expanded-2">
-      <div className="student-lessons-expanded-2-child" />
+    <div className="chopin">
+      <div className="chopin-child" />
       <div className="glass2" />
       <div className="lets-get-to-container2">
         <span>{`Let’s get to work, `}</span>
@@ -76,6 +76,9 @@ const StudentLessonsExpanded2 = () => {
         <div className="course-child2" />
       </div>
       <img className="chopin-1-icon2" alt="" src="/chopin-11@2x.png" />
+      <div class="progress">
+        <div class="progress-done"></div>
+      </div>
       <BottomFooter
         propBoxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
         propTop="1219px"
