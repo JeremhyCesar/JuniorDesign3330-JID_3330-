@@ -1,7 +1,7 @@
 import { useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import QuizContainer from "../components/QuizContainer";
-import BottomFooter from "../components/BottomFooter";
+import { BottomFooter, progressDict } from "../components/BottomFooter";
 import "./VideoFrame2.css";
 
 const VideoFrame2 = () => {
@@ -82,7 +82,7 @@ const VideoFrame2 = () => {
       />
       <div className="my-tasks-05-container1">
         <span>{`My Tasks: `}</span>
-        <span className="span3">0/5</span>
+        <span className="span3">{progressDict.getProgress("chopin")}/5</span>
         <span>{` completed `}</span>
       </div>
       <div className="complete-them-all-container1">

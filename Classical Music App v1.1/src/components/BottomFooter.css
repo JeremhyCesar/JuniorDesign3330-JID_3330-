@@ -219,9 +219,12 @@
 
 .progress-done {
   display: flex;
+  position:absolute;
+  top: 0px;
+  z-index: 2;
   align-items: center;
   justify-content: center;
-  color: greenyellow;
+  background-color: greenyellow;
   height: 100%;
   width: 0;
   transition: 1s ease 0.3s

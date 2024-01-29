@@ -1,11 +1,14 @@
 import { useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./EndScreen.css";
-import BottomFooter from "../components/BottomFooter";
+import { BottomFooter, progressDict } from "../components/BottomFooter";
 
 const EndScreen = () => {
   const navigate = useNavigate();
-
+  let topic = useLocation().pathname.split("/")[2];
+  if (progressDict.getProgress(topic) == 4) {
+    progressDict.finishQuiz(topic);
+  }
   const onEvaarrowIosBackFillIconClick = useCallback(() => {
     navigate("/quizzes-expanded");
   }, [navigate]);

@@ -1,11 +1,16 @@
 import { useCallback } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { BottomFooter, addProgress } from "../components/BottomFooter";
+import { BottomFooter, progressDict } from "../components/BottomFooter";
 import "./StudentLessonsExpanded2.css";
 
 const StudentLessonsExpanded2 = () => {
   const navigate = useNavigate();
+  let topic = useLocation().pathname.split("/")[2];
 
+  function setProgress() {
+    let prog = progressDict.getProgress(topic);
+    document.getElementsByClassName("span5")[0].innerHTML = prog + '/5'
+  }
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {
     navigate("/quizzes");
   }, [navigate]);
@@ -31,19 +36,34 @@ const StudentLessonsExpanded2 = () => {
   }, [navigate]);
 
   const onVideo11Click = useCallback(() => {
-    addProgress("chopin");
+    if (progressDict.getProgress("chopin") == 0) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
     navigate("/lessons/chopin/video-1");
   }, [navigate]);
 
   const onVideo21Click = useCallback(() => {
+    if (progressDict.getProgress("chopin") == 1) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
     navigate("/lessons/chopin/video-2");
   }, [navigate]);
 
   const onWorksheet1ImageClick = useCallback(() => {
+    if (progressDict.getProgress("chopin") == 2) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
     navigate("/lessons/chopin/worksheet");
   }, [navigate]);
 
   const onReview1ImageClick = useCallback(() => {
+    if (progressDict.getProgress("chopin") == 3) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
     navigate("/lessons/chopin/review");
   }, [navigate]);
 
@@ -66,7 +86,7 @@ const StudentLessonsExpanded2 = () => {
       <b className="frdric-chopin8">{`Frédéric Chopin `}</b>
       <div className="my-tasks-05-container2">
         <span>{`My Tasks: `}</span>
-        <span className="span5">0/5</span>
+        <span className="span5">{progressDict.getProgress(topic)}/5</span>
         <span>{` completed `}</span>
       </div>
       <div className="complete-them-all-container2">

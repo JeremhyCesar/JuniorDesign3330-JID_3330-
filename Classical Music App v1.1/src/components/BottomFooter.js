@@ -1,11 +1,25 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import OperatingSystemElementsHome from "./OperatingSystemElementsHome";
 import "./BottomFooter.css";
 
-let progressDict = {};
-export const addProgress = (topic) => {
-  progressDict[topic] += 1;
+
+export const progressDict = {
+  addProgress: (topic) => {
+    progressDict[topic].progress += 1;
+  },
+  getProgress: (topic) => {
+    return progressDict.hasOwnProperty(topic) && progressDict[topic].hasOwnProperty("progress") ? progressDict[topic].progress : 0;
+  },
+  finishQuiz: (topic) => {
+    progressDict[topic].quiz = true;
+    progressDict[topic].progress += 1;
+    document.getElementsByClassName("progress-done")[0].style.width = progressDict[topic].progress / 5 * 100 + '%';
+  },
+  getQuizComplete: (topic) => {
+    return progressDict[topic].quiz;
+  }
 };
+
 export const BottomFooter = ({
   propBoxShadow,
   propTop,
@@ -31,7 +45,6 @@ export const BottomFooter = ({
       cursor: propCursor,
     };
   }, [propCursor]);
-  
   let progressVisibility = "hidden";
   let splitPath = path.split("/")
   // if the content is a learning module (i.e. needs progress tracked) then url will start with "/lessons/"
@@ -39,14 +52,14 @@ export const BottomFooter = ({
     progressVisibility = "visible";
     // second part of url will represent topic
     if (!progressDict.hasOwnProperty(splitPath[2])) {
-      progressDict[splitPath[2]] = 0;
+      progressDict[splitPath[2]] = {quiz: false, progress: 0};
     }
   }
 
   return (
     <div className="nav11">
       <div className="progress" style={{visibility: progressVisibility}}>
-        <div className="progress-done"></div>
+        <div className="progress-done" style={{width: progressDict.getProgress("chopin") * 20.0+"%"}}></div>
       </div>
       <div className="nav-bar12">
         <div className="rectangle-wrapper8">
