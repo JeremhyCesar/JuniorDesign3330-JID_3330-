@@ -197,7 +197,7 @@
 }
 .nav11 {
   position: absolute;
-  top: 1219px;
+  bottom: 0px;
   left: 0;
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   width: 414px;
@@ -206,4 +206,26 @@
   font-size: var(--font-size-3xs);
   color: var(--color-white);
   font-family: var(--font-lexend);
+}
+.progress {
+  position: absolute;
+  z-index: 1;
+  top: 0px;
+  left: 0px;
+  background-color: darkgray;
+  height: 10px;
+  width: 100%;
+}
+
+.progress-done {
+  display: flex;
+  position:absolute;
+  top: 0px;
+  z-index: 2;
+  align-items: center;
+  justify-content: center;
+  background-color: greenyellow;
+  height: 100%;
+  width: 0;
+  transition: 1s ease 0.3s
 }

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Course3Container from "../components/Course3Container";
 import CourseContainer from "../components/CourseContainer";
 import BottomFooter from "../components/BottomFooter";
@@ -90,6 +90,7 @@ const StudentLesson2 = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
     </div>
   );

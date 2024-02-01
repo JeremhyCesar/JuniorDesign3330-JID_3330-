@@ -1,10 +1,11 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./StudentLesson.css";
 
 const StudentLesson = () => {
   const navigate = useNavigate();
-
+  
+  
   const onCourse1ContainerClick = useCallback(() => {
     navigate("/student-lesson-2");
   }, [navigate]);

@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import Course3Container from "../components/Course3Container";
 import CourseContainer from "../components/CourseContainer";
 import BottomFooter from "../components/BottomFooter";
@@ -45,7 +45,7 @@ const Quizzes = () => {
           alt=""
           src="/saxophonist-playing-saxophone-wearing-golden-glasses@2x.png"
         />
-        <div className="progress">
+        <div className="quiz-progress">
           <div className="progress-child" />
           <div className="completed">0% completed</div>
         </div>
@@ -91,6 +91,7 @@ const Quizzes = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
     </div>
   );

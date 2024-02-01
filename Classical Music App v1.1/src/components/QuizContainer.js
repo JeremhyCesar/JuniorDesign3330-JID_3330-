@@ -1,5 +1,5 @@
 import { useMemo, useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./QuizContainer.css";
 
 const QuizContainer = ({
@@ -50,11 +50,11 @@ const QuizContainer = ({
   const navigate = useNavigate();
 
   const onTask5ContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onRectangle4Click = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   return (

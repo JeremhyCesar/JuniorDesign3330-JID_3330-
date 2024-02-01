@@ -1,4 +1,4 @@
-.student-lessons-expanded-2-child {
+.chopin-child {
   position: absolute;
   top: 227px;
   left: 36px;
@@ -137,7 +137,7 @@
   width: 348px;
   height: 114px;
 }
-.student-lessons-expanded-2 {
+.chopin {
   position: relative;
   background-color: var(--color-white);
   width: 100%;

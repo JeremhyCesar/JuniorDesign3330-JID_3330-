@@ -1,11 +1,16 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
-import BottomFooter from "../components/BottomFooter";
+import { useNavigate, useLocation } from "react-router-dom";
+import { BottomFooter, progressDict } from "../components/BottomFooter";
 import "./StudentLessonsExpanded2.css";
 
 const StudentLessonsExpanded2 = () => {
   const navigate = useNavigate();
+  let topic = useLocation().pathname.split("/")[2];
 
+  function setProgress() {
+    let prog = progressDict.getProgress(topic);
+    document.getElementsByClassName("span5")[0].innerHTML = prog + '/5'
+  }
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {
     navigate("/quizzes");
   }, [navigate]);
@@ -27,28 +32,44 @@ const StudentLessonsExpanded2 = () => {
   }, [navigate]);
 
   const onMiniQuiz1Click = useCallback(() => {
-    navigate("/question-1");
+    navigate("/quizzes/chopin/question-1");
   }, [navigate]);
 
   const onVideo11Click = useCallback(() => {
-    navigate("/video-1");
+    if (progressDict.getProgress("chopin") == 0) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
+    navigate("/lessons/chopin/video-1");
   }, [navigate]);
 
   const onVideo21Click = useCallback(() => {
-    navigate("/video-2");
+    if (progressDict.getProgress("chopin") == 1) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
+    navigate("/lessons/chopin/video-2");
   }, [navigate]);
 
   const onWorksheet1ImageClick = useCallback(() => {
-    navigate("/worksheet");
+    if (progressDict.getProgress("chopin") == 2) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
+    navigate("/lessons/chopin/worksheet");
   }, [navigate]);
 
   const onReview1ImageClick = useCallback(() => {
-    navigate("/review");
+    if (progressDict.getProgress("chopin") == 3) {
+      progressDict.addProgress("chopin");
+      setProgress();
+    }
+    navigate("/lessons/chopin/review");
   }, [navigate]);
 
   return (
-    <div className="student-lessons-expanded-2">
-      <div className="student-lessons-expanded-2-child" />
+    <div className="chopin">
+      <div className="chopin-child" />
       <div className="glass2" />
       <div className="lets-get-to-container2">
         <span>{`Let’s get to work, `}</span>
@@ -65,7 +86,7 @@ const StudentLessonsExpanded2 = () => {
       <b className="frdric-chopin8">{`Frédéric Chopin `}</b>
       <div className="my-tasks-05-container2">
         <span>{`My Tasks: `}</span>
-        <span className="span5">0/5</span>
+        <span className="span5">{progressDict.getProgress(topic)}/5</span>
         <span>{` completed `}</span>
       </div>
       <div className="complete-them-all-container2">
@@ -94,6 +115,7 @@ const StudentLessonsExpanded2 = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
       <img
         className="mini-quiz-1"

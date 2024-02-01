@@ -1,12 +1,12 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import "./FormContainer.css";
 
 const FormContainer = () => {
   const navigate = useNavigate();
 
   const onRectangle3Click = useCallback(() => {
-    navigate("/question-4");
+    navigate("/quizzes/chopin/question-4");
   }, [navigate]);
 
   return (

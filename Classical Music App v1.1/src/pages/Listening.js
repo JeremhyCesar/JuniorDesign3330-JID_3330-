@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import MadeForYouContainer from "../components/MadeForYouContainer";
 import PopularComposersContainer from "../components/PopularComposersContainer";
 import FavoriteSongsContainer from "../components/FavoriteSongsContainer";
@@ -61,6 +61,7 @@ const Listening = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
     </div>
   );

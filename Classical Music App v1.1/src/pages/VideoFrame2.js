@@ -1,18 +1,18 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import QuizContainer from "../components/QuizContainer";
-import BottomFooter from "../components/BottomFooter";
+import { BottomFooter, progressDict } from "../components/BottomFooter";
 import "./VideoFrame2.css";
 
 const VideoFrame2 = () => {
   const navigate = useNavigate();
 
   const onTasksContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onTask4ContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {
@@ -36,7 +36,7 @@ const VideoFrame2 = () => {
   }, [navigate]);
 
   const onFrdricChopinTextClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onCourseContainerClick = useCallback(() => {
@@ -44,7 +44,7 @@ const VideoFrame2 = () => {
   }, []);
 
   const onChopin1ImageClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onImage3Click = useCallback(() => {
@@ -82,7 +82,7 @@ const VideoFrame2 = () => {
       />
       <div className="my-tasks-05-container1">
         <span>{`My Tasks: `}</span>
-        <span className="span3">0/5</span>
+        <span className="span3">{progressDict.getProgress("chopin")}/5</span>
         <span>{` completed `}</span>
       </div>
       <div className="complete-them-all-container1">
@@ -133,6 +133,7 @@ const VideoFrame2 = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
       <img
         className="image-3-icon"

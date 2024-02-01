@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import FormContainer1 from "../components/FormContainer1";
 import BottomFooter from "../components/BottomFooter";
 import "./StudentHome.css";
@@ -111,6 +111,7 @@ const StudentHome = () => {
           onAccountsSelectedTabContainerClick
         }
         onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
       />
     </div>
   );

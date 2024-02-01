@@ -112,7 +112,7 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/student-lessons-expanded-2":
+      case "/lessons/chopin":
         title = "";
         metaDescription = "";
         break;
@@ -172,22 +172,22 @@ function App() {
     <Routes>
       <Route path="/" element={<StudentHome />} />
       <Route path="/student-home" element={<StudentHome1 />} />
-      <Route path="/worksheet" element={<Worksheet />} />
-      <Route path="/review" element={<Review />} />
-      <Route path="/video-2" element={<VideoFrame1 />} />
-      <Route path="/video-1" element={<VideoFrame2 />} />
-      <Route path="/end-screen" element={<EndScreen />} />
-      <Route path="/question-5" element={<Question5 />} />
-      <Route path="/question-4" element={<Question4 />} />
-      <Route path="/question-3" element={<Question3 />} />
-      <Route path="/question-2" element={<Question2 />} />
-      <Route path="/question-1" element={<Question1 />} />
+      <Route path="/lessons/chopin/worksheet" element={<Worksheet />} />
+      <Route path="/lessons/chopin/review" element={<Review />} />
+      <Route path="/lessons/chopin/video-2" element={<VideoFrame1 />} />
+      <Route path="/lessons/chopin/video-1" element={<VideoFrame2 />} />
+      <Route path="/quizzes/chopin/end-screen" element={<EndScreen />} />
+      <Route path="/quizzes/chopin/question-5" element={<Question5 />} />
+      <Route path="/quizzes/chopin/question-4" element={<Question4 />} />
+      <Route path="/quizzes/chopin/question-3" element={<Question3 />} />
+      <Route path="/quizzes/chopin/question-2" element={<Question2 />} />
+      <Route path="/quizzes/chopin/question-1" element={<Question1 />} />
       <Route path="/quizzes-expanded" element={<QuizzesExpanded />} />
       <Route path="/quizzes" element={<Quizzes />} />
       <Route path="/social" element={<Social />} />
       <Route path="/listening" element={<Listening />} />
       <Route
-        path="/student-lessons-expanded-2"
+        path="/lessons/chopin"
         element={<StudentLessonsExpanded2 />}
       />
       <Route path="/student-lesson-2" element={<StudentLesson2 />} />

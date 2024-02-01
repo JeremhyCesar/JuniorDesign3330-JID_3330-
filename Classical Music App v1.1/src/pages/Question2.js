@@ -1,17 +1,18 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import CourseCard from "../components/CourseCard";
 import "./Question2.css";
+import BottomFooter from "../components/BottomFooter";
 
 const Question2 = () => {
   const navigate = useNavigate();
 
   const onEvaarrowIosBackFillIconClick = useCallback(() => {
-    navigate("/question-1");
+    navigate("/quizzes/chopin/question-1");
   }, [navigate]);
 
   const onRectangle3Click = useCallback(() => {
-    navigate("/question-3");
+    navigate("/quizzes/chopin/question-3");
   }, [navigate]);
 
   const onPayAndTransferUnselectedTabContainerClick = useCallback(() => {
@@ -36,6 +37,26 @@ const Question2 = () => {
 
   return (
     <div className="question-2">
+      <BottomFooter
+        propBoxShadow="0px 4px 4px rgba(0, 0, 0, 0.25)"
+        propTop="1010px"
+        propFilter="unset"
+        propCursor="pointer"
+        onPayAndTransferUnselectedTabContainerClick={
+          onPayAndTransferUnselectedTabContainerClick
+        }
+        onPayAndTransferUnselectedTabContainer1Click={
+          onPayAndTransferUnselectedTabContainer1Click
+        }
+        onPayAndTransferUnselectedTabContainer2Click={
+          onPayAndTransferUnselectedTabContainer2Click
+        }
+        onAccountsSelectedTabContainerClick={
+          onAccountsSelectedTabContainerClick
+        }
+        onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
+      />
       <img
         className="entypodots-two-horizontal-icon4"
         alt=""
@@ -69,55 +90,6 @@ const Question2 = () => {
         propWidth2="244px"
         propWidth3="265px"
       />
-      <div className="nav7">
-        <div className="nav-bar8">
-          <div className="rectangle-wrapper5">
-            <div className="rectangle8" />
-          </div>
-          <div className="nav-bar-background8" />
-          <div className="barshome-indicatorsiphoneli8">
-            <div className="home-indicator9" />
-          </div>
-        </div>
-        <div
-          className="payandtransfer-unselected-tab24"
-          onClick={onPayAndTransferUnselectedTabContainerClick}
-        >
-          <div className="pay-transfer24">Quizzes</div>
-          <img className="vector-icon25" alt="" src="/vector.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab25"
-          onClick={onPayAndTransferUnselectedTabContainer1Click}
-        >
-          <div className="pay-transfer25">Social</div>
-          <img className="vector-icon26" alt="" src="/vector1.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab26"
-          onClick={onPayAndTransferUnselectedTabContainer2Click}
-        >
-          <div className="pay-transfer25">Listen</div>
-          <img className="vector-icon27" alt="" src="/vector2.svg" />
-        </div>
-        <div
-          className="accounts-selected-tab8"
-          onClick={onAccountsSelectedTabContainerClick}
-        >
-          <div className="tap-area8" />
-          <div className="accounts-label8">Home</div>
-          <div className="iconboundingbox8" />
-          <img className="path-icon8" alt="" src="/path.svg" />
-        </div>
-        <div className="zelle-label-parent5" onClick={onFrameContainerClick}>
-          <div className="zelle-label8">Lessons</div>
-          <img
-            className="iconsactionableedit9"
-            alt=""
-            src="/iconsactionableedit.svg"
-          />
-        </div>
-      </div>
     </div>
   );
 };

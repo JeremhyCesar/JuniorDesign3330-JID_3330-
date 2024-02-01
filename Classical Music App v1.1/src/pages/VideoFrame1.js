@@ -1,25 +1,26 @@
 import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import QuizContainer from "../components/QuizContainer";
 import "./VideoFrame1.css";
+import { BottomFooter, progressDict } from "../components/BottomFooter";
 
 const VideoFrame1 = () => {
   const navigate = useNavigate();
 
   const onTasksContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onTask4ContainerClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onFrdricChopinTextClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onChopin1ImageClick = useCallback(() => {
-    navigate("/student-lessons-expanded-2");
+    navigate("/lessons/chopin");
   }, [navigate]);
 
   const onImage2Click = useCallback(() => {
@@ -71,7 +72,7 @@ const VideoFrame1 = () => {
       />
       <div className="my-tasks-05-container">
         <span>{`My Tasks: `}</span>
-        <span className="span1">0/5</span>
+        <span className="span1">{progressDict.getProgress("chopin")}/5</span>
         <span>{` completed `}</span>
       </div>
       <div className="complete-them-all-container">
@@ -110,55 +111,26 @@ const VideoFrame1 = () => {
         src="/image-2@2x.png"
         onClick={onImage2Click}
       />
-      <div className="nav2">
-        <div className="nav-bar3">
-          <div className="group-div">
-            <div className="rectangle3" />
-          </div>
-          <div className="nav-bar-background3" />
-          <div className="barshome-indicatorsiphoneli3">
-            <div className="home-indicator4" />
-          </div>
-        </div>
-        <div
-          className="payandtransfer-unselected-tab9"
-          onClick={onPayAndTransferUnselectedTabContainerClick}
-        >
-          <div className="pay-transfer9">Quizzes</div>
-          <img className="vector-icon9" alt="" src="/vector.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab10"
-          onClick={onPayAndTransferUnselectedTabContainer1Click}
-        >
-          <div className="pay-transfer10">Social</div>
-          <img className="vector-icon10" alt="" src="/vector1.svg" />
-        </div>
-        <div
-          className="payandtransfer-unselected-tab11"
-          onClick={onPayAndTransferUnselectedTabContainer2Click}
-        >
-          <div className="pay-transfer10">Listen</div>
-          <img className="vector-icon11" alt="" src="/vector2.svg" />
-        </div>
-        <div
-          className="accounts-selected-tab3"
-          onClick={onAccountsSelectedTabContainerClick}
-        >
-          <div className="tap-area3" />
-          <div className="accounts-label3">Home</div>
-          <div className="iconboundingbox3" />
-          <img className="path-icon3" alt="" src="/path.svg" />
-        </div>
-        <div className="frame-div" onClick={onFrameContainerClick}>
-          <div className="zelle-label3">Lessons</div>
-          <img
-            className="iconsactionableedit4"
-            alt=""
-            src="/iconsactionableedit.svg"
-          />
-        </div>
-      </div>
+      <BottomFooter
+        propBoxShadow="unset"
+        propTop="1219px"
+        propFilter="blur(4px)"
+        propCursor="pointer"
+        onPayAndTransferUnselectedTabContainerClick={
+          onPayAndTransferUnselectedTabContainerClick
+        }
+        onPayAndTransferUnselectedTabContainer1Click={
+          onPayAndTransferUnselectedTabContainer1Click
+        }
+        onPayAndTransferUnselectedTabContainer2Click={
+          onPayAndTransferUnselectedTabContainer2Click
+        }
+        onAccountsSelectedTabContainerClick={
+          onAccountsSelectedTabContainerClick
+        }
+        onFrameContainerClick={onFrameContainerClick}
+        path = {useLocation().pathname}
+      />
     </div>
   );
 };
