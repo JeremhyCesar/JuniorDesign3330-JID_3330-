@@ -16,20 +16,20 @@ export function Home({ navigation }) {
         <ScrollView style={{backgroundColor: 'white'}}>
             <Text style={{
                 fontWeight: 'bold',
-                top: 32,
+                top: 64,
                 left: '8%',
                 fontSize: 48,
                 color: '#e2480d'
             }}>Julie Smith</Text>
             <Text style={{
-                top: 36,
+                top: 68,
                 left: '8%',
                 fontSize: 20,
                 textAlign: 'left',
                 color: '#717171'
             }}>Happy Music Monday!</Text>
             <View style={{
-                top: 60,
+                top: 92,
                 left: '8%',
                 borderRadius: 31,
                 backgroundColor: 'white',
@@ -54,7 +54,7 @@ export function Home({ navigation }) {
                     textAlign: 'center'
                 }}>Where words fail, music speaks.</Text>
             </View>
-            <Pressable onPress={() => {navigation.navigate('Lessons')}} style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+            <Pressable onPress={() => {navigation.navigate('Lessons')}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -71,7 +71,7 @@ export function Home({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </Pressable>
-            <View style={[{top: 126, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
+            <View style={[{top: 158, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -88,7 +88,7 @@ export function Home({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </View>
-            <View style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+            <View style={[{top: 190, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -105,7 +105,7 @@ export function Home({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </View>
-            <View style={{height: 180}}/>
+            <View style={{height: 210}}/>
         </ScrollView>
     );
 }
