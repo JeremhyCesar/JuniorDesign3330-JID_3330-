@@ -3,7 +3,7 @@ import { StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './src/pages/Home.js'
-import { Lessons } from './src/pages/Lessons.js';
+import { Lessons } from './src/pages/LessonHome.js';
 
 const Tab = createBottomTabNavigator();
 
