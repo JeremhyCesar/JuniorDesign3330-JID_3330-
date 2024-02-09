@@ -11,10 +11,9 @@ export default function App() {
   return (
     <NavigationContainer screenOptions>
       <Tab.Navigator 
-        screenOptions={{headerShown: 'false', tabBarStyle: {backgroundColor: '#e2480d'}}}
+        screenOptions={{headerShown: false, tabBarStyle: {backgroundColor: '#e2480d'}}}
         backBehavior='history'>
         <Tab.Screen
-          options={{headerShown: 'false'}}
           name="Home"
           component={Home}/>
         <Tab.Screen
