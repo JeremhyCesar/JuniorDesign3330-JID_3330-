@@ -39,17 +39,18 @@ export function Home({ navigation }) {
                 width: '84%',
                 height: 142
             }}>
+                <Image source={require('../../assets/girl-playing-cello.png')}/>
                 <Text style={{
+                    position: 'absolute',
                     top: '25%',
-                    left: '15%',
-                    fontSize: 30,
+                    left: '30%',
+                    fontSize: 26,
                     fontWeight: 500,
                     width: '70%',
                     shadowOffset: {width: 4, height: 4},
                     shadowColor: 'black',
                     shadowOpacity: 0.25,
                     color: '#717171',
-                    flex: 1,
                     flexWrap: 'wrap',
                     textAlign: 'center'
                 }}>Where words fail, music speaks.</Text>
