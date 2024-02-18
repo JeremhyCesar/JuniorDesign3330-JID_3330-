@@ -73,10 +73,14 @@ export function CompareAndContrastLessons() {
                     fontWeight: 'bold',
                     color: 'white',
 <<<<<<< HEAD
+<<<<<<< HEAD
                 }}>Genres</Text>
 =======
                 }}>Instruments</Text>
 >>>>>>> 65c01c5 (Compare and Contrast Section)
+=======
+                }}>Genres</Text>
+>>>>>>> 7abc592 (Genre section added)
                 <Image source={require('../../assets/musical-band-performing.png')} style={{
                     position: 'absolute',
                     top: 30,
