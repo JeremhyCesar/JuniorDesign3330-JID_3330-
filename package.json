@@ -13,10 +13,14 @@
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "expo": "^50.0.4",
 =======
     "expo": "^50.0.6",
 >>>>>>> 2515e48 (Created "Composers" page)
+=======
+    "expo": "^50.0.7",
+>>>>>>> 7173f2a (Contemporary Page Added)
     "expo-status-bar": "~1.11.1",
     "react": "18.2.0",
     "react-native": "0.73.2",
