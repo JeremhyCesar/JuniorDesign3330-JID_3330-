@@ -1,61 +1,99 @@
-import { ScrollView, StyleSheet, Text, View, Image } from 'react-native';
+import React from 'react';
+import { ScrollView, Text, StyleSheet, View, Image } from 'react-native';
 
-export function WorksheetPage({ navigation }) {
-    const styles = StyleSheet.create({
-        evaArrowIosBackFillIcon: {
-            position: 'absolute',
-            top: 61,
-            left: 15,
-            width: 35,
-            height: 35.7,
-            overflow: 'hidden',
-        },
-        section1EarlyLifeAndEduc: {
-            margin: 0,
-        },
-        birthAndEarly: {
-            fontWeight: '300',
-        },
-        // Additional styles...
-        answerTheseQuestions: {
-            position: 'absolute',
-            top: 162,
-            left: 37,
-            fontSize: 40, // Adjust this based on your application's design system
-            fontWeight: '600',
-            color: '#00BFFF', // Example color, replace with your actual variable or hex code
-            width: 333,
-        },
-        teaching1Icon2: {
-            position: 'absolute',
-            top: 30,
-            left: 75,
-            width: 123,
-            height: 127,
-            resizeMode: 'cover', // Adjusted for React Native
-        },
-        worksheetContainer: {
-            backgroundColor: 'white',
-            padding: 20, // Example padding, adjust as needed
-        },
-    });
-
+export function Worksheet() {
     return (
-        <ScrollView style={styles.worksheetContainer}>
-            <Text style={styles.answerTheseQuestions}>Answer these questions on your own paper!</Text>
-            {/* Assuming you're showing questions dynamically, here's a placeholder */}
-            <View style={{ marginTop: 20 }}>
-                <Text style={{ fontWeight: 'bold' }}>Section 1: Early Life and Education</Text>
-                {/* Example question */}
-                <Text>1. What is the date and place of birth of Chopin?</Text>
-                {/* Add more questions and sections similarly */}
+        <ScrollView style={styles.container}>
+            {/* Add the worksheet title and subtitle */}
+            <View style={styles.titleContainer}>
+                <Image
+                    source={require('../../assets/teaching-icon.png')}
+                    style={styles.headerImage}
+                />
+                <View style={styles.textContainer}>
+                    <Text style={styles.worksheetTitle}>Worksheet</Text>
+                    <Text style={styles.subtitle}>Practice your knowledge</Text>
+                </View>
             </View>
-            {/* Example for adding an image */}
-            <Image
-                source={require('../../assets/teaching-icon.png')} // Adjust path as needed
-                style={styles.teaching1Icon2}
-            />
-            {/* Add more content as needed */}
+
+            <Text style={styles.instruction}>
+                Answer these questions on your own paper!
+            </Text>
+
+            {/* Section 1 */}
+            <View style={styles.section}>
+                <Text style={styles.header}>Section 1: Early Life and Education</Text>
+                <Text style={styles.question}>Birth and Early Years:</Text>
+                <Text style={styles.detail}>- Date and place of birth:</Text>
+                <Text style={styles.detail}>- Age at which Chopin started playing piano:</Text>
+            </View>
+
+            {/* Repeat for other sections */}
+            <View style={styles.section}>
+                <Text style={styles.header}>Section 2: Life in Paris and Artistic Contributions</Text>
+                {/* Add questions/details here */}
+            </View>
+
+            {/* Add more sections as needed */}
         </ScrollView>
     );
 }
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#FFFFFF',
+        paddingHorizontal: 25, 
+    },
+    titleContainer: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        paddingVertical: 10,
+    },
+    headerImage: {
+        width: 100, 
+        height: 100, 
+        resizeMode: 'contain',
+    },
+    textContainer: {
+        marginLeft: 20, 
+    },
+    worksheetTitle: {
+        fontSize: 22,
+        fontWeight: 'bold',
+        color: '#07a3e0',
+    },
+    subtitle: {
+        fontSize: 16,
+        color: '#07a3e0',
+        fontStyle: 'italic',
+    },
+    instruction: {
+        fontSize: 16,
+        fontWeight: 'bold',
+        color: '#07a3e0',
+        marginVertical: -10, 
+        textAlign: 'center', 
+    },
+    section: {
+        marginBottom: 20,
+        marginTop: 25,
+    },
+    header: {
+        fontSize: 18,
+        fontWeight: 'bold',
+        marginBottom: 10,
+        color: '#000',
+    },
+    question: {
+        fontSize: 16,
+        fontWeight: '600',
+        marginTop: 8,
+        color: '#000',
+    },
+    detail: {
+        fontSize: 14,
+        marginLeft: 10,
+        color: '#000',
+    },
+});

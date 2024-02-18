@@ -4,6 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './src/pages/Home.js'
 import { Lessons } from './src/pages/Lessons.js';
+import { Worksheet } from './src/pages/Worksheet.js';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -20,6 +22,10 @@ export default function App() {
         <Tab.Screen
           name="Lessons"
           component={Lessons}/>
+          {/* for testing purpose */}
+        <Tab.Screen
+          name="Worksheet"
+          component={Worksheet} />
       </Tab.Navigator>
     </NavigationContainer>
   );
