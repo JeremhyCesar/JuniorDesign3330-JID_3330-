@@ -2,7 +2,10 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 import { ClassicalLessons } from './ClassicalLessons';
 import { ContemporaryLessons } from './ContemporaryLessons';
+<<<<<<< HEAD
 import { CompareAndContrastLessons } from './CompareAndContrastLessons';
+=======
+>>>>>>> 7c30d6c (Contemporary Page Added)
 
 export function Lessons() {
     const Stack = createNativeStackNavigator();
@@ -17,9 +20,12 @@ export function Lessons() {
              <Stack.Screen
                 name="ContemporaryLessons"
                 component={ContemporaryLessons}/>
+<<<<<<< HEAD
             <Stack.Screen
                 name="CompareAndContrastLessons"
                 component={CompareAndContrastLessons}/>
+=======
+>>>>>>> 7c30d6c (Contemporary Page Added)
         </Stack.Navigator>
     )
 }
@@ -92,7 +98,11 @@ function LessonHome({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </Pressable>
+<<<<<<< HEAD
             <Pressable onPress={() => navigation.navigate('CompareAndContrastLessons')}style={[{top: 154, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+=======
+            <View style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+>>>>>>> 7c30d6c (Contemporary Page Added)
                 <Text style={{
                     top: 26,
                     left: '10%',
