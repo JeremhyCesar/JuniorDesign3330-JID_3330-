@@ -4,6 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './src/pages/Home.js'
 import { Lessons } from './src/pages/Lessons.js';
+import { Composers } from './src/pages/Composers.js'
 
 const Tab = createBottomTabNavigator();
 
