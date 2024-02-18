@@ -1,6 +1,8 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 import { ClassicalLessons } from './ClassicalLessons';
+import { ContemporaryLessons } from './ContemporaryLessons';
+import { CompareAndContrastLessons } from './CompareAndContrastLessons';
 
 export function Lessons() {
     const Stack = createNativeStackNavigator();
@@ -12,6 +14,12 @@ export function Lessons() {
             <Stack.Screen
                 name="ClassicalLessons"
                 component={ClassicalLessons}/>
+             <Stack.Screen
+                name="ContemporaryLessons"
+                component={ContemporaryLessons}/>
+            <Stack.Screen
+                name="CompareAndContrastLessons"
+                component={CompareAndContrastLessons}/>
         </Stack.Navigator>
     )
 }
@@ -64,7 +72,7 @@ function LessonHome({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </Pressable>
-            <View style={[{top: 126, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
+            <Pressable onPress={() => navigation.navigate('ContemporaryLessons')}style={[{top: 124, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -83,8 +91,8 @@ function LessonHome({ navigation }) {
                     height: 180,
                     objectFit: 'cover'
                 }}/>
-            </View>
-            <View style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+            </Pressable>
+            <Pressable onPress={() => navigation.navigate('CompareAndContrastLessons')}style={[{top: 154, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -103,7 +111,7 @@ function LessonHome({ navigation }) {
                     height: 200,
                     objectFit: 'cover'
                 }}/>
-            </View>
+            </Pressable>
             <View style={{height: 180}}/>
         </ScrollView>
     );
