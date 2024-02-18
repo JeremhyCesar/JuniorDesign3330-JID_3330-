@@ -3,9 +3,13 @@ import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-nati
 import { ClassicalLessons } from './ClassicalLessons';
 import { ContemporaryLessons } from './ContemporaryLessons';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { CompareAndContrastLessons } from './CompareAndContrastLessons';
 =======
 >>>>>>> 7c30d6c (Contemporary Page Added)
+=======
+import { CompareAndContrastLessons } from './CompareAndContrastLessons';
+>>>>>>> 65c01c5 (Compare and Contrast Section)
 
 export function Lessons() {
     const Stack = createNativeStackNavigator();
@@ -21,11 +25,17 @@ export function Lessons() {
                 name="ContemporaryLessons"
                 component={ContemporaryLessons}/>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Stack.Screen
                 name="CompareAndContrastLessons"
                 component={CompareAndContrastLessons}/>
 =======
 >>>>>>> 7c30d6c (Contemporary Page Added)
+=======
+            <Stack.Screen
+                name="CompareAndContrastLessons"
+                component={CompareAndContrastLessons}/>
+>>>>>>> 65c01c5 (Compare and Contrast Section)
         </Stack.Navigator>
     )
 }
@@ -99,10 +109,14 @@ function LessonHome({ navigation }) {
                 }}/>
             </Pressable>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <Pressable onPress={() => navigation.navigate('CompareAndContrastLessons')}style={[{top: 154, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
 =======
             <View style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
 >>>>>>> 7c30d6c (Contemporary Page Added)
+=======
+            <Pressable onPress={() => navigation.navigate('CompareAndContrastLessons')}style={[{top: 154, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+>>>>>>> 65c01c5 (Compare and Contrast Section)
                 <Text style={{
                     top: 26,
                     left: '10%',

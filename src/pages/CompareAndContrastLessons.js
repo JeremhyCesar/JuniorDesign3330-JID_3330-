@@ -72,7 +72,11 @@ export function CompareAndContrastLessons() {
                     textAlign: 'left',
                     fontWeight: 'bold',
                     color: 'white',
+<<<<<<< HEAD
                 }}>Genres</Text>
+=======
+                }}>Instruments</Text>
+>>>>>>> 65c01c5 (Compare and Contrast Section)
                 <Image source={require('../../assets/musical-band-performing.png')} style={{
                     position: 'absolute',
                     top: 30,
