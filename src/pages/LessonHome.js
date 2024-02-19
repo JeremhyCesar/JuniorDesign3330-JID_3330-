@@ -12,6 +12,7 @@ import { ContemporaryLessons } from "./ContemporaryLessons";
 import { CompareAndContrastLessons } from "./CompareAndContrastLessons";
 import { ClassicalComposers } from "./ClassicalComposers";
 import { ChopinScreen } from "./ChopinScreen"; // Import the Chopin screen
+import { ClassicalComposers } from './ClassicalComposers';
 
 export function Lessons() {
   const Stack = createNativeStackNavigator();
