@@ -4,6 +4,7 @@ import { ClassicalLessons } from './ClassicalLessons';
 import { ContemporaryLessons } from './ContemporaryLessons';
 import { CompareAndContrastLessons } from './CompareAndContrastLessons';
 import { ClassicalComposers } from './ClassicalComposers';
+import { VideoPage } from './VideoPage';
 
 export function Lessons() {
     const Stack = createNativeStackNavigator();
@@ -24,6 +25,9 @@ export function Lessons() {
             <Stack.Screen
                 name="CompareAndContrastLessons"
                 component={CompareAndContrastLessons}/>
+            <Stack.Screen
+                name="VideoPage"
+                component={VideoPage}/>
         </Stack.Navigator>
     )
 }
