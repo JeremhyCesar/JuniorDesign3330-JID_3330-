@@ -11,13 +11,16 @@ import { ClassicalLessons } from "./ClassicalLessons";
 import { ContemporaryLessons } from "./ContemporaryLessons";
 import { CompareAndContrastLessons } from "./CompareAndContrastLessons";
 import { ClassicalComposers } from "./ClassicalComposers";
-import { VideoPage } from "./VideoPage";
 import { ChopinScreen } from "./ChopinScreen";
+import { VideoPage } from "./VideoPage";
+import { Worksheet } from "./Worksheet";
+import { ReviewSession } from "./ReviewSession";
 
 export function Lessons() {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator
+      initialRouteName="LessonHome"
       backBehavior="history"
       screenOptions={{ headerShown: false }}
     >
@@ -34,6 +37,8 @@ export function Lessons() {
       />
       <Stack.Screen name="Chopin" component={ChopinScreen} />
       <Stack.Screen name="VideoPage" component={VideoPage} />
+      <Stack.Screen name="Worksheet" component={Worksheet} />
+      <Stack.Screen name="ReviewSession" component={ReviewSession} />
     </Stack.Navigator>
   );
 }
