@@ -198,12 +198,12 @@ export function ChopinScreen() {
           />
         </Pressable>
 
-        <View style={styles.imageContainer}>
+        <Pressable style={styles.imageContainer} onPress={() => navigation.navigate("ReviewSession")}>
           <Image
             source={require("../../assets/review-1.png")}
             style={styles.image}
           />
-        </View>
+        </Pressable>
 
         <View style={styles.imageContainer}>
           <Image

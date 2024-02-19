@@ -14,7 +14,7 @@ import { ClassicalComposers } from "./ClassicalComposers";
 import { ChopinScreen } from "./ChopinScreen";
 import { VideoPage } from "./VideoPage";
 import { Worksheet } from "./Worksheet";
-
+import { ReviewSession } from "./ReviewSession";
 
 export function Lessons() {
   const Stack = createNativeStackNavigator();
@@ -38,6 +38,7 @@ export function Lessons() {
       <Stack.Screen name="Chopin" component={ChopinScreen} />
       <Stack.Screen name="VideoPage" component={VideoPage} />
       <Stack.Screen name="Worksheet" component={Worksheet} />
+      <Stack.Screen name="ReviewSession" component={ReviewSession} />
     </Stack.Navigator>
   );
 }
