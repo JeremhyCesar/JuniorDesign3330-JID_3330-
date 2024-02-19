@@ -55,7 +55,8 @@ export function Home({ navigation }) {
                     textAlign: 'center'
                 }}>Where words fail, music speaks.</Text>
             </View>
-            <Pressable onPress={() => {navigation.navigate('Lessons')}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+            { /* By adding { screen: 'LessonHome'} can make sure that we will go to the LessonHome instead the page on the stack */}
+            <Pressable onPress={() => {navigation.navigate('Lessons', { screen: 'LessonHome'})}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',

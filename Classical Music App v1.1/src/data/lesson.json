@@ -1,0 +1,35 @@
+[
+  {
+    "id": "lesson1",
+    "category": "Classical Music - Composers",
+    "title": "Wolfgang Amadeus Mozart",
+    "backgroundImage": "/images/lessons/lesson1-Mozart.jpg",
+    "videoUrl": "https://www.youtube.com/watch?v=gsb5nWFpwsE",
+    "article":  "Wolfgang Amadeus Mozart, born in Salzburg in 1756, is revered as one of the most prolific and influential composers of the Classical era. His extensive body of work, composed in just 35 years, encompasses every genre of his time, including symphonies, operas, concertos, chamber music, and solo works.",
+    "review": "Wolfgang Amadeus Mozart’s work is a perfect representation of the Classical era’s ideals. His music, characterized by clarity, symmetry, and balance, captures the essence of human emotion and intellect.",
+    "quiz": [
+      {
+        "question": "Mozart is famous for being a child prodigy in which field?",
+        "options": ["Painting", "Literature", "Music", "Science"],
+        "answer": "Music"
+      },
+      {
+        "question": "Which city was a significant place for Mozart's musical career?",
+        "options": ["London", "Paris", "Salzburg", "Rome"],
+        "answer": "Salzburg"
+      },
+      {
+        "question": "Which of these is a well-known opera composed by Mozart?",
+        "options": ["Carmen", "La Bohème", "The Magic Flute", "Aida"],
+        "answer": "The Magic Flute"
+      },
+      {
+        "question": "In what area did Mozart compose most of his works?",
+        "options": ["Baroque", "Classical", "Romantic", "Modern"],
+        "answer": "Classical"
+      }
+    ]
+  }
+]
+
+  
