@@ -1,11 +1,10 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './src/pages/Home.js'
-import { Lessons } from './src/pages/Lessons.js';
-import { Worksheet } from './src/pages/Worksheet.js';
 
+import { Lessons } from './src/pages/LessonHome.js';
 
 const Tab = createBottomTabNavigator();
 
@@ -13,19 +12,17 @@ export default function App() {
   return (
     <NavigationContainer screenOptions>
       <Tab.Navigator 
-        screenOptions={{headerShown: 'false', tabBarStyle: {backgroundColor: '#e2480d'}}}
+        screenOptions={{headerShown: false, tabBarActiveTintColor: '#ffffff', tabBarInactiveTintColor: '#ffffff', tabBarStyle: {backgroundColor: '#e2480d'}}}
         backBehavior='history'>
         <Tab.Screen
-          options={{headerShown: 'false'}}
           name="Home"
-          component={Home}/>
+          component={Home}
+          options={{tabBarIcon: () => {return (<Image source={require('./assets/home-icon.png')}/>)}}}/>
         <Tab.Screen
           name="Lessons"
-          component={Lessons}/>
-          {/* for testing purpose */}
-        <Tab.Screen
-          name="Worksheet"
-          component={Worksheet} />
+
+          component={Lessons}
+          options={{tabBarIcon: () => {return (<Image source={require('./assets/lesson-icon.png')}/>)}}}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
