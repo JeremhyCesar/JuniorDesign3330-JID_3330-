@@ -72,8 +72,11 @@ export function ChopinScreen() {
     image: {
       width: 300,
       height: 100,
-      //resizeMode: "contain", // Adjust the resizeMode as needed
     },
+    pressableImage: {
+        alignItems: 'center',
+        justifyContent: 'center',
+      },
   });
 
   return (
@@ -153,6 +156,12 @@ export function ChopinScreen() {
           }}
         />
       </View>
+
+      {/* Example Pressable Image
+        <Pressable onPress={() => handlePress('TargetScreenName')} style={styles.pressableImage}>
+            <Image source={require("../../assets/video-1.png")} style={styles.image} />
+        </Pressable>
+      */}
 
       <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
         <View style={styles.imageContainer}>
