@@ -64,7 +64,6 @@ export function ChopinScreen() {
           {
             width: 350,
             height: 249,
-            left: "8%",
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: "#ffbb37",
@@ -85,7 +84,6 @@ export function ChopinScreen() {
       <View>
         <Text
           style={{
-            left: "8%",
             fontSize: 24,
             textAlign: "left",
             color: "#2f4f4f",
