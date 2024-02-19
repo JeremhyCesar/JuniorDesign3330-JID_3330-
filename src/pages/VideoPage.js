@@ -1,27 +1,27 @@
-import { useCallback, View } from "react";
-import { YoutubePlayer } from "react-native-youtube-iframe";
+import { Button, Text, View } from "react-native";
+import React, { useState, useCallback } from "react";
+import YoutubePlayer from "react-native-youtube-iframe";
 
-export function VideoPage(props) {
-    const onStateChange = useCallback((state) => {
-    if (state === "ended") {
-        setPlaying(false);
-        Alert.alert("video has finished playing!");
-    }
-    }, []);
-    
-    const togglePlaying = useCallback(() => {
-    setPlaying((prev) => !prev);
-    }, []);
-    
+// usage: navigation.navigate('VideoPage', {composerName: [name of composer], videoID: [videoID]})
+export function VideoPage({ route, navigation}) {
+    const { composerName, videoID } = route.params;
     return (
-    <View>
-        <YoutubePlayer
-        height={300}
-        play={playing}
-        videoId={"iee2TATGMyI"}
-        onChangeState={onStateChange}
-        />
-        <Button title={playing ? "pause" : "play"} onPress={togglePlaying} />
-    </View>
+        <View>
+            <Text style={{
+                fontWeight: 'bold',
+                top: 64,
+                left: '8%',
+                fontSize: 42,
+                color: '#333'
+            }}>{composerName} Video</Text>
+            <View style={{
+                top: 100
+            }}>
+                <YoutubePlayer
+                height={300}
+                videoId={videoID}
+                />
+            </View>
+        </View>
     );
 }
