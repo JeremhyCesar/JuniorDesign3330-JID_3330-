@@ -188,7 +188,10 @@ export function ChopinScreen() {
           />
         </Pressable>
 
-        <Pressable style={styles.imageContainer}>
+        <Pressable
+          style={styles.imageContainer}
+          onPress={() => navigation.navigate("Worksheet")}
+        >
           <Image
             source={require("../../assets/worksheet-1.png")}
             style={styles.image}
