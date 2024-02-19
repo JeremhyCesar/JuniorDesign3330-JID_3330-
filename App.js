@@ -2,7 +2,8 @@ import { StatusBar } from 'expo-status-bar';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { Home } from './src/pages/Home.js'
+import { Home } from './src/pages/Home.js';
+import { VideoPage } from './src/pages/VideoPage.js';
 import { Lessons } from './src/pages/LessonHome.js';
 import { Composers } from './src/pages/Composers.js'
 
@@ -16,7 +17,7 @@ export default function App() {
         backBehavior='history'>
         <Tab.Screen
           name="Home"
-          component={Home}
+          component={VideoPage}
           options={{tabBarIcon: () => {return (<Image source={require('./assets/home-icon.png')}/>)}}}/>
         <Tab.Screen
           name="Lessons"
