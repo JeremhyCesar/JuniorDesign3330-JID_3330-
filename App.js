@@ -3,6 +3,7 @@ import { Image, StyleSheet, Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './src/pages/Home.js'
+
 import { Lessons } from './src/pages/LessonHome.js';
 
 const Tab = createBottomTabNavigator();
@@ -19,6 +20,7 @@ export default function App() {
           options={{tabBarIcon: () => {return (<Image source={require('./assets/home-icon.png')}/>)}}}/>
         <Tab.Screen
           name="Lessons"
+
           component={Lessons}
           options={{tabBarIcon: () => {return (<Image source={require('./assets/lesson-icon.png')}/>)}}}/>
       </Tab.Navigator>
