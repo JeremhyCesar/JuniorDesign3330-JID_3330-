@@ -23,18 +23,22 @@ export function ChopinScreen() {
       fontWeight: "bold",
       fontSize: 48,
       color: "#333",
-      marginVertical: 20, // Spacing around the title
+      marginBottom: 10,
+      marginTop: 40,
     },
     introduction: {
       fontSize: 20,
       color: "#717171",
-      marginBottom: 20, // Spacing below the text
+      marginBottom: 10, // Spacing below the text
+    },
+    container: {
+      flex: 1,
+      justifyContent: "center", // Centers the child components vertically in the container
+      alignItems: "center", // Centers the child components horizontally in the container
     },
     imageContainer: {
-        flexDirection: 'row',
-        justifyContent: "center",
-        alignItems: "center",
-      },
+      marginVertical: 0,
+    },
     image: {
       width: 300, // Specify a width
       height: 200, // And a height for your image
@@ -45,7 +49,7 @@ export function ChopinScreen() {
   return (
     <ScrollView
       style={{ backgroundColor: "white" }}
-      contentContainerStyle={{ alignItems: 'center', padding: 20 }}
+      contentContainerStyle={{ padding: 20 }}
     >
       <View style={styles.centeredContent}>
         <Text style={styles.title}>Frédéric Chopin</Text>
@@ -64,9 +68,11 @@ export function ChopinScreen() {
           {
             width: 350,
             height: 249,
+            left: "3%",
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: "#ffbb37",
+            marginBottom: 10,
           },
         ]}
       >
@@ -85,9 +91,11 @@ export function ChopinScreen() {
         <Text
           style={{
             fontSize: 24,
+            left: "3%",
             textAlign: "left",
             color: "#2f4f4f",
             fontWeight: "500",
+            marginBottom: 10,
           }}
         >
           My Tasks:{" "}
@@ -99,9 +107,9 @@ export function ChopinScreen() {
       <View>
         <Text
           style={{
-            left: "8%",
             fontSize: 18,
             textAlign: "left",
+            left: "3%",
             color: "#717171",
           }}
         >
@@ -110,42 +118,38 @@ export function ChopinScreen() {
         </Text>
       </View>
 
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("../../assets/video-1.png")}
-          style={styles.image}
-        />
+      <View style={styles.container}>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../../assets/video-1.png")}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../../assets/video-2-1.png")}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../../assets/worksheet-1.png")}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../../assets/review-1.png")}
+            style={styles.image}
+          />
+        </View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require("../../assets/mini-quiz-1.png")}
+            style={styles.image}
+          />
+        </View>
       </View>
-
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("../../assets/video-2-1.png")}
-          style={styles.image}
-        />
-      </View>
-
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("../../assets/worksheet-1.png")}
-          style={styles.image}
-        />
-      </View>
-
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("../../assets/review-1.png")}
-          style={styles.image}
-        />
-      </View>
-
-      <View style={styles.imageContainer}>
-        <Image
-          source={require("../../assets/mini-quiz-1.png")}
-          style={styles.image}
-        />
-      </View>
-
-
     </ScrollView>
   );
 }
