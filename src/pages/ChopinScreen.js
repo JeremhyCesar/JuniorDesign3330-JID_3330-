@@ -12,13 +12,20 @@ import { useNavigation } from "@react-navigation/native";
 
 export function ChopinScreen() {
   const [progress, setProgress] = useState(0);
+  const [modulesComplete, setModulesComplete] = useState(0);
   const totalTasks = 5; // Total number of tasks, could be dynamic as well
 
   const navigation = useNavigation();
 
-  const handlePress = (screenName) => {
-    setProgress((prevProgress) => prevProgress + 1);
-    navigation.navigate(screenName);
+  // moduleNo should be 0 indexed
+  const handlePress = (moduleNo) => {
+    setModulesComplete((prevModules) => {
+      if ((prevModules & (1 << moduleNo)) == 0) {
+        setProgress((prevProgress) => prevProgress + 1);
+        return prevModules + (1 << moduleNo);
+      }
+      return prevModules;
+    });
   };
 
   const styles = StyleSheet.create({
@@ -160,12 +167,13 @@ export function ChopinScreen() {
       <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
         <Pressable
           style={styles.imageContainer}
-          onPress={() =>
+          onPress={() => {
+            handlePress(0);
             navigation.navigate("VideoPage", {
-              composerName: "Chopin's life",
-              videoID: "-4mVVRO_98Y",
-            })
-          }
+              composerName: "Chopin's life", 
+              videoID: "-4mVVRO_98Y"
+            });
+          }}
         >
           <Image
             source={require("../../assets/video-1.png")}
@@ -175,12 +183,13 @@ export function ChopinScreen() {
 
         <Pressable
           style={styles.imageContainer}
-          onPress={() =>
+          onPress={() => {
+            handlePress(1);
             navigation.navigate("VideoPage", {
               composerName: "Chopin's music",
               videoID: "w4YyTQduZDc",
-            })
-          }
+            });
+          }}
         >
           <Image
             source={require("../../assets/video-2-1.png")}
@@ -190,7 +199,10 @@ export function ChopinScreen() {
 
         <Pressable
           style={styles.imageContainer}
-          onPress={() => navigation.navigate("Worksheet")}
+          onPress={() => {
+            handlePress(2);
+            navigation.navigate("Worksheet");
+          }}
         >
           <Image
             source={require("../../assets/worksheet-1.png")}
@@ -198,7 +210,10 @@ export function ChopinScreen() {
           />
         </Pressable>
 
-        <Pressable style={styles.imageContainer} onPress={() => navigation.navigate("ReviewSession")}>
+        <Pressable style={styles.imageContainer} onPress={() => {
+          handlePress(3);
+          navigation.navigate("ReviewSession");
+          }}>
           <Image
             source={require("../../assets/review-1.png")}
             style={styles.image}
