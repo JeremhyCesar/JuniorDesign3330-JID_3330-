@@ -3,6 +3,8 @@ import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-nati
 import { ClassicalLessons } from './ClassicalLessons';
 import { ContemporaryLessons } from './ContemporaryLessons';
 import { CompareAndContrastLessons } from './CompareAndContrastLessons';
+import { VideoPage } from './VideoPage';
+import { Home } from './Home';
 
 export function Lessons() {
     const Stack = createNativeStackNavigator();
@@ -20,6 +22,9 @@ export function Lessons() {
             <Stack.Screen
                 name="CompareAndContrastLessons"
                 component={CompareAndContrastLessons}/>
+            <Stack.Screen
+                name="VideoPage"
+                component={VideoPage}/>
         </Stack.Navigator>
     )
 }
