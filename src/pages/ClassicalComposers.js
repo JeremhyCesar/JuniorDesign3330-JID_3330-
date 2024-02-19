@@ -1,6 +1,6 @@
-import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, Pressable } from 'react-native';
 
-export function ClassicalComposers() {
+export function ClassicalComposers({navigation}) {
     const styles = StyleSheet.create({
         button: {
             borderRadius: 30,
@@ -28,7 +28,7 @@ export function ClassicalComposers() {
                 textAlign: 'left',
                 color: '#717171'
             }}>The minds behind the music!</Text>
-            <View style={[{top: 94, left: '8%', backgroundColor: '#ffffff'}, styles.button]}>
+            <Pressable onPress={() => navigation.navigate('Chopin')} style={[{top: 94, left: '8%', backgroundColor: '#ffffff'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '8%',
@@ -47,7 +47,7 @@ export function ClassicalComposers() {
                     height: 150,
                     objectFit: 'cover'
                 }}/>
-            </View>
+            </Pressable>
             <View style={[{top: 109, left: '8%', backgroundColor: '#ffffff'}, styles.button]}>
                 <Text style={{
                     top: 25,
