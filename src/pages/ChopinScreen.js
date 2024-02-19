@@ -164,12 +164,17 @@ import {
         */}
   
         <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
-          <View style={styles.imageContainer}>
+          <Pressable 
+            style={styles.imageContainer}
+            onPress={() => navigation.navigate('VideoPage', {
+              composerName: 'Chopin',
+              videoID:'-4mVVRO_98Y'
+            })}>
             <Image
               source={require("../../assets/video-1.png")}
               style={styles.image}
             />
-          </View>
+          </Pressable>
           <View style={styles.imageContainer}>
             <Image
               source={require("../../assets/video-2-1.png")}
