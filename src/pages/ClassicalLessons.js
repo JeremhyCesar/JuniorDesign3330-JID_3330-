@@ -1,6 +1,6 @@
-import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
+import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
-export function ClassicalLessons() {
+export function ClassicalLessons({ navigation }) {
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,
@@ -28,7 +28,7 @@ export function ClassicalLessons() {
                 textAlign: 'left',
                 color: '#717171'
             }}>What should we learn now?</Text>
-            <View style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+            <Pressable onPress={() => navigation.navigate('ClassicalComposers')} style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -45,7 +45,7 @@ export function ClassicalLessons() {
                     height: 220,
                     objectFit: 'cover'
                 }}/>
-            </View>
+            </Pressable>
             <View style={[{top: 126, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
                 <Text style={{
                     top: 26,
