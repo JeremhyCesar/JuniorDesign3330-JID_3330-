@@ -55,7 +55,7 @@ export function Home({ navigation }) {
                     textAlign: 'center'
                 }}>Where words fail, music speaks.</Text>
             </View>
-            <Pressable onPress={() => {navigation.navigate('Lessons')}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+            <Pressable onPress={() => {navigation.navigate('Lessons', { screen: 'LessonHome'})}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',

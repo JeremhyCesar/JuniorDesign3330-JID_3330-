@@ -18,6 +18,7 @@ export function Lessons() {
   const Stack = createNativeStackNavigator();
   return (
     <Stack.Navigator
+      initialRouteName="LessonHome"
       backBehavior="history"
       screenOptions={{ headerShown: false }}
     >
