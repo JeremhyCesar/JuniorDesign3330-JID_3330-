@@ -32,17 +32,16 @@ export function ChopinScreen() {
       marginBottom: 10, // Spacing below the text
     },
     container: {
-      flex: 1,
-      justifyContent: "center", // Centers the child components vertically in the container
       alignItems: "center", // Centers the child components horizontally in the container
     },
     imageContainer: {
-      marginVertical: 0,
+      alignItems: "center",
+      marginVertical: 5,
     },
     image: {
-      width: 300, // Specify a width
-      height: 200, // And a height for your image
-      resizeMode: "contain", // Adjust the resizeMode as needed
+      width: 300,
+      height: 100,
+      //resizeMode: "contain", // Adjust the resizeMode as needed
     },
   });
 
@@ -68,7 +67,7 @@ export function ChopinScreen() {
           {
             width: 350,
             height: 249,
-            left: "3%",
+            left: "5%",
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: "#ffbb37",
@@ -118,7 +117,20 @@ export function ChopinScreen() {
         </Text>
       </View>
 
-      <View style={styles.container}>
+      <View style={[{ top: 20, left: "8%", backgroundColor: "#ffffff" }]}>
+        <Image
+          source={require("../../assets/video-1.png")}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: "4%",
+            width: 120,
+            height: 120,
+          }}
+        />
+      </View>
+
+      <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
         <View style={styles.imageContainer}>
           <Image
             source={require("../../assets/video-1.png")}
