@@ -1,7 +1,26 @@
-import { StyleSheet, ScrollView, Text, View, Image } from "react-native";
+import {
+  StyleSheet,
+  ScrollView,
+  Text,
+  View,
+  Image,
+  Pressable,
+} from "react-native";
+import React, { useState } from "react";
 import LessonBlock from "./LessonBlock";
+import { useNavigation } from "@react-navigation/native";
 
 export function ChopinScreen() {
+  const [progress, setProgress] = useState(0);
+  const totalTasks = 5; // Total number of tasks, could be dynamic as well
+
+  const navigation = useNavigation();
+
+  const handlePress = (screenName) => {
+    setProgress((prevProgress) => prevProgress + 1);
+    navigation.navigate(screenName);
+  };
+
   const styles = StyleSheet.create({
     button: {
       borderRadius: 30,
@@ -30,6 +49,18 @@ export function ChopinScreen() {
       fontSize: 20,
       color: "#717171",
       marginBottom: 10, // Spacing below the text
+    },
+    tasksText: {
+      fontSize: 24,
+      left: "5%",
+      textAlign: "left",
+      color: "#2f4f4f",
+      fontWeight: "500",
+      marginBottom: 10,
+    },
+    progressText: {
+      fontWeight: "bold",
+      color: "#E2480D",
     },
     container: {
       alignItems: "center", // Centers the child components horizontally in the container
@@ -87,18 +118,11 @@ export function ChopinScreen() {
       </View>
 
       <View>
-        <Text
-          style={{
-            fontSize: 24,
-            left: "3%",
-            textAlign: "left",
-            color: "#2f4f4f",
-            fontWeight: "500",
-            marginBottom: 10,
-          }}
-        >
+        <Text style={styles.tasksText}>
           My Tasks:{" "}
-          <Text style={{ fontWeight: "bold", color: "#E2480D" }}>0/5</Text>{" "}
+          <Text style={styles.progressText}>
+            {progress}/{totalTasks}
+          </Text>{" "}
           completed
         </Text>
       </View>
@@ -108,7 +132,7 @@ export function ChopinScreen() {
           style={{
             fontSize: 18,
             textAlign: "left",
-            left: "3%",
+            left: "5%",
             color: "#717171",
           }}
         >
