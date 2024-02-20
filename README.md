@@ -3,12 +3,25 @@ The purpose of this mobile application, Notes on the Note Makers, will be to rai
 
 # Release Notes
 
+## Version 1.2.0
+
+### Features
+* Created 20 Classical and Contemporary Music Lessons
+* Migrated the app's front-end service from React to React Native
+* Declutter the bottom bar and increased utility of the shown options
+* Improved navigation in between Home Page, lessons, worksheets, and articles
+### Bug Fixes
+* Fixed the issues of videos playing in-app from last version 
+### Known Issues
+* No known issues
+
 ## Version 1.1.0
 
 ### Features
-* Feature 1
-* Feature 2
+* Created 20 Classical Music Lessons
+* Implemented the Lesson Framework within the app via React
+* Added Navigation to Lessons from the Home Page
 ### Bug Fixes
-* Bug Fix 1
+* Videos in app within lessons not working properly
 ### Known Issues
-* Known Issue 1
+* No known issues
