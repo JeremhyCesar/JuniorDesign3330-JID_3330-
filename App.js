@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Home } from './src/pages/Home.js'
 
 import { Lessons } from './src/pages/LessonHome.js';
+import { Social } from './src/pages/SocialPage.js';
 
 const Tab = createBottomTabNavigator();
 
@@ -17,12 +18,17 @@ export default function App() {
         <Tab.Screen
           name="Home"
           component={Home}
-          options={{tabBarIcon: () => {return (<Image source={require('./assets/home-icon.png')}/>)}}}/>
+          options={{tabBarIcon: () => {return (<Image source={require('./assets/home-icon.png')} style={styles.tabIcon} />)}}}/>
         <Tab.Screen
           name="Lessons"
 
           component={Lessons}
           options={{tabBarIcon: () => {return (<Image source={require('./assets/lesson-icon.png')}/>)}}}/>
+        <Tab.Screen
+          name="Social"
+
+          component={Social}
+          options={{tabBarIcon: () => {return (<Image source={require('./assets/social-icon.png')} style={styles.tabIcon} />)}}}/>
       </Tab.Navigator>
     </NavigationContainer>
   );
@@ -34,5 +40,9 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+  },
+  tabIcon: {
+    width: 30, 
+    height: 30, 
   },
 });
