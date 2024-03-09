@@ -89,23 +89,24 @@ export function Home({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </View>
-            <View style={[{top: 190, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
-                <Text style={{
-                    top: 26,
-                    left: '10%',
-                    fontSize: 48,
-                    textAlign: 'left',
-                    fontWeight: 'bold',
-                    color: 'white'
-                }}>Quizzes</Text>
-                <Image source={require('../../assets/to-do-list.png')} style={{
-                    top: 30,
-                    left: '55%',
-                    width: '35%',
-                    height: 120,
-                    objectFit: 'cover'
-                }}/>
-            </View>
+            <Pressable onPress={() => {navigation.navigate('Quizzes', { screen: 'QuizSelection'})}} 
+            style={[{top: 190, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+               <Text style={{
+                   top: 26,
+                   left: '10%',
+                   fontSize: 48,
+                   textAlign: 'left',
+                   fontWeight: 'bold',
+                   color: 'white',
+               }}>Quizzes</Text>
+               <Image source={require('../../assets/to-do-list.png')} style={{
+                   top: 10,
+                   left: '55%',
+                   width: '35%',
+                   height: 120,
+                   objectFit: 'cover'
+               }}/>
+           </Pressable>
             <View style={{height: 210}}/>
         </ScrollView>
     );
