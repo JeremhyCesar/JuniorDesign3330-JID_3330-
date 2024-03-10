@@ -50,5 +50,5 @@ const styles = StyleSheet.create({
   tabIcon: {
     width: 30, 
     height: 30, 
-  },
+  }
 });
