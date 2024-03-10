@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
-
+import Lock from '../../assets/-icon-heart.svg';
 
 export function QuizTopic({ navigation }) {
   const styles = StyleSheet.create({
@@ -50,22 +50,17 @@ export function QuizTopic({ navigation }) {
       fontWeight: 'bold',
       marginTop: 20,
     },
-    blockContainer: {
-        position: 'absolute',
-        top: 400,
-        bottom: 0,
-        left: 0,
-        right: 0,
-        height: '100%',
-        backgroundColor: '#ececec',
-        shadowColor: '#ececec',
-        shadowOpacity: 0.5,
-        shadowRadius: 2,
-        shadowOffset: {
-          height: -68,
-          width: 0,
-        },
-      },
+    blurView: {
+        borderRadius: 31,
+        width: 370,
+        height: 145,
+        marginLeft: 10,
+        top: 6,
+        backgroundColor: '#c3c3c3', // This simulates a 'blurred' background
+        justifyContent: 'center', // Center the icon horizontally
+        alignItems: 'center', // Center the icon vertically
+        opacity: 0.8, // You can adjust this to achieve the desired 'blur' effect
+    },
   });
 
   return (
@@ -135,32 +130,10 @@ export function QuizTopic({ navigation }) {
             backgroundColor: '#c3c3c3', // Change this to your desired rectangle color
         }} />
       </View>
-      <View style={styles.blockContainer}>
-        <Image
-          source={require('../../assets/lock-icon.png')}
-          style={{
-            width: 50,
-            height: 65,
-            alignSelf: 'center',
-            marginTop: 20,
-          }}
-        />
-        <Text style={[
-           { top: 0, left: "42%"},
+      <Text style={[
+           { top: 120, left: "8%"},
            styles.lockedText,
          ]}>Locked...</Text>
-      </View>
-      {/* <Image source={require('../../assets/lock-icon.png')}
-        style={{
-            width: 50,
-            height: 65, 
-            marginLeft: 150,
-            top: 160
-          }} />
-      <Text style={[
-           { top: 155, left: "37%"},
-           styles.lockedText,
-         ]}>Locked...</Text> */}
     </ScrollView>
   );
 };
