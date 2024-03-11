@@ -1,4 +1,4 @@
-import { View, Text, Pressable } from "react-native"; 
+import { View, Text, Pressable, Image, TouchableOpacity } from "react-native"; 
 import { Asset } from "expo-asset";
 
 const quizQuestions = {
@@ -14,9 +14,13 @@ export function QuizQuestion ({ route, navigation}) {
         <View style={{flexDirection: "column", alignContent: "center", width: '100%', height: '100%'}}>
             <Text style={{top:50, fontWeight: "bold", justifyContent: "center", alignSelf: "center", color: "#00347f", fontSize: 32}}>{composerName}</Text>
             <View style={{top: 75, left: '5%', width: '90%', height: '83%', backgroundColor: '#1e2237', borderRadius: 34}}>
-                <Text style={{color: '#ffffff', fontSize: 26, alignSelf: "center", fontWeight: "bold", top: 30}}>Question {questionNo}</Text>
-                <View style={{backgroundColor: '#cccccc', width: '100%', height: 5, top: 50}}/>
-                <Text style={{top: 80, textAlign: "center", alignSelf: "center", flexWrap: "wrap", width: '70%', fontSize: 34, fontWeight: "bold", color: '#ffffff'}}>{questions[questionNo - 1][0]}</Text>
+                {questionNo != 1 && 
+                    <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: composerName, quizId: quizId, questionNo: questionNo - 1, answers: answers})}>
+                        <Image source={require("../../assets/back-arrow.png")} style={{top: 25, left: 10, width: 40, }}/>
+                    </TouchableOpacity>}
+                <Text style={{color: '#ffffff', position: "absolute", fontSize: 26, alignSelf: "center", fontWeight: "bold", top: 27}}>Question {questionNo}</Text>
+                <View style={{position: "absolute", backgroundColor: '#cccccc', width: '100%', height: 5, top: 85}}/>
+                <Text style={{position: "absolute", top: 120, textAlign: "center", alignSelf: "center", flexWrap: "wrap", width: '70%', fontSize: 34, fontWeight: "bold", color: '#ffffff'}}>{questions[questionNo - 1][0]}</Text>
                 <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[0]], navigation)} style={{position: "absolute", top: 350, left: "4%", width: "92%", height: 72, backgroundColor: "#e2480d", borderRadius: 32}}>
                     <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>A.  {questions[questionNo - 1][ansOrder[0]]}</Text>
                 </Pressable>
