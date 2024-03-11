@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import React, { useState } from "react";
 import LessonBlock from "./LessonBlock";
+
 import { useNavigation } from "@react-navigation/native";
 
 export function CompareDemo() {
@@ -116,7 +117,7 @@ export function CompareDemo() {
           },
         ]}
       >
-        <Image
+        {/* <Image
           source={require("../../assets/chopin.png")}
           style={{
             top: 30,
@@ -124,7 +125,7 @@ export function CompareDemo() {
             height: 290,
             objectFit: "cover",
           }}
-        />
+        /> */}
       </View>
 
       <View>
@@ -132,7 +133,7 @@ export function CompareDemo() {
           My Tasks:{" "}
           <Text style={styles.progressText}>
             {progress}/{totalTasks}
-          </Text>{" "}
+          </Text>{"Exploring Beethoven's Symphony No. 5 in C minor: A Triumph of Human Spirit"}
           completed
         </Text>
       </View>
@@ -165,7 +166,7 @@ export function CompareDemo() {
       </View>
 
       <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
-        <Pressable
+        {/* <Pressable
           style={styles.imageContainer}
           onPress={() => {
             handlePress(0);
@@ -195,7 +196,7 @@ export function CompareDemo() {
             source={require("../../assets/video-2-1.png")}
             style={styles.image}
           />
-        </Pressable>
+        </Pressable> */}
 
         <Pressable
           style={styles.imageContainer}
