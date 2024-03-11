@@ -10,6 +10,43 @@ export function Social({ navigation }) {
             width: '84%',
             height: 250,
             cursor: 'pointer'
+        },
+        toggle: {
+            borderRadius: 50,
+            shadowOffset: {width: 4, height: 4},
+            shadowColor: 'black',
+            shadowOpacity: 0.25,
+            width: '84%',
+            height: 500,
+            cursor: 'pointer',
+            marginTop: -50
+        },
+        sides: {
+            backgroundColor: '#1E2237', 
+            width: '70%', 
+            height: 100, 
+            borderRadius: 15,
+            alignSelf: 'center', 
+            marginTop: 280 
+        },
+        shape: {
+            backgroundColor: '#252A40', 
+            width: '25%', 
+            height: 180, 
+            borderTopLeftRadius: 15, // Rounded top left corner
+            borderTopRightRadius: 15, // Straight top right corner
+            borderBottomLeftRadius: 0, // Rounded bottom left corner
+            borderBottomRightRadius: 0, // Straight bottom right corner
+            alignSelf: 'center', 
+            marginTop: -180
+        },
+        line: {
+            backgroundColor: '#699BF7', 
+            width: '15%', 
+            height: 3,
+            left: 60,
+            borderRadius: 20,
+            top: 80,
         }
     })
     return (
@@ -17,96 +54,78 @@ export function Social({ navigation }) {
             <Text style={{
                 fontWeight: 'bold',
                 top: 64,
-                left: '8%',
-                fontSize: 48,
-                color: '#e2480d'
-            }}>D Smith</Text>
-            <Text style={{
-                top: 68,
-                left: '8%',
-                fontSize: 20,
-                textAlign: 'left',
-                color: '#717171'
-            }}>Happy Music Monday!</Text>
+                left: '40%',
+                fontSize: 30,
+                color: 'white'
+            }}>Social</Text>
             <View style={{
                 top: 92,
                 left: '8%',
-                borderRadius: 31,
-                backgroundColor: 'white',
+                borderRadius: 15,
+                backgroundColor: '#e24808',
                 shadowOffset: {width: 4, height: 4},
                 shadowColor: 'black',
                 shadowOpacity: 0.25,
                 width: '84%',
-                height: 142
+                height: 60
             }}>
-                <Image source={require('../../assets/girl-playing-cello.png')}/>
                 <Text style={{
                     position: 'absolute',
-                    top: '25%',
-                    left: '30%',
-                    fontSize: 26,
+                    top: '30%',
+                    left: '-18%',
+                    fontSize: 18,
                     fontWeight: 500,
                     width: '70%',
                     shadowOffset: {width: 4, height: 4},
                     shadowColor: 'black',
                     shadowOpacity: 0.25,
-                    color: '#717171',
+                    color: 'white',
                     flexWrap: 'wrap',
                     textAlign: 'center'
-                }}>Where words fail, music speaks.</Text>
-            </View>
-            <Pressable onPress={() => {navigation.navigate('Lessons', { screen: 'LessonHome'})}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+                }}>Friends</Text>
                 <Text style={{
-                    top: 26,
+                    position: 'absolute',
+                    top: '30%',
+                    left: '15%',
+                    fontSize: 18,
+                    fontWeight: 500,
+                    width: '70%',
+                    shadowOffset: {width: 4, height: 4},
+                    shadowColor: 'black',
+                    shadowOpacity: 0.25,
+                    color: 'white',
+                    flexWrap: 'wrap',
+                    textAlign: 'center'
+                }}>National</Text>
+                <Text style={{
+                    position: 'absolute',
+                    top: '30%',
+                    left: '48%',
+                    fontSize: 18,
+                    fontWeight: 500,
+                    width: '70%',
+                    shadowOffset: {width: 4, height: 4},
+                    shadowColor: 'black',
+                    shadowOpacity: 0.25,
+                    color: 'white',
+                    flexWrap: 'wrap',
+                    textAlign: 'center'
+                }}>Global</Text>
+            </View>
+            <View style={styles.line}></View>
+            <View style={styles.sides}></View>
+            <View style={styles.shape}></View>
+            <View style={[{top: 80, left: '8%', backgroundColor: '#1E2237'}, styles.toggle]}>
+                <Text style={{
+                    marginTop: 10,
                     left: '10%',
                     fontSize: 48,
                     textAlign: 'left',
                     fontWeight: 'bold',
                     color: 'white'
-                }}>Learn</Text>
-                <Image source={require('../../assets/teaching-icon.png')} style={{
-                    top: 10,
-                    left: '45%',
-                    width: '45%',
-                    height: 186,
-                    objectFit: 'cover'
-                }}/>
-            </Pressable>
-            <View style={[{top: 158, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
-                <Text style={{
-                    top: 26,
-                    left: '10%',
-                    fontSize: 48,
-                    textAlign: 'left',
-                    fontWeight: 'bold',
-                    color: 'white'
-                }}>Listen</Text>
-                <Image source={require('../../assets/girl-enjoying-music.png')} style={{
-                    top: 10,
-                    left: '43%',
-                    width: '50%',
-                    height: 160,
-                    objectFit: 'cover'
-                }}/>
+                }}></Text>
             </View>
-            <View style={[{top: 190, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
-                <Text style={{
-                    top: 26,
-                    left: '10%',
-                    fontSize: 48,
-                    textAlign: 'left',
-                    fontWeight: 'bold',
-                    color: 'white'
-                }}>Quizzes</Text>
-                <Image source={require('../../assets/to-do-list.png')} style={{
-                    top: 30,
-                    left: '55%',
-                    width: '35%',
-                    height: 120,
-                    objectFit: 'cover'
-                }}/>
-            </View>
-            <View style={{height: 210}}/>
+            <View style={{height: 100}}/>
         </ScrollView>
     );
 }
