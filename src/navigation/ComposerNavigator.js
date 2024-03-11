@@ -1,5 +1,5 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ComposersPage } from "../pages/Lessons/ComposersPage";
 import { LessonScreen } from "../components/lessons/LessonScreenFormate";
 import { VideoPage } from "../pages/Lessons/VideoPage";
@@ -7,7 +7,7 @@ import { Worksheet } from "../pages/Lessons/Worksheet";
 import { ReviewSession } from "../pages/Lessons/ReviewSession";
 import composerLessonData from "../data/composerLessons.json";
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const ComposerNavigator = () => {
   return (

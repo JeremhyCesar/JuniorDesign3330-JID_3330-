@@ -1,11 +1,11 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ClassicalMusicPage } from "../pages/Lessons/ClassicalMusicPage";
 import ComposerNavigator from "./ComposerNavigator";
 // import MusicalWorksScreen from './screens/MusicalWorksScreen';
 // import InstrumentsScreen from './screens/InstrumentsScreen';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const ClassicalMusicStack = () => {
   return (
