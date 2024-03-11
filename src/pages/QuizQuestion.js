@@ -8,6 +8,8 @@ export function QuizQuestion ({ route, navigation}) {
     const {composerName, quizId, questionNo, answers} = route.params;
     var quizPath = "../quizzes/" + quizId;
     const { questions } = quizQuestions["ChopinBeginner"];
+    let ansOrder = [1, 2, 3, 4];
+    ansOrder.sort(() => Math.random() - 0.5);
     return (
         <View style={{flexDirection: "column", alignContent: "center", width: '100%', height: '100%'}}>
             <Text style={{top:50, fontWeight: "bold", justifyContent: "center", alignSelf: "center", color: "#00347f", fontSize: 32}}>{composerName}</Text>
@@ -16,16 +18,16 @@ export function QuizQuestion ({ route, navigation}) {
                 <View style={{backgroundColor: '#cccccc', width: '100%', height: 5, top: 50}}/>
                 <Text style={{top: 80, textAlign: "center", alignSelf: "center", flexWrap: "wrap", width: '70%', fontSize: 34, fontWeight: "bold", color: '#ffffff'}}>{questions[questionNo - 1][0]}</Text>
                 <Pressable style={{top: 225, left: "4%", width: "92%", height: 72, backgroundColor: "#e2480d", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>A.  {questions[questionNo - 1][1]}</Text>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>A.  {questions[questionNo - 1][ansOrder[0]]}</Text>
                 </Pressable>
                 <Pressable style={{top: 235, left: "4%", width: "92%", height: 72, backgroundColor: "#FFBB37", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>B.  {questions[questionNo - 1][2]}</Text>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>B.  {questions[questionNo - 1][ansOrder[1]]}</Text>
                 </Pressable>
                 <Pressable style={{top: 245, left: "4%", width: "92%", height: 72, backgroundColor: "#2d6f9a", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>C.  {questions[questionNo - 1][3]}</Text>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>C.  {questions[questionNo - 1][ansOrder[2]]}</Text>
                 </Pressable>
                 <Pressable style={{top: 255, left: "4%", width: "92%", height: 72, backgroundColor: "#979797", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>D.  {questions[questionNo - 1][4]}</Text>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>D.  {questions[questionNo - 1][ansOrder[3]]}</Text>
                 </Pressable>
             </View>
         </View>
