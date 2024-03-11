@@ -24,6 +24,8 @@ export function ReviewSession({ reviewContent }) {
     );
   }
 
+  const name = Object.keys(reviewContent)[0];
+
   return (
     <View style={{ flex: 1 }}>
       <View
@@ -75,7 +77,7 @@ export function ReviewSession({ reviewContent }) {
             color: "gray",
           }}
         >
-          review Chopin's stylistic choices
+          Review {name}'s stylistic choices
         </Text>
       </View>
       <ScrollView style={{ marginTop: 15 }}>

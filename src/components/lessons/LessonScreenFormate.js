@@ -15,24 +15,28 @@ import reviewData from "../../data/review.json";
 const imageMap = {
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
   "piano.png": require("../../../assets/instruments/piano.png"),
-  // Add more mappings for other composers or instruments
+  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png"),
+  // Add more mappings for other composers, instruments or other topics
 };
 
 export function LessonScreen({ lessonData }) {
   const {
     composerName,
     instrumentName,
+    comparedName,
     introduction,
     imageSource,
     videoPages,
   } = lessonData;
-  const name = composerName || instrumentName;
+  const name = composerName || instrumentName || comparedName;
   const worksheetContent =
     worksheetData.composers[composerName] ||
-    worksheetData.instruments[instrumentName];
+    worksheetData.instruments[instrumentName] ||
+    worksheetData.compared[comparedName];
   const reviewContent =
     reviewData.composers[composerName] ||
-    reviewData.instruments[instrumentName];
+    reviewData.instruments[instrumentName] ||
+    reviewData.compared[comparedName];
 
   const [progress, setProgress] = useState(0);
   const [modulesComplete, setModulesComplete] = useState(0);
@@ -199,6 +203,17 @@ export function LessonScreen({ lessonData }) {
           titleColor="#2196f3"
           onPress={() => {
             handlePress(videoPages.length + 1);
+            navigation.navigate("ReviewSession", { reviewContent });
+          }}
+        />
+
+        <LessonBlock
+          image={require("../../../assets/quiz-icon.png")}
+          title="Mini Quiz"
+          notes={`Review the knowledge of ${name}`}
+          titleColor="#FFD000"
+          onPress={() => {
+            handlePress(videoPages.length + 2);
             navigation.navigate("ReviewSession", { reviewContent });
           }}
         />

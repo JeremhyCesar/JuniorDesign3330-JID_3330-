@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { LessonScreen } from "../screens/LessonScreen";
 import ClassicalMusicNavigator from './ClassicalMusicNavigator';
 import { ContemporaryMusicPage } from "../pages/Lessons/ContemporaryMusicPage";
-import { CompareAndContrastPage } from "../pages/Lessons/CompareAndContrastPage";
+import CompareAndContrastNavigator from "./CompareAndContrastNavigator"
 
 const Stack = createNativeStackNavigator();
 
@@ -18,7 +18,7 @@ export function LessonNavigator() {
       />
       <Stack.Screen
         name="CompareAndContrast"
-        component={CompareAndContrastPage}
+        component={CompareAndContrastNavigator}
       />
     </Stack.Navigator>
   );
