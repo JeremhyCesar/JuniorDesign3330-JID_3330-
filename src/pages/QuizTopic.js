@@ -130,10 +130,21 @@ export function QuizTopic({ navigation }) {
             backgroundColor: '#c3c3c3', // Change this to your desired rectangle color
         }} />
       </View>
-      <Text style={[
-           { top: 120, left: "8%"},
-           styles.lockedText,
-         ]}>Locked...</Text>
+      
+      <TouchableOpacity 
+      style={[{ top: 100, left: "8%" },
+           styles.quizContainer,
+         ]}>
+        <Text style={styles.quizTitle}>Locked...</Text>
+        <Image source={require('../../assets/lock.png')}
+        style={{
+            width: 100,
+            height: 100, 
+            marginLeft: 10,
+            top: -5
+          }} />
+      </TouchableOpacity>
+
     </ScrollView>
   );
 };
