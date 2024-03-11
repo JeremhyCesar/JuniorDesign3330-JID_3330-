@@ -2,6 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LockIcon from '../../assets/-icon-lock-locked.svg';
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from "react-native";
+import { QuizQuestion } from "./QuizQuestion"
 
 export function Quizzes() {
     const Stack = createNativeStackNavigator();
@@ -12,6 +13,7 @@ export function Quizzes() {
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="QuizSelection" component={QuizSelection} />
+        <Stack.Screen name="QuizQuestion" component={QuizQuestion} />
       </Stack.Navigator>
     );
 }
@@ -52,43 +54,43 @@ function QuizSelection({ navigation }) {
         >
           Test your knowledge
         </Text>
-        <View style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
-                <Text style={{
-                    top: 26,
-                    left: '10%',
-                    fontSize: 28,
-                    textAlign: 'left',
-                    fontWeight: 'bold',
-                    color: 'white',
-                    width: 150,
-                    flexWrap: "wrap"
-                }}>Beginner</Text>
-                <Image source={require('../../assets/girl-playing-violin.png')} style={{
-                    position: "absolute",
-                    top: 0,
-                    left: '45%',
-                    width: 160,
-                    height: 250,
-                    objectFit: 'cover'
-                }}/>
-                <View style={{
-                    borderRadius: 31,
-                    backgroundColor: "white", 
-                    width: 200, 
-                    height: 9,
-                    marginLeft: 83,
-                    top: 184
-                }} />
-                <Text style={{
-                    top: 186,
-                    marginLeft: 135,
-                    fontSize: 13,
-                    textAlign: 'left',
-                    fontWeight: 'bold',
-                    color: 'white',
-                    flexWrap: "wrap"
-                }}>0% completed</Text>
-        </View>
+        <Pressable onPress={() => navigation.navigate("QuizQuestion", {composerName: 'Frédéric Chopin', quizId: 'ChopinBeginner', questionNo: 1})} style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+          <Text style={{
+              top: 26,
+              left: '10%',
+              fontSize: 28,
+              textAlign: 'left',
+              fontWeight: 'bold',
+              color: 'white',
+              width: 150,
+              flexWrap: "wrap"
+          }}>Beginner</Text>
+          <Image source={require('../../assets/girl-playing-violin.png')} style={{
+              position: "absolute",
+              top: 0,
+              left: '45%',
+              width: 160,
+              height: 250,
+              objectFit: 'cover'
+          }}/>
+          <View style={{
+              borderRadius: 31,
+              backgroundColor: "white", 
+              width: 200, 
+              height: 9,
+              marginLeft: 83,
+              top: 184
+          }} />
+          <Text style={{
+              top: 186,
+              marginLeft: 135,
+              fontSize: 13,
+              textAlign: 'left',
+              fontWeight: 'bold',
+              color: 'white',
+              flexWrap: "wrap"
+          }}>0% completed</Text>
+        </Pressable>
         <View style={[{top: 124, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
                 <Text style={{
                     top: 26,
