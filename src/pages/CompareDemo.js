@@ -17,6 +17,7 @@ export function CompareDemo() {
   const totalTasks = 3; // Total number of tasks, could be dynamic as well
 
   const navigation = useNavigation();
+  /// update needed on navigation!!!!!!!!!!
 
   // moduleNo should be 0 indexed
   const handlePress = (moduleNo) => {
