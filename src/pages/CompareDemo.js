@@ -167,9 +167,9 @@ export function CompareDemo() {
       </View>
       
 
-      /// added new pressable buttons here 
+      //added new pressable buttons here 
       <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
-        <Pressable
+        {/* <Pressable
           style={styles.imageContainer}
           onPress={() => {
             handlePress(0);
@@ -194,7 +194,7 @@ export function CompareDemo() {
               videoID: "w4YyTQduZDc",
             });
           }}
-        >
+        > */}
           <Image
             source={require("../../assets/video-2-1.png")}
             style={styles.image}
