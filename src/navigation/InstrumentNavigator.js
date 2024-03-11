@@ -5,7 +5,7 @@ import { LessonScreen } from "../components/lessons/LessonScreenFormate";
 import { VideoPage } from "../pages/Lessons/VideoPage";
 import { Worksheet } from "../pages/Lessons/Worksheet";
 import { ReviewSession } from "../pages/Lessons/ReviewSession";
-import instrumentLessonDate from "../data/instrumentsLessons.json";
+import instrumentLessonData from "../data/instrumentsLessons.json";
 
 const Stack = createNativeStackNavigator();
 
@@ -16,7 +16,7 @@ const InstrumentNavigator = () => {
       <Stack.Screen name="LessonScreen">
         {(props) => {
           const { instrumentName } = props.route.params;
-          const lessonData = instrumentLessonDate.find(
+          const lessonData = instrumentLessonData.find(
             (lesson) => lesson.instrumentName === instrumentName
           );
           return <LessonScreen {...props} lessonData={lessonData} />;
@@ -31,7 +31,14 @@ const InstrumentNavigator = () => {
           />
         )}
       </Stack.Screen>
-      <Stack.Screen name="ReviewSession" component={ReviewSession} />
+      <Stack.Screen name="ReviewSession">
+        {(props) => (
+          <ReviewSession
+            {...props}
+            reviewContent={props.route.params.reviewContent}
+          />
+        )}
+      </Stack.Screen>
     </Stack.Navigator>
   );
 };

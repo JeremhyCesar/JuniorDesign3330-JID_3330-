@@ -10,6 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import LessonBlock from "./LessonBlock";
 import worksheetData from "../../data/worksheet.json";
+import reviewData from '../../data/review.json';
 
 const imageMap = {
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
@@ -24,6 +25,7 @@ export function LessonScreen({ lessonData }) {
 
   const name = composerName || instrumentName;
   const worksheetContent = worksheetData.composers[composerName] || worksheetData.instruments[instrumentName];
+  const reviewContent = reviewData.composers[composerName] || reviewData.instruments[instrumentName];
 
   // moduleNo should be 0 indexed
   const handlePress = (moduleNo) => {
@@ -171,7 +173,7 @@ export function LessonScreen({ lessonData }) {
           notes={`Review the knowledge of ${name}`}
           titleColor="#2196f3"
           onPress={() => {
-            navigation.navigate("ReviewSession");
+            navigation.navigate('ReviewSession', { reviewContent });
           }}
         />
       </View>

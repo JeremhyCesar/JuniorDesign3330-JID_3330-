@@ -32,7 +32,14 @@ const ComposerNavigator = () => {
           />
         )}
       </Stack.Screen>
-      <Stack.Screen name="ReviewSession" component={ReviewSession} />
+      <Stack.Screen name="ReviewSession">
+        {(props) => (
+          <ReviewSession
+            {...props}
+            reviewContent={props.route.params.reviewContent}
+          />
+        )}
+      </Stack.Screen>
     </Stack.Navigator>
   );
 };
