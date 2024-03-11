@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import {
   StyleSheet,
   ScrollView,
@@ -6,20 +7,47 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import React, { useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import LessonBlock from "./LessonBlock";
+import worksheetData from "../../data/worksheet.json";
+import reviewData from "../../data/review.json";
 
-export function ChopinScreen() {
+const imageMap = {
+  "Chopin.png": require("../../../assets/composers/Chopin.png"),
+  "piano.png": require("../../../assets/instruments/piano.png"),
+  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png"),
+  // Add more mappings for other composers, instruments or other topics
+};
+
+export function LessonScreen({ lessonData }) {
+  const {
+    composerName,
+    instrumentName,
+    comparedName,
+    introduction,
+    imageSource,
+    videoPages,
+  } = lessonData;
+  const name = composerName || instrumentName || comparedName;
+  const worksheetContent =
+    worksheetData.composers[composerName] ||
+    worksheetData.instruments[instrumentName] ||
+    worksheetData.compared[comparedName];
+  const reviewContent =
+    reviewData.composers[composerName] ||
+    reviewData.instruments[instrumentName] ||
+    reviewData.compared[comparedName];
+
   const [progress, setProgress] = useState(0);
   const [modulesComplete, setModulesComplete] = useState(0);
-  const totalTasks = 5; // Total number of tasks, could be dynamic as well
+  const totalTasks = videoPages.length + 3; // Videos + Worksheet + Review
 
   const navigation = useNavigation();
 
   // moduleNo should be 0 indexed
   const handlePress = (moduleNo) => {
     setModulesComplete((prevModules) => {
-      if ((prevModules & (1 << moduleNo)) == 0) {
+      if ((prevModules & (1 << moduleNo)) === 0) {
         setProgress((prevProgress) => prevProgress + 1);
         return prevModules + (1 << moduleNo);
       }
@@ -91,12 +119,12 @@ export function ChopinScreen() {
       contentContainerStyle={{ padding: 20 }}
     >
       <View style={styles.centeredContent}>
-        <Text style={styles.title}>Frédéric Chopin</Text>
+        <Text style={styles.title}>{name}</Text>
       </View>
 
       <View style={styles.textContent}>
         <Text style={styles.introduction}>
-          Let's go to work,{" "}
+          {introduction}{" "}
           <Text style={{ fontWeight: "bold", color: "#E2480D" }}>Julie!</Text>
         </Text>
       </View>
@@ -112,16 +140,19 @@ export function ChopinScreen() {
             alignItems: "center",
             backgroundColor: "#ffbb37",
             marginBottom: 10,
+            backgroundImage: `url(${imageMap[imageSource]})`,
+            backgroundSize: "cover", // or "contain", "stretch"
+            backgroundPosition: "center",
           },
         ]}
       >
         <Image
-          source={require("../../assets/chopin.png")}
+          source={imageMap[imageSource]}
           style={{
             top: 30,
             width: 208,
             height: 290,
-            objectFit: "cover",
+            resizeMode: "contain",
           }}
         />
       </View>
@@ -136,95 +167,56 @@ export function ChopinScreen() {
         </Text>
       </View>
 
-      <View>
-        <Text
-          style={{
-            fontSize: 18,
-            textAlign: "left",
-            left: "5%",
-            color: "#717171",
-          }}
-        >
-          Complete them all before you move on to{"\n"}
-          <Text style={{ fontWeight: "bold" }}>Ludwig van Beethoven</Text>
-        </Text>
-      </View>
+      <View style={styles.lessonBlocksContainer}>
+        {videoPages.map((videoPage, index) => (
+          <LessonBlock
+            key={videoPage.title}
+            image={require("../../../assets/video-icon.png")}
+            title="Video"
+            notes={videoPage.title}
+            titleColor="#ff9800"
+            onPress={() => {
+              handlePress(index);
+              navigation.navigate("VideoPage", {
+                videoTitle: videoPage.title,
+                videoID: videoPage.videoID,
+              });
+            }}
+          />
+        ))}
 
-      <View style={[{ top: 20, left: "8%", backgroundColor: "#ffffff" }]}>
-        <Image
-          source={require("../../assets/video-1.png")}
-          style={{
-            position: "absolute",
-            top: 0,
-            left: "4%",
-            width: 120,
-            height: 120,
+        <LessonBlock
+          image={require("../../../assets/worksheet-icon.png")}
+          title="Worksheet"
+          notes={`Complete the worksheet of ${name}`}
+          titleColor="#4caf50"
+          onPress={() => {
+            handlePress(videoPages.length);
+            navigation.navigate("Worksheet", { worksheetContent });
           }}
         />
-      </View>
 
-      <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
-        <Pressable
-          style={styles.imageContainer}
+        <LessonBlock
+          image={require("../../../assets/worksheet-icon.png")}
+          title="Review"
+          notes={`Review the knowledge of ${name}`}
+          titleColor="#2196f3"
           onPress={() => {
-            handlePress(0);
-            navigation.navigate("VideoPage", {
-              composerName: "Chopin's life", 
-              videoID: "-4mVVRO_98Y"
-            });
+            handlePress(videoPages.length + 1);
+            navigation.navigate("ReviewSession", { reviewContent });
           }}
-        >
-          <Image
-            source={require("../../assets/video-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
+        />
 
-        <Pressable
-          style={styles.imageContainer}
+        <LessonBlock
+          image={require("../../../assets/quiz-icon.png")}
+          title="Mini Quiz"
+          notes={`Review the knowledge of ${name}`}
+          titleColor="#FFD000"
           onPress={() => {
-            handlePress(1);
-            navigation.navigate("VideoPage", {
-              composerName: "Chopin's music",
-              videoID: "w4YyTQduZDc",
-            });
+            handlePress(videoPages.length + 2);
+            navigation.navigate("ReviewSession", { reviewContent });
           }}
-        >
-          <Image
-            source={require("../../assets/video-2-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
-
-        <Pressable
-          style={styles.imageContainer}
-          onPress={() => {
-            handlePress(2);
-            navigation.navigate("Worksheet");
-          }}
-        >
-          <Image
-            source={require("../../assets/worksheet-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
-
-        <Pressable style={styles.imageContainer} onPress={() => {
-          handlePress(3);
-          navigation.navigate("ReviewSession");
-          }}>
-          <Image
-            source={require("../../assets/review-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
-
-        <View style={styles.imageContainer}>
-          <Image
-            source={require("../../assets/mini-quiz-1.png")}
-            style={styles.image}
-          />
-        </View>
+        />
       </View>
     </ScrollView>
   );
