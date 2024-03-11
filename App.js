@@ -6,6 +6,7 @@ import { Home } from './src/pages/Home.js'
 
 import { Lessons } from './src/pages/LessonHome.js';
 import { Social } from './src/pages/SocialPage.js';
+import { Quizzes } from './src/pages/QuizSelection.js'
 
 const Tab = createBottomTabNavigator();
 
@@ -19,6 +20,11 @@ export default function App() {
           name="Home"
           component={Home}
           options={{tabBarIcon: () => {return (<Image source={require('./assets/home-icon.png')} style={styles.tabIcon} />)}}}/>
+        <Tab.Screen
+          name="Quizzes"
+
+          component={Quizzes}
+          options={{tabBarIcon: () => {return (<Image source={require('./assets/quiz-icon.png')} style={styles.quizTabIcon}/>)}}}/>
         <Tab.Screen
           name="Lessons"
 
@@ -45,4 +51,9 @@ const styles = StyleSheet.create({
     width: 30, 
     height: 30, 
   },
+  quizTabIcon: {
+    width: 22, 
+    height: 22, 
+    top: 3
+  }
 });
