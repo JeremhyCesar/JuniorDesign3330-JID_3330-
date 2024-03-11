@@ -88,7 +88,7 @@ export function QuizTopic({ navigation }) {
           Test your knowledge
         </Text>
 
-      <TouchableOpacity 
+      <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: "Frédéric Chopin", quizId: "ChopinBeginner", questionNo: 1})}
       style={[{ top: 100, left: "8%" },
            styles.quizContainer,
          ]}>

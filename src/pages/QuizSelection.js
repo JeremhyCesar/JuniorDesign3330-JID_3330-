@@ -1,7 +1,9 @@
 import React from 'react';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from "react-native";
+import { QuizQuestion } from "./QuizQuestion"
 import { QuizTopic } from "./QuizTopic"
+
 export function Quizzes() {
     const Stack = createNativeStackNavigator();
     return (
@@ -11,6 +13,7 @@ export function Quizzes() {
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="QuizSelection" component={QuizSelection} />
+        <Stack.Screen name="QuizQuestion" component={QuizQuestion} />
         <Stack.Screen name="QuizTopic" component={QuizTopic} />
       </Stack.Navigator>
     );
