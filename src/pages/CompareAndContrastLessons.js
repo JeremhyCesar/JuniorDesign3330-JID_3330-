@@ -1,5 +1,4 @@
 import { StyleSheet, ScrollView, Text, View, Image, Pressable } from 'react-native';
-import CompareAndContrastLessons from './CompareAndContrastLessons';
 import CompareDemo from './CompareDemo';
 
 export function CompareAndContrastLessons() {

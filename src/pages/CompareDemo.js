@@ -195,41 +195,40 @@ export function CompareDemo() {
             });
           }}
         > */}
-          <Image
-            source={require("../../assets/video-2-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
+        <Image
+          source={require("../../assets/video-2-1.png")}
+          style={styles.image}
+        />
+      </View>
 
-        <Pressable
-          style={styles.imageContainer}
-          onPress={() => {
-            handlePress(2);
-            navigation.navigate("Worksheet");
-          }}
-        >
-          <Image
-            source={require("../../assets/worksheet-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
+      <Pressable
+        style={styles.imageContainer}
+        onPress={() => {
+          handlePress(2);
+          navigation.navigate("Worksheet");
+        }}
+      >
+        <Image
+          source={require("../../assets/worksheet-1.png")}
+          style={styles.image}
+        />
+      </Pressable>
 
-        <Pressable style={styles.imageContainer} onPress={() => {
-          handlePress(3);
-          navigation.navigate("ReviewSession");
-          }}>
-          <Image
-            source={require("../../assets/review-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
+      <Pressable style={styles.imageContainer} onPress={() => {
+        handlePress(3);
+        navigation.navigate("ReviewSession");
+        }}>
+        <Image
+          source={require("../../assets/review-1.png")}
+          style={styles.image}
+        />
+      </Pressable>
 
-        <View style={styles.imageContainer}>
-          <Image
-            source={require("../../assets/mini-quiz-1.png")}
-            style={styles.image}
-          />
-        </View>
+      <View style={styles.imageContainer}>
+        <Image
+          source={require("../../assets/mini-quiz-1.png")}
+          style={styles.image}
+        />
       </View>
     </ScrollView>
   );
