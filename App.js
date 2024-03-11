@@ -24,7 +24,7 @@ export default function App() {
           name="Quizzes"
 
           component={Quizzes}
-          options={{tabBarIcon: () => {return (<Image source={require('./assets/lesson-icon.png')}/>)}}}/>
+          options={{tabBarIcon: () => {return (<Image source={require('./assets/quiz-icon.png')} style={styles.quizTabIcon}/>)}}}/>
         <Tab.Screen
           name="Lessons"
 
@@ -50,5 +50,10 @@ const styles = StyleSheet.create({
   tabIcon: {
     width: 30, 
     height: 30, 
+  },
+  quizTabIcon: {
+    width: 22, 
+    height: 22, 
+    top: 3
   }
 });
