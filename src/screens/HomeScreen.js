@@ -1,6 +1,6 @@
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
-export function Home({ navigation }) {
+export function HomeScreen({ navigation }) {
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,
@@ -55,7 +55,7 @@ export function Home({ navigation }) {
                     textAlign: 'center'
                 }}>Where words fail, music speaks.</Text>
             </View>
-            <Pressable onPress={() => {navigation.navigate('Lessons', { screen: 'LessonHome'})}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+            <Pressable onPress={() => {navigation.navigate('LessonNavigator', { screen: 'LessonHome' })}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',

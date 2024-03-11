@@ -1,4 +1,3 @@
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import {
   Pressable,
   StyleSheet,
@@ -7,43 +6,8 @@ import {
   View,
   Image,
 } from "react-native";
-import { ClassicalLessons } from "./ClassicalLessons";
-import { ContemporaryLessons } from "./ContemporaryLessons";
-import { CompareAndContrastLessons } from "./CompareAndContrastLessons";
-import { ClassicalComposers } from "./ClassicalComposers";
-import { ChopinScreen } from "./ChopinScreen";
-import { VideoPage } from "./VideoPage";
-import { Worksheet } from "./Worksheet";
-import { ReviewSession } from "./ReviewSession";
 
-export function Lessons() {
-  const Stack = createNativeStackNavigator();
-  return (
-    <Stack.Navigator
-      initialRouteName="LessonHome"
-      backBehavior="history"
-      screenOptions={{ headerShown: false }}
-    >
-      <Stack.Screen name="LessonHome" component={LessonHome} />
-      <Stack.Screen name="ClassicalLessons" component={ClassicalLessons} />
-      <Stack.Screen name="ClassicalComposers" component={ClassicalComposers} />
-      <Stack.Screen
-        name="ContemporaryLessons"
-        component={ContemporaryLessons}
-      />
-      <Stack.Screen
-        name="CompareAndContrastLessons"
-        component={CompareAndContrastLessons}
-      />
-      <Stack.Screen name="Chopin" component={ChopinScreen} />
-      <Stack.Screen name="VideoPage" component={VideoPage} />
-      <Stack.Screen name="Worksheet" component={Worksheet} />
-      <Stack.Screen name="ReviewSession" component={ReviewSession} />
-    </Stack.Navigator>
-  );
-}
-
-function LessonHome({ navigation }) {
+export function LessonScreen({ navigation }) {
   const styles = StyleSheet.create({
     button: {
       borderRadius: 31,
@@ -80,7 +44,7 @@ function LessonHome({ navigation }) {
         What should we learn now?
       </Text>
       <Pressable
-        onPress={() => navigation.navigate("ClassicalLessons")}
+        onPress={() => navigation.navigate("ClassicalMusicHome")}
         style={[
           { top: 94, left: "8%", backgroundColor: "#ffbb37" },
           styles.button,
@@ -101,7 +65,7 @@ function LessonHome({ navigation }) {
           Classical Music
         </Text>
         <Image
-          source={require("../../assets/girl-playing-violin.png")}
+          source={require("../../../assets/girl-playing-violin.png")}
           style={{
             position: "absolute",
             top: 0,
@@ -113,7 +77,7 @@ function LessonHome({ navigation }) {
         />
       </Pressable>
       <Pressable
-        onPress={() => navigation.navigate("ContemporaryLessons")}
+        onPress={() => navigation.navigate("ContemporaryMusic")}
         style={[
           { top: 124, left: "8%", backgroundColor: "#e24808" },
           styles.button,
@@ -134,7 +98,7 @@ function LessonHome({ navigation }) {
           Contemporary Music
         </Text>
         <Image
-          source={require("../../assets/couple-dance-party.png")}
+          source={require("../../../assets/couple-dance-party.png")}
           style={{
             position: "absolute",
             top: 45,
@@ -146,7 +110,7 @@ function LessonHome({ navigation }) {
         />
       </Pressable>
       <Pressable
-        onPress={() => navigation.navigate("CompareAndContrastLessons")}
+        onPress={() => navigation.navigate("CompareAndContrast")}
         style={[
           { top: 154, left: "8%", backgroundColor: "#00347f" },
           styles.button,
@@ -167,7 +131,7 @@ function LessonHome({ navigation }) {
           Compare & Contrast
         </Text>
         <Image
-          source={require("../../assets/saxophonist.png")}
+          source={require("../../../assets/saxophonist.png")}
           style={{
             position: "absolute",
             top: 30,

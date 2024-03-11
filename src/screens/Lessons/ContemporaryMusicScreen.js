@@ -1,6 +1,6 @@
 import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
-export function ContemporaryLessons() {
+export function ContemporaryMusicScreen() {
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,
@@ -37,7 +37,7 @@ export function ContemporaryLessons() {
                     fontWeight: 'bold',
                     color: 'white',
                 }}>Composers</Text>
-                <Image source={require('../../assets/man-playing-piano.png')} style={{
+                <Image source={require('../../../assets/man-playing-piano.png')} style={{
                     position: 'absolute',
                     top: 20,
                     left: '30%',
@@ -55,7 +55,7 @@ export function ContemporaryLessons() {
                     fontWeight: 'bold',
                     color: 'white',
                 }}>Musical Works</Text>
-                <Image source={require('../../assets/girl-enjoying-music.png')} style={{
+                <Image source={require('../../../assets/girl-enjoying-music.png')} style={{
                     position: 'absolute',
                     top: 70,
                     left: '35%',
@@ -73,7 +73,7 @@ export function ContemporaryLessons() {
                     fontWeight: 'bold',
                     color: 'white',
                 }}>Instruments</Text>
-                <Image source={require('../../assets/musical-band-performing.png')} style={{
+                <Image source={require('../../../assets/musical-band-performing.png')} style={{
                     position: 'absolute',
                     top: 30,
                     left: '35%',
