@@ -8,24 +8,22 @@ import {
   Pressable,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import LessonBlock from "./LessonBlock";
+import worksheetData from "../../data/worksheet.json";
 
+const imageMap = {
+  "Chopin.png": require("../../../assets/composers/Chopin.png"),
+  "piano.png": require("../../../assets/instruments/piano.png"),
+  // Add more mappings for other composers or instruments
+};
 
 export function LessonScreen({ lessonData }) {
-  const {
-    composerName,
-    introduction,
-    imageSource,
-    videoPages,
-    worksheet,
-    review,
-    quizRoute,
-  } = lessonData;
-
-  const [progress, setProgress] = useState(0);
-  const [modulesComplete, setModulesComplete] = useState(0);
-  const totalTasks = videoPages.length + 3; // Total number of tasks (videos + worksheet + review + quiz)
+  const { composerName, instrumentName, introduction, imageSource, videoPages } = lessonData;
 
   const navigation = useNavigation();
+
+  const name = composerName || instrumentName;
+  const worksheetContent = worksheetData.composers[composerName] || worksheetData.instruments[instrumentName];
 
   // moduleNo should be 0 indexed
   const handlePress = (moduleNo) => {
@@ -102,7 +100,7 @@ export function LessonScreen({ lessonData }) {
       contentContainerStyle={{ padding: 20 }}
     >
       <View style={styles.centeredContent}>
-        <Text style={styles.title}>{composerName}</Text>
+        <Text style={styles.title}>{name}</Text>
       </View>
 
       <View style={styles.textContent}>
@@ -123,86 +121,59 @@ export function LessonScreen({ lessonData }) {
             alignItems: "center",
             backgroundColor: "#ffbb37",
             marginBottom: 10,
+            backgroundImage: `url(${imageMap[imageSource]})`,
+            backgroundSize: "cover", // or "contain", "stretch"
+            backgroundPosition: "center",
           },
         ]}
       >
         <Image
-          source={require("../../../assets/composers/Chopin.png")}
+          source={imageMap[imageSource]}
           style={{
             top: 30,
             width: 208,
             height: 290,
-            objectFit: "cover",
+            resizeMode: "contain",
           }}
         />
       </View>
 
-      <View style={[{ top: 20, backgroundColor: "#ffffff" }]}>
+      <View style={styles.lessonBlocksContainer}>
         {videoPages.map((videoPage, index) => (
-          <Pressable
+          <LessonBlock
             key={videoPage.title}
-            style={styles.imageContainer}
+            image={require("../../../assets/video-icon.png")}
+            title="Video"
+            notes={videoPage.title}
+            titleColor="#ff9800"
             onPress={() => {
-              if (videoPage.videoID) {
-                handlePress(index);
-                navigation.navigate("VideoPage", {
-                  composerName: videoPage.title,
-                  videoID: videoPage.videoID,
-                });
-              }
+              navigation.navigate("VideoPage", {
+                videoTitle: videoPage.title,
+                videoID: videoPage.videoID,
+              });
             }}
-          >
-            <Image
-              source={require("../../../assets/video-1.png")}
-              style={styles.image}
-            />
-          </Pressable>
+          />
         ))}
 
-        {videoPages.length < 2 && (
-          <View style={styles.imageContainer}>
-            <Image source={video2} style={styles.image} />
-          </View>
-        )}
-
-        <Pressable
-          style={styles.imageContainer}
+        <LessonBlock
+          image={require("../../../assets/worksheet-icon.png")}
+          title="Worksheet"
+          notes={`Complete the worksheet of ${name}`}
+          titleColor="#4caf50"
           onPress={() => {
-            handlePress(videoPages.length);
-            navigation.navigate("Worksheet");
+            navigation.navigate("Worksheet", { worksheetContent });
           }}
-        >
-          <Image
-            source={require("../../../assets/worksheet-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
+        />
 
-        <Pressable
-          style={styles.imageContainer}
+        <LessonBlock
+          image={require("../../../assets/worksheet-icon.png")}
+          title="Review"
+          notes={`Review the knowledge of ${name}`}
+          titleColor="#2196f3"
           onPress={() => {
-            handlePress(videoPages.length + 1);
             navigation.navigate("ReviewSession");
           }}
-        >
-          <Image
-            source={require("../../../assets/review-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
-
-        <Pressable
-          style={styles.imageContainer}
-          onPress={() => {
-            handlePress(videoPages.length + 2);
-            navigation.navigate(quizRoute);
-          }}
-        >
-          <Image
-            source={require("../../../assets/mini-quiz-1.png")}
-            style={styles.image}
-          />
-        </Pressable>
+        />
       </View>
     </ScrollView>
   );

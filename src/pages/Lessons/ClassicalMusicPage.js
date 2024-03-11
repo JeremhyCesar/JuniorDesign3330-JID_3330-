@@ -104,7 +104,8 @@ export function ClassicalMusicPage({ navigation }) {
           }}
         />
       </View>
-      <View
+      <Pressable
+        onPress={() => navigation.navigate("InstrumentsHome")}
         style={[
           { top: 160, left: "8%", backgroundColor: "#00347f" },
           styles.button,
@@ -133,7 +134,7 @@ export function ClassicalMusicPage({ navigation }) {
             objectFit: "cover",
           }}
         />
-      </View>
+      </Pressable>
       <View style={{ height: 180 }} />
     </ScrollView>
   );

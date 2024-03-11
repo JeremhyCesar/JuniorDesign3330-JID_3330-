@@ -1,24 +1,23 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { ComposersPage } from "../pages/Lessons/ComposersPage";
+import { InstrumentsPage } from "../pages/Lessons/InstrumentsPage";
 import { LessonScreen } from "../components/lessons/LessonScreenFormate";
 import { VideoPage } from "../pages/Lessons/VideoPage";
 import { Worksheet } from "../pages/Lessons/Worksheet";
 import { ReviewSession } from "../pages/Lessons/ReviewSession";
-import composerLessonData from "../data/composerLessons.json";
+import instrumentLessonDate from "../data/instrumentsLessons.json";
 
 const Stack = createNativeStackNavigator();
 
-const ComposerNavigator = () => {
-
+const InstrumentNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Composers" component={ComposersPage} />
+      <Stack.Screen name="Instruments" component={InstrumentsPage} />
       <Stack.Screen name="LessonScreen">
         {(props) => {
-          const { composerName } = props.route.params;
-          const lessonData = composerLessonData.find(
-            (lesson) => lesson.composerName === composerName
+          const { instrumentName } = props.route.params;
+          const lessonData = instrumentLessonDate.find(
+            (lesson) => lesson.instrumentName === instrumentName
           );
           return <LessonScreen {...props} lessonData={lessonData} />;
         }}
@@ -37,4 +36,4 @@ const ComposerNavigator = () => {
   );
 };
 
-export default ComposerNavigator;
+export default InstrumentNavigator;

@@ -2,8 +2,7 @@ import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { ClassicalMusicPage } from "../pages/Lessons/ClassicalMusicPage";
 import ComposerNavigator from "./ComposerNavigator";
-// import MusicalWorksScreen from './screens/MusicalWorksScreen';
-// import InstrumentsScreen from './screens/InstrumentsScreen';
+import InstrumentNavigator from "./InstrumentNavigator";
 
 const Stack = createNativeStackNavigator();
 
@@ -12,8 +11,7 @@ const ClassicalMusicStack = () => {
     <Stack.Navigator>
       <Stack.Screen name="ClassicalMusic" component={ClassicalMusicPage} />
       <Stack.Screen name="ComposersHome" component={ComposerNavigator} />
-      {/* <Stack.Screen name="MusicalWorks" component={MusicalWorksScreen} />
-      <Stack.Screen name="Instruments" component={InstrumentsScreen} /> */}
+      <Stack.Screen name="InstrumentsHome" component={InstrumentNavigator} />
     </Stack.Navigator>
   );
 };

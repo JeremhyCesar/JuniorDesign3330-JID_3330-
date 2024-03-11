@@ -6,10 +6,7 @@
       "videoPages": [
         { "title": "Chopin's life", "videoID": "-4mVVRO_98Y" },
         { "title": "Chopin's music", "videoID": "w4YyTQduZDc" }
-      ],
-      "worksheetComponent": "ChopinWorksheet",
-      "reviewComponent": "ChopinReviewSession",
-      "quizComponent": "ChopinQuiz"
+      ]
     },
     {
       "composerName": "Ludwig van Beethoven",
@@ -18,9 +15,6 @@
       "videoPages": [
         { "title": "Beethoven's life", "videoID": "abc123" },
         { "title": "Beethoven's music", "videoID": "xyz789" }
-      ],
-      "worksheetComponent": "BeethovenWorksheet",
-      "reviewComponent": "BeethovenReviewSession",
-      "quizComponent": "BeethovenQuiz"
+      ]
     }
   ]

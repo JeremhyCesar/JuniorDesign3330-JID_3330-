@@ -1,0 +1,85 @@
+{
+  "composers": {
+    "Frédéric Chopin": {
+      "sections": [
+        {
+          "title": "Section 1: Early Life and Education",
+          "questions": [
+            {
+              "question": "Birth and Early Years:",
+              "details": [
+                "Date and place of birth:",
+                "Age at which Chopin started playing piano:",
+                "Name two of Chopin's early music teachers:",
+                "Describe the role of Józef Elsner in Chopin's musical development:",
+                "How did Chopin's early musical education influence his later compositions?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Life in Paris and Artistic Contributions",
+          "questions": [
+            {
+              "question": "At what age did Chopin leave Poland for Paris?",
+              "details": [
+                "Describe the significance of Paris in Chopin's career:",
+                "What were the primary types of compositions Chopin focused on?",
+                "Explain how Chopin incorporated Polish folk music into his compositions:",
+                "Discuss the characteristics of Chopin's piano playing style:",
+                "What made Chopin's compositions technically demanding?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: Personal Life and Relationships",
+          "questions": [
+            {
+              "question": "Relationship with George Sand:",
+              "details": [
+                "Who was George Sand, and what was her significance in Chopin's life?",
+                "How did Chopin's relationship with Sand influence his music?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Influence",
+          "questions": [
+            {
+              "question": "How does Chopin's music continue to influence modern pianists and composers?",
+              "details": [
+                "Conduct research on one of Chopin's major works (e.g., a specific Ballade, Prelude, or Nocturne) and analyze its musical and emotional qualities."
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "instruments": {
+    "Piano": {
+      "sections": [
+        {
+          "title": "Section 1: Early Life and Education",
+          "questions": [
+            {
+              "question": "Birth and Early Years:",
+              "details": [
+                "Date and place of birth:",
+                "Age at which Chopin started playing piano:",
+                "Name two of Chopin's early music teachers:",
+                "Describe the role of Józef Elsner in Chopin's musical development:",
+                "How did Chopin's early musical education influence his later compositions?"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "French Horn": {
+      "sections": []
+    }
+  }
+}
