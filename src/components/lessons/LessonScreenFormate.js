@@ -10,7 +10,7 @@ import {
 import { useNavigation } from "@react-navigation/native";
 import LessonBlock from "./LessonBlock";
 import worksheetData from "../../data/worksheet.json";
-import reviewData from '../../data/review.json';
+import reviewData from "../../data/review.json";
 
 const imageMap = {
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
@@ -19,13 +19,26 @@ const imageMap = {
 };
 
 export function LessonScreen({ lessonData }) {
-  const { composerName, instrumentName, introduction, imageSource, videoPages } = lessonData;
+  const {
+    composerName,
+    instrumentName,
+    introduction,
+    imageSource,
+    videoPages,
+  } = lessonData;
+  const name = composerName || instrumentName;
+  const worksheetContent =
+    worksheetData.composers[composerName] ||
+    worksheetData.instruments[instrumentName];
+  const reviewContent =
+    reviewData.composers[composerName] ||
+    reviewData.instruments[instrumentName];
+
+  const [progress, setProgress] = useState(0);
+  const [modulesComplete, setModulesComplete] = useState(0);
+  const totalTasks = videoPages.length + 3; // Videos + Worksheet + Review
 
   const navigation = useNavigation();
-
-  const name = composerName || instrumentName;
-  const worksheetContent = worksheetData.composers[composerName] || worksheetData.instruments[instrumentName];
-  const reviewContent = reviewData.composers[composerName] || reviewData.instruments[instrumentName];
 
   // moduleNo should be 0 indexed
   const handlePress = (moduleNo) => {
@@ -140,6 +153,16 @@ export function LessonScreen({ lessonData }) {
         />
       </View>
 
+      <View>
+        <Text style={styles.tasksText}>
+          My Tasks:{" "}
+          <Text style={styles.progressText}>
+            {progress}/{totalTasks}
+          </Text>{" "}
+          completed
+        </Text>
+      </View>
+
       <View style={styles.lessonBlocksContainer}>
         {videoPages.map((videoPage, index) => (
           <LessonBlock
@@ -149,6 +172,7 @@ export function LessonScreen({ lessonData }) {
             notes={videoPage.title}
             titleColor="#ff9800"
             onPress={() => {
+              handlePress(index);
               navigation.navigate("VideoPage", {
                 videoTitle: videoPage.title,
                 videoID: videoPage.videoID,
@@ -163,6 +187,7 @@ export function LessonScreen({ lessonData }) {
           notes={`Complete the worksheet of ${name}`}
           titleColor="#4caf50"
           onPress={() => {
+            handlePress(videoPages.length);
             navigation.navigate("Worksheet", { worksheetContent });
           }}
         />
@@ -173,7 +198,8 @@ export function LessonScreen({ lessonData }) {
           notes={`Review the knowledge of ${name}`}
           titleColor="#2196f3"
           onPress={() => {
-            navigation.navigate('ReviewSession', { reviewContent });
+            handlePress(videoPages.length + 1);
+            navigation.navigate("ReviewSession", { reviewContent });
           }}
         />
       </View>
