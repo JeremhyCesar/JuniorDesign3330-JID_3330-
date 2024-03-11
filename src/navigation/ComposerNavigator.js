@@ -1,10 +1,10 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
-import { ComposersScreen } from "../screens/Lessons/ComposersScreen";
-import { LessonScreen } from "../components/lessons/LessonScreen";
-import { VideoPage } from "../pages/VideoPage";
-import { Worksheet } from "../pages/Worksheet";
-import { ReviewSession } from "../pages/ReviewSession";
+import { ComposersPage } from "../pages/Lessons/ComposersPage";
+import { LessonScreen } from "../components/lessons/LessonScreenFormate";
+import { VideoPage } from "../pages/Lessons/VideoPage";
+import { Worksheet } from "../pages/Lessons/Worksheet";
+import { ReviewSession } from "../pages/Lessons/ReviewSession";
 import composerLessonData from "../data/composerLessons.json";
 
 const Stack = createStackNavigator();
@@ -12,7 +12,7 @@ const Stack = createStackNavigator();
 const ComposerNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Composers" component={ComposersScreen} />
+      <Stack.Screen name="Composers" component={ComposersPage} />
       <Stack.Screen name="LessonScreen">
         {(props) => {
           const { composerName } = props.route.params;

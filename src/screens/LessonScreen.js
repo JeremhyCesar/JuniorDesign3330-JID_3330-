@@ -65,7 +65,7 @@ export function LessonScreen({ navigation }) {
           Classical Music
         </Text>
         <Image
-          source={require("../../../assets/girl-playing-violin.png")}
+          source={require("../../assets/girl-playing-violin.png")}
           style={{
             position: "absolute",
             top: 0,
@@ -98,7 +98,7 @@ export function LessonScreen({ navigation }) {
           Contemporary Music
         </Text>
         <Image
-          source={require("../../../assets/couple-dance-party.png")}
+          source={require("../../assets/couple-dance-party.png")}
           style={{
             position: "absolute",
             top: 45,
@@ -131,7 +131,7 @@ export function LessonScreen({ navigation }) {
           Compare & Contrast
         </Text>
         <Image
-          source={require("../../../assets/saxophonist.png")}
+          source={require("../../assets/saxophonist.png")}
           style={{
             position: "absolute",
             top: 30,

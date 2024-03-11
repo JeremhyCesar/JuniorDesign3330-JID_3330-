@@ -1,6 +1,6 @@
 import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
-export function ContemporaryMusicScreen() {
+export function ContemporaryMusicPage() {
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,

@@ -1,6 +1,6 @@
 import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
-export function CompareAndContrastScreen() {
+export function CompareAndContrastPage() {
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,

@@ -7,7 +7,7 @@ import {
   Image,
 } from "react-native";
 
-export function ClassicalMusicScreen({ navigation }) {
+export function ClassicalMusicPage({ navigation }) {
   const styles = StyleSheet.create({
     button: {
       borderRadius: 31,

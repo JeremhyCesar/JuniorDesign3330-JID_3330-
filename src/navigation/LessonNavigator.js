@@ -1,9 +1,9 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { LessonScreen } from "../screens/Lessons/LessonScreen";
+import { LessonScreen } from "../screens/LessonScreen";
 import ClassicalMusicNavigator from './ClassicalMusicNavigator';
-import { ContemporaryMusicScreen } from "../screens/Lessons/ContemporaryMusicScreen";
-import { CompareAndContrastScreen } from "../screens/Lessons/CompareAndContrastScreen";
+import { ContemporaryMusicPage } from "../pages/Lessons/ContemporaryMusicPage";
+import { CompareAndContrastPage } from "../pages/Lessons/CompareAndContrastPage";
 
 const Stack = createNativeStackNavigator();
 
@@ -14,11 +14,11 @@ export function LessonNavigator() {
       <Stack.Screen name="ClassicalMusicHome" component={ClassicalMusicNavigator} />
       <Stack.Screen
         name="ContemporaryMusic"
-        component={ContemporaryMusicScreen}
+        component={ContemporaryMusicPage}
       />
       <Stack.Screen
         name="CompareAndContrast"
-        component={CompareAndContrastScreen}
+        component={CompareAndContrastPage}
       />
     </Stack.Navigator>
   );

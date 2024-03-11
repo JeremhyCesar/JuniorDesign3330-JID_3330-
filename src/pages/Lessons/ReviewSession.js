@@ -28,7 +28,7 @@ export function ReviewSession() {
                 alignItems: 'center',
                 justifyContent: 'center'
             }}>
-                <Image source={require('../../assets/teaching-icon.png')}
+                <Image source={require('../../../assets/teaching-icon.png')}
                 style={{
                     width: 130,
                     height: 130,

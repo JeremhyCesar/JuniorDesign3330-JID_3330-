@@ -7,7 +7,7 @@ import {
     Pressable,
   } from "react-native";
   
-  export function ComposersScreen({ navigation }) {
+  export function ComposersPage({ navigation }) {
     const styles = StyleSheet.create({
       button: {
         borderRadius: 30,
