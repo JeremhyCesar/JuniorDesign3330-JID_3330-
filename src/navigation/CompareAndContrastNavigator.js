@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 
 const CompareAndContrastStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="CompareAndContrastHome" component={CompareAndContrastPage} />
       <Stack.Screen name="ComposersHome" component={ComposerNavigator} />
       <Stack.Screen name='MusicWorkHome' component={MusicWorksNavigator} />

@@ -55,7 +55,7 @@ export function HomeScreen({ navigation }) {
                     textAlign: 'center'
                 }}>Where words fail, music speaks.</Text>
             </View>
-            <Pressable onPress={() => {navigation.navigate('LessonNavigator', { screen: 'LessonHome' })}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+            <Pressable onPress={() => {navigation.navigate('Lessons', { screen: 'LessonHome' })}} style={[{top: 126, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -89,7 +89,7 @@ export function HomeScreen({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </View>
-            <Pressable onPress={() => {navigation.navigate('Quizzes', { screen: 'QuizSelection'})}} 
+            <Pressable onPress={() => {navigation.navigate('Quizzes', { screen: 'QuizScreen'})}} 
             style={[{top: 190, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
                <Text style={{
                    top: 26,

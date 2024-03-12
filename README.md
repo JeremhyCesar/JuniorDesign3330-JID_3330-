@@ -3,6 +3,19 @@ The purpose of this mobile application, Notes on the Note Makers, will be to rai
 
 # Release Notes
 
+## Version 1.3.0
+
+### Features
+* Created 20 Classical and Contemporary Music Lessons
+* Added a new "Quizzes" section to the bottom bar for navigational ease
+* Improved navigation in between Home Page, lessons, worksheets, and articles
+* Created quiz navigation page that generates random quiz based on topics
+* Added topic selectors for quizzes based on difficulty and content specification
+### Bug Fixes
+* Fixed issue of attempting to view a Compare and Contrast Lesson
+### Known Issues
+* No known issues
+
 ## Version 1.2.0
 
 ### Features

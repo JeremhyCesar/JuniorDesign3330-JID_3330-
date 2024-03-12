@@ -12,7 +12,7 @@ const Stack = createNativeStackNavigator();
 const ComposerNavigator = () => {
 
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Composers" component={ComposersPage} />
       <Stack.Screen name="LessonScreen">
         {(props) => {

@@ -9,7 +9,7 @@ const Stack = createNativeStackNavigator();
 
 export function LessonNavigator() {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="LessonHome" component={LessonScreen} />
       <Stack.Screen name="ClassicalMusicHome" component={ClassicalMusicNavigator} />
       <Stack.Screen

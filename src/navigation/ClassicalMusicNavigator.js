@@ -8,7 +8,7 @@ const Stack = createNativeStackNavigator();
 
 const ClassicalMusicStack = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="ClassicalMusic" component={ClassicalMusicPage} />
       <Stack.Screen name="ComposersHome" component={ComposerNavigator} />
       <Stack.Screen name="InstrumentsHome" component={InstrumentNavigator} />

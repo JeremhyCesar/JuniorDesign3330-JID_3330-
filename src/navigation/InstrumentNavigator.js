@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 
 const InstrumentNavigator = () => {
   return (
-    <Stack.Navigator>
+    <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Instruments" component={InstrumentsPage} />
       <Stack.Screen name="LessonScreen">
         {(props) => {

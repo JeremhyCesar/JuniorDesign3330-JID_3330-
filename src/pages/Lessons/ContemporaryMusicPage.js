@@ -1,4 +1,4 @@
-import { StyleSheet, ScrollView, Text, View, Image } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, Pressable } from 'react-native';
 
 export function ContemporaryMusicPage() {
     const styles = StyleSheet.create({
@@ -46,7 +46,7 @@ export function ContemporaryMusicPage() {
                     objectFit: 'cover'
                 }}/>
             </View>
-            <View style={[{top: 126, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
+            {/* <View style={[{top: 126, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -63,7 +63,25 @@ export function ContemporaryMusicPage() {
                     height: 150,
                     objectFit: 'cover'
                 }}/>
-            </View>
+            </View> */}
+            <Pressable onPress={() => navigation.navigate('ContrastDemo')} style={[{ top: 94, left: '8%', backgroundColor: '#ffbb37' }, styles.button]}>
+                <Text style={{
+                    top: 26,
+                    left: '10%',
+                    fontSize: 28,
+                    textAlign: 'left',
+                    fontWeight: 'bold',
+                    color: 'white',
+                }}>Musical Works</Text>
+                <Image source={require('../../../assets/girl-enjoying-music.png')} style={{
+                    position: 'absolute',
+                    top: 70,
+                    left: '35%',
+                    width: 190,
+                    height: 150,
+                    objectFit: 'cover'
+                }} />
+            </Pressable>
             <View style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
                 <Text style={{
                     top: 26,

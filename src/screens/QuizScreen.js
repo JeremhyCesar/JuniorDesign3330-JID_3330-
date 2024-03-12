@@ -3,20 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import LockIcon from '../../assets/-icon-lock-locked.svg';
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from "react-native";
 
-export function QuizScreen() {
-    const Stack = createNativeStackNavigator();
-    return (
-      <Stack.Navigator
-        initialRouteName="QuizSelection"
-        backBehavior="history"
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name="QuizSelection" component={QuizSelection} />
-      </Stack.Navigator>
-    );
-}
-
-function QuizScreen({ navigation }) {
+export function QuizScreen({ navigation }) {
     const styles = StyleSheet.create({
       button: {
         borderRadius: 31,
@@ -52,7 +39,12 @@ function QuizScreen({ navigation }) {
         >
           Test your knowledge
         </Text>
-        <View style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+        <Pressable
+         onPress={() => navigation.navigate("QuizTopic")}
+         style={[
+           { top: 94, left: "8%", backgroundColor: "#ffbb37" },
+           styles.button,
+         ]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -88,8 +80,13 @@ function QuizScreen({ navigation }) {
                     color: 'white',
                     flexWrap: "wrap"
                 }}>0% completed</Text>
-        </View>
-        <View style={[{top: 124, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
+        </Pressable>
+        <Pressable
+         onPress={() => navigation.navigate("QuizTopic")}
+         style={[
+           { top: 124, left: "8%", backgroundColor: "#e24808" },
+           styles.button,
+         ]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -125,8 +122,13 @@ function QuizScreen({ navigation }) {
                     color: 'white',
                     flexWrap: "wrap"
                 }}>0% completed</Text>
-        </View>
-        <View style={[{top: 154, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+        </Pressable>
+        <Pressable
+         onPress={() => navigation.navigate("QuizTopic")}
+         style={[
+           { top: 154, left: "8%", backgroundColor: "#00347f" },
+           styles.button,
+         ]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -162,7 +164,7 @@ function QuizScreen({ navigation }) {
                     color: 'white',
                     flexWrap: "wrap"
                 }}>0% completed</Text>
-            </View>
+            </Pressable>
         <View style={{ height: 180 }} />
       </ScrollView>
     );
