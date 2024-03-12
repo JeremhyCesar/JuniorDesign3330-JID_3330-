@@ -7,7 +7,6 @@ import {
   Pressable,
 } from "react-native";
 import React, { useState } from "react";
-import LessonBlock from "./LessonBlock";
 import { useNavigation } from "@react-navigation/native";
 
 export function ChopinScreen() {
