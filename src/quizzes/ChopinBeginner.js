@@ -25,3 +25,26 @@ export const questions = [
     "Vienna Conservatory",
     "Paris Conservatory"]];
 
+export const correctAnswers = [
+    {
+        question: "Where was Chopin born?",
+        correctAnswer: "Poland"
+    },
+    {
+        question: "What was Chopin's instrument of choice?",
+        correctAnswer: "The Piano"
+    },
+    {
+        question: "What type of music did Chopin focus on?",
+        correctAnswer: "Short Form Piano"
+    },
+    {
+        question: "What did Chopin's father do for work?",
+        correctAnswer: "Teacher"
+    },
+    {
+        question: "Where did Chopin study Music?",
+        correctAnswer: "Warsaw Conservatory"
+    }
+];
+

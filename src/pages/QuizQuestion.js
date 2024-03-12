@@ -1,15 +1,24 @@
 import { View, Text, Pressable, Image, TouchableOpacity } from "react-native"; 
+import { questions, correctAnswers } from '../quizzes/ChopinBeginner.js';
 import { Asset } from "expo-asset";
 
 const quizQuestions = {
     ChopinBeginner: require("../quizzes/ChopinBeginner")
 }
+
+score = 0;
+
 export function QuizQuestion ({ route, navigation}) {
     const {composerName, quizId, questionNo, answers} = route.params;
     var quizPath = "../quizzes/" + quizId;
     const { questions } = quizQuestions["ChopinBeginner"];
     let ansOrder = [1, 2, 3, 4];
     ansOrder.sort(() => Math.random() - 0.5);
+
+    if (questionNo == 1) {
+        score = 0;
+    }
+
     return (
         <View style={{flexDirection: "column", alignContent: "center", width: '100%', height: '100%'}}>
             <Text style={{top:50, fontWeight: "bold", justifyContent: "center", alignSelf: "center", color: "#00347f", fontSize: 32}}>{composerName}</Text>
@@ -48,5 +57,29 @@ function recordAnswer(composerName, quizId, questionNo, answers, answer, navigat
     }
     let newQuestionNo = questionNo + 1;
     newAnswers[questionNo - 1] = answer;
-    navigation.navigate('QuizQuestion', {composerName: composerName, quizId: quizId, questionNo: newQuestionNo, answers: newAnswers})
+
+    // Increase score if the answer is correct
+    if (isAnswerCorrect(questions[questionNo - 1][0], answer)) {
+        score++;
+    }
+    
+    // When the quiz is finished and the question number exceeds 5, direct to the QuizResults page
+    if (newQuestionNo > 5) {
+        navigation.navigate('QuizResults', { score: score, screen: 'QuizResults'})
+    } else {
+        navigation.navigate('QuizQuestion', {composerName: composerName, quizId: quizId, questionNo: newQuestionNo, answers: newAnswers})
+    }
+    
+}
+
+function isAnswerCorrect(questionAsked, userAnswer) {
+    // Find the correct answer object based on the question asked
+    const correctAnswerObj = correctAnswers.find(answerObj => answerObj.question === questionAsked);
+  
+    // If the question exists in our data, check the user's answer against the correct answer
+    if (correctAnswerObj && correctAnswerObj.correctAnswer === userAnswer) {
+      return true; // The answer is correct
+    } else {
+      return false; // The answer is incorrect or the question was not found
+    }
 }
