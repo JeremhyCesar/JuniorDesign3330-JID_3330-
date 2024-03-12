@@ -6,6 +6,7 @@ import {
     Image,
     Pressable,
   } from "react-native";
+  import instrumentLessonData from "../../data/instrumentsLessons.json";
   
   export function InstrumentsPage({ navigation }) {
     const styles = StyleSheet.create({
@@ -27,8 +28,8 @@ import {
       },
     });
   
-    const handleInstrumentPress = (instrumentName) => {
-      navigation.navigate("LessonScreen", { instrumentName });
+    const handleInstrumentPress = (lessonData) => {
+      navigation.navigate("LessonScreen", { lessonData });
     };
   
     return (
@@ -57,7 +58,11 @@ import {
         </Text>
   
         <Pressable
-          onPress={() => handleInstrumentPress("Piano")}
+          onPress={() =>
+            handleInstrumentPress(
+              instrumentLessonData.find((lesson) => lesson.instrumentName === "Piano")
+            )
+          }
           style={[
             { top: 94, left: "8%", backgroundColor: "#ffffff" },
             styles.button,
@@ -84,7 +89,11 @@ import {
         </Pressable>
   
         <Pressable
-          onPress={() => handleInstrumentPress("French Horn")}
+          onPress={() =>
+            handleInstrumentPress(
+              instrumentLessonData.find((lesson) => lesson.instrumentName === "French Horn")
+            )
+          }
           style={[
             { top: 109, left: "8%", backgroundColor: "#ffffff" },
             styles.button,

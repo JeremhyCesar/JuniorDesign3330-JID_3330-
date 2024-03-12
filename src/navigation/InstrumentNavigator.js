@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { InstrumentsPage } from "../pages/Lessons/InstrumentsPage";
-import { LessonScreen } from "../components/lessons/LessonScreenFormate";
+import { LessonScreen } from "../components/Lessons/LessonScreenFormate";
 import { VideoPage } from "../pages/Lessons/VideoPage";
 import { Worksheet } from "../pages/Lessons/Worksheet";
 import { ReviewSession } from "../pages/Lessons/ReviewSession";
@@ -15,10 +15,8 @@ const InstrumentNavigator = () => {
       <Stack.Screen name="Instruments" component={InstrumentsPage} />
       <Stack.Screen name="LessonScreen">
         {(props) => {
-          const { instrumentName } = props.route.params;
-          const lessonData = instrumentLessonData.find(
-            (lesson) => lesson.instrumentName === instrumentName
-          );
+          const { lessonData } = props.route.params;
+          
           return <LessonScreen {...props} lessonData={lessonData} />;
         }}
       </Stack.Screen>
