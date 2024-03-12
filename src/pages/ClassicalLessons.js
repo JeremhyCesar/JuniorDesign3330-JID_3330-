@@ -64,8 +64,7 @@ export function ClassicalLessons({ navigation }) {
                     objectFit: 'cover'
                 }}/>
             </View>
-
-            <Pressable onPress={() => navigation.navigate('Instruments')} style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
+            <View style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -82,7 +81,7 @@ export function ClassicalLessons({ navigation }) {
                     height: 220,
                     objectFit: 'cover'
                 }}/>
-            </Pressable>
+            </View>
             <View style={{height: 180}}/>
         </ScrollView>
     );
