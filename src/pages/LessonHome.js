@@ -15,7 +15,6 @@ import { ChopinScreen } from "./ChopinScreen";
 import { VideoPage } from "./VideoPage";
 import { Worksheet } from "./Worksheet";
 import { ReviewSession } from "./ReviewSession";
-import InstrumentNavigator from "../navigation/InstrumentNavigator";
 
 export function Lessons() {
   const Stack = createNativeStackNavigator();
@@ -28,7 +27,6 @@ export function Lessons() {
       <Stack.Screen name="LessonHome" component={LessonHome} />
       <Stack.Screen name="ClassicalLessons" component={ClassicalLessons} />
       <Stack.Screen name="ClassicalComposers" component={ClassicalComposers} />
-      <Stack.Screen name="Instruments" component={InstrumentNavigator} />
       <Stack.Screen
         name="ContemporaryLessons"
         component={ContemporaryLessons}
