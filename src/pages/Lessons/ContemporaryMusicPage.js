@@ -1,6 +1,6 @@
-import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
+import { StyleSheet, ScrollView, Text, View, Image, Pressable } from 'react-native';
 
-export function ClassicalLessons({ navigation }) {
+export function ContemporaryMusicPage() {
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,
@@ -20,7 +20,7 @@ export function ClassicalLessons({ navigation }) {
                 left: '8%',
                 fontSize: 42,
                 color: '#333'
-            }}>Classical Lessons</Text>
+            }}>Contemporary Lessons</Text>
             <Text style={{
                 top: 68,
                 left: '8%',
@@ -28,7 +28,7 @@ export function ClassicalLessons({ navigation }) {
                 textAlign: 'left',
                 color: '#717171'
             }}>What should we learn now?</Text>
-            <Pressable onPress={() => navigation.navigate('ClassicalComposers')} style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
+            <View style={[{top: 94, left: '8%', backgroundColor: '#ffbb37'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -37,7 +37,7 @@ export function ClassicalLessons({ navigation }) {
                     fontWeight: 'bold',
                     color: 'white',
                 }}>Composers</Text>
-                <Image source={require('../../assets/man-playing-piano.png')} style={{
+                <Image source={require('../../../assets/man-playing-piano.png')} style={{
                     position: 'absolute',
                     top: 20,
                     left: '30%',
@@ -45,8 +45,8 @@ export function ClassicalLessons({ navigation }) {
                     height: 220,
                     objectFit: 'cover'
                 }}/>
-            </Pressable>
-            <View style={[{top: 126, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
+            </View>
+            {/* <View style={[{top: 126, left: '8%', backgroundColor: '#e24808'}, styles.button]}>
                 <Text style={{
                     top: 26,
                     left: '10%',
@@ -55,7 +55,7 @@ export function ClassicalLessons({ navigation }) {
                     fontWeight: 'bold',
                     color: 'white',
                 }}>Musical Works</Text>
-                <Image source={require('../../assets/girl-enjoying-music.png')} style={{
+                <Image source={require('../../../assets/girl-enjoying-music.png')} style={{
                     position: 'absolute',
                     top: 70,
                     left: '35%',
@@ -63,7 +63,25 @@ export function ClassicalLessons({ navigation }) {
                     height: 150,
                     objectFit: 'cover'
                 }}/>
-            </View>
+            </View> */}
+            <Pressable onPress={() => navigation.navigate('ContrastDemo')} style={[{ top: 94, left: '8%', backgroundColor: '#ffbb37' }, styles.button]}>
+                <Text style={{
+                    top: 26,
+                    left: '10%',
+                    fontSize: 28,
+                    textAlign: 'left',
+                    fontWeight: 'bold',
+                    color: 'white',
+                }}>Musical Works</Text>
+                <Image source={require('../../../assets/girl-enjoying-music.png')} style={{
+                    position: 'absolute',
+                    top: 70,
+                    left: '35%',
+                    width: 190,
+                    height: 150,
+                    objectFit: 'cover'
+                }} />
+            </Pressable>
             <View style={[{top: 160, left: '8%', backgroundColor: '#00347f'}, styles.button]}>
                 <Text style={{
                     top: 26,
@@ -73,7 +91,7 @@ export function ClassicalLessons({ navigation }) {
                     fontWeight: 'bold',
                     color: 'white',
                 }}>Instruments</Text>
-                <Image source={require('../../assets/musical-band-performing.png')} style={{
+                <Image source={require('../../../assets/musical-band-performing.png')} style={{
                     position: 'absolute',
                     top: 30,
                     left: '35%',
