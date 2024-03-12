@@ -20,7 +20,7 @@ const HomeNavigator = () => {
         <Tab.Screen
           name="Quizzes"
           component={QuizNavigator}
-          options={{tabBarIcon: () => {return (<Image source={require('../../assets/quiz-icon.png')} style={styles.quizTabIcon}/>)}}}/>
+          options={{tabBarIcon: () => {return (<Image source={require('../../assets/quiz-nav-icon.png')} style={styles.quizTabIcon}/>)}}}/>
         <Tab.Screen
           name="Lessons"
 
