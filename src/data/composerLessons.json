@@ -11,10 +11,10 @@
     {
       "composerName": "Ludwig van Beethoven",
       "introduction": "Time to explore Beethoven!",
-      "imageSource": "../../assets/beethoven.png",
+      "imageSource": "Bethoven.png",
       "videoPages": [
-        { "title": "Beethoven's life", "videoID": "abc123" },
-        { "title": "Beethoven's music", "videoID": "xyz789" }
+        { "title": "Beethoven's life", "videoID": "9h1xvHUkD9A" },
+        { "title": "Beethoven's music", "videoID": "-4788Tmz9Zo" }
       ]
     }
   ]

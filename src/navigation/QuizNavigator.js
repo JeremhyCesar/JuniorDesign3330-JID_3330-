@@ -1,6 +1,5 @@
 import React from 'react';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { Pressable, StyleSheet, ScrollView, Text, View, Image } from "react-native";
 import { QuizQuestion } from "../pages/QuizQuestion"
 import { QuizTopic } from "../pages/QuizTopic"
 import { QuizScreen } from "../screens/QuizScreen"
