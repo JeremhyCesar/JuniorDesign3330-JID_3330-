@@ -26,6 +26,7 @@
     "react-native-svg": "^15.1.0",
     "react-native-webview": "^13.8.1",
     "react-native-youtube-iframe": "^2.3.0",
+    "validator": "^13.11.0",
     "yarn": "^1.22.21"
   },
   "devDependencies": {
