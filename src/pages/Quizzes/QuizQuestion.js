@@ -1,9 +1,9 @@
 import { View, Text, Pressable, Image, TouchableOpacity } from "react-native"; 
-import { questions, correctAnswers } from '../quizzes/ChopinBeginner.js';
+import { questions, correctAnswers } from '../../quizzes/ChopinBeginner.js';
 import { Asset } from "expo-asset";
 
 const quizQuestions = {
-    ChopinBeginner: require("../quizzes/ChopinBeginner")
+    ChopinBeginner: require("../../quizzes/ChopinBeginner.js")
 }
 
 score = 0;
@@ -25,7 +25,7 @@ export function QuizQuestion ({ route, navigation}) {
             <View style={{top: 75, left: '5%', width: '90%', height: '83%', backgroundColor: '#1e2237', borderRadius: 34}}>
                 {questionNo != 1 && 
                     <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: composerName, quizId: quizId, questionNo: questionNo - 1, answers: answers})}>
-                        <Image source={require("../../assets/back-arrow.png")} style={{top: 25, left: 10, width: 40, }}/>
+                        <Image source={require("../../../assets/back-arrow.png")} style={{top: 25, left: 10, width: 40, }}/>
                     </TouchableOpacity>}
                 <Text style={{color: '#ffffff', position: "absolute", fontSize: 26, alignSelf: "center", fontWeight: "bold", top: 27}}>Question {questionNo}</Text>
                 <View style={{position: "absolute", backgroundColor: '#cccccc', width: '100%', height: 5, top: 85}}/>

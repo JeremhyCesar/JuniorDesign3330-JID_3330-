@@ -1,6 +1,5 @@
 import React from 'react';
 import { StyleSheet, View, Text, Image, ScrollView, TouchableOpacity } from 'react-native';
-import Lock from '../../assets/-icon-heart.svg';
 
 export function QuizTopic({ navigation }) {
   const styles = StyleSheet.create({
@@ -93,7 +92,7 @@ export function QuizTopic({ navigation }) {
            styles.quizContainer,
          ]}>
         <Text style={styles.quizTitle}>Frédéric Chopin</Text>
-        <Image source={require('../../assets/chopin.png')}
+        <Image source={require('../../../assets/chopin.png')}
         style={{
             width: 100,
             height: 150, 
@@ -136,7 +135,7 @@ export function QuizTopic({ navigation }) {
            styles.quizContainer,
          ]}>
         <Text style={styles.quizTitle}>Locked...</Text>
-        <Image source={require('../../assets/lock.png')}
+        <Image source={require('../../../assets/lock.png')}
         style={{
             width: 100,
             height: 100, 
