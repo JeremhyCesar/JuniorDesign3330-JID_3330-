@@ -123,16 +123,19 @@ function FriendsPage() {
             color: 'white',
             fontSize: 16,
             fontWeight: 'bold',
+            zIndex: 5
         },
         nameText: {
             color: 'white',
             fontSize: 16,
             fontWeight: 'bold',
+            zIndex: 6
         },
         userText: {
             color: 'grey',
             fontSize: 10,
             fontWeight: 'regular',
+            zIndex: 6
         },
         longLine: {
             backgroundColor: 'grey',
@@ -141,97 +144,88 @@ function FriendsPage() {
             left: 65,
             borderRadius: 20,
             position: 'absolute',
+            zIndex: 2
         },
+        friendsPageBackground: {
+            backgroundColor: '#00347F', 
+            flex: 1,
+        },
+        toggle: {
+            position: 'center',
+            height: 500,
+            width: 345,
+            borderTopLeftRadius: 15,
+            borderTopRightRadius: 15,
+            borderBottomLeftRadius: 0,
+            borderBottomRightRadius: 0,
+            zIndex: 1
+        }
     });
 
     return (
-        <View style={{ flex: 1 }}>
-            <View style={styles.sides}></View>
-            <View style={styles.shape}></View>
-            <View style={[{ top: 80, left: '8%', backgroundColor: '#1E2237' }, styles.toggle]}>
-                <Text style={{
-                    marginTop: 10,
-                    left: '10%',
-                    fontSize: 48,
-                    textAlign: 'left',
-                    fontWeight: 'bold',
-                    color: 'white'
-                }}></Text>
-            </View>
-            <Pressable onPress={() => { }} style={{ top: -730 }}>
-                <Image source={require('../../assets/alexander-hipp-iEEBWgY_6lA-unsplash.jpg')} style={styles.circleImage} />
-            </Pressable>
+        <ScrollView style={[styles.friendsPageBackground, { flex: 1 }]}>
+            <View style={[{top: -90}, styles.sides]}></View>
+            <View style={[{top: -90}, styles.shape]}></View>
 
-            <Pressable onPress={() => { }} style={{ left: '24%', top: -650 }}>
-                <Image source={require('../../assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg')} style={styles.circleImage} />
-            </Pressable>
+            {/* Images */}
+            <View>
+                <Pressable onPress={() => { }} style={{ top: -360 }}>
+                    <Image source={require('../../assets/alexander-hipp-iEEBWgY_6lA-unsplash.jpg')} style={styles.circleImage} />
+                </Pressable>
 
-            <Pressable onPress={() => { }} style={{ left: '-25%', top: -650 }}>
-                <Image source={require('../../assets/oguz-yagiz-kara-MZf0mI14RI0-unsplash.jpg')} style={styles.circleImage} />
-            </Pressable>
+                <Pressable onPress={() => { }} style={{ left: '24%', top: -280 }}>
+                    <Image source={require('../../assets/michael-dam-mEZ3PoFGs_k-unsplash.jpg')} style={styles.circleImage} />
+                </Pressable>
 
-            <View style={[{ top: 370, left: '21.5%', backgroundColor: '#009BD6' }, styles.smallCircleContainer]}>
-                <Text style={styles.numberText}>2</Text>
+                <Pressable onPress={() => { }} style={{ left: '-23.5%', top: -280 }}>
+                    <Image source={require('../../assets/oguz-yagiz-kara-MZf0mI14RI0-unsplash.jpg')} style={styles.circleImage} />
+                </Pressable>
             </View>
 
-            <View style={[{ top: 290, left: '46.5%', backgroundColor: '#FFAA00' }, styles.smallCircleContainer]}>
-                <Text style={styles.numberText}>1</Text>
+            {/* Text */}
+            <View>
+                <Text style={[{ top: -165, left: 94 }, styles.nameText]}>Jim</Text>
+                <Text style={[{ top: -260, left: 187.5 }, styles.nameText]}>Dave</Text>
+                <Text style={[{ top: -203, left: 287 }, styles.nameText]}>Tina</Text>
+
+                <Text style={[{ top: -200, left: 90 }, styles.userText]}>@jimbo</Text>
+                <Text style={[{ top: -290, left: 181.5 }, styles.userText]}>@thedavid</Text>
+                <Text style={[{ top: -225, left: 287 }, styles.userText]}>@tina12</Text>
+
+                <Text style={[{ top: 280, left: 150 }, styles.nameText]}>John</Text>
+                <Text style={[{ top: 460, left: 150 }, styles.nameText]}>Mary</Text>
+                <Text style={[{ top: 527, left: 150 }, styles.nameText]}>Lara</Text>
+                <Text style={[{ top: 600, left: 150 }, styles.nameText]}>May</Text>
+                <Text style={[{ top: 212, left: 150 }, styles.nameText]}>Bob</Text>
+
+                <Text style={[{ top: 311, left: 150 }, styles.userText]}>@heyitsjohn</Text>
+                <Text style={[{ top: 394, left: 150 }, styles.userText]}>@hadalamb</Text>
+                <Text style={[{ top: 465, left: 150 }, styles.userText]}>@thatgirllara</Text>
+                <Text style={[{ top: 548, left: 150 }, styles.userText]}>@springmay</Text>
+                <Text style={[{ top: 170, left: 150 }, styles.userText]}>@robert</Text>
             </View>
 
-            <View style={[{ top: 370, left: '70.5%', backgroundColor: '#00D95F' }, styles.smallCircleContainer]}>
-                <Text style={styles.numberText}>3</Text>
-            </View>
-
-            <Pressable onPress={() => { }} style={{ left: '-25%', top: -80 }}>
-                <Image source={require('../../assets/alex-suprun-ZHvM3XIOHoE-unsplash.jpg')} style={styles.userImage} />
-            </Pressable>
-
-            <Pressable onPress={() => { }} style={{ left: '-25%', top: -170 }}>
-                <Image source={require('../../assets/christopher-campbell-rDEOVtE7vOs-unsplash.jpg')} style={styles.userImage} />
-            </Pressable>
-
-            <Pressable onPress={() => { }} style={{ left: '-25%', top: -260 }}>
-                <Image source={require('../../assets/christina-wocintechchat-com-SJvDxw0azqw-unsplash.jpg')} style={styles.userImage} />
-            </Pressable>
-
-            <Pressable onPress={() => { }} style={{ left: '-25%', top: -350 }}>
-                <Image source={require('../../assets/ed-pylypenko-7zcbtbI4E2o-unsplash.jpg')} style={styles.userImage} />
-            </Pressable>
-
-            <Pressable onPress={() => { }} style={{ left: '-25%', top: -440 }}>
-                <Image source={require('../../assets/linkedin-sales-solutions-pAtA8xe_iVM-unsplash.jpg')} style={styles.userImage} />
-            </Pressable>
-
-            <Text style={[{ top: -520, left: 89 }, styles.nameText]}>Jim</Text>
-            <Text style={[{ top: -620, left: 187.5 }, styles.nameText]}>Dave</Text>
-            <Text style={[{ top: -558, left: 290 }, styles.nameText]}>Tina</Text>
-
-            <Text style={[{ top: -545, left: 86 }, styles.userText]}>@jimbo</Text>
-            <Text style={[{ top: -635, left: 181.5 }, styles.userText]}>@thedavid</Text>
-            <Text style={[{ top: -570, left: 287 }, styles.userText]}>@tina12</Text>
-
-            <Text style={[{ top: -385, left: 150 }, styles.nameText]}>John</Text>
-            <Text style={[{ top: -310, left: 150 }, styles.nameText]}>Mary</Text>
-            <Text style={[{ top: -243, left: 150 }, styles.nameText]}>Lara</Text>
-            <Text style={[{ top: -170, left: 150 }, styles.nameText]}>May</Text>
-            <Text style={[{ top: -558, left: 150 }, styles.nameText]}>Bob</Text>
-
-            <Text style={[{ top: -459, left: 150 }, styles.userText]}>@heyitsjohn</Text>
-            <Text style={[{ top: -376, left: 150 }, styles.userText]}>@hadalamb</Text>
-            <Text style={[{ top: -305, left: 150 }, styles.userText]}>@thatgirllara</Text>
-            <Text style={[{ top: -222, left: 150 }, styles.userText]}>@springmay</Text>
-            <Text style={[{ top: -600, left: 150 }, styles.userText]}>@robert</Text>
-
-
-            <View style={[{ top: 605 }, styles.longLine]}></View>
-            <View style={[{ top: 695 }, styles.longLine]}></View>
-            <View style={[{ top: 785 }, styles.longLine]}></View>
-            <View style={[{ top: 875 }, styles.longLine]}></View>
-
-            <View style={{ height: 100 }} />
+            <View style={[{ top: 410 }, styles.longLine]}></View>
+            <View style={[{ top: 500 }, styles.longLine]}></View>
+            <View style={[{ top: 590 }, styles.longLine]}></View>
+            <View style={[{ top: 680 }, styles.longLine]}></View>
+            
+        <View style={[{ top: -310, left: '8%', backgroundColor: '#1E2237', zIndex: 1 }, styles.toggle]}></View>
+        <View style={{ position: 'absolute', top: 90, left: 60 }}>
+            <Text style={[styles.numberText, { backgroundColor: 'yellow' }]}>1</Text>
         </View>
+        <View style={[styles.smallCircleContainer, {backgroundColor: 'yellow', top: 90, left: 60, position: 'absolute' }]}></View>
+        <View style={{ position: 'absolute', top: -260, left: 155 }}>
+            <Text style={[styles.numberText, { backgroundColor: 'green' }]}>2</Text>
+        </View>
+        <View style={{ position: 'absolute', top: -203, left: 255 }}>
+            <Text style={[styles.numberText, { backgroundColor: 'lightblue' }]}>3</Text>
+        </View>
+            
+        </ScrollView>
     );
 }
+
 
 function NationalPage() {
     return (
