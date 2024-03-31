@@ -4,7 +4,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { HomeScreen } from "../screens/HomeScreen";
 import { QuizNavigator } from "./QuizNavigator";
 import LessonNavigator from "./LessonNavigator";
-import { Social } from "../pages/SocialPage";
+import { SocialNavigator } from "./SocialNavigator"
 import { useNavigation } from "@react-navigation/native";
 
 const Stack = createStackNavigator();
@@ -59,7 +59,7 @@ const HomeNavigator = () => {
           />
           <Stack.Screen
             name="Social"
-            component={Social}
+            component={SocialNavigator}
             options={{
               tabBarIcon: () => (
                 <Image
