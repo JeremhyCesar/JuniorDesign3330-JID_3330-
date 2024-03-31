@@ -14,11 +14,11 @@ export function QuizNavigator() {
       initialRouteName="QuizScreen"
       screenOptions={{ headerShown: false }}
     >
-      <Stack.Screen name="QuizScreen" component={QuizScreen} />
+      <Stack.Screen name="My Quizzes" component={QuizScreen} />
       <Stack.Screen
         name="CreateRoomScreen"
         component={CreateRoomScreen}
-        options={{ headerShown: true, title: "Create Room" }}
+        options={{ headerShown: true, title: "Create an Online Quiz Room" }}
       />
       <Stack.Screen name="QuizQuestion" component={QuizQuestion} />
       <Stack.Screen name="QuizTopic" component={QuizTopic} />
