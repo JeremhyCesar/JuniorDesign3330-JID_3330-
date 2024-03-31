@@ -1,6 +1,4 @@
 import React from "react";
-import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import LockIcon from "../../assets/-icon-lock-locked.svg";
 import {
   Pressable,
   StyleSheet,
@@ -9,6 +7,7 @@ import {
   View,
   Image,
 } from "react-native";
+import { CreateRoomScreen } from "../pages/Quizzes/CreateOnlineQuizRoom";
 
 export function QuizScreen({ navigation }) {
   const styles = StyleSheet.create({
@@ -83,7 +82,7 @@ export function QuizScreen({ navigation }) {
         <View style={styles.buttonContainer}>
           <Pressable
             style={[styles.button, { marginBottom: 20 }]}
-            onPress={() => navigation.navigate("CreateOnlineQuiz")}
+            onPress={() => navigation.navigate("CreateRoomScreen")}
           >
             <Text style={[styles.buttonText, { color: "#ffbb37" }]}>
               Create Room

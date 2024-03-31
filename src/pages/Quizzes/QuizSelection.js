@@ -2,7 +2,7 @@ import React from 'react';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from "react-native";
 import { QuizQuestion } from "./QuizQuestion"
-import { QuizTopic } from "./QuizTopic"
+import { QuizTopic } from "../QuizTopic"
 
 export function Quizzes() {
     const Stack = createNativeStackNavigator();

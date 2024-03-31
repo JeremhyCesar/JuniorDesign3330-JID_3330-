@@ -1,23 +1,28 @@
-import React from 'react';
+import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import { QuizQuestion } from "../pages/QuizQuestion"
-import { QuizTopic } from "../pages/QuizTopic"
-import { QuizScreen } from "../screens/QuizScreen"
-import { QuizResults } from "../pages/Lessons/QuizResults"
+import { QuizQuestion } from "../pages/Quizzes/QuizQuestion";
+import { QuizTopic } from "../pages/Quizzes/QuizTopic";
+import { QuizScreen } from "../screens/QuizScreen";
+import { QuizResults } from "../pages/Lessons/QuizResults";
+import { CreateRoomScreen } from "../pages/Quizzes/CreateOnlineQuizRoom";
 
 const Stack = createNativeStackNavigator();
 
 export function QuizNavigator() {
-    return (
-      <Stack.Navigator
-        initialRouteName="QuizScreen"
-        backBehavior="QuizScreen"
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen name="QuizScreen" component={QuizScreen} />
-        <Stack.Screen name="QuizQuestion" component={QuizQuestion} />
-        <Stack.Screen name="QuizTopic" component={QuizTopic} />
-        <Stack.Screen name="QuizResults" component={QuizResults} />
-      </Stack.Navigator>
-    );
+  return (
+    <Stack.Navigator
+      initialRouteName="QuizScreen"
+      screenOptions={{ headerShown: false }}
+    >
+      <Stack.Screen name="QuizScreen" component={QuizScreen} />
+      <Stack.Screen
+        name="CreateRoomScreen"
+        component={CreateRoomScreen}
+        options={{ headerShown: true, title: "Create Room" }}
+      />
+      <Stack.Screen name="QuizQuestion" component={QuizQuestion} />
+      <Stack.Screen name="QuizTopic" component={QuizTopic} />
+      <Stack.Screen name="QuizResults" component={QuizResults} />
+    </Stack.Navigator>
+  );
 }
