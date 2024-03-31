@@ -11,7 +11,7 @@ export function QuizNavigator() {
     return (
       <Stack.Navigator
         initialRouteName="QuizScreen"
-        backBehavior="history"
+        backBehavior="QuizScreen"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="QuizScreen" component={QuizScreen} />

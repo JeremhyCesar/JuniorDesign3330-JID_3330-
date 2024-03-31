@@ -9,7 +9,7 @@ export function Quizzes() {
     return (
       <Stack.Navigator
         initialRouteName="QuizSelection"
-        backBehavior="history"
+        backBehavior="QuizSelection"
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="QuizSelection" component={QuizSelection} />
