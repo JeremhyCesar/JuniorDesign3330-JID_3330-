@@ -1,5 +1,6 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { QuizAnswers } from "../pages/Quizzes/QuizAnswers";
 import { QuizQuestion } from "../pages/Quizzes/QuizQuestion";
 import { QuizTopic } from "../pages/Quizzes/QuizTopic";
 import { QuizScreen } from "../screens/QuizScreen";
@@ -77,6 +78,7 @@ export function QuizNavigator() {
       <Stack.Screen name="QuizQuestion" component={QuizQuestion} />
       <Stack.Screen name="QuizTopic" component={QuizTopic} />
       <Stack.Screen name="QuizResults" component={QuizResults} />
+      <Stack.Screen name="QuizAnswers" component={QuizAnswers} />
     </Stack.Navigator>
   );
 }
