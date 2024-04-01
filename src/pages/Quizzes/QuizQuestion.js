@@ -7,6 +7,7 @@ const quizQuestions = {
 }
 
 score = 0;
+highScore = 0;
 
 // Styles for the tracker
 const styles = StyleSheet.create({
@@ -108,7 +109,8 @@ function recordAnswer(composerName, quizId, questionNo, answers, answer, navigat
     
     // When the quiz is finished and the question number exceeds 5, direct to the QuizResults page
     if (newQuestionNo > 5) {
-        navigation.navigate('QuizResults', { score: score, composerName: composerName, screen: 'QuizResults'})
+        highScoreCalculator(score);
+        navigation.navigate('QuizResults', { score: score, composerName: composerName, highScore: highScore, screen: 'QuizResults'})
     } else {
         navigation.navigate('QuizQuestion', {composerName: composerName, quizId: quizId, questionNo: newQuestionNo, answers: newAnswers})
     }
@@ -125,4 +127,9 @@ function isAnswerCorrect(questionAsked, userAnswer) {
     } else {
       return false; // The answer is incorrect or the question was not found
     }
+}
+
+function highScoreCalculator(questionsCorrect) {
+    highScore = Math.max(highScore, questionsCorrect);
+    return highScore;
 }
