@@ -18,7 +18,7 @@ export function QuizNavigator() {
       <Stack.Screen
         name="CreateRoomScreen"
         component={CreateRoomScreen}
-        options={{ headerShown: true, title: "Create an Online Quiz Room" }}
+        options={{ headerShown: true, title: "" }}
       />
       <Stack.Screen name="QuizQuestion" component={QuizQuestion} />
       <Stack.Screen name="QuizTopic" component={QuizTopic} />
