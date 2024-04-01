@@ -12,7 +12,7 @@ import fullStar from '../../../assets/fullStar.png';
 import emptyStar from '../../../assets/emptyStar.png';
 
 export function QuizResults({ route, navigation }) {
-    const {score, composerName} = route.params;
+    const {score, composerName, highScore} = route.params;
     var scoreString = score + "/5";
 
     const renderStars = () => {
@@ -80,7 +80,8 @@ export function QuizResults({ route, navigation }) {
                   <Pressable style={[{right: 25, backgroundColor: "#2d6f9a"}, styles.button]} onPress={() => navigation.navigate('QuizAnswers', { score: score, composerName: composerName, screen: 'QuizAnswers'})}>
                       <Text style={{fontSize: 17, color: "#ffffff", fontWeight: "bold"}}>Review Answers</Text>
                   </Pressable>
-                  <Image style={{position: "absolute", top: 440, alignSelf: "center", width: 215, height: 280}} source={require('../../../assets/chopin.png')}/>
+                  <Text style={[{top: 440, fontSize: 32}, styles.text]}>High Score: {highScore}/5</Text>
+                  <Image style={{position: "absolute", top: 480, alignSelf: "center", width: 160, height: 210}} source={require('../../../assets/chopin.png')}/>
               </View>
         </View>
     );
