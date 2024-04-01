@@ -162,8 +162,8 @@ export function QuizScreen({ navigation }) {
             position: "absolute",
             top: 30,
             right: 10,
-            width: 160,
-            height: 200,
+            width: 140,
+            height: 180,
             objectFit: "cover",
           }}
         />
