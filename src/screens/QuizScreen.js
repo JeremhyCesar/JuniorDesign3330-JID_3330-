@@ -7,7 +7,6 @@ import {
   View,
   Image,
 } from "react-native";
-import { CreateRoomScreen } from "../pages/Quizzes/CreateOnlineQuizRoom";
 
 export function QuizScreen({ navigation }) {
   const styles = StyleSheet.create({
