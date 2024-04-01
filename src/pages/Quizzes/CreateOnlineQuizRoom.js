@@ -28,7 +28,17 @@ export function CreateRoomScreen({ navigation }) {
     console.log("Room Capacity:", roomCapacity);
     console.log("Room Type:", roomType);
     console.log("Room Name:", roomName);
+    
     // Navigate to the quiz room or display a success message
+    navigation.navigate("OnlineQuizRoom", {
+        musicType,
+        category,
+        difficulty,
+        numQuestions,
+        roomCapacity,
+        roomType,
+        roomName,
+      });
   };
 
   return (
