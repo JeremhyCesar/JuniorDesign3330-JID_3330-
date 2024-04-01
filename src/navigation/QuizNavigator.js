@@ -1,11 +1,11 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import { QuizAnswers } from "../pages/Quizzes/QuizAnswers";
 import { QuizQuestion } from "../pages/Quizzes/QuizQuestion";
 import { QuizTopic } from "../pages/Quizzes/QuizTopic";
 import { QuizScreen } from "../screens/QuizScreen";
 import { QuizResults } from "../pages/Lessons/QuizResults";
 import { CreateRoomScreen } from "../pages/Quizzes/CreateOnlineQuizRoom";
-import { QuizAnswers } from "../pages/Quizzes/QuizAnswers";
 
 const Stack = createNativeStackNavigator();
 
