@@ -218,11 +218,11 @@ function FriendsPage() {
                 <Text style={[{ top: 168, left: 130 }, styles.userText]}>@robert</Text>
 
                 <Pressable onPress={() => { }} style={{ top: 85, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/vicko-mozara-m82uh_vamhg-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/vicko-mozara-m82uh_vamhg-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -5, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/park-troopers-RAtKWVlfdf4-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/park-troopers-RAtKWVlfdf4-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -95, left: -100, }}>
@@ -230,11 +230,11 @@ function FriendsPage() {
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -183, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/tim-mossholder-FRPbQvAwY10-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/tim-mossholder-FRPbQvAwY10-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: 173, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/oppo-find-x5-pro-L2_Ry2uv9c4-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/oppo-find-x5-pro-L2_Ry2uv9c4-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
             </View>
@@ -382,15 +382,15 @@ function NationalPage() {
             {/* Images */}
             <View>
                 <Pressable onPress={() => { }} style={{ top: -360 }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/freddy-mishiki-62GTOD-oY0w-unsplash.jpg')} style={styles.circleImage} />
+                    <Image source={require('../../assets/freddy-mishiki-62GTOD-oY0w-unsplash.jpg')} style={styles.circleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ left: '24%', top: -280 }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/brooke-cagle-oTweoxMKdkA-unsplash.jpg')} style={styles.circleImage} />
+                    <Image source={require('../../assets/brooke-cagle-oTweoxMKdkA-unsplash.jpg')} style={styles.circleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ left: '-23.5%', top: -280 }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/alex-suprun-ZHvM3XIOHoE-unsplash.jpg')} style={styles.circleImage} />
+                    <Image source={require('../../assets/alex-suprun-ZHvM3XIOHoE-unsplash.jpg')} style={styles.circleImage} />
                 </Pressable>
             </View>
 
@@ -419,23 +419,23 @@ function NationalPage() {
                 <Text style={[{ top: 168, left: 130 }, styles.userText]}>@robby</Text>
 
                 <Pressable onPress={() => { }} style={{ top: 85, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/michael-dam-mEZ3PoFGs_k-unsplash (1).jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/michael-dam-mEZ3PoFGs_k-unsplash (1).jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -5, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/iheb-ab-OBufvGMaBaQ-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/iheb-ab-OBufvGMaBaQ-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -95, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/ali-jouyandeh-bodgc6H44FA-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/ali-jouyandeh-bodgc6H44FA-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -183, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/mateo-avila-chinchilla-x_8oJhYU31k-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/mateo-avila-chinchilla-x_8oJhYU31k-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: 173, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/jan-bargallo-deike-vtUzH3UzDoE-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/jan-bargallo-deike-vtUzH3UzDoE-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
             </View>
@@ -582,15 +582,15 @@ function GlobalPage() {
             {/* Images */}
             <View>
                 <Pressable onPress={() => { }} style={{ top: -360 }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/michiel-annaert-vPgMtJK9uqQ-unsplash.jpg')} style={styles.circleImage} />
+                    <Image source={require('../../assets/michiel-annaert-vPgMtJK9uqQ-unsplash.jpg')} style={styles.circleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ left: '24%', top: -280 }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/caroline-hernandez-OldJIKSu5ms-unsplash.jpg')} style={styles.circleImage} />
+                    <Image source={require('../../assets/caroline-hernandez-OldJIKSu5ms-unsplash.jpg')} style={styles.circleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ left: '-23.5%', top: -280 }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/alev-takil-3jlUF7-3-4E-unsplash.jpg')} style={styles.circleImage} />
+                    <Image source={require('../../assets/alev-takil-3jlUF7-3-4E-unsplash.jpg')} style={styles.circleImage} />
                 </Pressable>
             </View>
 
@@ -619,23 +619,23 @@ function GlobalPage() {
                 <Text style={[{ top: 168, left: 130 }, styles.userText]}>@jerszn</Text>
 
                 <Pressable onPress={() => { }} style={{ top: 85, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/samsung-memory-7e5J2V80CDo-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/samsung-memory-7e5J2V80CDo-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -5, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/ben-weber-r-krWscXjvQ-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/ben-weber-r-krWscXjvQ-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -95, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/greyson-joralemon-9IBqihqhuHc-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/greyson-joralemon-9IBqihqhuHc-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: -183, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/jacky-zhao-nfVMgrQlBHI-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/jacky-zhao-nfVMgrQlBHI-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
                 <Pressable onPress={() => { }} style={{ top: 173, left: -100, }}>
-                    <Image source={require('/Users/ananyauday/JuniorDesign3330-JID_3330--3/assets/hannah-tasker-ZBkH8G4_yyE-unsplash.jpg')} style={styles.smallCircleImage} />
+                    <Image source={require('../../assets/hannah-tasker-ZBkH8G4_yyE-unsplash.jpg')} style={styles.smallCircleImage} />
                 </Pressable>
 
             </View>
