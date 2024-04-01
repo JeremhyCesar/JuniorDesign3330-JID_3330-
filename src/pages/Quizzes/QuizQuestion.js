@@ -65,7 +65,7 @@ function recordAnswer(composerName, quizId, questionNo, answers, answer, navigat
     
     // When the quiz is finished and the question number exceeds 5, direct to the QuizResults page
     if (newQuestionNo > 5) {
-        navigation.navigate('QuizResults', { score: score, screen: 'QuizResults'})
+        navigation.navigate('QuizResults', { score: score, composerName: composerName, screen: 'QuizResults'})
     } else {
         navigation.navigate('QuizQuestion', {composerName: composerName, quizId: quizId, questionNo: newQuestionNo, answers: newAnswers})
     }
