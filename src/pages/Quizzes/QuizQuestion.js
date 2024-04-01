@@ -1,4 +1,4 @@
-import { View, Text, Pressable, Image, TouchableOpacity } from "react-native"; 
+import { View, Text, Pressable, Image, TouchableOpacity, StyleSheet } from "react-native"; 
 import { questions, correctAnswers } from '../../quizzes/ChopinBeginner.js';
 import { Asset } from "expo-asset";
 
@@ -7,6 +7,31 @@ const quizQuestions = {
 }
 
 score = 0;
+
+// Styles for the tracker
+const styles = StyleSheet.create({
+    trackerContainer: {
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        paddingBottom: 20,
+        paddingTop: 10,
+
+    },
+    circle: {
+        width: 40,
+        height: 40,
+        borderRadius: 12.5,
+        top: 90
+    },
+    circleText: {
+        color: 'white',
+        fontSize: 20, 
+        fontWeight: 'bold',
+        textAlign: 'center',
+        lineHeight: 40,
+    }
+});
 
 export function QuizQuestion ({ route, navigation}) {
     const {composerName, quizId, questionNo, answers} = route.params;
@@ -19,8 +44,22 @@ export function QuizQuestion ({ route, navigation}) {
         score = 0;
     }
 
+    // Function to render the question tracker circles
+    const renderCircle = (index) => {
+        let backgroundColor = index < questionNo ? '#00FF00' : '#808080'; // Green if answered, grey if not
+        return (
+            <View 
+                key={index}
+                style={[styles.circle, {backgroundColor}]}>
+
+                <Text style={styles.circleText}>{index}</Text>
+            </View>
+            
+        );
+    }
+
     return (
-        <View style={{flexDirection: "column", alignContent: "center", width: '100%', height: '100%'}}>
+        <View style={{flexDirection: "column", alignContent: "center", width: '100%', height: '90%'}}>
             <Text style={{top:50, fontWeight: "bold", justifyContent: "center", alignSelf: "center", color: "#00347f", fontSize: 32}}>{composerName}</Text>
             <View style={{top: 75, left: '5%', width: '90%', height: '83%', backgroundColor: '#1e2237', borderRadius: 34}}>
                 {questionNo != 1 && 
@@ -29,21 +68,25 @@ export function QuizQuestion ({ route, navigation}) {
                     </TouchableOpacity>}
                 <Text style={{color: '#ffffff', position: "absolute", fontSize: 26, alignSelf: "center", fontWeight: "bold", top: 27}}>Question {questionNo}</Text>
                 <View style={{position: "absolute", backgroundColor: '#cccccc', width: '100%', height: 5, top: 85}}/>
-                <Text style={{position: "absolute", top: 120, textAlign: "center", alignSelf: "center", flexWrap: "wrap", width: '70%', fontSize: 34, fontWeight: "bold", color: '#ffffff'}}>{questions[questionNo - 1][0]}</Text>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[0]], navigation)} style={{position: "absolute", top: 300, left: "4%", width: "92%", height: 72, backgroundColor: "#e2480d", borderRadius: 32}}>
+                <Text style={{position: "absolute", top: 110, textAlign: "center", alignSelf: "center", flexWrap: "wrap", width: '70%', fontSize: 28, fontWeight: "bold", color: '#ffffff'}}>{questions[questionNo - 1][0]}</Text>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[0]], navigation)} style={{position: "absolute", top: 230, left: "4%", width: "92%", height: 72, backgroundColor: "#e2480d", borderRadius: 32}}>
                     <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>A.  {questions[questionNo - 1][ansOrder[0]]}</Text>
                 </Pressable>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[1]], navigation)} style={{position: "absolute", top: 380, left: "4%", width: "92%", height: 72, backgroundColor: "#FFBB37", borderRadius: 32}}>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[1]], navigation)} style={{position: "absolute", top: 310, left: "4%", width: "92%", height: 72, backgroundColor: "#FFBB37", borderRadius: 32}}>
                     <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>B.  {questions[questionNo - 1][ansOrder[1]]}</Text>
                 </Pressable>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[2]], navigation)} style={{position: "absolute", top: 460, left: "4%", width: "92%", height: 72, backgroundColor: "#2d6f9a", borderRadius: 32}}>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[2]], navigation)} style={{position: "absolute", top: 390, left: "4%", width: "92%", height: 72, backgroundColor: "#2d6f9a", borderRadius: 32}}>
                     <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>C.  {questions[questionNo - 1][ansOrder[2]]}</Text>
                 </Pressable>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[3]], navigation)} style={{position: "absolute", top: 540, left: "4%", width: "92%", height: 72, backgroundColor: "#979797", borderRadius: 32}}>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[3]], navigation)} style={{position: "absolute", top: 470, left: "4%", width: "92%", height: 72, backgroundColor: "#979797", borderRadius: 32}}>
                     <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>D.  {questions[questionNo - 1][ansOrder[3]]}</Text>
                 </Pressable>
             </View>
+            <View style={styles.trackerContainer}>
+                {[1, 2, 3, 4, 5].map(renderCircle)}
+            </View>
         </View>
+        
     );
 }
 
