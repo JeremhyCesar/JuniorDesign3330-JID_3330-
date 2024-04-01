@@ -6,6 +6,7 @@ import { QuizScreen } from "../screens/QuizScreen";
 import { QuizResults } from "../pages/Lessons/QuizResults";
 import { CreateRoomScreen } from "../pages/Quizzes/CreateOnlineQuizRoom";
 import { OnlineQuizRoom } from "../pages/Quizzes/OnlineQuizRoom";
+import { JoinOnlineQuizRoom } from "../pages/Quizzes/JoinOnlineQuizRoom";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,6 +20,11 @@ export function QuizNavigator() {
       <Stack.Screen
         name="CreateRoomScreen"
         component={CreateRoomScreen}
+        options={{ headerShown: true, title: "" }}
+      />
+      <Stack.Screen
+        name="JoinOnlineQuizRoom"
+        component={JoinOnlineQuizRoom}
         options={{ headerShown: true, title: "" }}
       />
       <Stack.Screen

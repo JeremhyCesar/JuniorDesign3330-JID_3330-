@@ -89,7 +89,7 @@ export function QuizScreen({ navigation }) {
           </Pressable>
           <Pressable
             style={styles.button}
-            onPress={() => navigation.navigate("JoinOnlineQuiz")}
+            onPress={() => navigation.navigate("JoinOnlineQuizRoom")}
           >
             <Text style={[styles.buttonText, { color: "#ffbb37" }]}>
               Join Room
