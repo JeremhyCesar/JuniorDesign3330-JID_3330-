@@ -1,5 +1,6 @@
 import { Image, TouchableOpacity, Text, View, TextInput, Alert } from 'react-native'
 import { useState, useEffect } from 'react';
+import { useEmailPasswordAuth } from '@realm/react';
 import * as validator from 'validator';
 
 export const RegisterScreen = (navigation) => {
@@ -10,6 +11,8 @@ export const RegisterScreen = (navigation) => {
     const [error, setError] = useState('');
     const [showError, setShowError] = useState(false);
     const [isFormValid, setIsFormValid] = useState(false);
+
+    const {register, result} = useEmailPasswordAuth();
 
     useEffect(() => validateForm(), 
         [name, email, password, passConf]);
@@ -28,9 +31,16 @@ export const RegisterScreen = (navigation) => {
     }
 
     const handleSubmit = () => {
-        console.log('submit pressed');
         if (!isFormValid) setShowError(true);
-        // TODO register account
+        else {
+            register({email: email, password: password});
+            if (result.error) {
+                setError(result.error);
+                setShowError(true);
+            } else {
+                navigation.navigate("LoginScreen");
+            }
+        }
     }
 
     return (
