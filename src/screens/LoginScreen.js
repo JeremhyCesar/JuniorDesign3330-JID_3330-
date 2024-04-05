@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import { useEmailPasswordAuth } from '@realm/react';
 import * as validator from 'validator';
 
-export const LoginScreen = (navigation) => {
+export const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState(''); 
     const [password, setPassword] = useState('');
     const [error, setError] = useState('');
@@ -40,8 +40,9 @@ export const LoginScreen = (navigation) => {
             <View style={{position: 'absolute', left: '10%', top: 200, width: '80%'}}>
                 <Text style={{fontSize: 60, color: '#f04b10', fontWeight: 'bold'}}>Login</Text>
                 <Text style={{fontSize: 24, fontWeight: 'bold', color: '#054584'}}>Please sign in to continue.</Text>
-                <TextInput onChangeText={setEmail} placeholder={'example@gmail.com'} textContentType='emailAddress' inputMode='email' style={{fontSize: 16, top: 30, height: 60, padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
-                <TextInput onChangeText={setPassword} placeholder={'••••••••••'} textContentType='password' secureTextEntry={true} style={{fontSize: 16, top: 45, height: 60, padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
+                <Text onPress={() => navigation.navigate('RegisterScreen')} style={{fontSize: 14, top: 8, color: '#5555ff'}}>Don't have an account? Register here</Text>
+                <TextInput onChangeText={setEmail} placeholder={'example@gmail.com'} textContentType='emailAddress' inputMode='email' style={{fontSize: 16, top: 20, height: 60, padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
+                <TextInput onChangeText={setPassword} placeholder={'••••••••••'} textContentType='password' secureTextEntry={true} style={{fontSize: 16, top: 35, height: 60, padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
                 {showError && <Text style={{position: 'absolute', top: 285, color: '#cc0000'}}>{error}</Text>}
                 <TouchableOpacity onPress={() => handleSubmit()} style={{opacity: isFormValid ? 1 : 0.5, borderRadius: 24, backgroundColor: '#054584', left: '45%', width: '55%', height: 60, top: 80, shadowOffset: {height: 5}, shadowColor: 'black', shadowOpacity: 0.25, elevation: 3}}>
                     <Text style={{top: 10, alignSelf: 'center', fontSize: 26, color: '#ffffff'}}>LOGIN</Text>
