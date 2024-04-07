@@ -7,6 +7,7 @@ export function HomeScreen({ navigation }) {
             shadowOffset: {width: 4, height: 4},
             shadowColor: 'black',
             shadowOpacity: 0.25,
+            elevation: 2,
             width: '84%',
             height: 250,
             cursor: 'pointer'

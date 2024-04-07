@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View, Image, Pressable, ScrollView } from 'react-native';
+import { useEmailPasswordAuth } from '@realm/react';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 const Tab = createMaterialTopTabNavigator();
 
 export function SocialPage({ navigation }) {
     const [activeTab, setActiveTab] = useState('Friends');
-
+    const { logOut } = useEmailPasswordAuth();
     const styles = StyleSheet.create({
         title: {
             fontWeight: 'bold',
@@ -48,6 +49,9 @@ export function SocialPage({ navigation }) {
     return (
         <View style={{ flex: 1, backgroundColor: '#00347F' }}>
             <Text style={styles.title}>Social</Text>
+            <Pressable onPress={() => logOut()} style={{top: 17, left: '65%', height: 40, width: '30%', backgroundColor: '#1e2237', borderRadius: 15}}>
+                <Text style={{top: 5, left: '15%', color: 'white', fontSize: 20}}>LOG OUT</Text>
+            </Pressable>
             <Tab.Navigator
                 initialRouteName="Friends"
                 tabBarOptions={{
