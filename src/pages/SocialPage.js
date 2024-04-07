@@ -18,8 +18,8 @@ export function SocialPage({ navigation }) {
         tabBar: {
             backgroundColor: '#e24808',
             borderRadius: 15,
-            marginLeft: '8%',
-            width: '84%',
+            marginLeft: '15%',
+            width: '70%',
             height: 60,
             shadowOffset: { width: 4, height: 4 },
             shadowColor: 'black',
@@ -27,18 +27,18 @@ export function SocialPage({ navigation }) {
             marginTop: 70,
         },
         tabLabel: {
-            fontSize: 18,
+            fontSize: 20,
             fontWeight: '500',
             textTransform: 'none',
             color: 'white',
-            top: 6,
+            top: 3,
         },
         indicator: {
             backgroundColor: '#699BF7',
             height: 4,
-            width: 80,
+            width: 60,
             borderRadius: 20,
-            left: 17,
+            left: 42,
         },
         scrollView: {
             backgroundColor: '#00347F',
@@ -55,12 +55,11 @@ export function SocialPage({ navigation }) {
                     style: styles.tabBar,
                     indicatorStyle: styles.indicator,
                     activeTintColor: 'white',
-                    inactiveTintColor: 'white',
+                    inactiveTintColor: 'grey',
                 }}
                 onTabPress={({ route }) => setActiveTab(route.name)}>
                 <Tab.Screen name="Friends" component={FriendsPage} />
-                <Tab.Screen name="National" component={NationalPage} />
-                <Tab.Screen name="Global" component={GlobalPage} />
+                <Tab.Screen name="Classes" component={ClassPage} />
             </Tab.Navigator>
         </View>
     );
@@ -267,7 +266,7 @@ function FriendsPage() {
 }
 
 
-function NationalPage() {
+function ClassPage() {
     const styles = StyleSheet.create({
         sides: {
             backgroundColor: '#1E2237',
@@ -467,202 +466,3 @@ function NationalPage() {
     );
 }
 
-function GlobalPage() {
-    const styles = StyleSheet.create({
-        sides: {
-            backgroundColor: '#1E2237',
-            width: '70%',
-            height: 100,
-            borderRadius: 15,
-            alignSelf: 'center',
-            marginTop: 280
-        },
-        shape: {
-            backgroundColor: '#252A40',
-            width: '25%',
-            height: 180,
-            borderTopLeftRadius: 15,
-            borderTopRightRadius: 15,
-            borderBottomLeftRadius: 0,
-            borderBottomRightRadius: 0,
-            alignSelf: 'center',
-            marginTop: -180
-        },
-        circleImage: {
-            width: 70,
-            height: 70,
-            borderRadius: 30,
-            borderWidth: 5,
-            borderColor: 'white',
-            position: 'absolute',
-            top: 40,
-            alignSelf: 'center',
-            zIndex: 1,
-        },
-        smallCircleImage: {
-            width: 60,
-            height: 60,
-            borderRadius: 30,
-            borderWidth: 5,
-            borderColor: 'white',
-            position: 'absolute',
-            top: 40,
-            alignSelf: 'center',
-            zIndex: 1,
-        },
-        userImage: {
-            width: 60,
-            height: 60,
-            borderRadius: 30,
-            borderWidth: 5,
-            borderColor: 'white',
-            position: 'absolute',
-            top: 40,
-            alignSelf: 'center',
-            zIndex: 1,
-        },
-        smallCircleContainer: {
-            position: 'absolute',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: 30,
-            height: 30,
-            borderRadius: 15,
-            alignSelf: 'center',
-            zIndex: 1,
-        },
-        numberText: {
-            color: 'white',
-            fontSize: 16,
-            fontWeight: 'bold',
-            zIndex: 5
-        },
-        nameText: {
-            color: 'white',
-            fontSize: 16,
-            fontWeight: 'bold',
-            zIndex: 6
-        },
-        userText: {
-            color: 'grey',
-            fontSize: 10,
-            fontWeight: 'regular',
-            zIndex: 6
-        },
-        longLine: {
-            backgroundColor: 'grey',
-            width: '68%',
-            height: 2,
-            left: 65,
-            borderRadius: 20,
-            position: 'absolute',
-            zIndex: 2
-        },
-        friendsPageBackground: {
-            backgroundColor: '#00347F', 
-            flex: 1,
-        },
-        toggle: {
-            position: 'center',
-            height: 500,
-            width: 345,
-            borderTopLeftRadius: 15,
-            borderTopRightRadius: 15,
-            borderBottomLeftRadius: 0,
-            borderBottomRightRadius: 0,
-            zIndex: 1
-        }
-    });
-
-    return (
-        <ScrollView style={[styles.friendsPageBackground, { flex: 1 }]}>
-            <View style={[{top: -90}, styles.sides]}></View>
-            <View style={[{top: -90}, styles.shape]}></View>
-
-            {/* Images */}
-            <View>
-                <Pressable onPress={() => { }} style={{ top: -360 }}>
-                    <Image source={require('../../assets/michiel-annaert-vPgMtJK9uqQ-unsplash.jpg')} style={styles.circleImage} />
-                </Pressable>
-
-                <Pressable onPress={() => { }} style={{ left: '24%', top: -280 }}>
-                    <Image source={require('../../assets/caroline-hernandez-OldJIKSu5ms-unsplash.jpg')} style={styles.circleImage} />
-                </Pressable>
-
-                <Pressable onPress={() => { }} style={{ left: '-23.5%', top: -280 }}>
-                    <Image source={require('../../assets/alev-takil-3jlUF7-3-4E-unsplash.jpg')} style={styles.circleImage} />
-                </Pressable>
-            </View>
-
-            {/* Text */}
-            <View>
-                <Text style={[{ top: -165, left: 92 }, styles.nameText]}>Tina</Text>
-                <Text style={[{ top: -260, left: 187.5 }, styles.nameText]}>Lana</Text>
-                <Text style={[{ top: -203, left: 287 }, styles.nameText]}>Mira</Text>
-
-                <Text style={[{ top: -203, left: 90 }, styles.userText]}>@tinster</Text>
-                <Text style={[{ top: -290, left: 187.5 }, styles.userText]}>@lana3</Text>
-                <Text style={[{ top: -225, left: 285 }, styles.userText]}>@mira12</Text>
-            </View>
-
-            <View style={[{ top: -150, left: '8%', backgroundColor: '#1E2237', zIndex: 1 }, styles.toggle]}>
-                <Text style={[{ top: 25, left: 130 }, styles.nameText]}>Jose</Text>
-                <Text style={[{ top: 95, left: 130 }, styles.nameText]}>Walle</Text>
-                <Text style={[{ top: 165, left: 130 }, styles.nameText]}>Moore</Text>
-                <Text style={[{ top: 325, left: 130 }, styles.nameText]}>Aya</Text>
-                <Text style={[{ top: 212, left: 130 }, styles.nameText]}>Jer</Text>
-
-                <Text style={[{ top: -50, left: 130 }, styles.userText]}>@jose34</Text>
-                <Text style={[{ top: 30, left: 130 }, styles.userText]}>@thatsmewalle</Text>
-                <Text style={[{ top: 107, left: 130 }, styles.userText]}>@moore32</Text>
-                <Text style={[{ top: 275, left: 130 }, styles.userText]}>@ayamazing</Text>
-                <Text style={[{ top: 168, left: 130 }, styles.userText]}>@jerszn</Text>
-
-                <Pressable onPress={() => { }} style={{ top: 85, left: -100, }}>
-                    <Image source={require('../../assets/samsung-memory-7e5J2V80CDo-unsplash.jpg')} style={styles.smallCircleImage} />
-                </Pressable>
-
-                <Pressable onPress={() => { }} style={{ top: -5, left: -100, }}>
-                    <Image source={require('../../assets/ben-weber-r-krWscXjvQ-unsplash.jpg')} style={styles.smallCircleImage} />
-                </Pressable>
-
-                <Pressable onPress={() => { }} style={{ top: -95, left: -100, }}>
-                    <Image source={require('../../assets/greyson-joralemon-9IBqihqhuHc-unsplash.jpg')} style={styles.smallCircleImage} />
-                </Pressable>
-
-                <Pressable onPress={() => { }} style={{ top: -183, left: -100, }}>
-                    <Image source={require('../../assets/jacky-zhao-nfVMgrQlBHI-unsplash.jpg')} style={styles.smallCircleImage} />
-                </Pressable>
-
-                <Pressable onPress={() => { }} style={{ top: 173, left: -100, }}>
-                    <Image source={require('../../assets/hannah-tasker-ZBkH8G4_yyE-unsplash.jpg')} style={styles.smallCircleImage} />
-                </Pressable>
-
-            </View>
-
-            <View style={[{ top: 410 }, styles.longLine]}></View>
-            <View style={[{ top: 500 }, styles.longLine]}></View>
-            <View style={[{ top: 590 }, styles.longLine]}></View>
-            <View style={[{ top: 680 }, styles.longLine]}></View>
-            
-        <View style={[styles.smallCircleContainer, {zIndex: 1, backgroundColor: '#FFAA00', top: -935, left: 0, position: 'relative' }]}>
-        <View style={{ position: 'relative', zIndex: 2, top: 0, left: 0 }}>
-            <Text style={[styles.numberText]}>1</Text>
-        </View>
-        </View>
-
-        <View style={[styles.smallCircleContainer, {zIndex: 1, backgroundColor: '#009BD6', top: -885, left: -98, position: 'relative' }]}>
-        <View style={{ position: 'relative', zIndex: 2, top: 0, left: 0 }}>
-            <Text style={[styles.numberText]}>2</Text>
-        </View>
-        </View>
-
-        <View style={[styles.smallCircleContainer, {zIndex: 1, backgroundColor: '#00D95F', top: -915, left: 99, position: 'relative' }]}>
-        <View style={{ position: 'relative', zIndex: 2, top: 0, left: 0 }}>
-            <Text style={[styles.numberText]}>3</Text>
-        </View>
-        </View>
-
-        </ScrollView>
-    );
-}
