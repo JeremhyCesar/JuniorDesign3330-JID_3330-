@@ -11,10 +11,19 @@
     {
       "composerName": "Ludwig van Beethoven",
       "introduction": "Time to explore Beethoven!",
-      "imageSource": "Bethoven.png",
+      "imageSource": "Beethoven.png",
       "videoPages": [
         { "title": "Beethoven's life", "videoID": "9h1xvHUkD9A" },
         { "title": "Beethoven's music", "videoID": "-4788Tmz9Zo" }
+      ]
+    },
+    {
+      "composerName": "Johann Sebastian Bach",
+      "introduction": "Let's learn about Bach!",
+      "imageSource": "Bach.png",
+      "videoPages": [
+        { "title": "Bach's life", "videoID": "V5ijvbKeAp8" },
+        { "title": "Bach's music", "videoID": "TvyLebqTtW4" }
       ]
     }
   ]
