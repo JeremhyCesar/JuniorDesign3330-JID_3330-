@@ -56,6 +56,133 @@
           ]
         }
       ]
+    },
+    "Johann Sebastian Bach": {
+      "sections": [
+        {
+          "title": "Section 1: Early Life and Education",
+          "questions": [
+            {
+              "question": "Birth and Early Years:",
+              "details": [
+                "Date and place of birth:",
+                "Musical family background: Describe the influence of Bach's family on his music:",
+                "Age at which Bach started learning music:",
+                "Name two of Bach's early music teachers:",
+                "How did Bach's early musical education influence his later compositions?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Life in Arnstadt and Mühlhausen",
+          "questions": [
+            {
+              "question": "Bach's early career:",
+              "details": [
+                "At what age did Bach first obtain a professional position and where?",
+                "Describe the significance of Arnstadt and Mühlhausen in Bach's career:",
+                "What were the primary types of compositions Bach focused on during this period?",
+                "Discuss the development of Bach's organ playing and compositional style in his early career:",
+                "How did Bach's experiences in Arnstadt and Mühlhausen shape his approach to church music?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: Career in Leipzig",
+          "questions": [
+            {
+              "question": "Leipzig Period:",
+              "details": [
+                "Describe Bach's role and responsibilities in Leipzig:",
+                "List major works composed by Bach during his Leipzig period:",
+                "Explain how Bach’s music was influenced by his duties in Leipzig:",
+                "Discuss the challenges and accomplishments of Bach's Leipzig period:"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Musical Style and Influence",
+          "questions": [
+            {
+              "question": "Bach's Legacy:",
+              "details": [
+                "Describe the characteristics of Bach's musical style:",
+                "How does Bach's music embody the Baroque style?",
+                "List and describe the influence of Bach on later composers and musicians:",
+                "Conduct research on one of Bach's major works (e.g., the Brandenburg Concertos, the Well-Tempered Clavier) and analyze its compositional and emotional qualities."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "Ludwig van Beethoven": {
+      "sections": [
+        {
+          "title": "Section 1: Early Life and Musical Beginnings",
+          "questions": [
+            {
+              "question": "Birth and Formative Years:",
+              "details": [
+                "Date and place of Beethoven's birth:",
+                "Describe Beethoven's family and his father's musical influence on him:",
+                "Challenges faced by Beethoven during his childhood, including his father's expectations and his mother's death:",
+                "Age at which Beethoven moved to Vienna and his purpose for relocating:"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Development and Early Works",
+          "questions": [
+            {
+              "question": "Vienna – The Musical Capital:",
+              "details": [
+                "Who was Beethoven’s significant mentor in Vienna?",
+                "Explain how Mozart and Haydn's styles influenced Beethoven's early compositions:",
+                "Identify some of Beethoven's early works that reflect the transition from Classical to Romantic musical styles:",
+                "Discuss the innovative elements in Beethoven's compositions during his time in Vienna:"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: Middle Period and Heroic Works",
+          "questions": [
+            {
+              "question": "Overcoming Personal Tragedy:",
+              "details": [
+                "Detail the personal tragedy Beethoven began experiencing in his late 20s:",
+                "Discuss the impact of Beethoven's deafness on his compositions and public performances:",
+                "List and describe three major works from Beethoven’s 'middle' or 'heroic' period:"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Late Period Masterpieces and Legacy",
+          "questions": [
+            {
+              "question": "Profound Late Works:",
+              "details": [
+                "When did Beethoven's late period roughly begin?",
+                "Name and describe the significance of three compositions from Beethoven's late period:",
+                "How did Beethoven's 'Late String Quartets' and 'Ninth Symphony' change the perspectives on what music could achieve?"
+              ]
+            },
+            {
+              "question": "Continued Influence and Timeless Legacy:",
+              "details": [
+                "Discuss how Beethoven has influenced music genres beyond classical music:",
+                "Explain the universal themes in Beethoven's music and their relevance today:"
+              ]
+            }
+          ]
+        }
+      ]
     }
   },
   "instruments": {

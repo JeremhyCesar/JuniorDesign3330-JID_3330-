@@ -20,6 +20,7 @@ const ComposerNavigator = () => {
           const lessonData = composerLessonData.find(
             (lesson) => lesson.composerName === composerName
           );
+          console.log(lessonData)
           return <LessonScreen {...props} lessonData={lessonData} />;
         }}
       </Stack.Screen>
