@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect}from "react";
 import { StyleSheet, Image, View, ScrollView, SafeAreaView, Pressable } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { HomeScreen } from "../screens/HomeScreen";
@@ -65,7 +65,7 @@ const HomeNavigator = () => {
               tabBarIcon: () => (
                 <Image
                   source={require('../../assets/listen-nav-icon.png')}
-                  style={styles.tabIcon}
+                  style={styles.quizTabIcon}
                 />
               ),
             }}
@@ -95,11 +95,14 @@ const HomeNavigator = () => {
           <Pressable onPress={() => navigateToScreen("Social")}>
             <Image source={require('../../assets/socialbaricon.png')} style={styles.box} />
           </Pressable>
+          <Pressable onPress={() => navigateToScreen("Listen")}>
+            <Image source={require('../../assets/listenbaricon.png')} style={styles.box} />
+          </Pressable>
           <Pressable onPress={() => navigateToScreen("Lessons")}>
             <Image source={require('../../assets/lessonsbaricon.png')} style={styles.box} />
           </Pressable>
         </View>
-      </SafeAreaView>
+      </SafeAreaView> 
     </View>
   );
 };
@@ -137,7 +140,7 @@ const styles = StyleSheet.create({
   box: {
     width: 40,
     height: 40,
-  },
+  }
 });
 
 export default HomeNavigator;
