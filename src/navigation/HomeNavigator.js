@@ -6,6 +6,7 @@ import { QuizNavigator } from "./QuizNavigator";
 import LessonNavigator from "./LessonNavigator";
 import { SocialNavigator } from "./SocialNavigator"
 import { useNavigation } from "@react-navigation/native";
+import ListenNavigator from "./ListenNavigator";
 
 const Stack = createStackNavigator();
 
@@ -57,6 +58,18 @@ const HomeNavigator = () => {
               ),
             }}
           />
+         <Stack.Screen
+            name="Listen"
+            component={ListenNavigator}
+            options={{
+              tabBarIcon: () => (
+                <Image
+                  source={require('../../assets/listen-nav-icon.png')}
+                  style={styles.tabIcon}
+                />
+              ),
+            }}
+          />    
           <Stack.Screen
             name="Social"
             component={SocialNavigator}

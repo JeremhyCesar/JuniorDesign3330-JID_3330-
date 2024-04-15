@@ -24,6 +24,8 @@ export function ComposersPage({ navigation }) {
     navigation.navigate("LessonScreen", { composerName });
   };
 
+  const buttonHeight = 125; // height of each button
+
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
       <Text
@@ -86,7 +88,7 @@ export function ComposersPage({ navigation }) {
       <Pressable
         onPress={() => handleComposerPress("Ludwig van Beethoven")}
         style={[
-          { top: 109, left: "8%", backgroundColor: "#ffffff" },
+          { top: 94 + (2/3)*buttonHeight, left: "8%", backgroundColor: "#ffffff" },
           styles.button,
         ]}
       >
@@ -117,9 +119,10 @@ export function ComposersPage({ navigation }) {
         />
       </Pressable>
 
-      <View
+      <Pressable
+        onPress={() => handleComposerPress("Johann Sebastian Bach")}
         style={[
-          { top: 124, left: "8%", backgroundColor: "#ffffff" },
+          { top: 94 + (4/3)*buttonHeight, left: "8%", backgroundColor: "#ffffff" },
           styles.button,
         ]}
       >
@@ -135,7 +138,7 @@ export function ComposersPage({ navigation }) {
             flexWrap: "wrap",
           }}
         >
-          J. S. Bach
+          J.S. Bach
         </Text>
         <Image
           source={require("../../../assets/composers/Bach.png")}
@@ -144,11 +147,11 @@ export function ComposersPage({ navigation }) {
             top: 0,
             left: "55%",
             width: 120,
-            height: 150,
+            height: 155,
             objectFit: "cover",
           }}
         />
-      </View>
+      </Pressable>
 
       <View style={{ height: 180 }} />
     </ScrollView>
