@@ -122,7 +122,7 @@ const ListenScreen = () => {
           borderRadius: 10, 
           shadowOffset: 10 
         }}
-        onPress={() => navigation.navigate('DetailsScreen')}
+        onPress={() => navigation.navigate('SongDetailsScreen')}
       >
         <Image 
           source={require('../../assets/moonlightsonata.jpg')} 
