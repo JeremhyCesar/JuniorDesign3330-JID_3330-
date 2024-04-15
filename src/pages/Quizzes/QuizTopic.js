@@ -13,6 +13,7 @@ export function QuizTopic({ navigation }) {
       fontSize: 24,
       fontWeight: 'bold',
       marginBottom: 20,
+      textAlign: 'center',
     },
     quizContainer: {
       backgroundColor: 'white',
@@ -21,9 +22,10 @@ export function QuizTopic({ navigation }) {
       marginBottom: 10,
       flexDirection: 'row',
       alignItems: 'center',
-      left:'1%',
+      alignSelf: 'center', 
       width: 370,
       height: 145,
+      top: 60
     },
     quizTitle: {
       color: '#dd571c',
@@ -40,7 +42,7 @@ export function QuizTopic({ navigation }) {
       marginBottom: 10,
       flexDirection: 'row',
       alignItems: 'center',
-      left:'1%',
+      justifyContent: 'center',
       width: 30,
       height: 30
     },
@@ -55,93 +57,56 @@ export function QuizTopic({ navigation }) {
         height: 145,
         marginLeft: 10,
         top: 6,
-        backgroundColor: '#c3c3c3', // This simulates a 'blurred' background
-        justifyContent: 'center', // Center the icon horizontally
-        alignItems: 'center', // Center the icon vertically
-        opacity: 0.8, // You can adjust this to achieve the desired 'blur' effect
+        backgroundColor: '#c3c3c3', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        opacity: 0.8, 
     },
   });
 
   return (
     <ScrollView style={styles.container}>
-      <Text
-          style={{
-            fontWeight: "bold",
-            top: 64,
-            left: "8%",
-            fontSize: 48,
-            color: "#333",
-          }}
-        >
-          My Quizzes
-        </Text>
-        <Text
-          style={{
-            top: 68,
-            left: "8%",
-            fontSize: 20,
-            textAlign: "left",
-            color: "#717171",
-          }}
-        >
-          Test your knowledge
-        </Text>
-
-      <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: "Frédéric Chopin", quizId: "ChopinBeginner", questionNo: 1})}
-      style={[{ top: 100, left: "8%" },
-           styles.quizContainer,
-         ]}>
-        <Text style={styles.quizTitle}>Frédéric Chopin</Text>
-        <Image source={require('../../../assets/chopin.png')}
+<Text
         style={{
-            width: 100,
-            height: 150, 
-            marginLeft: 10,
-            top: 15
-          }} />
+          fontWeight: "bold",
+          top: 30,
+          left: "8%",
+          fontSize: 48,
+          color: "#333",
+        }}
+      >
+        My Quizzes
+      </Text>
+      <Text
+        style={{
+          top: 30,
+          left: "8%",
+          fontSize: 20,
+          textAlign: "left",
+          color: "#717171",
+        }}
+      >
+        Test your knowledge
+      </Text>
+
+      <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: "Frédéric Chopin", quizId: "ChopinBeginner", questionNo: 1})} style={styles.quizContainer}>
+        <Text style={styles.quizTitle}>Frédéric Chopin</Text>
+        <Image source={require('../../../assets/chopin.png')} style={{ width: 100, height: 150, marginLeft: 10, top: 15 }} />
       </TouchableOpacity>
 
-    
-      <View style={[{ top: 100, left: "8%" },
-           styles.quizContainer,
-         ]}>
+      <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: "Ludwig van Beethoven", quizId: "BeethovenBeginner", questionNo: 1})} style={styles.quizContainer}>
         <Text style={styles.quizTitle}>Ludwig van Beethoven</Text>
-        <View style={{
-            borderRadius: 31,
-            width: 90,
-            height: 90,
-            marginLeft: 10,
-            top: 6,
-            backgroundColor: '#c3c3c3', // Change this to your desired rectangle color
-        }} />
-      </View>
+        <Image source={require('../../../assets/beethoven.webp')} style={{ width: 100, height: 150, marginLeft: 10, top: 15 }} />
+      </TouchableOpacity>
 
-      <View style={[{ top: 100, left: "8%" },
-           styles.quizContainer,
-         ]}>
+      <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: "Johann Bach", quizId: "BachBeginner", questionNo: 1})} style={styles.quizContainer}>
         <Text style={styles.quizTitle}>Johann Bach</Text>
-        <View style={{
-            borderRadius: 31,
-            width: 90,
-            height: 90,
-            marginLeft: 10,
-            top: 6,
-            backgroundColor: '#c3c3c3', // Change this to your desired rectangle color
-        }} />
-      </View>
+        <Image source={require('../../../assets/bachquiz.webp')} style={{ width: 100, height: 150, marginLeft: 10, top: 15 }} />
+      </TouchableOpacity>
       
-      <TouchableOpacity 
-      style={[{ top: 100, left: "8%" },
-           styles.quizContainer,
-         ]}>
+      <TouchableOpacity style={styles.quizContainer}>
         <Text style={styles.quizTitle}>Locked...</Text>
-        <Image source={require('../../../assets/lock.png')}
-        style={{
-            width: 100,
-            height: 100, 
-            marginLeft: 10,
-            top: -5
-          }} />
+        <Image source={require('../../../assets/lock.png')} style={{ width: 100, height: 100, marginLeft: 10, top: -5 }} />
       </TouchableOpacity>
 
     </ScrollView>
