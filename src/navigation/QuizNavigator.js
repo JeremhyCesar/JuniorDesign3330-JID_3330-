@@ -13,62 +13,45 @@ import { CreateQuiz } from "../pages/Quizzes/CreateQuiz";
 const Stack = createNativeStackNavigator();
 
 export function QuizNavigator() {
+  const screenOptions = {
+    headerShown: true,
+    headerStyle: {
+      backgroundColor: "#e2480d",
+    },
+    headerTintColor: "white",
+    headerTitleStyle: {
+      fontWeight: "bold",
+    },
+  };
+
   return (
-    <Stack.Navigator
-      initialRouteName="QuizScreen"
-      screenOptions={{ headerShown: false }}
-    >
-      <Stack.Screen name="My Quizzes" component={QuizScreen} />
+    <Stack.Navigator initialRouteName="QuizScreen" screenOptions={screenOptions}>
+      <Stack.Screen name="My Quizzes" component={QuizScreen} options={{ headerShown: false }} />
       <Stack.Screen
         name="CreateRoomScreen"
         component={CreateRoomScreen}
         options={{
-          headerShown: true,
           title: "Create Quiz Room",
-          headerStyle: {
-            backgroundColor: "#e2480d", 
-          },
-          headerTintColor: "white",
-          headerTitleStyle: {
-            fontWeight: "bold", 
-          },
         }}
       />
       <Stack.Screen
         name="CreateQuiz"
         component={CreateQuiz}
         options={{
-          headerShown: true,
           title: "Create Quiz",
-          headerStyle: {
-            backgroundColor: "#e2480d", 
-          },
-          headerTintColor: "white",
-          headerTitleStyle: {
-            fontWeight: "bold", 
-          },
         }}
       />
       <Stack.Screen
         name="JoinOnlineQuizRoom"
         component={JoinOnlineQuizRoom}
         options={{
-          headerShown: true,
           title: "Join Online Quiz",
-          headerStyle: {
-            backgroundColor: "#e2480d", 
-          },
-          headerTintColor: "white",
-          headerTitleStyle: {
-            fontWeight: "bold", 
-          },
         }}
       />
       <Stack.Screen
         name="OnlineQuizRoom"
         component={OnlineQuizRoom}
         options={{
-          headerShown: true,
           title: "",
           gestureDirection: "horizontal",
           gestureEnabled: true,

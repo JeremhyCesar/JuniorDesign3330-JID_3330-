@@ -77,7 +77,7 @@ export function QuizScreen({ navigation }) {
           styles.block,
         ]}
       >
-        <Text style={styles.title}>Online Quiz</Text>
+        <Text style={[styles.title, {left: 5, top: 5}]}>Online Quiz</Text>
         <View style={styles.buttonContainer}>
           <Pressable
             style={[styles.button, { marginBottom: 20 }]}
@@ -114,7 +114,7 @@ export function QuizScreen({ navigation }) {
           styles.block,
         ]}
       >
-        <Text style={styles.title}>Offline Quiz</Text>
+        <Text style={[styles.title, {left: 5, top: 5}]}>Offline Quiz</Text>
         <View style={styles.buttonContainer}>
           <Pressable
             style={[styles.button, { marginBottom: 20 }]}
@@ -131,9 +131,9 @@ export function QuizScreen({ navigation }) {
           source={require("../../assets/couple-dance-party.png")}
           style={{
             position: "absolute",
-            top: 45,
-            right: 0,
-            width: 220,
+            top: 70,
+            right: 5,
+            width: 200,
             height: 180,
             objectFit: "cover",
           }}
@@ -145,13 +145,13 @@ export function QuizScreen({ navigation }) {
           styles.block,
         ]}
       >
-        <Text style={styles.title}>Create Quiz</Text>
+        <Text style={[styles.title, {left: 5, top: 5}]}>Create Quiz</Text>
         <View style={styles.buttonContainer}>
           <Pressable
             style={[styles.button, { marginBottom: 20 }]}
             onPress={() => navigation.navigate("CreateQuiz")}
           >
-            <Text style={[styles.buttonText, { color: "#00347f" }]}>
+            <Text style={[styles.buttonText, {color: "#00347f" }]}>
               Create New Quiz
             </Text>
           </Pressable>
@@ -160,10 +160,10 @@ export function QuizScreen({ navigation }) {
           source={require("../../assets/saxophonist.png")}
           style={{
             position: "absolute",
-            top: 30,
-            right: 10,
-            width: 140,
-            height: 180,
+            top: 70,
+            right: 15,
+            width: 130,
+            height: 170,
             objectFit: "cover",
           }}
         />
