@@ -25,5 +25,14 @@
         { "title": "Bach's life", "videoID": "V5ijvbKeAp8" },
         { "title": "Bach's music", "videoID": "TvyLebqTtW4" }
       ]
+    },
+    {
+      "composerName": "Wolfgang Amadeus Mozart",
+      "introduction": "Let's learn about Mozart!",
+      "imageSource": "Mozart.png",
+      "videoPages": [
+        { "title": "Mozart's life", "videoID": "gsb5nWFpwsE" },
+        { "title": "Mozart's music", "videoID": "Nx_m2ZTZPuk&t" }
+      ]
     }
   ]
