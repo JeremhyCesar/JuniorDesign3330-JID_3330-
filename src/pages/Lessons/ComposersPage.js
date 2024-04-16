@@ -23,8 +23,12 @@ export function ComposersPage({ navigation }) {
       image: require("../../../assets/composers/Bach.png"),
     },
     {
-      name: "Wolfgang Amadeus Mozart",
+      name: "Wolfgang Mozart",
       image: require("../../../assets/composers/Mozart.png"),
+    },
+    {
+      name: "Robert Schumann",
+      image: require("../../../assets/composers/Schumann.png"),
     },
     // Add more composers as needed
   ];

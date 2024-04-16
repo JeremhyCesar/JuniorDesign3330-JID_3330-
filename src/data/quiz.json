@@ -23,7 +23,38 @@
             "answer": "C"
           }
         ]
+      },
+
+      "Robert Schumann": {
+        "quizzes": [
+          {
+            "question": "Which of these pieces is a composition by Robert Schumann?",
+            "options": ["The Magic Flute", "Für Elise", "Dichterliebe", "The Barber of Seville"],
+            "answer": "C"
+          },
+          {
+            "question": "Schumann’s music is often noted for its:",
+            "options": ["Classical formality", "Dance-like rhythms", "Emotional depth", "Religious themes"],
+            "answer": "C"
+          },
+          {
+            "question": "Robert Schumann was a leading composer of which musical era?",
+            "options": ["Baroque", "Classical", "Romantic", "Modern"],
+            "answer": "C"
+          },
+          {
+            "question": "Schumann’s ‘Scenes from Childhood’ is written for which instrument?",
+            "options": ["Violin", "Piano", "Flute", "Cello"],
+            "answer": "B"
+          },
+          {
+            "question": "Who was a significant influence in Schumann's life and music?",
+            "options": ["Wolfgang Amadeus Mozart", "Johann Sebastian Bach", "Clara Wieck", "Felix Mendelssohn"],
+            "answer": "C"
+          }
+        ]
       }
+      
     },
     "instruments": {
       "Piano": {

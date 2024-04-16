@@ -117,7 +117,7 @@
       ]
     },
 
-    "Wolfgang Amadeus Mozart": {
+    "Wolfgang Mozart": {
       "sections": [
         {
           "content": "Wolfgang Amadeus Mozart’s work is a perfect representation of the Classical era’s ideals. His music, characterized by clarity, symmetry, and balance, captures the essence of human emotion and intellect.",
@@ -142,6 +142,35 @@
         },
         {
           "content": "Mozart’s untimely death left a profound impact on the music world. His compositions continue to be celebrated for their beauty, complexity, and emotional depth, underscoring his status as one of the greatest composers in Western music history."
+        }
+      ]
+    },
+
+    "Robert Schumann": {
+      "sections": [
+        {
+          "content": "Robert Schumann's work is a quintessential reflection of the Romantic era's values. His compositions, known for their emotional intensity and innovative use of harmony and form, delve deep into the Romantic spirit, emphasizing the importance of individual expression and subjective experience.",
+          "points": [
+            {
+              "title": "Pioneer of Romantic Music",
+              "description": "Schumann was instrumental in defining the Romantic era in music, particularly through his piano works and lieder. His compositions often showcase a deep connection to the literary movements of his time, blending music with poetry."
+            },
+            {
+              "title": "Complexity and Emotional Range",
+              "description": "Schumann's works range from joyful and exuberant to deeply melancholic and introspective, reflecting the complex emotions of the human soul. His ability to convey subtle emotional nuances sets his music apart."
+            },
+            {
+              "title": "Innovation in Song and Symphonic Forms",
+              "description": "Schumann contributed significantly to the development of the song cycle and symphony, expanding their potential for emotional expression and structural complexity. His song cycles, such as 'Dichterliebe,' are celebrated for their lyrical and thematic depth."
+            },
+            {
+              "title": "Influence on Later Composers and the Lied Genre",
+              "description": "Schumann’s emphasis on lyrical purity and emotional authenticity had a lasting impact on the music of subsequent generations. His approach to the Lied and orchestral music influenced many later composers, including Brahms and Mahler."
+            }
+          ]
+        },
+        {
+          "content": "Despite battling mental health issues, Schumann's artistic output remained prolific and influential. His legacy endures in the core repertoire of classical music, epitomizing the Romantic ethos and continuing to move audiences with its profound emotional depth and innovative compositions."
         }
       ]
     }
