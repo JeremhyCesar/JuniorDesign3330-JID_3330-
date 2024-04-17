@@ -1,0 +1,6 @@
+module Pods_JuniorDesign3330JID3330 {
+  umbrella header "Pods-JuniorDesign3330JID3330-umbrella.h"
+
+  export *
+  module * { export * }
+}

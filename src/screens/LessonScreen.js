@@ -77,38 +77,39 @@ export function LessonScreen({ navigation }) {
         />
       </Pressable>
       <Pressable
-        onPress={() => navigation.navigate("ContemporaryMusic")}
-        style={[
-          { top: 124, left: "8%", backgroundColor: "#e24808" },
-          styles.button,
-        ]}
-      >
-        <Text
-          style={{
-            top: 26,
-            left: "10%",
-            fontSize: 28,
-            textAlign: "left",
-            fontWeight: "bold",
-            color: "white",
-            width: "55%",
-            flexWrap: "wrap",
-          }}
-        >
-          Contemporary Music
-        </Text>
-        <Image
-          source={require("../../assets/couple-dance-party.png")}
-          style={{
-            position: "absolute",
-            top: 45,
-            left: "35%",
-            width: 220,
-            height: 180,
-            objectFit: "cover",
-          }}
-        />
-      </Pressable>
+  onPress={() => navigation.navigate("ContemporaryMusic")}
+  style={[
+    { top: 124, left: "8%", backgroundColor: "#e24808" },
+    styles.button,
+  ]}
+>
+  <Text
+    style={{
+      top: 26,
+      left: "10%",
+      fontSize: 28,
+      textAlign: "left",
+      fontWeight: "bold",
+      color: "white",
+      flexDirection: "row",
+    }}
+  >
+    <Text style={{ flexShrink: 1 }}>Contemporary</Text>{"\n"}
+    <Text>Music</Text>
+  </Text>
+  <Image
+    source={require("../../assets/couple-dance-party.png")}
+    style={{
+      position: "absolute",
+      top: 45,
+      left: "35%",
+      width: 220,
+      height: 180,
+      objectFit: "cover",
+    }}
+  />
+</Pressable>
+
       <Pressable
         onPress={() => navigation.navigate("CompareAndContrast")}
         style={[

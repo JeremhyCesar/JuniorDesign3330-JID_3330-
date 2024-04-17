@@ -49,9 +49,6 @@ export function SocialPage({ navigation }) {
     return (
         <View style={{ flex: 1, backgroundColor: '#00347F' }}>
             <Text style={styles.title}>Social</Text>
-            <Pressable onPress={() => logOut()} style={{top: 17, left: '65%', height: 40, width: '30%', backgroundColor: '#1e2237', borderRadius: 15}}>
-                <Text style={{top: 5, left: '15%', color: 'white', fontSize: 20}}>LOG OUT</Text>
-            </Pressable>
             <Tab.Navigator
                 initialRouteName="Friends"
                 tabBarOptions={{
@@ -198,13 +195,13 @@ function FriendsPage() {
 
             {/* Text */}
             <View>
-                <Text style={[{ top: -165, left: 94 }, styles.nameText]}>Jim</Text>
-                <Text style={[{ top: -260, left: 187.5 }, styles.nameText]}>Dave</Text>
-                <Text style={[{ top: -203, left: 287 }, styles.nameText]}>Tina</Text>
+                <Text style={[{ top: -165, left: 89 }, styles.nameText]}>Jim</Text>
+                <Text style={[{ top: -260, left: 176.5 }, styles.nameText]}>Dave</Text>
+                <Text style={[{ top: -203, left: 275 }, styles.nameText]}>Tina</Text>
 
-                <Text style={[{ top: -200, left: 90 }, styles.userText]}>@jimbo</Text>
-                <Text style={[{ top: -290, left: 181.5 }, styles.userText]}>@thedavid</Text>
-                <Text style={[{ top: -225, left: 287 }, styles.userText]}>@tina12</Text>
+                <Text style={[{ top: -200, left: 86 }, styles.userText]}>@jimbo</Text>
+                <Text style={[{ top: -290, left: 170.5 }, styles.userText]}>@thedavid</Text>
+                <Text style={[{ top: -225, left: 275 }, styles.userText]}>@tina12</Text>
             </View>
 
             <View style={[{ top: -150, left: '8%', backgroundColor: '#1E2237', zIndex: 1 }, styles.toggle]}>
@@ -399,13 +396,13 @@ function ClassPage() {
 
             {/* Text */}
             <View>
-                <Text style={[{ top: -165, left: 94 }, styles.nameText]}>Ana</Text>
-                <Text style={[{ top: -260, left: 187.5 }, styles.nameText]}>Mort</Text>
-                <Text style={[{ top: -203, left: 283 }, styles.nameText]}>Julian</Text>
+                <Text style={[{ top: -165, left: 88 }, styles.nameText]}>Ana</Text>
+                <Text style={[{ top: -260, left: 180.5 }, styles.nameText]}>Mort</Text>
+                <Text style={[{ top: -203, left: 267 }, styles.nameText]}>Julian</Text>
 
-                <Text style={[{ top: -202, left: 88 }, styles.userText]}>@banana</Text>
-                <Text style={[{ top: -290, left: 182.5 }, styles.userText]}>@lemur4L</Text>
-                <Text style={[{ top: -225, left: 280 }, styles.userText]}>@kingjulian</Text>
+                <Text style={[{ top: -202, left: 82 }, styles.userText]}>@banana</Text>
+                <Text style={[{ top: -290, left: 174.5 }, styles.userText]}>@lemur4L</Text>
+                <Text style={[{ top: -225, left: 263 }, styles.userText]}>@kingjulian</Text>
             </View>
 
             <View style={[{ top: -150, left: '8%', backgroundColor: '#1E2237', zIndex: 1 }, styles.toggle]}>

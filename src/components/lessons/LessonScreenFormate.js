@@ -14,8 +14,11 @@ import reviewData from "../../data/review.json";
 
 const imageMap = {
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
+  "Bach.png": require("../../../assets/composers/Bach.png"),
+  "Beethoven.png": require("../../../assets/composers/Beethoven.png"),
   "piano.png": require("../../../assets/instruments/piano.png"),
   "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png"),
+  "Mozart.png": require("../../../assets/composers/Mozart.png"),
   // Add more mappings for other composers, instruments or other topics
 };
 

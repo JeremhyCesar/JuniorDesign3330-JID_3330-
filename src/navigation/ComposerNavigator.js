@@ -10,16 +10,24 @@ import composerLessonData from "../data/composerLessons.json";
 const Stack = createNativeStackNavigator();
 
 const ComposerNavigator = () => {
-
   return (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name="Composers" component={ComposersPage} />
-      <Stack.Screen name="LessonScreen">
+      <Stack.Screen
+        name="LessonScreen"
+        options={({ route }) => ({
+          headerShown: true,
+          headerTitle: route.params.composerName,
+          headerBackTitleVisible: false,
+          headerBackButtonMenuEnabled: false,
+        })}
+      >
         {(props) => {
           const { composerName } = props.route.params;
           const lessonData = composerLessonData.find(
             (lesson) => lesson.composerName === composerName
           );
+          console.log(lessonData);
           return <LessonScreen {...props} lessonData={lessonData} />;
         }}
       </Stack.Screen>
