@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App Test Client</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        var socket; // Declare socket globally so it can be accessed from HTML button handlers
+        document.addEventListener('DOMContentLoaded', function () {
+            socket = io('http://localhost:3000');
+
+            socket.on('connect', () => {
+                console.log('Connected to the server');
+                document.getElementById('status').textContent = 'Connected to the server';
+            });
+
+            socket.on('quizStarted', (quiz) => {
+                console.log('Quiz started:', quiz);
+                document.getElementById('quiz-info').textContent = 'Quiz started: ' + JSON.stringify(quiz);
+            });
+
+            socket.on('disconnect', () => {
+                console.log('Disconnected from server');
+                document.getElementById('status').textContent = 'Disconnected from server';
+            });
+        });
+
+        function startQuiz() {
+            socket.emit('startQuiz');
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Quiz App Test Client</h1>
+    <p id="status">Not connected</p>
+    <button onclick="start
