@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { View, Text, TextInput, ScrollView, TouchableOpacity, Image, Dimensions } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
+import { useUser, useObject } from '@realm/react';
+import { User } from '../models/User';
+import { BSON } from 'realm';
 
-const ListenScreen = () => {
-  const navigation = useNavigation();
+const ListenScreen = ({ navigation }) => {
+  const user = useObject(User, BSON.ObjectId(useUser().id));
   const [searchQuery, setSearchQuery] = useState('');
 
   const navigateToDetails = (category) => {
@@ -79,7 +81,7 @@ const ListenScreen = () => {
   return (
     <View style={{ flex: 1 }}>
       <View style={{ backgroundColor: '#e2480d', padding: 10 }}>
-        <Text style={{ left: 5, color: 'white', fontWeight: 'bold', marginTop: 45, fontSize: 25 }}>Let's listen, Julie!</Text>
+        <Text style={{ left: 5, color: 'white', fontWeight: 'bold', marginTop: 45, fontSize: 25 }}>Let's listen, {user.full_name.split(" ")[0]}!</Text>
       </View>
 
       <View style={{ padding: 10 }}>

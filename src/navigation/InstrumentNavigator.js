@@ -1,7 +1,7 @@
 import React from "react";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { InstrumentsPage } from "../pages/Lessons/InstrumentsPage";
-import { LessonScreen } from "../components/lessons/LessonScreenFormate";
+import { LessonScreen } from "../components/lessons/LessonScreenFormat";
 import { VideoPage } from "../pages/Lessons/VideoPage";
 import { Worksheet } from "../pages/Lessons/Worksheet";
 import { ReviewSession } from "../pages/Lessons/ReviewSession";

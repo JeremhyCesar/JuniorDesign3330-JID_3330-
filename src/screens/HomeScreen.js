@@ -1,7 +1,11 @@
 import React from 'react';
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
+import { useUser, useObject } from '@realm/react';
+import { User } from '../models/User';
+import { BSON } from 'realm';
 
 export function HomeScreen({ navigation }) {
+    const user = useObject(User, BSON.ObjectId(useUser().id));
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,
@@ -29,7 +33,7 @@ export function HomeScreen({ navigation }) {
                 left: '8%',
                 fontSize: 48,
                 color: '#e2480d'
-            }}>Julie Smith</Text>
+            }}>{user.full_name}</Text>
             <Text style={{
                 top: 68,
                 left: '8%',

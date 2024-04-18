@@ -7,10 +7,13 @@ import {
   Image,
   Pressable,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import LessonBlock from "./LessonBlock";
 import worksheetData from "../../data/worksheet.json";
 import reviewData from "../../data/review.json";
+import { useObject, useRealm, useUser } from "@realm/react";
+import { BSON } from "realm";
+import { User } from "../../models/User";
 
 const imageMap = {
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
@@ -46,9 +49,41 @@ export function LessonScreen({ lessonData }) {
   const totalTasks = videoPages.length + 3; // Videos + Worksheet + Review
 
   const navigation = useNavigation();
+  const user = useObject(User, BSON.ObjectId(useUser().id));
+  const realm = useRealm();
+  // sync module progress with database
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      lessonIndex = user.lesson_topics.indexOf(name)
+      if (lessonIndex !== -1) {
+        let prog = user.lesson_progress[lessonIndex];
+        setModulesComplete(prog);
+        setProgress(0)
+        for (i = 0; i < 5; i++) {
+          if ((prog >> i) & 1 === 1) setProgress((prev) => prev + 1);
+        }
+      }
+    });
+    return unsubscribe;
+  }, [navigation]);
 
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('blur', () => {
+      realm.write(() => {
+        if (user.lesson_topics.indexOf(name) === -1) {
+          user.lesson_topics.push(name);
+          user.lesson_progress.push(modulesComplete);
+        } else {
+          user.lesson_progress[user.lesson_topics.indexOf(name)] = modulesComplete;
+        }
+      })
+    });
+    return unsubscribe;
+  }, [modulesComplete]);
+  
+  
   // moduleNo should be 0 indexed
-  const handlePress = (moduleNo) => {
+  const completeModule = (moduleNo) => {
     setModulesComplete((prevModules) => {
       if ((prevModules & (1 << moduleNo)) === 0) {
         setProgress((prevProgress) => prevProgress + 1);
@@ -128,7 +163,7 @@ export function LessonScreen({ lessonData }) {
       <View style={styles.textContent}>
         <Text style={styles.introduction}>
           {introduction}{" "}
-          <Text style={{ fontWeight: "bold", color: "#E2480D" }}>Julie!</Text>
+          <Text style={{ fontWeight: "bold", color: "#E2480D" }}>{user.full_name.split(" ")[0]}!</Text>
         </Text>
       </View>
 
@@ -138,7 +173,6 @@ export function LessonScreen({ lessonData }) {
           {
             width: 350,
             height: 249,
-            left: "5%",
             justifyContent: "center",
             alignItems: "center",
             backgroundColor: "#ffbb37",
@@ -179,7 +213,7 @@ export function LessonScreen({ lessonData }) {
             notes={videoPage.title}
             titleColor="#ff9800"
             onPress={() => {
-              handlePress(index);
+              completeModule(index);
               navigation.navigate("VideoPage", {
                 videoTitle: videoPage.title,
                 videoID: videoPage.videoID,
@@ -194,7 +228,7 @@ export function LessonScreen({ lessonData }) {
           notes={`Complete the worksheet of ${name}`}
           titleColor="#4caf50"
           onPress={() => {
-            handlePress(videoPages.length);
+            completeModule(videoPages.length);
             navigation.navigate("Worksheet", { worksheetContent });
           }}
         />
@@ -205,7 +239,7 @@ export function LessonScreen({ lessonData }) {
           notes={`Review the knowledge of ${name}`}
           titleColor="#2196f3"
           onPress={() => {
-            handlePress(videoPages.length + 1);
+            completeModule(videoPages.length + 1);
             navigation.navigate("ReviewSession", { reviewContent });
           }}
         />
@@ -216,7 +250,7 @@ export function LessonScreen({ lessonData }) {
           notes={`Review the knowledge of ${name}`}
           titleColor="#FFD000"
           onPress={() => {
-            handlePress(videoPages.length + 2);
+            completeModule(videoPages.length + 2);
             navigation.navigate("ReviewSession", { reviewContent });
           }}
         />
