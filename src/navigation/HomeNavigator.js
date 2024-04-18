@@ -94,6 +94,7 @@ const HomeNavigator = () => {
           />
         </Stack.Navigator>
       </ScrollView>
+      {initialRoute == "Home" && 
       <SafeAreaView style={styles.bottomBar}>
         <View style={styles.boxContainer}>
           <Pressable onPress={() => navigateToScreen("Home")}>
@@ -112,7 +113,7 @@ const HomeNavigator = () => {
             <Image source={require('../../assets/lessonsbaricon.png')} style={styles.box} />
           </Pressable>
         </View>
-      </SafeAreaView> 
+      </SafeAreaView> }
     </View>
   );
 };

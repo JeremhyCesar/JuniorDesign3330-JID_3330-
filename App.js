@@ -18,6 +18,13 @@ const App = () =>
           <RealmProvider schema={[User, Class, OnlineQuizRecord, LocalQuizRecord]}
             sync={{
               flexible: true,
+              initialSubscriptions: {
+                update: (subs, realm) => {
+                  console.log('im trying');
+                  subs.add(realm.objects([User, Class, OnlineQuizRecord, LocalQuizRecord]))
+                }
+              },
+              rerunOnOpen: true,
               existingRealmFileBehavior: {
                 type: OpenRealmBehaviorType.DownloadBeforeOpen,
                 timeOut: 1000,
