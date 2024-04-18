@@ -14,7 +14,6 @@ export const AccountInfoScreen = ({ navigation }) => {
     const toggleTeacher = () => setTeacher(previousState => !previousState);
 
     const handleConfirm = () => {
-        console.log('hi');
         realm.subscriptions.update((mutableSubs) => {
             mutableSubs.add(realm.objects("User"), {name: "userSubscription"});
         })
