@@ -39,7 +39,7 @@ const styles = StyleSheet.create({
     top: 0,
     right: 20,
     width: 120,
-    height: 155,
+    height: 120,
     objectFit: "cover",
   },
 });
