@@ -12,6 +12,12 @@ export function HomeScreen({ navigation }) {
             width: '84%',
             height: 250,
             cursor: 'pointer'
+        },
+        userButton: {
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            zIndex: 1, // Ensures button is on top of other content
         }
     });
 
@@ -111,6 +117,9 @@ export function HomeScreen({ navigation }) {
                 }} />
             </Pressable>
             <View style={{ height: 210 }} />
+            <Pressable style={[styles.userButton, {top: 75, right: 25}]} onPress={() => navigation.navigate('UserPage')}>
+                <Image source={require('../../assets/user-icon.webp')} style={{ width: 40, height: 40 }} />
+            </Pressable>
         </ScrollView>
     );
 }

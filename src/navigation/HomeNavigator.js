@@ -7,6 +7,7 @@ import LessonNavigator from "./LessonNavigator";
 import { SocialNavigator } from "./SocialNavigator"
 import { useNavigation } from "@react-navigation/native";
 import ListenNavigator from "./ListenNavigator";
+import { UserPage } from '../screens/UserPage';
 
 const Stack = createStackNavigator();
 
@@ -69,7 +70,14 @@ const HomeNavigator = () => {
                 />
               ),
             }}
-          />    
+          />  
+          <Stack.Screen
+            name="UserPage"
+            component={UserPage}
+            options={{
+            title: 'User Page',
+           }}
+         />
           <Stack.Screen
             name="Social"
             component={SocialNavigator}
