@@ -1,16 +1,21 @@
 import React from 'react';
 import {registerRootComponent} from 'expo'
 import { AppProvider, UserProvider, RealmProvider } from '@realm/react';
-import {OpenRealmBehaviorType, OpenRealmTimeOutBehavior} from 'realm';
+import {OpenRealmBehaviorType, OpenRealmTimeOutBehavior, Object} from 'realm';
 // import {SYNC_CONFIG} from './sync.config';
 import { NavigationContainer } from '@react-navigation/native';
 import LoginNavigator from './src/navigation/LoginNavigator';
 import HomeNavigator from './src/navigation/HomeNavigator';
+import { Class } from './src/models/Class';
+import { User } from './src/models/User';
+import { LocalQuizRecord } from './src/models/LocalQuizRecord';
+import { OnlineQuizRecord } from './src/models/OnlineQuizRecord';
+
 const App = () =>
   <NavigationContainer>
     <AppProvider id={'application-0-surqu'}>
         <UserProvider fallback={<LoginNavigator />}>
-          <RealmProvider
+          <RealmProvider schema={[User, Class, OnlineQuizRecord, LocalQuizRecord]}
             sync={{
               flexible: true,
               existingRealmFileBehavior: {

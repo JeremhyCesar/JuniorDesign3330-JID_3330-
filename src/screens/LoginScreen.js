@@ -1,7 +1,9 @@
 import { Image, TouchableOpacity, Text, View, TextInput } from 'react-native'
 import { useState, useEffect } from 'react';
+import { useRealm, useQuery } from '@realm/react';
 import { useEmailPasswordAuth } from '@realm/react';
 import * as validator from 'validator';
+import { User } from 'realm';
 
 export const LoginScreen = ({ navigation }) => {
     const [email, setEmail] = useState(''); 
@@ -30,7 +32,17 @@ export const LoginScreen = ({ navigation }) => {
             if (result.error) {
                 setError(result.error.message);
                 setShowError(true);
-            }
+            } /*else {
+                let user = useUser();
+                if (realm.objectForPrimaryKey(user.id) === null) {
+                    realm.write(
+                        realm.create(User, {
+                            _id: user.id,
+
+                        })
+                    )
+                }
+            }*/
         }
     }
 
