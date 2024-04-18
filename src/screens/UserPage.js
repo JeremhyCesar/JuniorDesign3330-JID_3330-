@@ -1,9 +1,10 @@
 // UserPage.js
 import React from 'react';
 import { View, Text, StyleSheet, Image, Pressable, Alert } from 'react-native';
-import { FirstScreen } from '../screens/FirstScreen';
+import { useEmailPasswordAuth } from '@realm/react';
 
 export function UserPage({ navigation }) {
+    const { logOut } = useEmailPasswordAuth();
     const handleLogout = () => {
         Alert.alert(
             'Logout',
@@ -16,7 +17,7 @@ export function UserPage({ navigation }) {
                 {
                     text: 'Logout',
                     onPress: () => {
-                        navigation.navigate('FirstScreen'); 
+                        logOut();
                     },
                 },
             ],

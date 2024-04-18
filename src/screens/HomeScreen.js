@@ -45,6 +45,7 @@ export function HomeScreen({ navigation }) {
                 shadowOffset: { width: 4, height: 4 },
                 shadowColor: 'black',
                 shadowOpacity: 0.25,
+                elevation: 3,
                 width: '84%',
                 height: 142
             }}>
@@ -61,7 +62,8 @@ export function HomeScreen({ navigation }) {
                     shadowOpacity: 0.25,
                     color: '#717171',
                     flexWrap: 'wrap',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    elevation: 3
                 }}>Where words fail, music speaks.</Text>
             </View>
             <Pressable onPress={() => { navigation.navigate('Lessons', { screen: 'LessonHome' }) }} style={[{ top: 126, left: '8%', backgroundColor: '#ffbb37' }, styles.button]}>

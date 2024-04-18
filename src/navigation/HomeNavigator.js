@@ -7,22 +7,28 @@ import LessonNavigator from "./LessonNavigator";
 import { SocialNavigator } from "./SocialNavigator"
 import { useNavigation } from "@react-navigation/native";
 import ListenNavigator from "./ListenNavigator";
+import { useUser, useObject } from "@realm/react";
+import { User } from "../models/User";
+import { BSON } from "realm";
+import { AccountInfoScreen } from "../screens/AccountInfoScreen";
 import { UserPage } from '../screens/UserPage';
 
 const Stack = createStackNavigator();
 
 const HomeNavigator = () => {
   const navigation = useNavigation();
+  const user = useUser();
 
   const navigateToScreen = (screenName) => {
     navigation.navigate("Home");
     navigation.navigate(screenName);
   };
+  let initialRoute = useObject(User, BSON.ObjectId(user.id)) === null ? "AccountInfo" : "Home";
 
   return (
     <View style={{ flex: 1 }}>
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <CustomStackNavigator>
+        <Stack.Navigator initialRouteName={initialRoute} screenOptions={{headerShown: false}}>
           <Stack.Screen
             name="Home"
             component={HomeScreen}
@@ -34,6 +40,10 @@ const HomeNavigator = () => {
                 />
               ),
             }}
+          />
+          <Stack.Screen
+            name="AccountInfo"
+            component={AccountInfoScreen}
           />
           <Stack.Screen
             name="Quizzes"
@@ -90,8 +100,9 @@ const HomeNavigator = () => {
               ),
             }}
           />
-        </CustomStackNavigator>
+        </Stack.Navigator>
       </ScrollView>
+      {initialRoute == "Home" && 
       <SafeAreaView style={styles.bottomBar}>
         <View style={styles.boxContainer}>
           <Pressable onPress={() => navigateToScreen("Home")}>
@@ -110,18 +121,8 @@ const HomeNavigator = () => {
             <Image source={require('../../assets/lessonsbaricon.png')} style={styles.box} />
           </Pressable>
         </View>
-      </SafeAreaView> 
+      </SafeAreaView> }
     </View>
-  );
-};
-
-const CustomStackNavigator = ({ children }) => {
-  const Stack = createStackNavigator();
-
-  return (
-    <Stack.Navigator screenOptions={{ headerShown: false }}>
-      {children}
-    </Stack.Navigator>
   );
 };
 
