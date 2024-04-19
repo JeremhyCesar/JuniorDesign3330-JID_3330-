@@ -39,7 +39,7 @@ export function UserPage({ navigation }) {
             <Image source={require('../../assets/profile-picture.jpeg')} style={styles.profilePicture} />
             <View style={styles.buttonContainer}>
                 {user.user_type === "Teacher" &&
-                <Pressable style={[styles.button, styles.settingsButton]} onPress={() => navigation.navigate('ClassCreation')}>
+                <Pressable style={[styles.button, styles.settingsButton]} onPress={() => navigation.navigate(user.managed_class === null ? 'ClassCreation' : 'ClassInfo')}>
                     <Text style={styles.buttonText}>Class Settings</Text>
                 </Pressable>}
                 <Pressable style={[styles.button, styles.settingsButton]} onPress={() => navigation.navigate('Settings')}>

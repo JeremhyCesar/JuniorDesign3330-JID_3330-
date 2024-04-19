@@ -31,6 +31,7 @@ export function HomeScreen({ navigation }) {
                 fontWeight: 'bold',
                 top: 64,
                 left: '8%',
+                width: '75%',
                 fontSize: 48,
                 color: '#e2480d'
             }}>{user.full_name}</Text>
@@ -123,7 +124,7 @@ export function HomeScreen({ navigation }) {
                 }} />
             </Pressable>
             <View style={{ height: 210 }} />
-            <Pressable style={[styles.userButton, {top: 75, right: 25}]} onPress={() => navigation.navigate('UserPage')}>
+            <Pressable style={[styles.userButton, {top: 75, right: 30}]} onPress={() => navigation.navigate('UserPage')}>
                 <Image source={require('../../assets/user-icon.webp')} style={{ width: 40, height: 40 }} />
             </Pressable>
         </ScrollView>

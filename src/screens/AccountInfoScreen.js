@@ -2,28 +2,55 @@ import React, { useState } from 'react';
 import { Image, TouchableOpacity, Text, View, TextInput, Switch } from 'react-native';
 import { User } from '../models/User';
 import { BSON } from 'realm';
-import { useRealm, useUser } from '@realm/react';
+import { useQuery, useRealm, useUser } from '@realm/react';
+import { Class } from '../models/Class';
 
 export const AccountInfoScreen = ({ navigation }) => {
     const realm = useRealm();
     const user = useUser();
+    const classes = useQuery(Class);
 
     const [name, setName] = useState("");
     const [teacher, setTeacher] = useState(false);
+    const [code, setCode] = useState(0);
 
     const toggleTeacher = () => setTeacher(previousState => !previousState);
+    
+    realm.subscriptions.update((mutableSubs) => {
+        mutableSubs.add(realm.objects("User").filtered(" _id == $0", BSON.ObjectId(user.id)), {name: "userSubscription"});
+        mutableSubs.add(realm.objects("Class"), {name: "classSubscription"});
+    })
 
     const handleConfirm = () => {
-        realm.subscriptions.update((mutableSubs) => {
-            mutableSubs.add(realm.objects("User").filtered(" _id == $0", BSON.ObjectId(user.id)), {name: "userSubscription"});
-        })
+        const classFromCode = classes.find((object) => object.join_code == code);
+
         realm.write(() => {
-            realm.create(User, {
-                _id: BSON.ObjectId(user.id),
-                full_name: name,
-                user_type: teacher ? 'Teacher' : 'Student',
-            })
-        })
+            console.log(classes);
+            console.log(classFromCode);
+            if (classFromCode && !teacher) {
+                classFromCode.students.push(
+                    realm.create(User, {
+                        _id: BSON.ObjectId(user.id),
+                        full_name: name,
+                        user_type: teacher ? 'Teacher' : 'Student',
+                        enrolled_class: classFromCode
+                    }));
+                realm.subscriptions.update((mutableSubs) => {
+                    mutableSubs.removeByName("classSubscription");
+                    mutableSubs.add(realm.objects("Class").filtered("join_code == $0", code), {name: "classSubscription"});
+                })
+            }
+            else if (code == 0) {
+                realm.create(User, {
+                    _id: BSON.ObjectId(user.id),
+                    full_name: name,
+                    user_type: teacher ? 'Teacher' : 'Student',
+                });
+                realm.subscriptions.update((mutableSubs) => {
+                    mutableSubs.removeByName("classSubscription");
+                })
+            }
+        });
         if (!teacher) navigation.navigate('Home');
         else navigation.navigate('ClassCreation');
     }
@@ -39,8 +66,9 @@ export const AccountInfoScreen = ({ navigation }) => {
                 <Text style={{position: 'absolute', fontSize: 16, top: 180}}>Are you a Teacher?</Text>
                 <Switch style={{position: 'absolute', left: '70%', top: 175, }}onValueChange={toggleTeacher} value={teacher}/>
                 <Text style={{position: 'absolute', fontSize: 16, top: 215}}>If you have a teacher who provided you with a class code, enter it here:</Text>
-                <TextInput  placeholderTextColor='#888888' placeholder={'a52e1db793fa'} style={{fontSize: 16, position: 'absolute', top: 265, height: 40, width: '100%', padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
-                <TouchableOpacity onPress={() => handleConfirm()} style={{borderRadius: 24, backgroundColor: '#054584', left: '45%', width: '55%', height: 60, top: 285, shadowOffset: {height: 5}, shadowColor: 'black', shadowOpacity: 0.25, elevation: 3}}>
+                <TextInput onChangeText={setCode} placeholderTextColor='#888888' placeholder={'385475'} style={{fontSize: 16, position: 'absolute', top: 265, height: 40, width: '100%', padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
+                <Text onPress={() => navigation.navigate('Home')} style={{position: 'absolute', fontSize: 14, top: 320, color: '#5555ff'}}>Click here if you've already done this</Text>
+                <TouchableOpacity onPress={() => handleConfirm()} inputMode='numeric' style={{borderRadius: 24, backgroundColor: '#054584', left: '45%', width: '55%', height: 60, top: 295, shadowOffset: {height: 5}, shadowColor: 'black', shadowOpacity: 0.25, elevation: 3}}>
                     <Text style={{top: 10, alignSelf: 'center', fontSize: 26, color: '#ffffff'}}>CONFIRM</Text>
                 </TouchableOpacity>
             </View>

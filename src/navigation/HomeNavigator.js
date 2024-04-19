@@ -13,6 +13,7 @@ import { BSON } from "realm";
 import { AccountInfoScreen } from "../screens/AccountInfoScreen";
 import { UserPage } from '../screens/UserPage';
 import { ClassCreationScreen } from "../screens/ClassCreationScreen";
+import { ClassInfoScreen } from "../screens/ClassInfoScreen";
 
 const Stack = createStackNavigator();
 
@@ -49,6 +50,9 @@ const HomeNavigator = () => {
           <Stack.Screen 
             name="ClassCreation"
             component={ClassCreationScreen}/>
+          <Stack.Screen
+            name="ClassInfo"
+            component={ClassInfoScreen}/>
           <Stack.Screen
             name="Quizzes"
             component={QuizNavigator}

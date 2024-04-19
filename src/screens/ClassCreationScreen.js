@@ -4,31 +4,39 @@ import { User } from '../models/User';
 import { BSON } from 'realm';
 import { useObject, useQuery, useRealm, useUser } from '@realm/react';
 import { Class } from '../models/Class';
+import 'react-native-get-random-values';
 
 export const ClassCreationScreen = ({ navigation }) => {
     const realm = useRealm();
-    const user = useObject(BSON.ObjectId(useUser().id));
+    const user = useObject(User, BSON.ObjectId(useUser().id));
     const classes = useQuery(Class);
 
     const [name, setName] = useState("");
 
     const handleCreate = () => {
+        if (user.managed_class !== null) return;
+        let code = 0;
+        while (code === 0) {
+            code = Math.floor(100000 + 900000 * Math.random());
+            if (classes.filtered('join_code == $0', code).length > 0) code = 0;
+        }
+        realm.subscriptions.update((mutableSubs) => {
+            mutableSubs.add(classes, {name: "classSubscription"});
+        })
+        
         realm.write(() => {
-            let code = 0;
-            while (code = 0) {
-                code = Math.floor(100000 + 900000 * Math.random());
-                if (classes.filtered('join_code == $0', code).length > 0) code = 0;
-            }
-            let id = BSON.ObjectId();
-            realm.create(Class, {
-                _id: id,
+            user.managed_class = realm.create(Class, {
+                _id: BSON.ObjectId(),
                 class_name: name,
-                teacher: user.id,
+                teacher: user,
                 join_code: code
             })
-            user.managed_class = id;
         })
-        navigation.navigate('Home');
+        realm.subscriptions.update((mutableSubs) => {
+            mutableSubs.removeByName("classSubscription");
+            mutableSubs.add(classes.filtered('join_code == $0', code), {name: "classSubscription"});
+        });
+        navigation.navigate('ClassInfo');
     }
 
     return (
