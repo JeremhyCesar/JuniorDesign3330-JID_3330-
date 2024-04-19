@@ -21,7 +21,7 @@ const App = () =>
               initialSubscriptions: {
                 update: (subs, realm) => {
                   console.log('im trying');
-                  subs.add(realm.objects([User, Class, OnlineQuizRecord, LocalQuizRecord]))
+                  subs.add(realm.objects("User").filtered(" _id == $0", BSON.ObjectId(user.id)))
                 }
               },
               rerunOnOpen: true,

@@ -15,7 +15,7 @@ export const AccountInfoScreen = ({ navigation }) => {
 
     const handleConfirm = () => {
         realm.subscriptions.update((mutableSubs) => {
-            mutableSubs.add(realm.objects("User"), {name: "userSubscription"});
+            mutableSubs.add(realm.objects("User").filtered(" _id == $0", BSON.ObjectId(user.id)), {name: "userSubscription"});
         })
         realm.write(() => {
             realm.create(User, {
@@ -24,7 +24,8 @@ export const AccountInfoScreen = ({ navigation }) => {
                 user_type: teacher ? 'Teacher' : 'Student',
             })
         })
-        navigation.navigate('Home');
+        if (!teacher) navigation.navigate('Home');
+        else navigation.navigate('ClassCreation');
     }
 
     return (
@@ -38,7 +39,7 @@ export const AccountInfoScreen = ({ navigation }) => {
                 <Text style={{position: 'absolute', fontSize: 16, top: 180}}>Are you a Teacher?</Text>
                 <Switch style={{position: 'absolute', left: '70%', top: 175, }}onValueChange={toggleTeacher} value={teacher}/>
                 <Text style={{position: 'absolute', fontSize: 16, top: 215}}>If you have a teacher who provided you with a class code, enter it here:</Text>
-                <TextInput  placeholderTextColor='#888888' placeholder={'a52i1j'} style={{fontSize: 16, position: 'absolute', top: 265, height: 40, width: '100%', padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
+                <TextInput  placeholderTextColor='#888888' placeholder={'a52e1db793fa'} style={{fontSize: 16, position: 'absolute', top: 265, height: 40, width: '100%', padding: 10, borderRadius: 6, borderWidth: 1, borderColor: '#888888'}}/>
                 <TouchableOpacity onPress={() => handleConfirm()} style={{borderRadius: 24, backgroundColor: '#054584', left: '45%', width: '55%', height: 60, top: 285, shadowOffset: {height: 5}, shadowColor: 'black', shadowOpacity: 0.25, elevation: 3}}>
                     <Text style={{top: 10, alignSelf: 'center', fontSize: 26, color: '#ffffff'}}>CONFIRM</Text>
                 </TouchableOpacity>
