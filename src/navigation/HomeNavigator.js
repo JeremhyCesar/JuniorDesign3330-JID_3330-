@@ -10,6 +10,8 @@ import ListenNavigator from "./ListenNavigator";
 import { useUser, useObject } from "@realm/react";
 import { User } from "../models/User";
 import { BSON } from "realm";
+import { ClassCreationScreen } from "../screens/ClassCreationScreen";
+import { ClassInfoScreen } from "../screens/ClassInfoScreen";
 import UserPage from "../screens/UserPage";
 import AccountInfoScreen from "../screens/AccountInfoScreen";
 
@@ -45,6 +47,12 @@ const HomeNavigator = () => {
             name="AccountInfo"
             component={AccountInfoScreen}
           />
+          <Stack.Screen 
+            name="ClassCreation"
+            component={ClassCreationScreen}/>
+          <Stack.Screen
+            name="ClassInfo"
+            component={ClassInfoScreen}/>
           <Stack.Screen
             name="Quizzes"
             component={QuizNavigator}
