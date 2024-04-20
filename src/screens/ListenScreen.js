@@ -105,8 +105,14 @@ const ListenScreen = () => {
     updateCurrentTrack();
   };
 
-  const navigateToDetails = (category) => {
-    navigation.navigate("Details", { category });
+  const addSongToQueue = async (song) => {
+    await TrackPlayer.add({
+      id: song.id,
+      url: song.url,
+      title: song.name,
+      artist: song.composer,
+      artwork: song.image,
+    });
   };
 
   const navigateToSearchResults = () => {
@@ -148,6 +154,7 @@ const ListenScreen = () => {
           name: "Symphony No. 5",
           composer: "Ludwig van Beethoven",
           image: require("../../assets/symp5.jpeg"),
+          url: require("../../assets/music/symp5.mp3"),
         },
       ];
     } else if (category === "My Composers") {
@@ -199,15 +206,14 @@ const ListenScreen = () => {
 
     // Play song
     const playSong = async (song) => {
-      await TrackPlayer.reset();
-      await TrackPlayer.add({
-        id: song.id,
-        url: song.url,
-        title: song.name,
-        artist: song.composer,
-        artwork: song.image,
-      });
-      await TrackPlayer.play();
+      const queue = await TrackPlayer.getQueue();
+      const index = queue.findIndex((track) => track.id === song.id);
+      if (index !== -1) {
+        await TrackPlayer.skip(index);
+      } else {
+        await addSongToQueue(song);
+        await TrackPlayer.play();
+      }
     };
 
     return (
