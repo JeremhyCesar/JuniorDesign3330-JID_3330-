@@ -4,36 +4,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz App Test Client</title>
+    <title>Quiz Test Client</title>
     <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
     <script>
-        var socket; // Declare socket globally so it can be accessed from HTML button handlers
         document.addEventListener('DOMContentLoaded', function () {
-            socket = io('http://localhost:3000');
+            const socket = io('http://localhost:3000');
+            const quizInfoDiv = document.getElementById('quiz-info');
+            const resultsDiv = document.getElementById('results');
 
             socket.on('connect', () => {
-                console.log('Connected to the server');
-                document.getElementById('status').textContent = 'Connected to the server';
+                console.log('Connected to server');
             });
 
             socket.on('quizStarted', (quiz) => {
                 console.log('Quiz started:', quiz);
-                document.getElementById('quiz-info').textContent = 'Quiz started: ' + JSON.stringify(quiz);
+                quizInfoDiv.textContent = 'Quiz Started! Question: ' + quiz.questions[quiz.currentQuestionIndex].text;
+                // Display options here and allow user to select an answer
             });
 
-            socket.on('disconnect', () => {
-                console.log('Disconnected from server');
-                document.getElementById('status').textContent = 'Disconnected from server';
+            socket.on('answerResult', (result) => {
+                console.log('Result received:', result);
+                resultsDiv.textContent = 'Your answer was: ' + (result.correct ? 'Correct' : 'Incorrect');
+            });
+
+            document.getElementById('startQuiz').addEventListener('click', function () {
+                socket.emit('startQuiz');
+            });
+
+            document.getElementById('submitAnswer').addEventListener('click', function () {
+                // For simplicity, sending a hardcoded answer
+                const answerData = { questionId: 1, answer: 'A' }; // Modify as needed
+                socket.emit('submitAnswer', answerData);
             });
         });
-
-        function startQuiz() {
-            socket.emit('startQuiz');
-        }
     </script>
 </head>
 
 <body>
-    <h1>Quiz App Test Client</h1>
-    <p id="status">Not connected</p>
-    <button onclick="start
+    <h1>Quiz Test Client</h1>
+    <button id="startQuiz">Start Quiz</button>
+    <div id="quiz-info"></div>
+    <button id="submitAnswer">Submit Answer</button>
+    <div id="results"></div>
+</body>
+
+</html>
