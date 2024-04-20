@@ -10,10 +10,6 @@ export const ClassInfoScreen = ({ navigation }) => {
     const user = useObject(User, BSON.ObjectId(useUser().id));
     const students = useQuery(User).filtered('enrolled_class == $0', user.managed_class);
     
-    realm.subscriptions.update((mutableSubs) => {
-        mutableSubs.removeByName("studentSubscription");
-        mutableSubs.add(realm.objects("User"), {name: "userSubscription"});
-    })
     
     return (
         <View>
