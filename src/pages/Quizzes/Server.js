@@ -14,7 +14,7 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoUrl = 'mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers'; 
 // Notemaker connection string: mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers
 
-const client = new MongoClient(uri, {
+const client = new MongoClient(mongoUrl, {
     serverApi: { version: ServerApiVersion.v1 } // API supported by MongoDB 
 });
 
@@ -34,7 +34,7 @@ connectToMongo();
 
 // MongoDB getClass and getUser
 
-// Basic Structure:
+// Basic structure:
 // Class: {"_id":{"$oid":"6622f20cbd39907ce121e9c0"},"class_name":"My Fun Class","join_code":{"$numberLong":"869960"},"teacher":{"$oid":"6621acd496939a7ddd0beba6"},"students":[{"$oid":"6622fa245c295b1c187367d2"}]}
 // User: {"_id":{"$oid":"660b549a7403ac7f3ae1bf02"},"full_name":"Benjamin Borthwick","user_type":"Student","lesson_progress":[{"$numberLong":"7"},{"$numberLong":"9"}],"lesson_topics":["Frédéric Chopin","Wolfgang Amadeus Mozart"]}
 async function getClassByJoinCode(joinCode) {
