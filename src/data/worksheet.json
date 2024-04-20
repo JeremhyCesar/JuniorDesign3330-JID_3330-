@@ -189,16 +189,152 @@
     "Piano": {
       "sections": [
         {
-          "title": "Section 1: Early Life and Education",
+          "title": "Section 1: The Origins of the Piano",
           "questions": [
             {
-              "question": "Birth and Early Years:",
+              "question": "Early Beginnings:",
               "details": [
-                "Date and place of birth:",
-                "Age at which Chopin started playing piano:",
-                "Name two of Chopin's early music teachers:",
-                "Describe the role of Józef Elsner in Chopin's musical development:",
-                "How did Chopin's early musical education influence his later compositions?"
+                "Who invented the piano and in what year?",
+                "What was the piano originally called?",
+                "How did the early piano differ from the harpsichord?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Development Through the Ages",
+          "questions": [
+            {
+              "question": "Evolving Designs:",
+              "details": [
+                "Describe the major changes in piano design from its invention to the end of the 19th century.",
+                "How did the Industrial Revolution affect piano manufacturing?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: The Piano in Classical and Romantic Music",
+          "questions": [
+            {
+              "question": "Key Composers and Works:",
+              "details": [
+                "Name a famous Classical era composer known for piano compositions.",
+                "Identify a key piano piece by a Romantic era composer.",
+                "How did the roles of the piano in orchestral and solo performances evolve during these periods?"
+              ]
+            },
+            {
+              "question": "Fill in the Blanks:",
+              "details": [
+                "Classical Composer: _________________________",
+                "Famous Composition: _________________________",
+                "Role of Piano in Composition: _________________________",
+                "Romantic Composer: _________________________",
+                "Famous Composition: _________________________",
+                "Role of Piano in Composition: _________________________"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Innovations and Modern Piano",
+          "questions": [
+            {
+              "question": "20th Century to Present:",
+              "details": [
+                "What technological and design innovations have shaped modern pianos?",
+                "Discuss the impact of digital pianos and synthesizers on musicians and composers."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 5: The Piano in Contemporary Music",
+          "questions": [
+            {
+              "question": "Contemporary Use and Repertoire:",
+              "details": [
+                "How is the piano utilized in modern genres such as jazz, pop, and film music?",
+                "Provide examples of contemporary works or artists that prominently feature the piano."
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "Harp": {
+      "sections": [
+        {
+          "title": "Section 1: Ancient Origins",
+          "questions": [
+            {
+              "question": "Discovering Ancient Harps:",
+              "details": [
+                "What materials were early harps made from?",
+                "Describe how early harps were played.",
+                "What was the cultural significance of harps in ancient civilizations?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Medieval and Renaissance Harps",
+          "questions": [
+            {
+              "question": "Harp Development Through Ages:",
+              "details": [
+                "How did harp designs change from the Medieval to Renaissance period?",
+                "What techniques were used to play harps during these times?",
+                "In what ways did art and literature of these periods feature harps?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: Baroque and Classical Innovations",
+          "questions": [
+            {
+              "question": "Composers and Their Harps:",
+              "details": [
+                "Name a Baroque composer who featured the harp.",
+                "Describe a Classical composition that includes the harp.",
+                "What were some innovations in harp design during these eras?"
+              ]
+            },
+            {
+              "question": "Fill in the Blanks:",
+              "details": [
+                "Baroque Composer: _________________________",
+                "Composition: _________________________",
+                "Role of Harp: _________________________",
+                "Classical Composer: _________________________",
+                "Composition: _________________________",
+                "Role of Harp: _________________________"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Romantic Period and 19th Century",
+          "questions": [
+            {
+              "question": "Romantic Harp Resurgence:",
+              "details": [
+                "How did Berlioz and Liszt use the harp in their compositions?",
+                "What symbolic roles did the harp play in Romantic literature?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 5: Modern Harp Advancements",
+          "questions": [
+            {
+              "question": "Modern Harp Innovations:",
+              "details": [
+                "What are some modern advancements in harp design?",
+                "Give examples of contemporary music that showcases modern harp developments."
               ]
             }
           ]
@@ -206,8 +342,82 @@
       ]
     },
     "French Horn": {
-      "sections": []
-    }
+      "sections": [
+        {
+          "title": "Section 1: Origins of the French Horn",
+          "questions": [
+            {
+              "question": "Historical Beginnings:",
+              "details": [
+                "What is the origin of the French horn?",
+                "How did the French horn evolve from hunting horns?",
+                "Describe the early use of the horn in classical music compositions."
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Evolution of the French Horn",
+          "questions": [
+            {
+              "question": "Design and Construction:",
+              "details": [
+                "Discuss the major changes in the design of the French horn from the 17th to the 19th century.",
+                "How did the invention of valves enhance the capabilities of the French horn?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: The French Horn in Classical and Romantic Music",
+          "questions": [
+            {
+              "question": "Composers and Notable Works:",
+              "details": [
+                "Name a classical era composer who utilized the French horn prominently.",
+                "Identify a significant piece from the Romantic era featuring the French horn.",
+                "Discuss how the French horn's role in the orchestra changed during these periods."
+              ]
+            },
+            {
+              "question": "Fill in the Blanks:",
+              "details": [
+                "Classical Composer: _________________________",
+                "Significant Composition: _________________________",
+                "Role of French Horn in this Composition: _________________________",
+                "Romantic Composer: _________________________",
+                "Significant Composition: _________________________",
+                "Role of French Horn in this Composition: _________________________"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Modern Developments",
+          "questions": [
+            {
+              "question": "20th Century Innovations:",
+              "details": [
+                "What are some of the modern technological advancements in French horn manufacturing?",
+                "How have these changes affected the sound and playability of the horn?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 5: The French Horn in Contemporary Music",
+          "questions": [
+            {
+              "question": "Contemporary Roles and Repertoire:",
+              "details": [
+                "How is the French horn used in modern orchestras and bands?",
+                "Provide examples of contemporary pieces or film scores that feature the French horn prominently."
+              ]
+            }
+          ]
+        }
+      ]
+    }    
   },
   "compared": {
     "Beethoven's Symphony No.5 and Mozart's Symphony No.40": {
