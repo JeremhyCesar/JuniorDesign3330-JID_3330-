@@ -11,7 +11,7 @@ const io = new Server(server);
 
 // MongoDB connections: set up client and API connection to mongodb 
 const { MongoClient, ServerApiVersion } = require('mongodb');
-const mongoUrl = 'mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers'; 
+const mongoUrl = 'mongodb+srv://borthwickbenjamin:n9KIP1FwgyntJVmD@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers'; 
 // Notemaker connection string: mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers
 
 const client = new MongoClient(mongoUrl, {
