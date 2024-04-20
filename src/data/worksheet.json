@@ -185,7 +185,7 @@
       ]
     },
 
-    "Wolfgang Amadeus Mozart": {
+    "Wolfgang Mozart": {
       "sections": [
         {
           "title": "Section 1: Early Life and Musical Prodigy",
@@ -244,6 +244,72 @@
               "details": [
                 "How has Mozart's music influenced later classical composers and other music genres?",
                 "Explain the universal appeal of Mozart's music and its impact on modern musical performances:"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+
+    "Robert Schumann": {
+      "sections": [
+        {
+          "title": "Section 1: Early Life and Musical Foundations",
+          "questions": [
+            {
+              "question": "Birth and Early Musical Influences:",
+              "details": [
+                "Date and place of Schumann's birth:",
+                "Describe Schumann's family and their influence on his early musical education:",
+                "Key musical milestones achieved by Schumann during his youth:",
+                "Age at which Schumann composed his first piece of music and his initial public performances:"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Artistic Development and Early Works",
+          "questions": [
+            {
+              "question": "Studies and Early Career:",
+              "details": [
+                "Who were the notable mentors and teachers who influenced Schumann's musical style?",
+                "Discuss how Schumann's early experiences with literature and music shaped his compositions:",
+                "Identify some of Schumann's important works from his early adult years:",
+                "Impact of Schumann's symphonies and solo piano works on his career trajectory:"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: Romantic Influence and Marriage",
+          "questions": [
+            {
+              "question": "Life with Clara Wieck:",
+              "details": [
+                "What were the circumstances that led Schumann to marry Clara Wieck?",
+                "Explain how Clara's musical career influenced Schumann's compositions:",
+                "List and describe three major works composed by Schumann during his marriage to Clara:"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Later Years and Lasting Contributions",
+          "questions": [
+            {
+              "question": "Final Compositions and Mental Health:",
+              "details": [
+                "When did Schumann's final period roughly begin?",
+                "Name and describe the significance of three compositions from Schumann's final years:",
+                "Discuss how Schumann's later works reflect his mental health struggles and artistic vision:"
+              ]
+            },
+            {
+              "question": "Legacy and Influence on Romantic Music:",
+              "details": [
+                "How has Schumann's music influenced later romantic composers and other music genres?",
+                "Explain the enduring appeal of Schumann's music and its impact on modern musical interpretations:"
               ]
             }
           ]

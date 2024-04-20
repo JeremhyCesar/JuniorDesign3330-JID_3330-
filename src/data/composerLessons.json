@@ -27,12 +27,21 @@
       ]
     },
     {
-      "composerName": "Wolfgang Amadeus Mozart",
+      "composerName": "Wolfgang Mozart",
       "introduction": "Let's learn about Mozart!",
       "imageSource": "Mozart.png",
       "videoPages": [
         { "title": "Mozart's life", "videoID": "gsb5nWFpwsE" },
         { "title": "Mozart's music", "videoID": "Nx_m2ZTZPuk&t" }
+      ]
+    },
+    {
+      "composerName": "Robert Schumann",
+      "introduction": "Let's learn about Schumann!",
+      "imageSource": "Schumann.png",
+      "videoPages": [
+        { "title": "Schumann's life", "videoID": "vkLG3b6YNGA" },
+        { "title": "Schumann's music", "videoID": "49TvuAC0fpQ" }
       ]
     }
   ]

@@ -1,7 +1,9 @@
+import { useEmailPasswordAuth } from '@realm/react';
 import React from 'react';
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 
 export function HomeScreen({ navigation }) {
+    const { logOut } = useEmailPasswordAuth();
     const styles = StyleSheet.create({
         button: {
             borderRadius: 31,
@@ -12,11 +14,18 @@ export function HomeScreen({ navigation }) {
             width: '84%',
             height: 250,
             cursor: 'pointer'
+        },
+        userButton: {
+            position: 'absolute',
+            top: 10,
+            right: 10,
+            zIndex: 1, // Ensures button is on top of other content
         }
     });
 
     return (
         <ScrollView style={{ backgroundColor: 'white' }}>
+            <Image onPress = {() => logOut()} style  = {{zIndex: 1, position: 'absolute', top: 50, left: '80%', width: 50, height: 50}} source={require('../../assets/settings-icon.png')}/>
             <Text style={{
                 fontWeight: 'bold',
                 top: 64,
@@ -39,6 +48,7 @@ export function HomeScreen({ navigation }) {
                 shadowOffset: { width: 4, height: 4 },
                 shadowColor: 'black',
                 shadowOpacity: 0.25,
+                elevation: 3,
                 width: '84%',
                 height: 142
             }}>
@@ -55,7 +65,8 @@ export function HomeScreen({ navigation }) {
                     shadowOpacity: 0.25,
                     color: '#717171',
                     flexWrap: 'wrap',
-                    textAlign: 'center'
+                    textAlign: 'center',
+                    elevation: 3
                 }}>Where words fail, music speaks.</Text>
             </View>
             <Pressable onPress={() => { navigation.navigate('Lessons', { screen: 'LessonHome' }) }} style={[{ top: 126, left: '8%', backgroundColor: '#ffbb37' }, styles.button]}>
@@ -111,6 +122,9 @@ export function HomeScreen({ navigation }) {
                 }} />
             </Pressable>
             <View style={{ height: 210 }} />
+            <Pressable style={[styles.userButton, {top: 75, right: 25}]} onPress={() => navigation.navigate('UserPage')}>
+                <Image source={require('../../assets/user-icon.webp')} style={{ width: 40, height: 40 }} />
+            </Pressable>
         </ScrollView>
     );
 }
