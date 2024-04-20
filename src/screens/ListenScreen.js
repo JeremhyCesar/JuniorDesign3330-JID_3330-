@@ -129,6 +129,7 @@ const ListenScreen = () => {
           name: "The Four Seasons",
           composer: "Antonio Vivaldi",
           image: require("../../assets/4seasons.jpeg"),
+          url: require("../../assets/music/4seasons.mp3"),
         },
         {
           id: "2",

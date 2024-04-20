@@ -11,7 +11,7 @@ import TrackPlayer, {
 const SongDetailsPage = ({ route }) => {
   const navigation = useNavigation();
   const { currentTrack: initialTrack } = route.params || {};
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(true);
   const [isFavorite, setIsFavorite] = useState(false);
   const [progress, setProgress] = useState(0);
   const [currentTrack, setCurrentTrack] = useState(initialTrack);
@@ -27,7 +27,7 @@ const SongDetailsPage = ({ route }) => {
         setCurrentTrack(track);
       } else if (event.type === Event.PlaybackState) {
         const state = event.state;
-        setIsPlaying(state === TrackPlayer.STATE_PLAYING);
+        // setIsPlaying(state === TrackPlayer.STATE_PLAYING);
       }
     }
   );
@@ -43,13 +43,13 @@ const SongDetailsPage = ({ route }) => {
   }, []);
 
   const togglePlayback = async () => {
-      const state = await TrackPlayer.getState();
+      const state = (await TrackPlayer.getPlaybackState()).state;
       if (state === "playing") {
           await TrackPlayer.pause();
-        //   setIsPlaying(false);
+          setIsPlaying(false);
       } else {
           await TrackPlayer.play();
-        //   setIsPlaying(true);
+          setIsPlaying(true);
       }
   };
 
