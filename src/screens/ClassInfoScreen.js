@@ -10,12 +10,11 @@ export const ClassInfoScreen = ({ navigation }) => {
     const user = useObject(User, BSON.ObjectId(useUser().id));
     const students = useQuery(User).filtered('enrolled_class == $0', user.managed_class);
     
-    const updateSubs = () => {
-        realm.subscriptions.update((mutableSubs) => {
-            mutableSubs.removeByName("studentSubscription");
-            mutableSubs.add(realm.objects("User").filtered(), {name: "studentSubscription"});
-        })
-    }
+    realm.subscriptions.update((mutableSubs) => {
+        mutableSubs.removeByName("studentSubscription");
+        mutableSubs.add(realm.objects("User"), {name: "userSubscription"});
+    })
+    
     return (
         <View>
             <Text onPress={() => navigation.goBack()} style={{fontSize: 16, color: '#007AFF', fontSize: 20, top: 50, left: 20}}>Back</Text>

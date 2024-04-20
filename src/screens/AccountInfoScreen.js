@@ -17,7 +17,7 @@ export const AccountInfoScreen = ({ navigation }) => {
     const toggleTeacher = () => setTeacher(previousState => !previousState);
     
     realm.subscriptions.update((mutableSubs) => {
-        mutableSubs.add(realm.objects("User").filtered(" _id == $0", BSON.ObjectId(user.id)), {name: "userSubscription"});
+        mutableSubs.add(realm.objects("User"), {name: "userSubscription"});
         mutableSubs.add(realm.objects("Class"), {name: "classSubscription"});
     })
 
@@ -35,10 +35,6 @@ export const AccountInfoScreen = ({ navigation }) => {
                         user_type: teacher ? 'Teacher' : 'Student',
                         enrolled_class: classFromCode
                     }));
-                realm.subscriptions.update((mutableSubs) => {
-                    mutableSubs.removeByName("classSubscription");
-                    mutableSubs.add(realm.objects("Class").filtered("join_code == $0", code), {name: "classSubscription"});
-                })
             }
             else if (code == 0) {
                 realm.create(User, {
@@ -46,9 +42,6 @@ export const AccountInfoScreen = ({ navigation }) => {
                     full_name: name,
                     user_type: teacher ? 'Teacher' : 'Student',
                 });
-                realm.subscriptions.update((mutableSubs) => {
-                    mutableSubs.removeByName("classSubscription");
-                })
             }
         });
         if (!teacher) navigation.navigate('Home');

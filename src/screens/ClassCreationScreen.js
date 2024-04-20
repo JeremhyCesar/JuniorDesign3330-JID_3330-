@@ -9,10 +9,13 @@ import 'react-native-get-random-values';
 export const ClassCreationScreen = ({ navigation }) => {
     const realm = useRealm();
     const user = useObject(User, BSON.ObjectId(useUser().id));
-    const classes = useQuery(Class);
 
     const [name, setName] = useState("");
 
+    realm.subscriptions.update((mutableSubs) => {
+        mutableSubs.add(realm.objects("Class"), {name: "classSubscription"});
+    })
+    
     const handleCreate = () => {
         if (user.managed_class !== null) return;
         let code = 0;
@@ -20,9 +23,6 @@ export const ClassCreationScreen = ({ navigation }) => {
             code = Math.floor(100000 + 900000 * Math.random());
             if (classes.filtered('join_code == $0', code).length > 0) code = 0;
         }
-        realm.subscriptions.update((mutableSubs) => {
-            mutableSubs.add(classes, {name: "classSubscription"});
-        })
         
         realm.write(() => {
             user.managed_class = realm.create(Class, {
@@ -32,10 +32,7 @@ export const ClassCreationScreen = ({ navigation }) => {
                 join_code: code
             })
         })
-        realm.subscriptions.update((mutableSubs) => {
-            mutableSubs.removeByName("classSubscription");
-            mutableSubs.add(classes.filtered('join_code == $0', code), {name: "classSubscription"});
-        });
+
         navigation.navigate('ClassInfo');
     }
 
