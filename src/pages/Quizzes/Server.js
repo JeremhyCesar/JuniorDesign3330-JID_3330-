@@ -14,7 +14,9 @@ const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoUrl = 'mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers'; 
 // Notemaker connection string: mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers
 
-
+const client = new MongoClient(uri, {
+    serverApi: { version: ServerApiVersion.v1 } // API supported by MongoDB 
+});
 
 async function connectToMongo() {
     try {
