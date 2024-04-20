@@ -32,6 +32,26 @@ async function connectToMongo() {
 connectToMongo();
 
 
+// MongoDB getClass and getUser
+
+// Basic Structure:
+// Class: {"_id":{"$oid":"6622f20cbd39907ce121e9c0"},"class_name":"My Fun Class","join_code":{"$numberLong":"869960"},"teacher":{"$oid":"6621acd496939a7ddd0beba6"},"students":[{"$oid":"6622fa245c295b1c187367d2"}]}
+// User: {"_id":{"$oid":"660b549a7403ac7f3ae1bf02"},"full_name":"Benjamin Borthwick","user_type":"Student","lesson_progress":[{"$numberLong":"7"},{"$numberLong":"9"}],"lesson_topics":["Frédéric Chopin","Wolfgang Amadeus Mozart"]}
+async function getClassByJoinCode(joinCode) {
+    const database = client.db("Notemakers");
+    const classes = database.collection("Class");
+
+    const classInfo = await classes.findOne({ "join_code": joinCode });
+    return classInfo;
+}
+
+async function getUserById(userId) {
+    const database = client.db("Notemakers");
+    const users = database.collection("User");
+
+    const userInfo = await users.findOne({ "_id": new MongoClient.ObjectId(userId) });
+    return userInfo;
+}
 
 
 // EVENT HANDLER NEEDED 
