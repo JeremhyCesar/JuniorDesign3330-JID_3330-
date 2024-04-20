@@ -4,6 +4,7 @@ import { View, Text, StyleSheet, Image, Pressable, Alert } from 'react-native';
 import { FirstScreen } from '../screens/FirstScreen';
 
 const UserPage = ({ navigation }) => {
+
     const handleLogout = () => {
         Alert.alert(
             'Logout',
