@@ -16,5 +16,14 @@
         { "title": "History of French Horn", "videoID": "NLx9JUufLN8" },
         { "title": "Music Art of French Horn", "videoID": "NLx9JUufLN8" }
       ]
+    },
+    {
+      "instrumentName": "Harp",
+      "introduction": "Let's learn about the Harp!",
+      "imageSource": "harp.png",
+      "videoPages": [
+        { "title": "History of Harp", "videoID": "P2Xdb1ljd3g" },
+        { "title": "Music Art of Harp", "videoID": "xxIvwTRGb1M" }
+      ]
     }
   ]
