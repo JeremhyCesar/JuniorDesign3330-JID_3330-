@@ -31,8 +31,8 @@ const ListenScreen = () => {
 
   // create a function to toggle the playback state
   const togglePlayback = async () => {
-    const state = await TrackPlayer.getState();
-    if (state === TrackPlayer.STATE_PLAYING) {
+    const state = (await TrackPlayer.getPlaybackState()).state;
+    if (state === "playing") {
       await TrackPlayer.pause();
       setIsPlaying(false);
     } else {
@@ -181,12 +181,12 @@ const ListenScreen = () => {
 
       subscribeToTrackChange();
 
-      return () => {
-        TrackPlayer.removeEventListener(
-          "playback-track-changed",
-          updateCurrentTrack
-        );
-      };
+      // return () => {
+      //   TrackPlayer.removeEventListener(
+      //     "playback-track-changed",
+      //     updateCurrentTrack
+      //   );
+      // };
     }, []);
 
     // track the playback progress and update the progress bar value:
