@@ -11,9 +11,14 @@ import { useNavigation } from "@react-navigation/native";
 import TrackPlayer from "react-native-track-player";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { useUser, useObject } from '@realm/react';
+import { User } from '../models/User';
+import { BSON } from 'realm'
 
 const ListenScreen = () => {
   const navigation = useNavigation();
+  const user = useObject(User, BSON.ObjectId(useUser().id));
+
   const [searchQuery, setSearchQuery] = useState(""); // store the search query
   const [progress, setProgress] = useState(0); // store the progress of the current track
   const [isPlaying, setIsPlaying] = useState(false); // store the playback state
@@ -304,7 +309,7 @@ const ListenScreen = () => {
             fontSize: 25,
           }}
         >
-          Let's listen, Julie!
+          Let's listen, {user.full_name.split(" ")[0]}!
         </Text>
       </View>
 
