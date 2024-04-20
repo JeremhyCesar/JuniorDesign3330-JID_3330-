@@ -1,8 +1,8 @@
 import React from 'react';
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import ListenScreen from '../screens/ListenScreen';
-import SearchResultsScreen from '../screens/SearchResultsScreen'; 
-import SongDetailsScreen from '../screens/SongDetailsScreen';
+import SearchResultsPage from '../pages/Listen/SearchResultsPage';
+import SongDetailsPage from '../pages/Listen/SongDetailsPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -14,9 +14,9 @@ export function ListenNavigator() {
         screenOptions={{ headerShown: false }}
       >
         <Stack.Screen name="ListenScreen" component={ListenScreen} />
-        <Stack.Screen name="SongDetailsScreen" component={SongDetailsScreen} />
+        <Stack.Screen name="SongDetailsPage" component={SongDetailsPage} />
         {/* Use the component prop directly */}
-        <Stack.Screen name="SearchResultsScreen" component={SearchResultsScreen} />
+        <Stack.Screen name="SearchResultsPage" component={SearchResultsPage} />
       </Stack.Navigator>
     );
 }

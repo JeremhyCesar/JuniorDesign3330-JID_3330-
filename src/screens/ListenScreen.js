@@ -6,7 +6,6 @@ import {
   ScrollView,
   TouchableOpacity,
   Image,
-  Dimensions,
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import TrackPlayer from "react-native-track-player";
@@ -16,23 +15,67 @@ import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 const ListenScreen = () => {
   const navigation = useNavigation();
   const [searchQuery, setSearchQuery] = useState(""); // store the search query
-  const [currentTrack, setCurrentTrack] = useState(null); // store the current track information
   const [progress, setProgress] = useState(0); // store the progress of the current track
   const [isPlaying, setIsPlaying] = useState(false); // store the playback state
   const [isMuted, setIsMuted] = useState(false); // store the volume state
 
-  const navigateToDetails = (category) => {
-    navigation.navigate("Details", { category });
+  // Define a default track to display when no track is playing
+  const defaultTrack = {
+    id: null,
+    title: "No music playing",
+    artist: "Select a song to play",
   };
 
-  const navigateToSearchResults = () => {
-    navigation.navigate("SearchResultsScreen", { searchQuery });
+  const [currentTrack, setCurrentTrack] = useState(defaultTrack);
+
+  // Setup player
+  useEffect(() => {
+    setupPlayer();
+    return () => {
+      TrackPlayer.destroy(); // destroy the player on unmount
+    };
+  }, []);
+
+  const setupPlayer = async () => {
+    await TrackPlayer.setupPlayer(); // initialize the player
   };
+
+  // create a function to update the current track information whenever a new track starts playing
+  const updateCurrentTrack = async () => {
+    // get the current track id, because the design of the "trackPlayer" does not store the detailed track information
+    const track = await TrackPlayer.getCurrentTrack();
+    // takes the track ID and uses it to fetch more comprehensive details about the track, then display in the user interface
+    const trackObject = await TrackPlayer.getTrack(track);
+    setCurrentTrack(trackObject);
+  };
+
+  // subscribe to the playback-track-changed event to update the current track information
+  useEffect(() => {
+    const subscribeToTrackChange = async () => {
+      await TrackPlayer.addEventListener("playback-track-changed", () => {
+        updateCurrentTrack();
+        setIsPlaying(true);
+      });
+    };
+
+    subscribeToTrackChange();
+  }, []);
+
+  // track the playback progress and update the progress bar value:
+  useEffect(() => {
+    const intervalId = setInterval(async () => {
+      const position = await TrackPlayer.getPosition();
+      const duration = await TrackPlayer.getDuration();
+      const progress = position / duration;
+      setProgress(progress);
+    }, 1000);
+    return () => clearInterval(intervalId);
+  }, []);
 
   // create a function to toggle the playback state
   const togglePlayback = async () => {
-    const state = await TrackPlayer.getState();
-    if (state === TrackPlayer.STATE_PLAYING) {
+    const state = (await TrackPlayer.getPlaybackState()).state;
+    if (state === "playing") {
       await TrackPlayer.pause();
       setIsPlaying(false);
     } else {
@@ -50,6 +93,24 @@ const ListenScreen = () => {
       await TrackPlayer.setVolume(0);
       setIsMuted(true);
     }
+  };
+
+  const previousTrack = async () => {
+    await TrackPlayer.skipToPrevious();
+    updateCurrentTrack();
+  };
+  
+  const nextTrack = async () => {
+    await TrackPlayer.skipToNext();
+    updateCurrentTrack();
+  };
+
+  const navigateToDetails = (category) => {
+    navigation.navigate("Details", { category });
+  };
+
+  const navigateToSearchResults = () => {
+    navigation.navigate("SearchResultsScreen", { searchQuery });
   };
 
   const renderPressableButtons = (category) => {
@@ -149,57 +210,6 @@ const ListenScreen = () => {
       await TrackPlayer.play();
     };
 
-    // Setup player
-    useEffect(() => {
-      setupPlayer();
-      return () => {
-        TrackPlayer.destroy();
-      };
-    }, []);
-
-    const setupPlayer = async () => {
-      await TrackPlayer.setupPlayer(); // initialize the player
-    };
-
-    // create a function to update the current track information whenever a new track starts playing
-    const updateCurrentTrack = async () => {
-      // get the current track id, because the design of the "trackPlayer" does not store the detailed track information
-      const track = await TrackPlayer.getCurrentTrack();
-      // takes the track ID and uses it to fetch more comprehensive details about the track, then display in the user interface
-      const trackObject = await TrackPlayer.getTrack(track);
-      setCurrentTrack(trackObject);
-    };
-
-    // subscribe to the playback-track-changed event to update the current track information
-    useEffect(() => {
-      const subscribeToTrackChange = async () => {
-        await TrackPlayer.addEventListener("playback-track-changed", () => {
-          updateCurrentTrack();
-          setIsPlaying(true);
-        });
-      };
-
-      subscribeToTrackChange();
-
-      return () => {
-        TrackPlayer.removeEventListener(
-          "playback-track-changed",
-          updateCurrentTrack
-        );
-      };
-    }, []);
-
-    // track the playback progress and update the progress bar value:
-    useEffect(() => {
-      const intervalId = setInterval(async () => {
-        const position = await TrackPlayer.getPosition();
-        const duration = await TrackPlayer.getDuration();
-        const progress = position / duration;
-        setProgress(progress);
-      }, 1000);
-      return () => clearInterval(intervalId);
-    }, []);
-
     return (
       <ScrollView horizontal={true} style={{ flex: 1 }}>
         <View style={{ flexDirection: "row", alignItems: "center" }}>
@@ -274,7 +284,6 @@ const ListenScreen = () => {
       </ScrollView>
     );
   };
-  const { width } = Dimensions.get("window");
 
   return (
     <View style={{ flex: 1 }}>
@@ -344,18 +353,11 @@ const ListenScreen = () => {
           borderRadius: 10,
           shadowOffset: 10,
         }}
-        onPress={() => navigation.navigate("SongDetailsScreen")}
+        onPress={() => navigation.navigate("SongDetailsPage", { currentTrack })}
       >
-        {currentTrack && (
-          <>
-            <Image
-              source={currentTrack.artwork}
-              style={{ width: 65, height: 65, borderRadius: 10 }}
-            />
-            <View style={{ marginLeft: 10, flex: 1 }}>
+            <View style={{ flex: 1 }}>
               <Text
                 style={{
-                  top: 6,
                   fontWeight: "bold",
                   color: "black",
                   fontSize: 20,
@@ -363,15 +365,15 @@ const ListenScreen = () => {
               >
                 {currentTrack.title}
               </Text>
-              <Text style={{ top: 4, left: -2, color: "black", fontSize: 15 }}>
+              <Text style={{ color: "black", fontSize: 15 }}>
                 {currentTrack.artist}
               </Text>
               <View
                 style={{
                   backgroundColor: "white",
                   height: 10,
-                  width: "115%",
-                  marginTop: 15,
+                  width: "100%",
+                  marginTop: 10,
                   borderRadius: 10,
                   zIndex: 1,
                 }}
@@ -389,6 +391,13 @@ const ListenScreen = () => {
 
             <View style={{ flexDirection: "row", alignItems: "center" }}>
               <TouchableOpacity
+                onPress={previousTrack}
+                style={{ marginRight: 20 }}
+              >
+                <FontAwesome name="step-backward" size={30} color="black" />
+              </TouchableOpacity>
+
+              <TouchableOpacity
                 onPress={togglePlayback}
                 style={{ marginRight: 20 }}
               >
@@ -399,6 +408,10 @@ const ListenScreen = () => {
                 />
               </TouchableOpacity>
 
+              <TouchableOpacity onPress={nextTrack} style={{ marginRight: 20 }}>
+                <FontAwesome name="step-forward" size={30} color="black" />
+              </TouchableOpacity>
+
               <TouchableOpacity onPress={toggleVolume}>
                 <FontAwesome5
                   name={isMuted ? "volume-mute" : "volume-down"}
@@ -407,8 +420,6 @@ const ListenScreen = () => {
                 />
               </TouchableOpacity>
             </View>
-          </>
-        )}
       </TouchableOpacity>
     </View>
   );

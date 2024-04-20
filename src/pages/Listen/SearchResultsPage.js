@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 
-const SearchResultsScreen = ({ route }) => {
+const SearchResultsPage = ({ route }) => {
     const navigation = useNavigation();
     const { searchQuery } = route.params;
 
@@ -65,4 +65,4 @@ const SearchResultsScreen = ({ route }) => {
     );
 };
 
-export default SearchResultsScreen;
+export default SearchResultsPage;
