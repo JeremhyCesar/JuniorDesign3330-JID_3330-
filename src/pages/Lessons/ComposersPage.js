@@ -15,7 +15,7 @@ export function ComposersPage({ navigation }) {
       image: require("../../../assets/composers/Chopin.png"),
     },
     {
-      name: "Ludwig Van Beethoven",
+      name: "Ludwig van Beethoven",
       image: require("../../../assets/composers/Beethoven.png"),
     },
     {

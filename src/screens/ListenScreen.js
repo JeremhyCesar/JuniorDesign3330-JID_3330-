@@ -116,7 +116,7 @@ const ListenScreen = () => {
   };
 
   const navigateToSearchResults = () => {
-    navigation.navigate("SearchResultsScreen", { searchQuery });
+    navigation.navigate("SearchResultsPage", { searchQuery });
   };
 
   const renderPressableButtons = (category) => {
