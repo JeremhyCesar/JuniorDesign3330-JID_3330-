@@ -53,8 +53,29 @@ async function getUserById(userId) {
     return userInfo;
 }
 
+// JOIN CLASS:
+// 1. Student submits a join code via the frontend.
+// 2. The backend receives the join code and retrieves the corresponding class.
+// 3. If the class exists, add the student's ID to the class's students array.
+// 4. Update the student's records to include this class in their profile if necessary.
+async function joinClass(userId, joinCode) {
+    const classInfo = await getClassByJoinCode(joinCode);
+    if (!classInfo) {
+        throw new Error("Class not found");
+    }
 
-// EVENT HANDLER NEEDED 
+    // Add user to the class's student list: "students":[{"$oid":"6622fa245c295b1c187367d2"}]
+    const updatedClassInfo = await client.db("Notemakers").collection("Class").updateOne(
+        { "_id": classInfo._id },
+        { $addToSet: { "students": new MongoClient.ObjectId(userId) } }
+    );
+
+    return { class: updatedClassInfo, user: updatedUserInfo };
+}
+
+
+
+// EVENT HANDLERS NEEDED 
 // Connection: To handle any new user joining.
 // startQuiz: Triggered by the host to start the quiz.
 // submitAnswer: Used by participants to submit their answers.
