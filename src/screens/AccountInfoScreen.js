@@ -4,7 +4,7 @@ import { User } from '../models/User';
 import { BSON } from 'realm';
 import { useRealm, useUser } from '@realm/react';
 
-export const AccountInfoScreen = ({ navigation }) => {
+const AccountInfoScreen = ({ navigation }) => {
     const realm = useRealm();
     const user = useUser();
 
@@ -14,6 +14,7 @@ export const AccountInfoScreen = ({ navigation }) => {
     const toggleTeacher = () => setTeacher(previousState => !previousState);
 
     const handleConfirm = () => {
+        console.log('hi');
         realm.subscriptions.update((mutableSubs) => {
             mutableSubs.add(realm.objects("User"), {name: "userSubscription"});
         })
@@ -47,3 +48,5 @@ export const AccountInfoScreen = ({ navigation }) => {
         </View>
     )
 }
+
+export default AccountInfoScreen;
