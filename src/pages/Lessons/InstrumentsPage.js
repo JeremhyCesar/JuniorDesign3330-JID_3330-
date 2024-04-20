@@ -48,7 +48,7 @@ import {
           style={{
             top: 68,
             left: "8%",
-            fontSize: 20,
+            fontSize: 15,
             textAlign: "left",
             color: "#717171",
           }}

@@ -28,17 +28,17 @@ export function CreateRoomScreen({ navigation }) {
     console.log("Room Capacity:", roomCapacity);
     console.log("Room Type:", roomType);
     console.log("Room Name:", roomName);
-    
+
     // Navigate to the quiz room or display a success message
     navigation.navigate("OnlineQuizRoom", {
-        musicType,
-        category,
-        difficulty,
-        numQuestions,
-        roomCapacity,
-        roomType,
-        roomName,
-      });
+      musicType,
+      category,
+      difficulty,
+      numQuestions,
+      roomCapacity,
+      roomType,
+      roomName,
+    });
   };
 
   return (
@@ -199,162 +199,75 @@ export function CreateRoomScreen({ navigation }) {
         <View style={styles.filterContainer}>
           <Text style={styles.filterLabel}>Number of Questions:</Text>
           <View style={styles.optionContainer}>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                numQuestions === 5 && styles.selectedOption,
-              ]}
-              onPress={() => setNumQuestions(5)}
-            >
-              <Text
+            {[5, 10, 20].map((value) => (
+              <TouchableOpacity
+                key={value}
                 style={[
-                  styles.optionText,
-                  numQuestions === 5 && styles.selectedText,
+                  styles.option,
+                  numQuestions === value && styles.selectedOption,
                 ]}
+                onPress={() => setNumQuestions(value)}
               >
-                5
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                numQuestions === 10 && styles.selectedOption,
-              ]}
-              onPress={() => setNumQuestions(10)}
-            >
-              <Text
-                style={[
-                  styles.optionText,
-                  numQuestions === 10 && styles.selectedText,
-                ]}
-              >
-                10
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                numQuestions === 20 && styles.selectedOption,
-              ]}
-              onPress={() => setNumQuestions(20)}
-            >
-              <Text
-                style={[
-                  styles.optionText,
-                  numQuestions === 20 && styles.selectedText,
-                ]}
-              >
-                20
-              </Text>
-            </TouchableOpacity>
+                <Text
+                  style={[
+                    styles.optionText,
+                    numQuestions === value && styles.selectedText,
+                  ]}
+                >
+                  {value}
+                </Text>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
 
         <View style={styles.filterContainer}>
           <Text style={styles.filterLabel}>Room Capacity:</Text>
           <View style={styles.optionContainer}>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                roomCapacity === 2 && styles.selectedOption,
-              ]}
-              onPress={() => setRoomCapacity(2)}
-            >
-              <Text
+            {[2, 3, 4, 5].map((value) => (
+              <TouchableOpacity
+                key={value}
                 style={[
-                  styles.optionText,
-                  roomCapacity === 2 && styles.selectedText,
+                  styles.option,
+                  roomCapacity === value && styles.selectedOption,
                 ]}
+                onPress={() => setRoomCapacity(value)}
               >
-                2
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                roomCapacity === 3 && styles.selectedOption,
-              ]}
-              onPress={() => setRoomCapacity(3)}
-            >
-              <Text
-                style={[
-                  styles.optionText,
-                  roomCapacity === 3 && styles.selectedText,
-                ]}
-              >
-                3
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                roomCapacity === 4 && styles.selectedOption,
-              ]}
-              onPress={() => setRoomCapacity(4)}
-            >
-              <Text
-                style={[
-                  styles.optionText,
-                  roomCapacity === 4 && styles.selectedText,
-                ]}
-              >
-                4
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                roomCapacity === 5 && styles.selectedOption,
-              ]}
-              onPress={() => setRoomCapacity(5)}
-            >
-              <Text
-                style={[
-                  styles.optionText,
-                  roomCapacity === 5 && styles.selectedText,
-                ]}
-              >
-                5
-              </Text>
-            </TouchableOpacity>
+                <Text
+                  style={[
+                    styles.optionText,
+                    roomCapacity === value && styles.selectedText,
+                  ]}
+                >
+                  {value}
+                </Text>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
 
         <View style={styles.filterContainer}>
           <Text style={styles.filterLabel}>Room Type:</Text>
           <View style={styles.optionContainer}>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                roomType === "Public" && styles.selectedOption,
-              ]}
-              onPress={() => setRoomType("Public")}
-            >
-              <Text
+            {["Public", "Private"].map((value) => (
+              <TouchableOpacity
+                key={value}
                 style={[
-                  styles.optionText,
-                  roomType === "Public" && styles.selectedText,
+                  styles.option,
+                  roomType === value && styles.selectedOption,
                 ]}
+                onPress={() => setRoomType(value)}
               >
-                Public
-              </Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              style={[
-                styles.option,
-                roomType === "Private" && styles.selectedOption,
-              ]}
-              onPress={() => setRoomType("Private")}
-            >
-              <Text
-                style={[
-                  styles.optionText,
-                  roomType === "Private" && styles.selectedText,
-                ]}
-              >
-                Private
-              </Text>
-            </TouchableOpacity>
+                <Text
+                  style={[
+                    styles.optionText,
+                    roomType === value && styles.selectedText,
+                  ]}
+                >
+                  {value}
+                </Text>
+              </TouchableOpacity>
+            ))}
           </View>
         </View>
 
@@ -365,7 +278,7 @@ export function CreateRoomScreen({ navigation }) {
             onChangeText={(text) => setRoomName(text)}
             value={roomName}
             placeholder="Enter room name"
-            placeholderTextColor="white"
+            placeholderTextColor="#ffbb37"
           />
         </View>
 
@@ -381,13 +294,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#ffbb37",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 28,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "white",
+    color: "black",
   },
   filterContainer: {
     marginBottom: 20,
@@ -395,7 +308,7 @@ const styles = StyleSheet.create({
   filterLabel: {
     fontSize: 18,
     marginBottom: 10,
-    color: "white",
+    color: "black",
   },
   optionContainer: {
     flexDirection: "row",
@@ -406,14 +319,14 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderWidth: 1,
-    borderColor: "white",
+    borderColor: "black",
     borderRadius: 5,
     marginRight: 10,
     marginBottom: 10,
   },
   selectedOption: {
-    backgroundColor: "white",
-    borderColor: "white",
+    backgroundColor: "rgba(255, 187, 55, 0.5)", // Adjust the alpha value (0.5) to control transparency
+    borderColor: "#ffbb37",
   },
   optionText: {
     fontSize: 16,
@@ -424,20 +337,20 @@ const styles = StyleSheet.create({
   },
   input: {
     height: 40,
-    borderColor: "white",
+    borderColor: "#ffbb37",
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
-    color: "white",
+    color: "black",
   },
   button: {
-    backgroundColor: "white",
+    backgroundColor: "#ffbb37",
     padding: 10,
     borderRadius: 5,
     alignItems: "center",
   },
   buttonText: {
-    color: "#ffbb37",
+    color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },

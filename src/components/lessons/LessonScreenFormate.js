@@ -13,12 +13,19 @@ import worksheetData from "../../data/worksheet.json";
 import reviewData from "../../data/review.json";
 
 const imageMap = {
+  // composers
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
   "Bach.png": require("../../../assets/composers/Bach.png"),
   "Beethoven.png": require("../../../assets/composers/Beethoven.png"),
+  "Mozart.png": require("../../../assets/composers/Mozart.png"),
+  "Schumann.png": require("../../../assets/composers/Schumann.png"),
+  
+  // instruments
   "piano.png": require("../../../assets/instruments/piano.png"),
-  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png"),
-  // Add more mappings for other composers, instruments or other topics
+  "frenchhorn.png": require("../../../assets/instruments/frenchhorn.png"),
+
+  // compared
+  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png")
 };
 
 export function LessonScreen({ lessonData }) {
@@ -212,7 +219,7 @@ export function LessonScreen({ lessonData }) {
         <LessonBlock
           image={require("../../../assets/quiz-icon.png")}
           title="Mini Quiz"
-          notes={`Review the knowledge of ${name}`}
+          notes={`Test your knowledge of ${name}`}
           titleColor="#FFD000"
           onPress={() => {
             handlePress(videoPages.length + 2);

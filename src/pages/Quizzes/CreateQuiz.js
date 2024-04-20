@@ -28,17 +28,17 @@ export function CreateQuiz({ navigation }) {
     console.log("Room Capacity:", roomCapacity);
     console.log("Room Type:", roomType);
     console.log("Room Name:", roomName);
-    
+
     // Navigate to the quiz room or display a success message
     navigation.navigate("OnlineQuizRoom", {
-        musicType,
-        category,
-        difficulty,
-        numQuestions,
-        roomCapacity,
-        roomType,
-        roomName,
-      });
+      musicType,
+      category,
+      difficulty,
+      numQuestions,
+      roomCapacity,
+      roomType,
+      roomName,
+    });
   };
 
   return (
@@ -273,13 +273,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#ffbb37",
+    backgroundColor: "white",
   },
   title: {
     fontSize: 28,
     fontWeight: "bold",
     marginBottom: 20,
-    color: "white",
+    color: "#ffbb37",
   },
   filterContainer: {
     marginBottom: 20,
@@ -287,7 +287,7 @@ const styles = StyleSheet.create({
   filterLabel: {
     fontSize: 18,
     marginBottom: 10,
-    color: "white",
+    color: "black", // Text color changed to black
   },
   optionContainer: {
     flexDirection: "row",
@@ -298,38 +298,38 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderWidth: 1,
-    borderColor: "white",
+    borderColor: "#ffbb37",
     borderRadius: 5,
     marginRight: 10,
     marginBottom: 10,
   },
   selectedOption: {
-    backgroundColor: "white",
-    borderColor: "white",
+    backgroundColor: "rgba(255, 187, 55, 0.5)",
+    borderColor: "#ffbb37",
   },
   optionText: {
     fontSize: 16,
-    color: "black",
+    color: "black", // Text color changed to black
   },
   selectedText: {
     color: "#ffbb37",
   },
   input: {
     height: 40,
-    borderColor: "white",
+    borderColor: "#ffbb37",
     borderWidth: 1,
     marginBottom: 10,
     paddingHorizontal: 10,
-    color: "white",
+    color: "#ffbb37",
   },
   button: {
-    backgroundColor: "white",
+    backgroundColor: "#ffbb37",
     padding: 10,
     borderRadius: 5,
     alignItems: "center",
   },
   buttonText: {
-    color: "#ffbb37",
+    color: "white",
     fontSize: 18,
     fontWeight: "bold",
   },
