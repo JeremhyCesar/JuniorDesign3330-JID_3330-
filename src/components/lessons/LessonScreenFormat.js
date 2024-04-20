@@ -16,13 +16,19 @@ import { BSON } from "realm";
 import { User } from "../../models/User";
 
 const imageMap = {
+  // composers
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
   "Bach.png": require("../../../assets/composers/Bach.png"),
   "Beethoven.png": require("../../../assets/composers/Beethoven.png"),
-  "piano.png": require("../../../assets/instruments/piano.png"),
-  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png"),
   "Mozart.png": require("../../../assets/composers/Mozart.png"),
-  // Add more mappings for other composers, instruments or other topics
+  "Schumann.png": require("../../../assets/composers/Schumann.png"),
+  
+  // instruments
+  "piano.png": require("../../../assets/instruments/piano.png"),
+  "frenchhorn.png": require("../../../assets/instruments/frenchhorn.png"),
+
+  // compared
+  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png")
 };
 
 export function LessonScreen({ lessonData }) {
@@ -247,7 +253,7 @@ export function LessonScreen({ lessonData }) {
         <LessonBlock
           image={require("../../../assets/quiz-icon.png")}
           title="Mini Quiz"
-          notes={`Review the knowledge of ${name}`}
+          notes={`Test your knowledge of ${name}`}
           titleColor="#FFD000"
           onPress={() => {
             completeModule(videoPages.length + 2);

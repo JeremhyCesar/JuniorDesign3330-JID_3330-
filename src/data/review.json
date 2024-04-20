@@ -117,7 +117,7 @@
       ]
     },
 
-    "Wolfgang Amadeus Mozart": {
+    "Wolfgang Mozart": {
       "sections": [
         {
           "content": "Wolfgang Amadeus Mozart’s work is a perfect representation of the Classical era’s ideals. His music, characterized by clarity, symmetry, and balance, captures the essence of human emotion and intellect.",
@@ -144,58 +144,171 @@
           "content": "Mozart’s untimely death left a profound impact on the music world. His compositions continue to be celebrated for their beauty, complexity, and emotional depth, underscoring his status as one of the greatest composers in Western music history."
         }
       ]
-    }
-  },
-  "instruments": {
-    "Piano": {
+    },
+
+    "Robert Schumann": {
       "sections": [
         {
-          "content": "The piano is a versatile instrument used in various genres, with a rich history and evolution.",
+          "content": "Robert Schumann's work is a quintessential reflection of the Romantic era's values. His compositions, known for their emotional intensity and innovative use of harmony and form, delve deep into the Romantic spirit, emphasizing the importance of individual expression and subjective experience.",
           "points": [
             {
-              "title": "Introduction of Cristofori and the Birth of the Piano",
-              "description": "In 1709, in Padua, Italy, Bartolomeo di Francesco Cristofori, a harpsichord maker, crafted what would become the first piano."
+              "title": "Pioneer of Romantic Music",
+              "description": "Schumann was instrumental in defining the Romantic era in music, particularly through his piano works and lieder. His compositions often showcase a deep connection to the literary movements of his time, blending music with poetry."
             },
             {
-              "title": "Historical Roots of Stringed Instruments",
-              "description": "Long ago, people discovered that tight, vibrating strings make sound. They experimented with bows, gourds, and boxes to amplify the tones."
+              "title": "Complexity and Emotional Range",
+              "description": "Schumann's works range from joyful and exuberant to deeply melancholic and introspective, reflecting the complex emotions of the human soul. His ability to convey subtle emotional nuances sets his music apart."
             },
             {
-              "title": "Evolution of Keyboard Instruments",
-              "description": "In the 14th century, a family of instruments with a keyboard emerged in Europe, including the dulcimer, clavichord, spinet, virginal, clavecin, and gravicembalo."
+              "title": "Innovation in Song and Symphonic Forms",
+              "description": "Schumann contributed significantly to the development of the song cycle and symphony, expanding their potential for emotional expression and structural complexity. His song cycles, such as 'Dichterliebe,' are celebrated for their lyrical and thematic depth."
             },
             {
-              "title": "Limitations of the Harpsichord",
-              "description": "Despite its grandeur, the harpsichord had a limitation – it couldn't vary its volume while playing."
-            },
-            {
-              "title": "Artistic Desire for Controlled Expression",
-              "description": "Musicians desired an instrument that allowed them to control the loudness and tone, leading to the invention of the piano."
-            },
-            {
-              "title": "Debut of Cristofori's Invention",
-              "description": "Cristofori presented his invention in Florence in 1709, named 'gravicembalo col piano e forte' or 'soft and loud keyboard instrument.'"
-            },
-            {
-              "title": "Evolution of Terminology",
-              "description": "Over time, the instrument's name changed from fortepiano to pianoforte and eventually to just piano."
-            },
-            {
-              "title": "Surviving Instruments",
-              "description": "The earliest surviving piano by Cristofori from 1720 is on display at the Metropolitan Museum of Art in New York City."
-            },
-            {
-              "title": "Remarkable Similarity to Modern Pianos",
-              "description": "Despite numerous improvements over 300 years, Cristofori's early pianos remarkably resemble the modern piano."
+              "title": "Influence on Later Composers and the Lied Genre",
+              "description": "Schumann’s emphasis on lyrical purity and emotional authenticity had a lasting impact on the music of subsequent generations. His approach to the Lied and orchestral music influenced many later composers, including Brahms and Mahler."
             }
           ]
         },
         {
-          "content": "Despite changes, the piano remains a timeless source of beautiful music, with Cristofori's invention influencing generations of musicians."
+          "content": "Despite battling mental health issues, Schumann's artistic output remained prolific and influential. His legacy endures in the core repertoire of classical music, epitomizing the Romantic ethos and continuing to move audiences with its profound emotional depth and innovative compositions."
         }
       ]
     }
   },
+  "instruments": {
+      "Piano": {
+        "sections": [
+          {
+            "content": "The piano is a versatile instrument used in various genres, with a rich history and evolution.",
+            "points": [
+              {
+                "title": "Introduction of Cristofori and the Birth of the Piano",
+                "description": "In 1709, in Padua, Italy, Bartolomeo di Francesco Cristofori, a harpsichord maker, crafted what would become the first piano."
+              },
+              {
+                "title": "Historical Roots of Stringed Instruments",
+                "description": "Long ago, people discovered that tight, vibrating strings make sound. They experimented with bows, gourds, and boxes to amplify the tones."
+              },
+              {
+                "title": "Evolution of Keyboard Instruments",
+                "description": "In the 14th century, a family of instruments with a keyboard emerged in Europe, including the dulcimer, clavichord, spinet, virginal, clavecin, and gravicembalo."
+              },
+              {
+                "title": "Limitations of the Harpsichord",
+                "description": "Despite its grandeur, the harpsichord had a limitation – it couldn't vary its volume while playing."
+              },
+              {
+                "title": "Artistic Desire for Controlled Expression",
+                "description": "Musicians desired an instrument that allowed them to control the loudness and tone, leading to the invention of the piano."
+              },
+              {
+                "title": "Debut of Cristofori's Invention",
+                "description": "Cristofori presented his invention in Florence in 1709, named 'gravicembalo col piano e forte' or 'soft and loud keyboard instrument.'"
+              },
+              {
+                "title": "Evolution of Terminology",
+                "description": "Over time, the instrument's name changed from fortepiano to pianoforte and eventually to just piano."
+              },
+              {
+                "title": "Surviving Instruments",
+                "description": "The earliest surviving piano by Cristofori from 1720 is on display at the Metropolitan Museum of Art in New York City."
+              },
+              {
+                "title": "Remarkable Similarity to Modern Pianos",
+                "description": "Despite numerous improvements over 300 years, Cristofori's early pianos remarkably resemble the modern piano."
+              }
+            ]
+          },
+          {
+            "content": "Despite changes, the piano remains a timeless source of beautiful music, with Cristofori's invention influencing generations of musicians."
+          }
+        ]
+      },
+      "French Horn": {
+        "sections": [
+          {
+            "content": "The French Horn, known for its distinct sound and complex shape, plays a crucial role in orchestras and has a rich history of development.",
+            "points": [
+              {
+                "title": "Roots in Religious Practices and Signaling Instruments",
+                "description": "The origins of the French Horn trace back to ancient times, where it was used in religious rituals and as a signaling instrument. The Shofar, made from a ram's horn, is still used in Jewish ceremonies today."
+              },
+              {
+                "title": "The Evolution of Horn Shapes",
+                "description": "From simple animal horns to intricately designed metal instruments, the French Horn's shape has evolved significantly. Introduced in France around 1650 for hunting, its circular design was perfected to aid mounted hunters."
+              },
+              {
+                "title": "Horns as Signaling Devices",
+                "description": "Beyond hunting, horns were essential in warfare and communications, particularly noted with the Lur Horn, which dates back to 800 BCE and was made from wood or bronze."
+              },
+              {
+                "title": "From Communication to Musical Expression",
+                "description": "By the 18th century, the horn transitioned from a signaling device to a musical instrument, thanks to composers like Jean Baptiste Lully who utilized its sound to mimic hunting scenes in compositions."
+              },
+              {
+                "title": "Innovation in Hand Muting and Stopping Techniques",
+                "description": "Between 1750 and 1755, Anton Joseph Hampel and instrument maker Johann Werner innovated hand muting and stopping techniques, allowing for greater musical expression and the introduction of chromatic scales in performances."
+              },
+              {
+                "title": "The Valved Horn Revolution",
+                "description": "In 1814, Heinrich Stölzel developed the first valved French Horn, dramatically expanding its capabilities by simplifying key changes and enhancing sound quality with additional tubing and valves."
+              },
+              {
+                "title": "Invention and Evolution of Modern Horns",
+                "description": "The late 19th century saw the introduction of the modern Single and Double Horns by German maker Fritz Kruspe, improving playability and range, particularly with the Double Horn in 1900 which corrected acoustic shortcomings of earlier designs."
+              },
+              {
+                "title": "Versatility in Single, Double, and Triple Horns",
+                "description": "Today, French Horns come in various forms: the beginner-friendly Single Horn, the versatile Double Horn with extra tubing sets for a fuller range, and the Triple Horn, which adds even more range and flexibility for advanced plays."
+              }
+            ]
+          },
+          {
+            "content": "Throughout its evolution, the French Horn has become a staple in classical music and continues to charm with its heroic and melodic capabilities, proving indispensable in orchestral settings."
+          }
+        ]
+      },
+      "Harp": {
+        "sections": [
+          {
+            "content": "The harp is one of the oldest musical instruments in the world, with its sweet sounds enchanting listeners from ancient times to modern orchestras.",
+            "points": [
+              {
+                "title": "Ancient Origins",
+                "description": "Harps date back to as early as 3000 BCE, found in civilizations like Ancient Egypt and Sumer where they were used in religious ceremonies and for royal entertainment."
+              },
+              {
+                "title": "Evolution from Bow to Triangular Harp",
+                "description": "Initially resembling hunting bows, early harps evolved into a variety of shapes, most notably the triangular frame harps which emerged in Europe around the 8th century."
+              },
+              {
+                "title": "Medieval to Renaissance Development",
+                "description": "During the Medieval period, the harp underwent significant refinement, increasing in size and string count. By the Renaissance, it was a regular member of court ensembles."
+              },
+              {
+                "title": "Baroque Period Enhancements",
+                "description": "The harp saw enhancements in both design and musical role during the Baroque period, with more intricate mechanisms like pedal systems introduced to expand its musical range."
+              },
+              {
+                "title": "Classical and Romantic Flourishing",
+                "description": "In the Classical and Romantic periods, composers such as Debussy and Ravel composed works that highlighted the harp’s ethereal sounds, fully utilizing its expanded capabilities."
+              },
+              {
+                "title": "Modern Technological Advancements",
+                "description": "The 20th century introduced electric harps, which use electronic amplification to enhance sound, allowing harpists to experiment with new genres and soundscapes."
+              },
+              {
+                "title": "Contemporary and Popular Music Integration",
+                "description": "Today, the harp is not only a staple in classical music but also appears in jazz, pop, and even rock music, showcasing its versatility and timeless appeal."
+              }
+            ]
+          },
+          {
+            "content": "With its rich history and continual adaptations, the harp remains a pivotal and beloved instrument in both historical and contemporary music settings."
+          }
+        ]
+      }            
+    },
   "compared": {
     "Beethoven's Symphony No.5 and Mozart's Symphony No.40": {
       "sections": [

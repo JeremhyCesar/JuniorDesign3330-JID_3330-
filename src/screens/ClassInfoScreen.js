@@ -6,7 +6,6 @@ import { useObject, useQuery, useRealm, useUser } from '@realm/react';
 import { Class } from '../models/Class';
 
 export const ClassInfoScreen = ({ navigation }) => {
-    const realm = useRealm();
     const user = useObject(User, BSON.ObjectId(useUser().id));
     const students = useQuery(User).filtered('enrolled_class == $0', user.managed_class);
     

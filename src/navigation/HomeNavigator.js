@@ -10,10 +10,10 @@ import ListenNavigator from "./ListenNavigator";
 import { useUser, useObject } from "@realm/react";
 import { User } from "../models/User";
 import { BSON } from "realm";
-import { AccountInfoScreen } from "../screens/AccountInfoScreen";
-import { UserPage } from '../screens/UserPage';
 import { ClassCreationScreen } from "../screens/ClassCreationScreen";
 import { ClassInfoScreen } from "../screens/ClassInfoScreen";
+import UserPage from "../screens/UserPage";
+import AccountInfoScreen from "../screens/AccountInfoScreen";
 
 const Stack = createStackNavigator();
 
@@ -88,14 +88,14 @@ const HomeNavigator = () => {
                 />
               ),
             }}
-          />  
+          />
           <Stack.Screen
             name="UserPage"
             component={UserPage}
             options={{
-            title: 'User Page',
-           }}
-         />
+              title: 'User Page',
+            }}
+          />
           <Stack.Screen
             name="Social"
             component={SocialNavigator}

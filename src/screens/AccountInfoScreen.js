@@ -5,7 +5,7 @@ import { BSON } from 'realm';
 import { useQuery, useRealm, useUser } from '@realm/react';
 import { Class } from '../models/Class';
 
-export const AccountInfoScreen = ({ navigation }) => {
+const AccountInfoScreen = ({ navigation }) => {
     const realm = useRealm();
     const user = useUser();
     const classes = useQuery(Class);
@@ -69,3 +69,5 @@ export const AccountInfoScreen = ({ navigation }) => {
         </View>
     )
 }
+
+export default AccountInfoScreen;

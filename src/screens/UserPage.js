@@ -21,7 +21,7 @@ export function UserPage({ navigation }) {
                 {
                     text: 'Logout',
                     onPress: () => {
-                        logOut();
+                        logOut(); 
                     },
                 },
             ],
@@ -52,6 +52,8 @@ export function UserPage({ navigation }) {
         </View>
     );
 }
+
+export default UserPage;
 
 const styles = StyleSheet.create({
     container: {

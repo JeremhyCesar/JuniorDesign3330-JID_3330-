@@ -1,3 +1,4 @@
+import { useEmailPasswordAuth } from '@realm/react';
 import React from 'react';
 import { Pressable, StyleSheet, ScrollView, Text, View, Image } from 'react-native';
 import { useUser, useObject } from '@realm/react';
