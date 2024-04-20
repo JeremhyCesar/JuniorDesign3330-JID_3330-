@@ -3,54 +3,106 @@ const http = require('http');
 const { Server } = require("socket.io");
 const cors = require('cors');
 const app = express();
-
 app.use(cors());
 app.use(express.static('public'));
 
 const server = http.createServer(app);
 const io = new Server(server);
 
+// MongoDB connections: set up client and API connection to mongodb 
+const { MongoClient, ServerApiVersion } = require('mongodb');
+const mongoUrl = 'mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers'; 
+// Notemaker connection string: mongodb+srv://borthwickbenjamin:<password>@notemakers.luedqgj.mongodb.net/?retryWrites=true&w=majority&appName=Notemakers
 
 
-// When a user visits the root URL (/) of your server, 
-// this code will respond by sending "Hello World!" back to the browser. 
-// req represents the HTTP request and contains details like query parameters, URL, headers, etc. res is used to send back responses to the client.
-// app.get('/', (req, res) => {
-//     res.send("Hello World!");
-// }); 
-// ^^ overriding so comment it out
 
-// event listener for new WebSocket connections to the server.
+async function connectToMongo() {
+    try {
+        await client.connect();
+        console.log("Successfully connected to MongoDB!");
+        return client;
+    } catch (error) {
+        console.error("Failed to connect to MongoDB", error);
+        process.exit(1); // Exit if there is a connection error
+    }
+}
+
+connectToMongo();
+
+
+
+
+// EVENT HANDLER NEEDED 
+// Connection: To handle any new user joining.
+// startQuiz: Triggered by the host to start the quiz.
+// submitAnswer: Used by participants to submit their answers.
+// quizStarted: Used to broadcast quiz data to all connected clients.
+// disconnect: To clean up when a user disconnects.
 io.on('connection', (socket) => {
-    console.log('A user connected');
+    console.log('A user connected:', socket.id);  
 
+    // startQuiz: Triggered by the host to start the quiz.
     socket.on('startQuiz', () => {
-        const quiz = loadQuiz();  // Function to load quiz data
-        // socket.emit('quizStarted', quiz);
-        console.log("launching quiz~");
+        const quiz = loadQuiz();  // This should fetch quiz data
+        io.emit('quizStarted', quiz);  // Broadcast to all connected clients
+        console.log("Quiz started!");
     });
 
+    // submitAnswer: Used by participants to submit their answers.
     socket.on('submitAnswer', (data) => {
-        // Evaluate answer, update score, and broadcast update
-        console.log(data);
+        const result = evaluateAnswer(data);
+        io.to(socket.id).emit('answerResult', result);  // Emit result back to the participant
+        console.log(`Answer received from ${socket.id}:`, data);
     });
 
+    // disconnect: To clean up when a user disconnects.
     socket.on('disconnect', () => {
-        console.log('User disconnected');
+        console.log('User disconnected:', socket.id);
+        // Perform any necessary cleanup
     });
 });
+
+// HELPER FUNCTION:
+
+// Function to load quiz data
+function loadQuiz() {
+    // fetch the quiz from a database or file
+    return {
+        questions: [
+            { id: 1, text: 'Question 1', options: ['A', 'B', 'C', 'D'], answer: 'A' },
+            
+        ],
+        currentQuestionIndex: 0
+    };
+}
+
+// Function to evaluate answer
+function evaluateAnswer(data) {
+    // Extract the answer and question ID from data object
+    const { questionId, answer } = data;
+
+    // Fetch the correct answer from your storage based on questionId
+    // For demonstration, assuming a correct answer of 'A'
+    const correctAnswer = 'A';
+
+    // Compare the participant's answer with the correct answer
+    const isCorrect = answer === correctAnswer;
+
+    // Return an object with the result
+    return {
+        questionId,
+        correct: isCorrect,
+        correctAnswer: isCorrect ? null : correctAnswer // Don't send the answer if correct to avoid cheating
+    };
+}
 
 server.listen(3000, () => {
     console.log('Server is running on http://localhost:3000');
 });
 
 
-// event handling:
-// Connection: To handle any new user joining.
-// startQuiz: Triggered by the host to start the quiz.
-// submitAnswer: Used by participants to submit their answers.
-// quizStarted: Used to broadcast quiz data to all connected clients.
-// disconnect: To clean up when a user disconnects.
+
+
 
 // Quiz logic handling:
 // Manage Quiz Logic
