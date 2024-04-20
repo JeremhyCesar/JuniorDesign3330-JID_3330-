@@ -353,7 +353,7 @@ const ListenScreen = () => {
           borderRadius: 10,
           shadowOffset: 10,
         }}
-        onPress={() => navigation.navigate("SongDetailsScreen")}
+        onPress={() => navigation.navigate("SongDetailsPage", { currentTrack })}
       >
             <View style={{ flex: 1 }}>
               <Text
