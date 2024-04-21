@@ -1,152 +1,137 @@
 [
-    {
-      "composerName": "Frédéric Chopin",
-      "introduction": "Let's go to work, ",
-      "imageSource": "Chopin.png",
-      "videoPages": [
-        { "title": "Chopin's life", "videoID": "-4mVVRO_98Y" },
-        { "title": "Chopin's music", "videoID": "w4YyTQduZDc" }
-      ]
-    },
-    {
-      "composerName": "Ludwig van Beethoven",
-      "introduction": "Time to explore Beethoven!",
-      "imageSource": "Beethoven.png",
-      "videoPages": [
-        { "title": "Beethoven's life", "videoID": "9h1xvHUkD9A" },
-        { "title": "Beethoven's music", "videoID": "-4788Tmz9Zo" }
-      ]
-    },
-    {
-      "composerName": "J.S. Bach",
-      "introduction": "Let's learn about Bach!",
-      "imageSource": "Bach.png",
-      "videoPages": [
-        { "title": "Bach's life", "videoID": "V5ijvbKeAp8" },
-        { "title": "Bach's music", "videoID": "TvyLebqTtW4" }
-      ]
-    },
-    {
-      "composerName": "Wolfgang Mozart",
-      "introduction": "Let's learn about Mozart!",
-      "imageSource": "Mozart.png",
-      "videoPages": [
-        { "title": "Mozart's life", "videoID": "gsb5nWFpwsE" },
-        { "title": "Mozart's music", "videoID": "Nx_m2ZTZPuk&t" }
-      ]
-    },
-    {
-      "composerName": "Robert Schumann",
-      "introduction": "Let's learn about Schumann!",
-      "imageSource": "Schumann.png",
-      "videoPages": [
-        { "title": "Schumann's life", "videoID": "vkLG3b6YNGA" },
-        { "title": "Schumann's music", "videoID": "49TvuAC0fpQ" }
-      ]
-    }, 
-    {
-      "composerName": "Jean Sibelius",
-      "introduction": "Discover the world of Sibelius!",
-      "imageSource": "Sibelius.png",
-      "videoPages": [
-        {
-          "title": "Sibelius's life",
-          "videoID": "hZCGD9YNc0A"
-        },
-        {
-          "title": "Sibelius's music",
-          "videoID": "JkIRhue9dpg"
-        }
-      ]
-    },
-    {
-      "composerName": "Maurice Ravel",
-      "introduction": "Explore the magic of Ravel!",
-      "imageSource": "Ravel.png",
-      "videoPages": [
-        {
-          "title": "Ravel's life",
-          "videoID": "epoOhflD85w"
-        },
-        {
-          "title": "Ravel's music",
-          "videoID": "esLaCimn9YQ"
-        }
-      ]
-    },
-    {
-      "composerName": "Pyotr Ilyich Tchaikovsky",
-      "introduction": "Dive into the brilliance of Tchaikovsky!",
-      "imageSource": "Tchaikovsky.png",
-      "videoPages": [
-        {
-          "title": "Tchaikovsky's life",
-          "videoID": "6qvBftijSDU"
-        },
-        {
-          "title": "Tchaikovsky's music",
-          "videoID": "rJf-In0CXx8"
-        }
-      ]
-    },
-    {
-      "composerName": "Sergei Rachmaninoff",
-      "introduction": "Experience the intensity of Rachmaninoff!",
-      "imageSource": "Rachmaninoff.png",
-      "videoPages": [
-        {
-          "title": "Rachmaninoff's life",
-          "videoID": "VAcbtFaM4jo"
-        },
-        {
-          "title": "Rachmaninoff's music",
-          "videoID": "mHd_YFAhYw8"
-        }
-      ]
-    },
-    {
-      "composerName": "Richard Strauss",
-      "introduction": "Unveil the complexity of Strauss!",
-      "imageSource": "Strauss.png",
-      "videoPages": [
-        {
-          "title": "Strauss's life",
-          "videoID": "gCwfeS4yffQ"
-        },
-        {
-          "title": "Strauss's music",
-          "videoID": "CKsFHV5A_SE"
-        }
-      ]
-    },
-    {
-      "composerName": "Richard Wagner",
-      "introduction": "Explore Wagner's epic operas!",
-      "imageSource": "Wagner.png",
-      "videoPages": [
-        {
-          "title": "Wagner's life",
-          "videoID": "1rNivt_Cxok"
-        },
-        {
-          "title": "Wagner's music",
-          "videoID": "KR2HQulzKE0"
-        }
-      ]
-    },
-    {
-      "composerName": "George Gershwin",
-      "introduction": "Dive into the jazz-influenced world of Gershwin!",
-      "imageSource": "Gershwin.png",
-      "videoPages": [
-        {
-          "title": "Gershwin's most famous piece",
-          "videoID": "Ce3OERuCY0E"
-        },
-        {
-          "title": "Gershwin's music",
-          "videoID": "kDIwaVsV828"
-        }
-      ]
-    }
-  ]
+  {
+    "composerName": "Frédéric Chopin",
+    "introduction": "Let's go to work, ",
+    "imageSource": "Chopin.png",
+    "videoPages": [
+      { "title": "Chopin's life", "videoID": "-4mVVRO_98Y" },
+      { "title": "Chopin's music", "videoID": "w4YyTQduZDc" }
+    ]
+  },
+  {
+    "composerName": "Ludwig van Beethoven",
+    "introduction": "Time to explore Beethoven!",
+    "imageSource": "Beethoven.png",
+    "videoPages": [
+      { "title": "Beethoven's life", "videoID": "9h1xvHUkD9A" },
+      { "title": "Beethoven's music", "videoID": "-4788Tmz9Zo" }
+    ]
+  },
+  {
+    "composerName": "J.S. Bach",
+    "introduction": "Let's learn about Bach!",
+    "imageSource": "Bach.png",
+    "videoPages": [
+      { "title": "Bach's life", "videoID": "V5ijvbKeAp8" },
+      { "title": "Bach's music", "videoID": "TvyLebqTtW4" }
+    ]
+  },
+  {
+    "composerName": "Wolfgang Amadeus Mozart",
+    "introduction": "Let's learn about Mozart!",
+    "imageSource": "Mozart.png",
+    "videoPages": [
+      { "title": "Mozart's life", "videoID": "gsb5nWFpwsE" },
+      { "title": "Mozart's music", "videoID": "Nx_m2ZTZPuk&t" }
+    ]
+  },
+  {
+    "composerName": "Pyotr Ilyich Tchaikovsky",
+    "introduction": "Dive into the brilliance of Tchaikovsky!",
+    "imageSource": "Tchaikovsky.png",
+    "videoPages": [
+      { "title": "Tchaikovsky's life", "videoID": "6qvBftijSDU" },
+      { "title": "Tchaikovsky's music", "videoID": "rJf-In0CXx8" }
+    ]
+  },
+  {
+    "composerName": "Sergei Rachmaninoff",
+    "introduction": "Experience the intensity of Rachmaninoff!",
+    "imageSource": "Rachmaninoff.png",
+    "videoPages": [
+      { "title": "Rachmaninoff's life", "videoID": "VAcbtFaM4jo" },
+      { "title": "Rachmaninoff's music", "videoID": "mHd_YFAhYw8" }
+    ]
+  },
+  {
+    "composerName": "Johannes Brahms",
+    "introduction": "Experience the intensity of Brahms!",
+    "imageSource": "Brahms.png",
+    "videoPages": [
+      { "title": "Brahms's life", "videoID": "Q8PRIWzCOAs" },
+      { "title": "Brahms's music", "videoID": "Z8gwcS3IOk4" }
+    ]
+  },
+  {
+    "composerName": "Franz Schubert",
+    "introduction": "Let's learn about Schubert!",
+    "imageSource": "Schubert.png",
+    "videoPages": [
+      { "title": "Schubert's life", "videoID": "De2iFwo1_Uk" },
+      { "title": "Schubert's music", "videoID": "CWIQcZHFVng" }
+    ]
+  },
+  {
+    "composerName": "Antonio Vivaldi",
+    "introduction": "Let's learn about Vivaldi!",
+    "imageSource": "Vivaldi.png",
+    "videoPages": [
+      { "title": "Vivaldi's life", "videoID": "jZQBmy2w110" },
+      { "title": "Vivaldi's music", "videoID": "wmS2yC56T68&t" }
+    ]
+  },
+  {
+    "composerName": "Franz Joseph Haydn",
+    "introduction": "Let's learn about Haydn!",
+    "imageSource": "Haydn.png",
+    "videoPages": [
+      { "title": "Haydn's life", "videoID": "c0lkze12Bvo" },
+      { "title": "Haydn's music", "videoID": "L1x_kagPbUM" }
+    ]
+  },
+  {
+    "composerName": "Claude Debussy",
+    "introduction": "Let's learn about Debussy!",
+    "imageSource": "Debussy.png",
+    "videoPages": [
+      { "title": "Debussy's life", "videoID": "AzTYGVFvhds" },
+      { "title": "Debussy's music", "videoID": "8mY9QZvdWfY" }
+    ]
+  },
+  {
+    "composerName": "Johann Strauss II",
+    "introduction": "Let's learn about Strauss II!",
+    "imageSource": "Strauss_II.png",
+    "videoPages": [
+      { "title": "Strauss II's life", "videoID": "cJ6j0nsbpOo" },
+      { "title": "Strauss II's music", "videoID": "5GYF96b79w4" }
+    ]
+  },
+  {
+    "composerName": "Franz Liszt",
+    "introduction": "Let's learn about Liszt!",
+    "imageSource": "Liszt.png",
+    "videoPages": [
+      { "title": "Liszt's life", "videoID": "8U4GNx7HV5k" },
+      { "title": "Liszt's music", "videoID": "Z7X2fDbiJWY" }
+    ]
+  },
+  {
+    "composerName": "Antonin Dvorak",
+    "introduction": "Let's learn about Dvorak!",
+    "imageSource": "Dvorak.png",
+    "videoPages": [
+      { "title": "Dvorak's life", "videoID": "60idWt-JxOY" },
+      { "title": "Dvorak's music", "videoID": "wsGeK7ax6Pw" }
+    ]
+  },
+  {
+    "composerName": "Georg Friedrich Handel",
+    "introduction": "Let's learn about Handel!",
+    "imageSource": "Handel.png",
+    "videoPages": [
+      { "title": "Handel's life", "videoID": "uU_aPsv2Vnk" },
+      { "title": "Handel's music", "videoID": "NsyBf5XaobA" }
+    ]
+  }
+]
