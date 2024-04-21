@@ -38,7 +38,7 @@ const VolumeBar = ({ visible, volume, onVolumeChange, onClose }) => {
       />
       
       <TouchableOpacity onPress={onClose} style={{ marginTop: 10 }}>
-        <Text style={{ fontSize: 16, color: "blue" }}>          </Text>
+        <Text style={{ fontSize: 16, color: "blue" }}> </Text>
       </TouchableOpacity>
     </View>
   );
