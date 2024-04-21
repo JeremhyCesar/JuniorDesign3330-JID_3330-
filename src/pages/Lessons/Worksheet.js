@@ -13,7 +13,7 @@ export function Worksheet({ worksheetContent }) {
     <View style={{ flex: 1 }}>
       <View
         style={{
-          top: 92,
+          top: 110,
           left: "12%",
           borderRadius: 31,
           backgroundColor: "#e3c565",
