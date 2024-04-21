@@ -6,6 +6,8 @@ import { VideoPage } from "../pages/Lessons/VideoPage";
 import { Worksheet } from "../pages/Lessons/Worksheet";
 import { ReviewSession } from "../pages/Lessons/ReviewSession";
 import composerLessonData from "../data/composerLessons.json";
+import { TouchableOpacity, View } from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const Stack = createNativeStackNavigator();
 
@@ -31,8 +33,41 @@ const ComposerNavigator = () => {
           return <LessonScreen {...props} lessonData={lessonData} />;
         }}
       </Stack.Screen>
-      <Stack.Screen name="VideoPage" component={VideoPage} />
-      <Stack.Screen name="Worksheet">
+      <Stack.Screen
+        name="VideoPage"
+        component={VideoPage}
+        options={({ navigation }) => ({
+          headerShown: true,
+          headerTitle: "",
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Icon name="arrow-back" size={25} color="white" />
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: "#e2480d",
+          },
+          headerTintColor: "white",
+        })}
+      />
+      <Stack.Screen
+        name="Worksheet"
+        options={({ navigation }) => ({
+          headerShown: true,
+          headerTitle: "",
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Icon name="arrow-back" size={25} color="white" />
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: "#e2480d",
+          },
+          headerTintColor: "white",
+        })}
+      >
         {(props) => (
           <Worksheet
             {...props}
@@ -40,7 +75,23 @@ const ComposerNavigator = () => {
           />
         )}
       </Stack.Screen>
-      <Stack.Screen name="ReviewSession">
+      <Stack.Screen
+        name="ReviewSession"
+        options={({ navigation }) => ({
+          headerShown: true,
+          headerTitle: "",
+          headerTransparent: true,
+          headerLeft: () => (
+            <TouchableOpacity onPress={() => navigation.goBack()}>
+              <Icon name="arrow-back" size={25} color="white" />
+            </TouchableOpacity>
+          ),
+          headerStyle: {
+            backgroundColor: "#e2480d",
+          },
+          headerTintColor: "white",
+        })}
+      >
         {(props) => (
           <ReviewSession
             {...props}
