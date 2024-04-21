@@ -128,10 +128,9 @@ export function LessonScreen({ lessonData }) {
     },
     title: {
       fontWeight: "bold",
-      fontSize: 48,
+      fontSize: 40,
       color: "#333",
       marginBottom: 10,
-      marginTop: 40,
     },
     introduction: {
       fontSize: 20,
@@ -164,6 +163,9 @@ export function LessonScreen({ lessonData }) {
     pressableImage: {
       alignItems: "center",
       justifyContent: "center",
+    },
+    lessonBlocksContainer: {
+      paddingLeft: 20,
     },
   });
 
