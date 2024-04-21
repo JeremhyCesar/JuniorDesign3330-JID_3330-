@@ -43,5 +43,50 @@
         { "title": "Schumann's life", "videoID": "vkLG3b6YNGA" },
         { "title": "Schumann's music", "videoID": "49TvuAC0fpQ" }
       ]
+    }, 
+    {
+      "composerName": "Jean Sibelius",
+      "introduction": "Discover the world of Sibelius!",
+      "imageSource": "Sibelius.png",
+      "videoPages": [
+        {
+          "title": "Sibelius's life",
+          "videoID": "hZCGD9YNc0A"
+        },
+        {
+          "title": "Sibelius's music",
+          "videoID": "JkIRhue9dpg"
+        }
+      ]
+    },
+    {
+      "composerName": "Maurice Ravel",
+      "introduction": "Explore the magic of Ravel!",
+      "imageSource": "Ravel.png",
+      "videoPages": [
+        {
+          "title": "Ravel's life",
+          "videoID": "epoOhflD85w"
+        },
+        {
+          "title": "Ravel's music",
+          "videoID": "esLaCimn9YQ"
+        }
+      ]
+    },
+    {
+      "composerName": "Pyotr Ilyich Tchaikovsky",
+      "introduction": "Dive into the brilliance of Tchaikovsky!",
+      "imageSource": "Tchaikovsky.png",
+      "videoPages": [
+        {
+          "title": "Tchaikovsky's life",
+          "videoID": "6qvBftijSDU"
+        },
+        {
+          "title": "Tchaikovsky's music",
+          "videoID": "rJf-In0CXx8"
+        }
+      ]
     }
   ]
