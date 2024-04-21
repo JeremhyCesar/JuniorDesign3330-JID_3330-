@@ -1,3 +1,4 @@
+import { useObject, useUser, useRealm, useQuery } from "@realm/react";
 import React, { useState } from "react";
 import {
   View,
@@ -8,8 +9,15 @@ import {
   ScrollView,
 } from "react-native";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { BSON } from "realm";
+import { User } from "../../models/User";
+import { QuizRoom } from "../../models/QuizRoom";
 
 export function CreateRoomScreen({ navigation }) {
+  const realm = useRealm();
+  const user = useObject(User, BSON.ObjectId(useUser().id))
+  const quizRooms = useQuery(QuizRoom);
+
   const [musicType, setMusicType] = useState("Classical");
   const [category, setCategory] = useState("Composer");
   const [difficulty, setDifficulty] = useState("Easy");
@@ -17,6 +25,10 @@ export function CreateRoomScreen({ navigation }) {
   const [roomCapacity, setRoomCapacity] = useState(2);
   const [roomType, setRoomType] = useState("Public");
   const [roomName, setRoomName] = useState("");
+
+  realm.subscriptions.update((mutableSubs) => {
+    mutableSubs.add(realm.objects("QuizRoom"), {name: "quizSubscription"});
+  })
 
   const handleCreateRoom = () => {
     // Handle room creation logic here
@@ -29,15 +41,29 @@ export function CreateRoomScreen({ navigation }) {
     console.log("Room Type:", roomType);
     console.log("Room Name:", roomName);
 
+    let joinCode = 0;
+    while (joinCode === 0) {
+      joinCode = Math.floor(100000 + 900000 * Math.random());
+      if (quizRooms.filtered('joinCode == $0', joinCode).length > 0) joinCode = 0;
+    }
+    realm.write(() => {
+      realm.create(QuizRoom, {
+        _id: BSON.ObjectId(),
+        difficulty: difficulty,
+        questionNo: -1,
+        numQuestions: numQuestions,
+        roomCapacity: roomCapacity,
+        roomName: roomName,
+        musicType: musicType,
+        category: category,
+        players: [user],
+        private: roomType === 'Private',
+        joinCode: joinCode
+      })
+    })
     // Navigate to the quiz room or display a success message
     navigation.navigate("OnlineQuizRoom", {
-      musicType,
-      category,
-      difficulty,
-      numQuestions,
-      roomCapacity,
-      roomType,
-      roomName,
+      joinCode, host: true
     });
   };
 

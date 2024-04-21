@@ -1,7 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import { QuizRoom } from "../../models/QuizRoom";
+import { useObject, useUser, useRealm, useQuery } from "@realm/react";
+import { BSON } from "realm";
+import { User } from "../../models/User";
 
-const quizRooms = [
+/*const quizRooms = [
   {
     id: "1",
     roomName: "Music Trivia",
@@ -35,28 +39,40 @@ const quizRooms = [
     roomType: "Private",
     players: 3,
   },
-];
+];*/
 
 export function JoinOnlineQuizRoom({ navigation }) {
+  const realm = useRealm();
+  const user = useObject(User, BSON.ObjectId(useUser().id));
+
+  realm.subscriptions.update((mutableSubs) => {
+    mutableSubs.add(realm.objects("QuizRoom"), {name: 'quizSubscription'});
+  })
+
+  const quizRooms = useQuery(QuizRoom);
+
   const handleJoinRoom = (room) => {
     // Handle joining the selected quiz room
     console.log(`Joining room: ${room.roomName}`);
+    realm.write(() => {
+      room.players.push(user);
+    })
     // Navigate to the OnlineQuizRoom component and pass the selected room details
     navigation.navigate("OnlineQuizRoom", room);
   };
 
-  const renderQuizRoom = ({ item }) => (
-    <TouchableOpacity style={styles.roomContainer} onPress={() => handleJoinRoom(item)}>
-      <Text style={styles.roomName}>{item.roomName}</Text>
+  const renderQuizRoom = ({ quizRoom }) => (
+    <TouchableOpacity style={styles.roomContainer} onPress={() => handleJoinRoom(quizRoom)}>
+      <Text style={styles.roomName}>{quizRoom.roomName}</Text>
       <View style={styles.roomDetails}>
-        <Text style={styles.detailText}>Music Type: {item.musicType}</Text>
-        <Text style={styles.detailText}>Category: {item.category}</Text>
-        <Text style={styles.detailText}>Difficulty: {item.difficulty}</Text>
-        <Text style={styles.detailText}>Questions: {item.numQuestions}</Text>
+        <Text style={styles.detailText}>Music Type: {quizRoom.musicType}</Text>
+        <Text style={styles.detailText}>Category: {quizRoom.category}</Text>
+        <Text style={styles.detailText}>Difficulty: {quizRoom.difficulty}</Text>
+        <Text style={styles.detailText}>Questions: {quizRoom.numQuestions}</Text>
         <Text style={styles.detailText}>
-          Players: {item.players}/{item.roomCapacity}
+          Players: {quizRoom.players.length}/{quizRoom.roomCapacity}
         </Text>
-        <Text style={styles.detailText}>Room Type: {item.roomType}</Text>
+        <Text style={styles.detailText}>Room Type: {quizRoom.private ? "Private" : "Public"}</Text>
       </View>
     </TouchableOpacity>
   );
@@ -67,7 +83,7 @@ export function JoinOnlineQuizRoom({ navigation }) {
       <FlatList
         data={quizRooms}
         renderItem={renderQuizRoom}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(quizRoom) => quizRoom.joinCode}
         contentContainerStyle={styles.listContainer}
       />
     </View>

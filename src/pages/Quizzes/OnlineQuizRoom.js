@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 export function OnlineQuizRoom({ route, navigation }) {
-  const { musicType, category, difficulty, numQuestions, roomCapacity, roomType, roomName } = route.params;
+  const { room } = route.params;
   const [isReady, setIsReady] = useState(false);
 
   const handleReadyPress = () => {
@@ -11,36 +11,36 @@ export function OnlineQuizRoom({ route, navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{roomName}</Text>
+      <Text style={styles.title}>{room.roomName}</Text>
 
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Music Type:</Text>
-        <Text style={styles.infoValue}>{musicType}</Text>
+        <Text style={styles.infoValue}>{room.musicType}</Text>
       </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Category:</Text>
-        <Text style={styles.infoValue}>{category}</Text>
+        <Text style={styles.infoValue}>{room.category}</Text>
       </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Difficulty:</Text>
-        <Text style={styles.infoValue}>{difficulty}</Text>
+        <Text style={styles.infoValue}>{room.difficulty}</Text>
       </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Number of Questions:</Text>
-        <Text style={styles.infoValue}>{numQuestions}</Text>
+        <Text style={styles.infoValue}>{room.numQuestions}</Text>
       </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Room Capacity:</Text>
-        <Text style={styles.infoValue}>{roomCapacity}</Text>
+        <Text style={styles.infoValue}>{room.roomCapacity}</Text>
       </View>
 
       <View style={styles.infoContainer}>
         <Text style={styles.infoLabel}>Room Type:</Text>
-        <Text style={styles.infoValue}>{roomType}</Text>
+        <Text style={styles.infoValue}>{room.roomType}</Text>
       </View>
 
       <View style={styles.waitingContainer}>

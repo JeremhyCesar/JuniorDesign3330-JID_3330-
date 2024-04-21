@@ -10,18 +10,19 @@ import { Class } from './src/models/Class';
 import { User } from './src/models/User';
 import { LocalQuizRecord } from './src/models/LocalQuizRecord';
 import { OnlineQuizRecord } from './src/models/OnlineQuizRecord';
+import { QuizRoom } from './src/models/QuizRoom';
 
 const App = () =>
   <NavigationContainer>
     <AppProvider id={'application-0-surqu'}>
         <UserProvider fallback={<LoginNavigator />}>
-          <RealmProvider schema={[User, Class, OnlineQuizRecord, LocalQuizRecord]}
+          <RealmProvider schema={[User, Class, OnlineQuizRecord, LocalQuizRecord, QuizRoom]}
             sync={{
               flexible: true,
               initialSubscriptions: {
                 update: (subs, realm) => {
                   console.log('im trying');
-                  subs.add(realm.objects([User, Class, OnlineQuizRecord, LocalQuizRecord]))
+                  subs.add(realm.objects("User"))
                 }
               },
               rerunOnOpen: true,
