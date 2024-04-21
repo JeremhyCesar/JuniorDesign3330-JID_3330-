@@ -98,6 +98,7 @@ const SongDetailsPage = ({ route }) => {
     await TrackPlayer.setRepeatMode(nextMode);
     setRepeatMode(nextMode);
   };
+  
 
   const handleVolumeChange = async (newVolume) => {
     await TrackPlayer.setVolume(newVolume);
