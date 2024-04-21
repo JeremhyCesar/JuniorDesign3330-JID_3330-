@@ -18,11 +18,21 @@ import { User } from "../../models/User";
 const imageMap = {
   // composers
   "Chopin.png": require("../../../assets/composers/Chopin.png"),
-  "Bach.png": require("../../../assets/composers/Bach.png"),
   "Beethoven.png": require("../../../assets/composers/Beethoven.png"),
+  "Bach.png": require("../../../assets/composers/Bach.png"),
   "Mozart.png": require("../../../assets/composers/Mozart.png"),
-  "Schumann.png": require("../../../assets/composers/Schumann.png"),
-  
+  "Tchaikovsky.png": require("../../../assets/composers/Tchaikovsky.png"),
+  "Rachmaninoff.png": require("../../../assets/composers/Rachmaninoff.png"),
+  "Brahms.png": require("../../../assets/composers/Brahms.png"),
+  "Schubert.png": require("../../../assets/composers/Schubert.png"),
+  "Vivaldi.png": require("../../../assets/composers/Vivaldi.png"),
+  "Haydn.png": require("../../../assets/composers/Haydn.png"),
+  "Debussy.png": require("../../../assets/composers/Debussy.png"),
+  "Strauss_II.png": require("../../../assets/composers/Strauss_II.png"),
+  "Liszt.png": require("../../../assets/composers/Liszt.png"),
+  "Dvorak.png": require("../../../assets/composers/Dvorak.png"),
+  "Handel.png": require("../../../assets/composers/Handel.png"),
+
   // instruments
   "piano.png": require("../../../assets/instruments/piano.png"),
   "frenchhorn.png": require("../../../assets/instruments/frenchhorn.png"),

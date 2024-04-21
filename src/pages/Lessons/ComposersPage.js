@@ -23,12 +23,52 @@ export function ComposersPage({ navigation }) {
       image: require("../../../assets/composers/Bach.png"),
     },
     {
-      name: "Wolfgang Mozart",
+      name: "Wolfgang Amadeus Mozart",
       image: require("../../../assets/composers/Mozart.png"),
     },
     {
-      name: "Robert Schumann",
-      image: require("../../../assets/composers/Schumann.png"),
+      name: "Pyotr Ilyich Tchaikovsky",
+      image: require("../../../assets/composers/Tchaikovsky.png"),
+    },
+    {
+      name: "Sergei Rachmaninoff",
+      image: require("../../../assets/composers/Rachmaninoff.png"),
+    },
+    {
+      name: "Johannes Brahms",
+      image: require("../../../assets/composers/Brahms.png"),
+    },
+    {
+      name: "Franz Schubert",
+      image: require("../../../assets/composers/Schubert.png"),
+    },
+    {
+      name: "Antonio Vivaldi",
+      image: require("../../../assets/composers/Vivaldi.png"),
+    },
+    {
+      name: "Franz Joseph Haydn",
+      image: require("../../../assets/composers/Haydn.png"),
+    },
+    {
+      name: "Claude Debussy",
+      image: require("../../../assets/composers/Debussy.png"),
+    },
+    {
+      name: "Johann Strauss II",
+      image: require("../../../assets/composers/Strauss_II.png"),
+    },
+    {
+      name: "Franz Liszt",
+      image: require("../../../assets/composers/Liszt.png"),
+    },
+    {
+      name: "Antonin Dvorak",
+      image: require("../../../assets/composers/Dvorak.png"),
+    },
+    {
+      name: "Georg Friedrich Handel",
+      image: require("../../../assets/composers/Handel.png"),
     },
     // Add more composers as needed
   ];
