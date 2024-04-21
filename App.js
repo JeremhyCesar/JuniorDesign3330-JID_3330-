@@ -1,7 +1,7 @@
 import React from 'react';
 import {registerRootComponent} from 'expo'
 import { AppProvider, UserProvider, RealmProvider } from '@realm/react';
-import {OpenRealmBehaviorType, OpenRealmTimeOutBehavior, Object} from 'realm';
+import {OpenRealmBehaviorType, OpenRealmTimeOutBehavior, Object, BSON} from 'realm';
 // import {SYNC_CONFIG} from './sync.config';
 import { NavigationContainer } from '@react-navigation/native';
 import LoginNavigator from './src/navigation/LoginNavigator';
@@ -21,7 +21,6 @@ const App = () =>
               flexible: true,
               initialSubscriptions: {
                 update: (subs, realm) => {
-                  console.log('im trying');
                   subs.add(realm.objects("User"))
                 }
               },

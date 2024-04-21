@@ -11,9 +11,14 @@ import { useNavigation } from "@react-navigation/native";
 import TrackPlayer from "react-native-track-player";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
+import { useUser, useObject } from '@realm/react';
+import { User } from '../models/User';
+import { BSON } from 'realm'
 
 const ListenScreen = () => {
   const navigation = useNavigation();
+  const user = useObject(User, BSON.ObjectId(useUser().id));
+
   const [searchQuery, setSearchQuery] = useState(""); // store the search query
   const [progress, setProgress] = useState(0); // store the progress of the current track
   const [isPlaying, setIsPlaying] = useState(false); // store the playback state
@@ -40,7 +45,7 @@ const ListenScreen = () => {
     await TrackPlayer.setupPlayer(); // initialize the player
   };
 
-  // create a function to update the current track information whenever a new track starts playing
+  // update the current track information whenever a new track starts playing
   const updateCurrentTrack = async () => {
     // get the current track id, because the design of the "trackPlayer" does not store the detailed track information
     const track = await TrackPlayer.getCurrentTrack();
@@ -72,7 +77,7 @@ const ListenScreen = () => {
     return () => clearInterval(intervalId);
   }, []);
 
-  // create a function to toggle the playback state
+  // toggle the playback state
   const togglePlayback = async () => {
     const state = (await TrackPlayer.getPlaybackState()).state;
     if (state === "playing") {
@@ -84,7 +89,7 @@ const ListenScreen = () => {
     }
   };
 
-  // create a function to toggle the volume state
+  // toggle the volume state
   const toggleVolume = async () => {
     if (isMuted) {
       await TrackPlayer.setVolume(1);
@@ -116,7 +121,7 @@ const ListenScreen = () => {
   };
 
   const navigateToSearchResults = () => {
-    navigation.navigate("SearchResultsScreen", { searchQuery });
+    navigation.navigate("SearchResultsPage", { searchQuery });
   };
 
   const renderPressableButtons = (category) => {
@@ -129,12 +134,14 @@ const ListenScreen = () => {
           name: "The Four Seasons",
           composer: "Antonio Vivaldi",
           image: require("../../assets/4seasons.jpeg"),
+          url: require("../../assets/music/4seasons.mp3"),
         },
         {
           id: "2",
           name: "Messiah",
           composer: "George Frideric Handel",
           image: require("../../assets/messiah.jpeg"),
+          url: require("../../assets/music/messiah.mp3"),
         },
         {
           id: "3",
@@ -148,6 +155,7 @@ const ListenScreen = () => {
           name: "The Nutcracker",
           composer: "Pyotr Ilyich Tchaikovsky",
           image: require("../../assets/nutcracker.jpg"),
+          url: require("../../assets/music/nutcracker.mp3"),
         },
         {
           id: "5",
@@ -180,26 +188,31 @@ const ListenScreen = () => {
           name: "Water Music",
           composer: "George Frideric Handel",
           image: require("../../assets/watermusic.jpg"),
+          url: require("../../assets/music/watermusic.mp3"),
         },
         {
           name: "Symphony No. 1",
           composer: "Gustav Mahler",
           image: require("../../assets/symp1.jpeg"),
+          url: require("../../assets/music/symp1.mp3"),
         },
         {
           name: "Symphony No. 3",
           composer: "Ludwig van Beethoven",
           image: require("../../assets/symp3.jpeg"),
+          url: require("../../assets/music/symp3.mp3"),
         },
         {
           name: "Carmen",
           composer: "Georges Bizet",
           image: require("../../assets/carmen.jpeg"),
+          url: require("../../assets/music/carmen.mp3"),
         },
         {
           name: "Swan Lake",
           composer: "Pyotr Ilyich Tchaikovsky",
           image: require("../../assets/swanlake.jpg"),
+          url: require("../../assets/music/swanlake.mp3"),
         },
       ];
     }
@@ -303,7 +316,7 @@ const ListenScreen = () => {
             fontSize: 25,
           }}
         >
-          Let's listen, Julie!
+          Let's listen, {user.full_name.split(" ")[0]}!
         </Text>
       </View>
 

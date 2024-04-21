@@ -6,16 +6,17 @@ import YoutubePlayer from "react-native-youtube-iframe";
 export function VideoPage({ route, navigation}) {
     const { composerName, videoID } = route.params;
     return (
+        
         <View>
             <Text style={{
                 fontWeight: 'bold',
-                top: 64,
-                left: '8%',
+                top: 120,
+                left: '5%',
                 fontSize: 42,
                 color: '#333'
-            }}>{composerName} Video</Text>
+            }}>{composerName} Video </Text>
             <View style={{
-                top: 100
+                top: 140
             }}>
                 <YoutubePlayer
                 height={300}

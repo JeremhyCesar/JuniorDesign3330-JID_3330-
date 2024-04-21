@@ -1,9 +1,13 @@
 // UserPage.js
 import React from 'react';
 import { View, Text, StyleSheet, Image, Pressable, Alert } from 'react-native';
-import { FirstScreen } from '../screens/FirstScreen';
+import { useEmailPasswordAuth, useObject, useUser } from '@realm/react';
+import { User } from '../models/User';
+import { BSON } from 'realm';
 
-const UserPage = ({ navigation }) => {
+export function UserPage({ navigation }) {
+    const { logOut } = useEmailPasswordAuth();
+    const user = useObject(User, BSON.ObjectID(useUser().id));
 
     const handleLogout = () => {
         Alert.alert(
@@ -17,7 +21,7 @@ const UserPage = ({ navigation }) => {
                 {
                     text: 'Logout',
                     onPress: () => {
-                        navigation.navigate('FirstScreen'); 
+                        logOut(); 
                     },
                 },
             ],
@@ -34,6 +38,10 @@ const UserPage = ({ navigation }) => {
             </Pressable>
             <Image source={require('../../assets/profile-picture.jpeg')} style={styles.profilePicture} />
             <View style={styles.buttonContainer}>
+                {user.user_type === "Teacher" &&
+                <Pressable style={[styles.button, styles.settingsButton]} onPress={() => navigation.navigate(user.managed_class === null ? 'ClassCreation' : 'ClassInfo')}>
+                    <Text style={styles.buttonText}>Class Settings</Text>
+                </Pressable>}
                 <Pressable style={[styles.button, styles.settingsButton]} onPress={() => navigation.navigate('Settings')}>
                     <Text style={styles.buttonText}>Settings</Text>
                 </Pressable>
