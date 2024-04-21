@@ -88,5 +88,65 @@
           "videoID": "rJf-In0CXx8"
         }
       ]
+    },
+    {
+      "composerName": "Sergei Rachmaninoff",
+      "introduction": "Experience the intensity of Rachmaninoff!",
+      "imageSource": "Rachmaninoff.png",
+      "videoPages": [
+        {
+          "title": "Rachmaninoff's life",
+          "videoID": "VAcbtFaM4jo"
+        },
+        {
+          "title": "Rachmaninoff's music",
+          "videoID": "mHd_YFAhYw8"
+        }
+      ]
+    },
+    {
+      "composerName": "Richard Strauss",
+      "introduction": "Unveil the complexity of Strauss!",
+      "imageSource": "Strauss.png",
+      "videoPages": [
+        {
+          "title": "Strauss's life",
+          "videoID": "gCwfeS4yffQ"
+        },
+        {
+          "title": "Strauss's music",
+          "videoID": "CKsFHV5A_SE"
+        }
+      ]
+    },
+    {
+      "composerName": "Richard Wagner",
+      "introduction": "Explore Wagner's epic operas!",
+      "imageSource": "Wagner.png",
+      "videoPages": [
+        {
+          "title": "Wagner's life",
+          "videoID": "1rNivt_Cxok"
+        },
+        {
+          "title": "Wagner's music",
+          "videoID": "KR2HQulzKE0"
+        }
+      ]
+    },
+    {
+      "composerName": "George Gershwin",
+      "introduction": "Dive into the jazz-influenced world of Gershwin!",
+      "imageSource": "Gershwin.png",
+      "videoPages": [
+        {
+          "title": "Gershwin's most famous piece",
+          "videoID": "Ce3OERuCY0E"
+        },
+        {
+          "title": "Gershwin's music",
+          "videoID": "kDIwaVsV828"
+        }
+      ]
     }
   ]
