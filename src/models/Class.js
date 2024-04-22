@@ -11,6 +11,7 @@ export class Class extends Object {
       online_quiz_history: 'OnlineQuizRecord[]',
       students: 'User[]',
       teacher: 'User',
+      join_code: 'int'
     },
     primaryKey: '_id',
   }
