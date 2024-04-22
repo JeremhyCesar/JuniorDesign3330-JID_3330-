@@ -9,21 +9,39 @@
       ]
     },
     {
+      "instrumentName": "Violin",
+      "introduction": "Time to explore Violin!",
+      "imageSource": "violin.png",
+      "videoPages": [
+        { "title": "History of Violin", "videoID": "NLx9JUufLN8" },
+        { "title": "Music Art of Violin", "videoID": "NLx9JUufLN8" }
+      ]
+    },
+    {
+      "instrumentName": "Flute",
+      "introduction": "Time to explore Flute!",
+      "imageSource": "flute.png",
+      "videoPages": [
+        { "title": "History of Flute", "videoID": "NLx9JUufLN8" },
+        { "title": "Music Art of Flute", "videoID": "NLx9JUufLN8" }
+      ]
+    },
+    {
+      "instrumentName": "Clarinet",
+      "introduction": "Time to explore Clarinet!",
+      "imageSource": "Clarinet.png",
+      "videoPages": [
+        { "title": "History of Clarinet", "videoID": "NLx9JUufLN8" },
+        { "title": "Music Art of Clarinet", "videoID": "NLx9JUufLN8" }
+      ]
+    },
+    {
       "instrumentName": "French Horn",
       "introduction": "Time to explore French Horn!",
       "imageSource": "frenchhorn.png",
       "videoPages": [
         { "title": "History of French Horn", "videoID": "NLx9JUufLN8" },
         { "title": "Music Art of French Horn", "videoID": "NLx9JUufLN8" }
-      ]
-    },
-    {
-      "instrumentName": "Harp",
-      "introduction": "Let's learn about the Harp!",
-      "imageSource": "harp.png",
-      "videoPages": [
-        { "title": "History of Harp", "videoID": "P2Xdb1ljd3g" },
-        { "title": "Music Art of Harp", "videoID": "xxIvwTRGb1M" }
       ]
     },
     {
@@ -34,5 +52,15 @@
         { "title": "History of Cello", "videoID": "yHX-Y1GRPGM" },
         { "title": "Music Art of Cello", "videoID": "3j3yFXHjMm0" }
       ]
+    },
+    {
+      "instrumentName": "Harp",
+      "introduction": "Let's learn about the Harp!",
+      "imageSource": "harp.png",
+      "videoPages": [
+        { "title": "History of Harp", "videoID": "P2Xdb1ljd3g" },
+        { "title": "Music Art of Harp", "videoID": "xxIvwTRGb1M" }
+      ]
     }
+    
   ]

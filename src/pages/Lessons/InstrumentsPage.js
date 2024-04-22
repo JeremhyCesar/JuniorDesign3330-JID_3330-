@@ -1,171 +1,80 @@
 import {
-    StyleSheet,
-    ScrollView,
-    Text,
-    View,
-    Image,
-    Pressable,
-  } from "react-native";
-  
-  export function InstrumentsPage({ navigation }) {
-    const styles = StyleSheet.create({
-      button: {
-        borderRadius: 30,
-        shadowOffset: { width: 4, height: 4 },
-        shadowColor: "black",
-        shadowOpacity: 0.25,
-        width: "84%",
-        height: 125,
-        cursor: "pointer",
-      },
-      instrumentImage: {
-        position: "absolute",
-        left: "55%",
-        width: 120,
-        height: 120,
-        resizeMode: "contain",
-      },
-    });
-  
-    const handleInstrumentPress = (instrumentName) => {
-      navigation.navigate("LessonScreen", { instrumentName });
-    };
-  
-    return (
-      <ScrollView style={{ backgroundColor: "white" }}>
-        <Text
-          style={{
-            fontWeight: "bold",
-            top: 64,
-            left: "8%",
-            fontSize: 48,
-            color: "#333",
-          }}
-        >
-          Instruments
-        </Text>
-        <Text
-          style={{
-            top: 68,
-            left: "8%",
-            fontSize: 15,
-            textAlign: "left",
-            color: "#717171",
-          }}
-        >
-          Explore the instruments of classical music!
-        </Text>
-  
-        <Pressable
-          onPress={() => handleInstrumentPress("Piano")}
-          style={[
-            { top: 94, left: "8%", backgroundColor: "#ffffff" },
-            styles.button,
-          ]}
-        >
-          <Text
-            style={{
-              top: 26,
-              left: "8%",
-              fontSize: 30,
-              textAlign: "left",
-              fontWeight: "bold",
-              color: "#dc7424",
-              width: 150,
-              flexWrap: "wrap",
-            }}
-          >
-            Piano
-          </Text>
-          <Image
-            source={require("../../../assets/instruments/piano.png")}
-            style={styles.instrumentImage}
-          />
-        </Pressable>
-  
-        <Pressable
-          onPress={() => handleInstrumentPress("French Horn")}
-          style={[
-            { top: 109, left: "8%", backgroundColor: "#ffffff" },
-            styles.button,
-          ]}
-        >
-          <Text
-            style={{
-              top: 25,
-              left: "8%",
-              fontSize: 30,
-              textAlign: "left",
-              fontWeight: "bold",
-              color: "#dc7424",
-              width: 165,
-              flexWrap: "wrap",
-            }}
-          >
-            French Horn
-          </Text>
-          <Image
-            source={require("../../../assets/instruments/frenchhorn.png")}
-            style={styles.instrumentImage}
-          />
-        </Pressable>
+  StyleSheet,
+  ScrollView,
+  Text,
+  View,
+  TouchableOpacity,
+} from "react-native";
+import InstrumentPostcard from "./InstrumentPostcard";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
-        <Pressable
-          onPress={() => handleInstrumentPress("Cello")}
-          style={[
-            { top: 124, left: "8%", backgroundColor: "#ffffff" },
-            styles.button,
-          ]}
-        >
-          <Text
-            style={{
-              top: 25,
-              left: "8%",
-              fontSize: 30,
-              textAlign: "left",
-              fontWeight: "bold",
-              color: "#dc7424",
-              width: 165,
-              flexWrap: "wrap",
-            }}
-          >
-            Cello
-          </Text>
-          <Image
-            source={require("../../../assets/instruments/cello.png")}
-            style={styles.instrumentImage}
-          />
-        </Pressable>
+// Use a seperate file for InstrumentsPage, since the pictures for composers and instruments are in different size
+export function InstrumentsPage({ navigation }) {
+  const instruments = [
+    { name: "Piano", image: require("../../../assets/instruments/piano.png") },
+    { name: "Violin", image: require("../../../assets/instruments/violin.png") },
+    { name: "Cello", image: require("../../../assets/instruments/cello.png") },
+    { name: "Flute", image: require("../../../assets/instruments/flute.png") },
+    { name: "Clarinet", image: require("../../../assets/instruments/Clarinet.png") },
+    { name: "French Horn", image: require("../../../assets/instruments/frenchhorn.png") },
+    
+    { name: "Harp", image: require("../../../assets/instruments/harp.png") },
+    // Add more instruments as needed
+  ];
 
-        <Pressable
-          onPress={() => handleInstrumentPress("Harp")}
-          style={[
-            { top: 139, left: "8%", backgroundColor: "#ffffff" },
-            styles.button,
-          ]}
-        >
-          <Text
-            style={{
-              top: 25,
-              left: "8%",
-              fontSize: 30,
-              textAlign: "left",
-              fontWeight: "bold",
-              color: "#dc7424",
-              width: 165,
-              flexWrap: "wrap",
-            }}
-          >
-            Harp
-          </Text>
-          <Image
-            source={require("../../../assets/instruments/harp.png")}
-            style={styles.instrumentImage}
+  const handleInstrumentPress = (instrumentName) => {
+    navigation.navigate("LessonScreen", { instrumentName });
+  };
+
+  return (
+    <ScrollView style={{ backgroundColor: "white" }}>
+      <View style={styles.header}>
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrow-back" size={25} color="white" />
+        </TouchableOpacity>
+      </View>
+      <Text style={styles.title}>Instruments</Text>
+      <Text style={styles.subtitle}>Explore the instruments of classical music!</Text>
+      <View style={styles.instrumentsContainer}>
+        {instruments.map((instrument, index) => (
+          <InstrumentPostcard
+            key={index}
+            instrument={instrument}
+            onPress={() => handleInstrumentPress(instrument.name)}
           />
-        </Pressable>
-  
-        <View style={{ height: 180 }} />
-      </ScrollView>
-    );
-  }
-  
+        ))}
+      </View>
+      <View style={{ height: 20 }} />
+    </ScrollView>
+  );
+}
+
+const styles = StyleSheet.create({
+  header: {
+    backgroundColor: "#e2480d",
+    paddingHorizontal: 10,
+    paddingTop: 55,
+    paddingBottom: 10,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+  title: {
+    fontWeight: "bold",
+    top: 10,
+    left: "8%",
+    fontSize: 48,
+    color: "#333",
+  },
+  subtitle: {
+    top: 20,
+    left: "8%",
+    fontSize: 20,
+    textAlign: "left",
+    color: "#717171",
+  },
+  instrumentsContainer: {
+    marginTop: 30,
+    alignItems: "center",
+  },
+});
