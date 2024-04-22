@@ -100,20 +100,20 @@ export function ComposersPage({ navigation }) {
 const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
-    top: 64,
+    top: 100,
     left: "8%",
     fontSize: 48,
     color: "#333",
   },
   subtitle: {
-    top: 68,
+    top: 110,
     left: "8%",
     fontSize: 20,
     textAlign: "left",
     color: "#717171",
   },
   composersContainer: {
-    marginTop: 94,
+    marginTop: 120,
     alignItems: "center",
   },
 });

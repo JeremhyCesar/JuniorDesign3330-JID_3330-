@@ -24,7 +24,7 @@ export function ClassicalMusicPage({ navigation }) {
       <Text
         style={{
           fontWeight: "bold",
-          top: 64,
+          top: 101,
           left: "8%",
           fontSize: 42,
           color: "#333",
@@ -34,7 +34,7 @@ export function ClassicalMusicPage({ navigation }) {
       </Text>
       <Text
         style={{
-          top: 68,
+          top: 110,
           left: "8%",
           fontSize: 20,
           textAlign: "left",
@@ -46,7 +46,7 @@ export function ClassicalMusicPage({ navigation }) {
       <Pressable
         onPress={() => navigation.navigate("ComposersHome")}
         style={[
-          { top: 94, left: "8%", backgroundColor: "#ffbb37" },
+          { top: 120, left: "8%", backgroundColor: "#ffbb37" },
           styles.button,
         ]}
       >
@@ -76,7 +76,7 @@ export function ClassicalMusicPage({ navigation }) {
       </Pressable>
       <View
         style={[
-          { top: 126, left: "8%", backgroundColor: "#e24808" },
+          { top: 136, left: "8%", backgroundColor: "#e24808" },
           styles.button,
         ]}
       >
@@ -107,7 +107,7 @@ export function ClassicalMusicPage({ navigation }) {
       <Pressable
         onPress={() => navigation.navigate("InstrumentsHome")}
         style={[
-          { top: 160, left: "8%", backgroundColor: "#00347f" },
+          { top: 150, left: "8%", backgroundColor: "#00347f" },
           styles.button,
         ]}
       >

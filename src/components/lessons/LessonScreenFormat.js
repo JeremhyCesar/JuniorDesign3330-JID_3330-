@@ -179,7 +179,7 @@ export function LessonScreen({ lessonData }) {
   return (
     <ScrollView
       style={{ backgroundColor: "white" }}
-      contentContainerStyle={{ padding: 20 }}
+      contentContainerStyle={{ paddingTop: 100, padding: 20 }}
     >
       <View style={styles.centeredContent}>
         <Text style={styles.title}>{name}</Text>
