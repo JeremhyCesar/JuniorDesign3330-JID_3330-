@@ -224,6 +224,39 @@
           }
         ]
       },
+      "Cello": {
+        "sections": [
+          {
+            "content": "Cello's Evolution Unveiled Through Time",
+            "points": [
+              {
+                "title": "Ancient Foundations",
+                "description": "The review commences by tracing the cello's roots back to ancient civilizations, where lyres and harps set the stage for musical expression. The gradual inclusion of the bow adds depth to this early musical journey."
+              },
+              {
+                "title": "Medieval Resonance",
+                "description": "Exploring the 13th century, the review dives into the depiction of early violin forms, born from the rebec and Byzantine-Greek lira. The emergence of playing methods, including the viola de braccio and viola de Gamba, marks a significant chapter in the cello's early evolution."
+              },
+              {
+                "title": "Renaissance Luthiers",
+                "description": "A spotlight on renowned luthiers, Andrea Amati, Gasparo da Salo, and Paolo Maggini, unfolds the development of the 'violone' – the precursor to the modern cello. This period witnesses the rise of larger instruments, responding to the demand for lower register sounds."
+              },
+              {
+                "title": "Stradivari's Standardization",
+                "description": "The turning point arrives in the 16th century as renowned violin makers, notably Antonio Stradivari, embark on crafting cellos that would shape the instrument's modern size post-1710. Standardization paves the way for virtuosos like Luigi Boccherini to explore new dimensions of cello performance."
+              },
+              {
+                "title": "Cultural Shifts and Refinements",
+                "description": "Examining the impact of cultural changes, including the French Revolution, the cello undergoes alterations for larger audiences. Design modifications, from raised bridges to extended necks, reflect a quest for enhanced volume, clarity, and responsiveness."
+              },
+              {
+                "title": "Bach's Era and Beyond",
+                "description": "The spotlight turns to Bach’s Six Suites, a landmark in cello composition. The late 1800s witness subtle design changes, with the introduction of the end pin rod, a testament to the instrument's adaptability."
+              }
+            ]
+          }
+        ]
+      },
       "French Horn": {
         "sections": [
           {
