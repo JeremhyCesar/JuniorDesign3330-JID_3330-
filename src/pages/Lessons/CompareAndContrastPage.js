@@ -110,7 +110,7 @@ export function CompareAndContrastPage({ navigation }) {
       </Pressable>
       <View
         style={[
-          { top: 160, left: "8%", backgroundColor: "#00347f" },
+          { top: 160, left: "8%", backgroundColor: "#00347f" }, // modify height every time!!! 
           styles.button,
         ]}
       >
