@@ -109,6 +109,60 @@ import {
             style={styles.instrumentImage}
           />
         </Pressable>
+
+        <Pressable
+          onPress={() => handleInstrumentPress("Cello")}
+          style={[
+            { top: 124, left: "8%", backgroundColor: "#ffffff" },
+            styles.button,
+          ]}
+        >
+          <Text
+            style={{
+              top: 25,
+              left: "8%",
+              fontSize: 30,
+              textAlign: "left",
+              fontWeight: "bold",
+              color: "#dc7424",
+              width: 165,
+              flexWrap: "wrap",
+            }}
+          >
+            Cello
+          </Text>
+          <Image
+            source={require("../../../assets/instruments/cello.png")}
+            style={styles.instrumentImage}
+          />
+        </Pressable>
+
+        <Pressable
+          onPress={() => handleInstrumentPress("Harp")}
+          style={[
+            { top: 139, left: "8%", backgroundColor: "#ffffff" },
+            styles.button,
+          ]}
+        >
+          <Text
+            style={{
+              top: 25,
+              left: "8%",
+              fontSize: 30,
+              textAlign: "left",
+              fontWeight: "bold",
+              color: "#dc7424",
+              width: 165,
+              flexWrap: "wrap",
+            }}
+          >
+            Harp
+          </Text>
+          <Image
+            source={require("../../../assets/instruments/harp.png")}
+            style={styles.instrumentImage}
+          />
+        </Pressable>
   
         <View style={{ height: 180 }} />
       </ScrollView>

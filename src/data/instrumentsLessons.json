@@ -25,5 +25,14 @@
         { "title": "History of Harp", "videoID": "P2Xdb1ljd3g" },
         { "title": "Music Art of Harp", "videoID": "xxIvwTRGb1M" }
       ]
+    },
+    {
+      "instrumentName": "Cello",
+      "introduction": "Discover the rich, deep tones of the Cello!",
+      "imageSource": "cello.png",
+      "videoPages": [
+        { "title": "History of Cello", "videoID": "yHX-Y1GRPGM" },
+        { "title": "Music Art of Cello", "videoID": "3j3yFXHjMm0" }
+      ]
     }
   ]
