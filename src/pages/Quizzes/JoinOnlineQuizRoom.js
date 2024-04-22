@@ -50,6 +50,7 @@ export function JoinOnlineQuizRoom({ navigation }) {
   })
 
   const quizRooms = useQuery(QuizRoom);
+  console.log(quizRooms[0]);
 
   const handleJoinRoom = (room) => {
     if (room.players.findIndex((playerId) => user._id.toString() == playerId) === -1) {
