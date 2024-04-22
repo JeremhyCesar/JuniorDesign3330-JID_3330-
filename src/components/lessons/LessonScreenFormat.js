@@ -38,7 +38,14 @@ const imageMap = {
   "frenchhorn.png": require("../../../assets/instruments/frenchhorn.png"),
 
   // compared
-  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png")
+  "BeethovenAndMozart.png": require("../../../assets/compared/BeethovenAndMozart.png"),
+  "TchaikovskyAndBach.png": require("../../../assets/compared/TchaikovskyAndBach.png"),
+  "ChopinLiszt.png": require("../../../assets/compared/ChopinLiszt.png"),
+  "DebussyRavel.png": require("../../../assets/compared/DebussyRavel.png"),
+  "StravinskySchoenberg.png": require("../../../assets/compared/StravinskySchoenberg.png")
+
+
+
 };
 
 export function LessonScreen({ lessonData }) {
