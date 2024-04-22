@@ -36,12 +36,12 @@ function ComposerNavigator() {
       <Stack.Screen name="Composers" component={ComposersPage} />
       <Stack.Screen
         name="LessonScreen"
-        options={({ route }) => ({
-          headerShown: true,
-          headerTitle: route.params.composerName,
-          headerBackTitleVisible: false,
-          headerBackButtonMenuEnabled: false,
-        })}
+        // options={({ route }) => ({
+        //   headerShown: true,
+        //   headerTitle: route.params.composerName,
+        //   headerBackTitleVisible: false,
+        //   headerBackButtonMenuEnabled: false,
+        // })}
       >
         {(props) => {
           const { composerName } = props.route.params;

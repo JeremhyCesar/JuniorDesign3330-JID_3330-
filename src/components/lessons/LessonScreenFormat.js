@@ -6,6 +6,7 @@ import {
   View,
   Image,
   Pressable,
+  TouchableOpacity,
 } from "react-native";
 import { useFocusEffect, useNavigation } from "@react-navigation/native";
 import LessonBlock from "./LessonBlock";
@@ -14,6 +15,7 @@ import reviewData from "../../data/review.json";
 import { useObject, useRealm, useUser } from "@realm/react";
 import { BSON } from "realm";
 import { User } from "../../models/User";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const imageMap = {
   // composers
@@ -42,10 +44,7 @@ const imageMap = {
   "TchaikovskyAndBach.png": require("../../../assets/compared/TchaikovskyAndBach.png"),
   "ChopinLiszt.png": require("../../../assets/compared/ChopinLiszt.png"),
   "DebussyRavel.png": require("../../../assets/compared/DebussyRavel.png"),
-  "StravinskySchoenberg.png": require("../../../assets/compared/StravinskySchoenberg.png")
-
-
-
+  "StravinskySchoenberg.png": require("../../../assets/compared/StravinskySchoenberg.png"),
 };
 
 export function LessonScreen({ lessonData }) {
@@ -76,14 +75,14 @@ export function LessonScreen({ lessonData }) {
   const realm = useRealm();
   // sync module progress with database
   React.useEffect(() => {
-    const unsubscribe = navigation.addListener('focus', () => {
-      lessonIndex = user.lesson_topics.indexOf(name)
+    const unsubscribe = navigation.addListener("focus", () => {
+      lessonIndex = user.lesson_topics.indexOf(name);
       if (lessonIndex !== -1) {
         let prog = user.lesson_progress[lessonIndex];
         setModulesComplete(prog);
-        setProgress(0)
+        setProgress(0);
         for (i = 0; i < 5; i++) {
-          if ((prog >> i) & 1 === 1) setProgress((prev) => prev + 1);
+          if ((prog >> i) & (1 === 1)) setProgress((prev) => prev + 1);
         }
       }
     });
@@ -91,20 +90,20 @@ export function LessonScreen({ lessonData }) {
   }, [navigation]);
 
   React.useEffect(() => {
-    const unsubscribe = navigation.addListener('blur', () => {
+    const unsubscribe = navigation.addListener("blur", () => {
       realm.write(() => {
         if (user.lesson_topics.indexOf(name) === -1) {
           user.lesson_topics.push(name);
           user.lesson_progress.push(modulesComplete);
         } else {
-          user.lesson_progress[user.lesson_topics.indexOf(name)] = modulesComplete;
+          user.lesson_progress[user.lesson_topics.indexOf(name)] =
+            modulesComplete;
         }
-      })
+      });
     });
     return unsubscribe;
   }, [modulesComplete]);
-  
-  
+
   // moduleNo should be 0 indexed
   const completeModule = (moduleNo) => {
     setModulesComplete((prevModules) => {
@@ -127,7 +126,7 @@ export function LessonScreen({ lessonData }) {
       cursor: "pointer",
     },
     centeredContent: {
-      alignItems: "center",
+      left: "8%",
     },
     textContent: {
       left: "8%",
@@ -146,7 +145,7 @@ export function LessonScreen({ lessonData }) {
     },
     tasksText: {
       fontSize: 24,
-      left: "5%",
+      left: "8%",
       textAlign: "left",
       color: "#2f4f4f",
       fontWeight: "500",
@@ -177,10 +176,23 @@ export function LessonScreen({ lessonData }) {
   });
 
   return (
-    <ScrollView
-      style={{ backgroundColor: "white" }}
-      contentContainerStyle={{ paddingTop: 100, padding: 20 }}
-    >
+    <ScrollView>
+      <View
+        style={{
+          backgroundColor: "#e2480d",
+          paddingHorizontal: 10,
+          paddingTop: 55,
+          paddingBottom: 10,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrow-back" size={25} color="white" />
+        </TouchableOpacity>
+      </View>
+
       <View style={styles.centeredContent}>
         <Text style={styles.title}>{name}</Text>
       </View>
@@ -188,35 +200,39 @@ export function LessonScreen({ lessonData }) {
       <View style={styles.textContent}>
         <Text style={styles.introduction}>
           {introduction}{" "}
-          <Text style={{ fontWeight: "bold", color: "#E2480D" }}>{user.full_name.split(" ")[0]}!</Text>
+          <Text style={{ fontWeight: "bold", color: "#E2480D" }}>
+            {user.full_name.split(" ")[0]}!
+          </Text>
         </Text>
       </View>
 
-      <View
-        style={[
-          styles.button,
-          {
-            width: 350,
-            height: 249,
-            justifyContent: "center",
-            alignItems: "center",
-            backgroundColor: "#ffbb37",
-            marginBottom: 10,
-            backgroundImage: `url(${imageMap[imageSource]})`,
-            backgroundSize: "cover", // or "contain", "stretch"
-            backgroundPosition: "center",
-          },
-        ]}
-      >
-        <Image
-          source={imageMap[imageSource]}
-          style={{
-            top: 30,
-            width: 208,
-            height: 290,
-            resizeMode: "contain",
-          }}
-        />
+      <View style={styles.container}>
+        <View
+          style={[
+            styles.button,
+            {
+              width: 350,
+              height: 249,
+              justifyContent: "center",
+              alignItems: "center",
+              backgroundColor: "#ffbb37",
+              marginBottom: 10,
+              backgroundImage: `url(${imageMap[imageSource]})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            },
+          ]}
+        >
+          <Image
+            source={imageMap[imageSource]}
+            style={{
+              top: 30,
+              width: 208,
+              height: 290,
+              resizeMode: "contain",
+            }}
+          />
+        </View>
       </View>
 
       <View>
