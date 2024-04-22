@@ -36,12 +36,6 @@ function ComposerNavigator() {
       <Stack.Screen name="Composers" component={ComposersPage} />
       <Stack.Screen
         name="LessonScreen"
-        // options={({ route }) => ({
-        //   headerShown: true,
-        //   headerTitle: route.params.composerName,
-        //   headerBackTitleVisible: false,
-        //   headerBackButtonMenuEnabled: false,
-        // })}
       >
         {(props) => {
           const { composerName } = props.route.params;
@@ -55,37 +49,37 @@ function ComposerNavigator() {
       <Stack.Screen
         name="VideoPage"
         component={VideoPage}
-        options={({ navigation }) => ({
-          headerShown: true,
-          headerTitle: "",
-          headerTransparent: true,
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Icon name="arrow-back" size={25} color="white" />
-            </TouchableOpacity>
-          ),
-          headerStyle: {
-            backgroundColor: "#e2480d",
-          },
-          headerTintColor: "white",
-        })}
+        // options={({ navigation }) => ({
+        //   headerShown: true,
+        //   headerTitle: "",
+        //   headerTransparent: true,
+        //   headerLeft: () => (
+        //     <TouchableOpacity onPress={() => navigation.goBack()}>
+        //       <Icon name="arrow-back" size={25} color="white" />
+        //     </TouchableOpacity>
+        //   ),
+        //   headerStyle: {
+        //     backgroundColor: "#e2480d",
+        //   },
+        //   headerTintColor: "white",
+        // })}
       />
       <Stack.Screen
         name="Worksheet"
-        options={({ navigation }) => ({
-          headerShown: true,
-          headerTitle: "",
-          headerTransparent: true,
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Icon name="arrow-back" size={25} color="white" />
-            </TouchableOpacity>
-          ),
-          headerStyle: {
-            backgroundColor: "#e2480d",
-          },
-          headerTintColor: "white",
-        })}
+        // options={({ navigation }) => ({
+        //   headerShown: true,
+        //   headerTitle: "",
+        //   headerTransparent: true,
+        //   headerLeft: () => (
+        //     <TouchableOpacity onPress={() => navigation.goBack()}>
+        //       <Icon name="arrow-back" size={25} color="white" />
+        //     </TouchableOpacity>
+        //   ),
+        //   headerStyle: {
+        //     backgroundColor: "#e2480d",
+        //   },
+        //   headerTintColor: "white",
+        // })}
       >
         {(props) => (
           <Worksheet
@@ -96,20 +90,20 @@ function ComposerNavigator() {
       </Stack.Screen>
       <Stack.Screen
         name="ReviewSession"
-        options={({ navigation }) => ({
-          headerShown: true,
-          headerTitle: "",
-          headerTransparent: true,
-          headerLeft: () => (
-            <TouchableOpacity onPress={() => navigation.goBack()}>
-              <Icon name="arrow-back" size={25} color="white" />
-            </TouchableOpacity>
-          ),
-          headerStyle: {
-            backgroundColor: "#e2480d",
-          },
-          headerTintColor: "white",
-        })}
+        // options={({ navigation }) => ({
+        //   headerShown: true,
+        //   headerTitle: "",
+        //   headerTransparent: true,
+        //   headerLeft: () => (
+        //     <TouchableOpacity onPress={() => navigation.goBack()}>
+        //       <Icon name="arrow-back" size={25} color="white" />
+        //     </TouchableOpacity>
+        //   ),
+        //   headerStyle: {
+        //     backgroundColor: "#e2480d",
+        //   },
+        //   headerTintColor: "white",
+        // })}
       >
         {(props) => (
           <ReviewSession

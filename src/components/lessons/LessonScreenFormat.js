@@ -170,6 +170,7 @@ export function LessonScreen({ lessonData }) {
     image: {
       width: 300,
       height: 100,
+      resizeMode: "contain"
     },
     pressableImage: {
       alignItems: "center",
