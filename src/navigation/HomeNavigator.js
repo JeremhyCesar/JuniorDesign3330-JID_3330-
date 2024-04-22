@@ -22,7 +22,7 @@ const HomeNavigator = () => {
   const user = useUser();
 
   const navigateToScreen = (screenName) => {
-    navigation.navigate("Home");
+    //navigation.navigate("Home");
     navigation.navigate(screenName);
   };
   let initialRoute = useObject(User, BSON.ObjectId(user.id)) === null ? "AccountInfo" : "Home";

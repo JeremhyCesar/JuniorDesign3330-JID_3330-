@@ -21,7 +21,9 @@ const App = () =>
               flexible: true,
               initialSubscriptions: {
                 update: (subs, realm) => {
-                  subs.add(realm.objects("User"))
+                  subs.add(realm.objects("User"));
+                  subs.add(realm.objects("Class"));
+                  subs.add(realm.objects("QuizRoom"));
                 }
               },
               rerunOnOpen: true,

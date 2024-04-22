@@ -42,12 +42,14 @@ export function CreateRoomScreen({ navigation }) {
     console.log("Room Name:", roomName);
 
     let joinCode = 0;
+    let id;
     while (joinCode === 0) {
       joinCode = Math.floor(100000 + 900000 * Math.random());
       if (quizRooms.filtered('joinCode == $0', joinCode).length > 0) joinCode = 0;
     }
     realm.write(() => {
-      realm.create(QuizRoom, {
+      user.current_quiz_code = joinCode;
+      id = realm.create(QuizRoom, {
         _id: BSON.ObjectId(),
         difficulty: difficulty,
         questionNo: -1,
@@ -56,10 +58,10 @@ export function CreateRoomScreen({ navigation }) {
         roomName: roomName,
         musicType: musicType,
         category: category,
-        players: [user],
+        players: [user._id],
         private: roomType === 'Private',
         joinCode: joinCode
-      })
+      })._id;
     })
     // Navigate to the quiz room or display a success message
     navigation.navigate("OnlineQuizRoom", {
