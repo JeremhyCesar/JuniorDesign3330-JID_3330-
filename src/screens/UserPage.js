@@ -1,13 +1,14 @@
 // UserPage.js
-import React from 'react';
-import { View, Text, StyleSheet, Image, Pressable, Alert } from 'react-native';
-import { useEmailPasswordAuth, useObject, useUser } from '@realm/react';
+import React, { useState } from 'react';
+import { View, Text, Image, TouchableOpacity, Pressable, StyleSheet, Alert} from 'react-native';
+import { useEmailPasswordAuth, useObject, useUser, TextInput} from '@realm/react';
 import { User } from '../models/User';
 import { BSON } from 'realm';
 
 export function UserPage({ navigation }) {
     const { logOut } = useEmailPasswordAuth();
     const user = useObject(User, BSON.ObjectID(useUser().id));
+    const currentUser = useUser();
 
     const handleLogout = () => {
         Alert.alert(
@@ -28,58 +29,33 @@ export function UserPage({ navigation }) {
             { cancelable: false }
         );
     };
-    
-    
 
     return (
-        <View style={styles.container}>
-            <Pressable onPress={() => navigation.goBack()} style={styles.backButton}>
-                <Text style={[styles.backButtonText, {fontSize: 20, top: 30}]}>Back</Text>
-            </Pressable>
-            <Image source={require('../../assets/profile-picture.jpeg')} style={styles.profilePicture} />
-            <View style={styles.buttonContainer}>
-                {user.user_type === "Teacher" &&
-                <Pressable style={[styles.button, styles.settingsButton]} onPress={() => navigation.navigate(user.managed_class === null ? 'ClassCreation' : 'ClassInfo')}>
-                    <Text style={styles.buttonText}>Class Settings</Text>
-                </Pressable>}
-                <Pressable style={[styles.button, styles.settingsButton]} onPress={() => navigation.navigate('Settings')}>
-                    <Text style={styles.buttonText}>Settings</Text>
-                </Pressable>
-                <Pressable style={[styles.button, styles.logoutButton]} onPress={handleLogout}>
-                    <Text style={styles.buttonText}>Logout</Text>
-                </Pressable>
-            </View>
-        </View>
-    );
+    <View style={styles.container}>
+        <Pressable onPress={() => navigation.goBack()} style={styles.backButton}>
+            <Text style={[styles.backButtonText, {fontSize: 20, top: 10}]}>Back</Text>
+        </Pressable>
+      <View style={styles.header}>
+        <Image source={require('../../assets/profile-picture.jpeg')} style={styles.profilePic} />
+        <Text style={styles.name}>{user.full_name}</Text>
+        <Text style={styles.email}>{currentUser.profile.email}</Text>
+      </View>
+      <Pressable style={[styles.button, styles.logoutButton]} onPress={handleLogout}>
+        <Text style={styles.buttonText}>Logout</Text>
+      </Pressable>
+
+    </View>
+  );
 }
 
 export default UserPage;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#ffffff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
     backButton: {
         position: 'absolute',
-        top: 20,
+        top: 40,
         left: 20,
         padding: 10,
-    },
-    backButtonText: {
-        fontSize: 16,
-        color: '#007AFF', 
-    },
-    profilePicture: {
-        width: 100,
-        height: 100,
-        borderRadius: 50,
-        marginBottom: 20,
-    },
-    buttonContainer: {
-        marginTop: 40,
     },
     button: {
         width: 200,
@@ -88,16 +64,51 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         alignItems: 'center',
         justifyContent: 'center',
+        marginTop: 30,
+        marginLeft: 100
     },
     buttonText: {
         color: 'white',
         fontSize: 16,
         fontWeight: 'bold',
     },
-    settingsButton: {
-        backgroundColor: '#007AFF', 
-    },
     logoutButton: {
         backgroundColor: '#FF3B30', 
+    },
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+      },
+    header: {
+        alignItems: 'center',
+        paddingVertical: 20,
+        marginTop: 230
+    },
+    profilePic: {
+        width: 100,
+        height: 100,
+        borderRadius: 50,
+    },
+    name: {
+        fontSize: 30,
+        fontWeight: 'bold',
+        marginTop: 10,
+    },
+    email: {
+        fontSize: 20,
+        marginTop: 10,
+    },
+    menuItem: {
+        paddingVertical: 15,
+        paddingHorizontal: 20,
+        borderBottomWidth: 1,
+        borderBottomColor: '#ddd',
+    },
+    menuText: {
+        fontSize: 18,
+    },
+    quizContent: {
+        paddingHorizontal: 20,
+        paddingVertical: 10,
     },
 });

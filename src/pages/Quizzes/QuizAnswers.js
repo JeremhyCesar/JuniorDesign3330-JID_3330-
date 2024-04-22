@@ -20,7 +20,7 @@ export function QuizAnswers({ route, navigation }) {
     const styles = StyleSheet.create({
         button: {
             position: "absolute", 
-            top: 640, 
+            top: 613, 
             justifyContent: "center", 
             alignItems: "center", 
             width: "40%", 
@@ -31,7 +31,7 @@ export function QuizAnswers({ route, navigation }) {
             backgroundColor: "#e2480d"
         },
         composerName: {
-            top:50, 
+            top:30, 
             fontWeight: "bold", 
             justifyContent: "center", 
             alignSelf: "center", 
@@ -62,7 +62,7 @@ export function QuizAnswers({ route, navigation }) {
         scrollViewContainer: {
             marginTop: 50,
             borderRadius: 34,
-            marginBottom: 80,
+
             marginLeft: 10
         },
         text: {
@@ -76,7 +76,7 @@ export function QuizAnswers({ route, navigation }) {
     return (
         <View style={{flexDirection: "column", alignContent: "center", width: '100%', height: '100%'}}>
             <Text style={styles.composerName}>{composerName}</Text>
-            <View style={{top: 75, left: '5%', width: '90%', height: '83%', backgroundColor: '#1e2237', borderRadius: 34}}>
+            <View style={{top: 50, left: '5%', width: '90%', height: '77%', backgroundColor: '#1e2237', borderRadius: 34}}>
                 <Text style={[{top: 27, fontSize: 26}, styles.text]}>Answers</Text>
                 <View style={{position: "absolute", backgroundColor: '#cccccc', width: '100%', height: 5, top: 85}}/>
                 <ScrollView style={styles.scrollViewContainer}>
@@ -96,10 +96,10 @@ export function QuizAnswers({ route, navigation }) {
                         );
                     })}
                 </ScrollView>
+            </View>
                 <Pressable style={styles.button} onPress={() => navigation.navigate("QuizTopic")}>
                         <Text style={{fontSize: 17, color: "#ffffff", fontWeight: "bold"}}>Back to Quizzes</Text>
                 </Pressable>
-            </View>
         </View>
     );
 }

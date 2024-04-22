@@ -15,8 +15,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-around',
         alignItems: 'center',
-        paddingBottom: 20,
-        paddingTop: 10,
+        bottom: 25,
+        
 
     },
     circle: {
@@ -41,10 +41,6 @@ export function QuizQuestion ({ route, navigation}) {
     let ansOrder = [1, 2, 3, 4];
     ansOrder.sort(() => Math.random() - 0.5);
 
-    if (questionNo == 1) {
-        score = 0;
-    }
-
     // Function to render the question tracker circles
     const renderCircle = (index) => {
         let backgroundColor = index < questionNo ? '#00FF00' : '#808080'; // Green if answered, grey if not
@@ -61,26 +57,32 @@ export function QuizQuestion ({ route, navigation}) {
 
     return (
         <View style={{flexDirection: "column", alignContent: "center", width: '100%', height: '90%'}}>
-            <Text style={{top:50, fontWeight: "bold", justifyContent: "center", alignSelf: "center", color: "#00347f", fontSize: 32}}>{composerName}</Text>
-            <View style={{top: 75, left: '5%', width: '90%', height: '83%', backgroundColor: '#1e2237', borderRadius: 34}}>
-                {questionNo != 1 && 
-                    <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: composerName, quizId: quizId, questionNo: questionNo - 1, answers: answers})}>
-                        <Image source={require("../../../assets/back-arrow.png")} style={{top: 25, left: 10, width: 40, }}/>
-                    </TouchableOpacity>}
+            <Text style={{top:30, fontWeight: "bold", justifyContent: "center", alignSelf: "center", color: "#00347f", fontSize: 32}}>{composerName}</Text>
+            <View style={{top: 50, left: '5%', width: '90%', height: '85%', backgroundColor: '#1e2237', borderRadius: 34}}>
+            {questionNo !== 1 && 
+                <TouchableOpacity onPress={() => navigation.navigate("QuizQuestion", {composerName: composerName, quizId: quizId, questionNo: questionNo - 1, answers: answers})}>
+                    <Image source={require("../../../assets/back-arrow.png")} style={{top: 25, left: 10, width: 40, }}/>
+                </TouchableOpacity>
+            }
+            {questionNo === 1 &&
+                <View style={{ width: 40, height: 40 }}></View>
+            }
                 <Text style={{color: '#ffffff', position: "absolute", fontSize: 26, alignSelf: "center", fontWeight: "bold", top: 27}}>Question {questionNo}</Text>
                 <View style={{position: "absolute", backgroundColor: '#cccccc', width: '100%', height: 5, top: 85}}/>
-                <Text style={{position: "absolute", top: 110, textAlign: "center", alignSelf: "center", flexWrap: "wrap", width: '70%', fontSize: 28, fontWeight: "bold", color: '#ffffff'}}>{questions[questionNo - 1][0]}</Text>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[0]], navigation)} style={{position: "absolute", top: 230, left: "4%", width: "92%", height: 72, backgroundColor: "#e2480d", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>A.  {questions[questionNo - 1][ansOrder[0]]}</Text>
+                <View style={{marginTop: 60, width: '100%', height: 130, justifyContent: 'center', alignItems: 'center'}}>
+                    <Text style={{textAlign: "center", flexWrap: "wrap", fontSize: 25, fontWeight: "bold", color: '#ffffff', paddingHorizontal: 20}} adjustsFontSizeToFit numberOfLines={10}>{questions[questionNo - 1][0]}</Text>
+                </View>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[0]], navigation)} style={{position: "absolute", top: 230, left: "4%", width: "92%", height: 55, backgroundColor: "#e2480d", borderRadius: 32}}>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 10, left: '8%', fontWeight: "bold", width: '88%'}} adjustsFontSizeToFit numberOfLines={2}>A.  {questions[questionNo - 1][ansOrder[0]]}</Text>
                 </Pressable>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[1]], navigation)} style={{position: "absolute", top: 310, left: "4%", width: "92%", height: 72, backgroundColor: "#FFBB37", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>B.  {questions[questionNo - 1][ansOrder[1]]}</Text>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[1]], navigation)} style={{position: "absolute", top:290, left: "4%", width: "92%", height: 55, backgroundColor: "#FFBB37", borderRadius: 32}}>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 10, left: '8%', fontWeight: "bold", width: '88%'}} adjustsFontSizeToFit numberOfLines={2}>B.  {questions[questionNo - 1][ansOrder[1]]}</Text>
                 </Pressable>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[2]], navigation)} style={{position: "absolute", top: 390, left: "4%", width: "92%", height: 72, backgroundColor: "#2d6f9a", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>C.  {questions[questionNo - 1][ansOrder[2]]}</Text>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[2]], navigation)} style={{position: "absolute", top: 350, left: "4%", width: "92%", height: 55, backgroundColor: "#2d6f9a", borderRadius: 32}}>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 10, left: '8%', fontWeight: "bold", width: '88%'}} adjustsFontSizeToFit numberOfLines={2}>C.  {questions[questionNo - 1][ansOrder[2]]}</Text>
                 </Pressable>
-                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[3]], navigation)} style={{position: "absolute", top: 470, left: "4%", width: "92%", height: 72, backgroundColor: "#979797", borderRadius: 32}}>
-                    <Text style={{fontSize: 26, color: "#ffffff", top: 20, left: '10%', fontWeight: "bold"}}>D.  {questions[questionNo - 1][ansOrder[3]]}</Text>
+                <Pressable onPress={() => recordAnswer(composerName, quizId, questionNo, answers, questions[questionNo - 1][ansOrder[3]], navigation)} style={{position: "absolute", top: 410, left: "4%", width: "92%", height: 55, backgroundColor: "#979797", borderRadius: 32}}>
+                    <Text style={{fontSize: 26, color: "#ffffff", top: 10, left: '8%', fontWeight: "bold", width: '88%'}} adjustsFontSizeToFit numberOfLines={2}>D.  {questions[questionNo - 1][ansOrder[3]]}</Text>
                 </Pressable>
             </View>
             <View style={styles.trackerContainer}>
@@ -94,27 +96,43 @@ export function QuizQuestion ({ route, navigation}) {
 function recordAnswer(composerName, quizId, questionNo, answers, answer, navigation) {
     let newAnswers;
     if (answers !== undefined) {
-        console.log(answers);
         newAnswers = Array.from(answers);
     } else {
-        newAnswers = []
+        newAnswers = [];
+        if (questionNo === 1) {
+            score = 0;
+        }
     }
     let newQuestionNo = questionNo + 1;
+
+    const previousAnswer = newAnswers[questionNo - 1];
     newAnswers[questionNo - 1] = answer;
 
-    // Increase score if the answer is correct
-    if (isAnswerCorrect(questions[questionNo - 1][0], answer)) {
-        score++;
+    if (previousAnswer === undefined) {
+        if (isAnswerCorrect(questions[questionNo - 1][0], answer)) {
+            score++;
+        }
+    } else {
+        if (isAnswerCorrect(questions[questionNo - 1][0], answer)) {
+            if (!isAnswerCorrect(questions[questionNo - 1][0], previousAnswer)) {
+                score++; 
+            }
+        } else {
+            if (isAnswerCorrect(questions[questionNo - 1][0], previousAnswer)) {
+                score--;
+            }
+        }
     }
-    
+
     // When the quiz is finished and the question number exceeds 5, direct to the QuizResults page
     if (newQuestionNo > 5) {
         highScoreCalculator(score);
-        navigation.navigate('QuizResults', { score: score, composerName: composerName, highScore: highScore, screen: 'QuizResults'})
+        navigation.navigate('QuizResults', { score: score, composerName: composerName, highScore: highScore, screen: 'QuizResults' });
     } else {
-        navigation.navigate('QuizQuestion', {composerName: composerName, quizId: quizId, questionNo: newQuestionNo, answers: newAnswers})
+        navigation.navigate('QuizQuestion', { composerName: composerName, quizId: quizId, questionNo: newQuestionNo, answers: newAnswers });
     }
-    
+
+    console.log(newAnswers);
 }
 
 function isAnswerCorrect(questionAsked, userAnswer) {
