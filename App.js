@@ -10,14 +10,22 @@ import { Class } from './src/models/Class';
 import { User } from './src/models/User';
 import { LocalQuizRecord } from './src/models/LocalQuizRecord';
 import { OnlineQuizRecord } from './src/models/OnlineQuizRecord';
+import { QuizRoom } from './src/models/QuizRoom';
 
 const App = () =>
   <NavigationContainer>
     <AppProvider id={'application-0-surqu'}>
         <UserProvider fallback={<LoginNavigator />}>
-          <RealmProvider schema={[User, Class, OnlineQuizRecord, LocalQuizRecord]}
+          <RealmProvider schema={[User, Class, OnlineQuizRecord, LocalQuizRecord, QuizRoom]}
             sync={{
               flexible: true,
+              initialSubscriptions: {
+                update: (subs, realm) => {
+                  subs.add(realm.objects("User"));
+                  subs.add(realm.objects("Class"));
+                  subs.add(realm.objects("QuizRoom"));
+                }
+              },
               rerunOnOpen: true,
               existingRealmFileBehavior: {
                 type: OpenRealmBehaviorType.DownloadBeforeOpen,

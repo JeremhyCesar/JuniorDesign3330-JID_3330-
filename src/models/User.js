@@ -13,6 +13,7 @@ export class User extends Object {
       local_quiz_history: 'LocalQuizRecord[]',
       managed_class: 'Class',
       user_type: 'string',
+      current_quiz_code: 'int?'
     },
     primaryKey: '_id',
   }

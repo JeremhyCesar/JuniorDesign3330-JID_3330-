@@ -1,56 +1,71 @@
-import React, { useState } from "react";
+import { useQuery } from "@realm/react";
+import React, { useEffect, useState } from "react";
 import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
+import { QuizRoom } from "../../models/QuizRoom";
+import { User } from "../../models/User";
 
 export function OnlineQuizRoom({ route, navigation }) {
-  const { musicType, category, difficulty, numQuestions, roomCapacity, roomType, roomName } = route.params;
+  const room = useQuery(QuizRoom).find((object) => object.joinCode === route.params.joinCode);
+  const players = useQuery(User).filtered('current_quiz_code == $0', route.params.joinCode);
   const [isReady, setIsReady] = useState(false);
+
+  console.log(Array(Math.ceil(players.length / 3.0)));
 
   const handleReadyPress = () => {
     setIsReady(!isReady);
   };
 
+  const genRowArray = (rows) => {
+    let arr = [];
+    for (i = 0; i < rows; i++) {
+      arr.push(i);
+    }
+    return arr;
+  };
+
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>{roomName}</Text>
+      <View style={styles.roomDetailsBlock}>
+        <Text style={styles.title}>{room.roomName}</Text>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoLabel}>Music Type:</Text>
+          <Text style={styles.infoValue}>{room.musicType}</Text>
+        </View>
 
-      <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Music Type:</Text>
-        <Text style={styles.infoValue}>{musicType}</Text>
-      </View>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoLabel}>Category:</Text>
+          <Text style={styles.infoValue}>{room.category}</Text>
+        </View>
 
-      <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Category:</Text>
-        <Text style={styles.infoValue}>{category}</Text>
-      </View>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoLabel}>Difficulty:</Text>
+          <Text style={styles.infoValue}>{room.difficulty}</Text>
+        </View>
 
-      <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Difficulty:</Text>
-        <Text style={styles.infoValue}>{difficulty}</Text>
-      </View>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoLabel}>Number of Questions:</Text>
+          <Text style={styles.infoValue}>{room.numQuestions}</Text>
+        </View>
 
-      <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Number of Questions:</Text>
-        <Text style={styles.infoValue}>{numQuestions}</Text>
-      </View>
-
-      <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Room Capacity:</Text>
-        <Text style={styles.infoValue}>{roomCapacity}</Text>
-      </View>
-
-      <View style={styles.infoContainer}>
-        <Text style={styles.infoLabel}>Room Type:</Text>
-        <Text style={styles.infoValue}>{roomType}</Text>
+        <View style={styles.infoContainer}>
+          <Text style={styles.infoLabel}>Players:</Text>
+          <Text style={styles.infoValue}>{players.length}/{room.roomCapacity}</Text>
+        </View>
       </View>
 
       <View style={styles.waitingContainer}>
         <Text style={styles.waitingText}>Waiting for other players to join...</Text>
       </View>
-
+      {genRowArray(Math.ceil(players.length / 3.0)).map((value) =>
+        <View key={value} style={styles.nameRow}>
+          {players.map((player, index) =>  index < 3 ? <Text key={index} style={styles.nameText}>{player.full_name.split(' ')[0]}</Text> : null
+          )}
+        </View>)
+      }
       <TouchableOpacity
         style={[styles.readyButton, isReady && styles.readyButtonActive]}
         onPress={handleReadyPress}
-      >
+        >
         <Text style={styles.readyButtonText}>{isReady ? "Ready!" : "Ready"}</Text>
       </TouchableOpacity>
     </View>
@@ -58,22 +73,41 @@ export function OnlineQuizRoom({ route, navigation }) {
 }
 
 const styles = StyleSheet.create({
+  roomDetailsBlock: {
+    borderRadius: 24,
+    backgroundColor: '#40406f',
+    width: '80%',
+    paddingLeft: 25,
+    paddingBottom: 5,
+    paddingTop: 5
+  },
   container: {
     flex: 1,
     padding: 20,
-    backgroundColor: "#ffbb37",
+    backgroundColor: "#211454",
     alignItems: "center",
   },
+  nameRow: {
+    flexDirection: 'row',
+    padding: 10,
+    paddingBottom: 20
+  },
+  nameText: {
+    color: 'white',
+    fontSize: 20,
+    flex: 1
+  },
   title: {
-    fontSize: 24,
+    fontSize: 26,
     fontWeight: "bold",
     marginBottom: 20,
     color: "white",
+    top: 5,
   },
   infoContainer: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 10,
+    marginBottom: 8,
   },
   infoLabel: {
     fontSize: 18,
@@ -86,7 +120,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   waitingContainer: {
-    marginTop: 40,
+    marginTop: 20,
     marginBottom: 20,
   },
   waitingText: {
@@ -106,6 +140,6 @@ const styles = StyleSheet.create({
   readyButtonText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#ffbb37",
+    color: 'black'  
   },
 });

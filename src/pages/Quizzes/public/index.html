@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Test Client</title>
+    <script src="https://cdn.socket.io/4.0.0/socket.io.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const socket = io('http://localhost:3000');
+            const quizInfoDiv = document.getElementById('quiz-info');
+            const resultsDiv = document.getElementById('results');
+
+            socket.on('connect', () => {
+                console.log('Connected to server');
+            });
+
+            socket.on('quizStarted', (quiz) => {
+                console.log('Quiz started:', quiz);
+                quizInfoDiv.textContent = 'Quiz Started! Question: ' + quiz.questions[quiz.currentQuestionIndex].text;
+                // Display options here and allow user to select an answer
+            });
+
+            socket.on('answerResult', (result) => {
+                console.log('Result received:', result);
+                resultsDiv.textContent = 'Your answer was: ' + (result.correct ? 'Correct' : 'Incorrect');
+            });
+
+            document.getElementById('startQuiz').addEventListener('click', function () {
+                socket.emit('startQuiz');
+            });
+
+            document.getElementById('submitAnswer').addEventListener('click', function () {
+                // For simplicity, sending a hardcoded answer
+                const answerData = { questionId: 1, answer: 'A' }; // Modify as needed
+                socket.emit('submitAnswer', answerData);
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <h1>Quiz Test Client</h1>
+    <button id="startQuiz">Start Quiz</button>
+    <div id="quiz-info"></div>
+    <button id="submitAnswer">Submit Answer</button>
+    <div id="results"></div>
+</body>
+
+</html>
