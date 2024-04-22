@@ -11,10 +11,16 @@
     {
       "comparedName": "Tchaikovsky's Swan Lake and Bach's Brandenburg",
       "introduction": "Time to explore Tchaikovsky and Bach!",
-      "imageSource": "../../assets/beethoven.png",
+      "imageSource": "bachquiz.webp",
       "videoPages": [
-        { "title": "Tchaikovsky's Swan Lake", "videoID": "abc123" },
-        { "title": "Bach's Brandenburg", "videoID": "xyz789" }
+        {
+          "title": "Tchaikovsky's Swan Lake",
+          "videoID": "_5PmTrOjLKY"
+        },
+        {
+          "title": "Bach's Brandenburg",
+          "videoID": "j5zvgpzmjzY"
+        }
       ]
     }
   ]
