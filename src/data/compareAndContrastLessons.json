@@ -9,18 +9,58 @@
       ]
     },
     {
-      "comparedName": "Tchaikovsky's Swan Lake and Bach's Brandenburg",
+      "comparedName": "Tchaikovsky's Swan Lake and Bach's Brandenburg Concertos",
       "introduction": "Time to explore Tchaikovsky and Bach!",
-      "imageSource": "bachquiz.webp",
+      "imageSource": "TchaikovskyAndBach.png",
+      "videoPages": [
+        { "title": "Tchaikovsky's Swan Lake", "videoID": "_5PmTrOjLKY" },
+        { "title": "Bach's Brandenburg", "videoID": "j5zvgpzmjzY" }
+      ]
+    },
+    {
+      "comparedName": "Chopin's Ballade No. 1 and Liszt's Hungarian Rhapsody",
+      "introduction": "Diving into Romantic piano masterpieces!",
+      "imageSource": "ChopinLiszt.png",
       "videoPages": [
         {
-          "title": "Tchaikovsky's Swan Lake",
-          "videoID": "_5PmTrOjLKY"
+          "title": "Chopin's Ballade No. 1",
+          "videoID": "3L6ASlLTuks"
         },
         {
-          "title": "Bach's Brandenburg",
-          "videoID": "j5zvgpzmjzY"
+          "title": "Liszt's Hungarian Rhapsody",
+          "videoID": "Z7X2fDbiJWY"
+        }
+      ]
+    },
+    {
+      "comparedName": "Debussy's Clair de Lune and Ravel's Bolero",
+      "introduction": "Exploring impressionist and minimalist influences!",
+      "imageSource": "DebussyRavel.png",
+      "videoPages": [
+        {
+          "title": "Debussy's Clair de Lune",
+          "videoID": "qjNFJKEROXk"
+        },
+        {
+          "title": "Ravel's Bolero",
+          "videoID": "9w0SRMfTfGY"
+        }
+      ]
+    },
+    {
+      "comparedName": "Stravinsky's The Rite of Spring and Schoenberg's Pierrot Lunaire",
+      "introduction": "Venture into the avant-garde of early 20th century!",
+      "imageSource": "StravinskySchoenberg.png",
+      "videoPages": [
+        {
+          "title": "Stravinsky's The Rite of Spring",
+          "videoID": "b5nRL0gELKA"
+        },
+        {
+          "title": "Schoenberg's Pierrot Lunaire",
+          "videoID": "hP93C8WGHQg"
         }
       ]
     }
+
   ]
