@@ -9,10 +9,18 @@ export function OnlineQuizRoom({ route, navigation }) {
   const players = useQuery(User).filtered('current_quiz_code == $0', route.params.joinCode);
   const [isReady, setIsReady] = useState(false);
 
-  console.log(players);
+  console.log(Array(Math.ceil(players.length / 3.0)));
 
   const handleReadyPress = () => {
     setIsReady(!isReady);
+  };
+
+  const genRowArray = (rows) => {
+    let arr = [];
+    for (i = 0; i < rows; i++) {
+      arr.push(i);
+    }
+    return arr;
   };
 
   return (
@@ -48,12 +56,11 @@ export function OnlineQuizRoom({ route, navigation }) {
       <View style={styles.waitingContainer}>
         <Text style={styles.waitingText}>Waiting for other players to join...</Text>
       </View>
-      {
-        <View style={styles.nameRow}>
-          {players.map((player, index) => {
-            return index < 3 ? <Text key={index} style={styles.nameText}>{player.full_name.split(' ')[0]}</Text> : null;
-          })}
-        </View>
+      {genRowArray(Math.ceil(players.length / 3.0)).map((value) =>
+        <View key={value} style={styles.nameRow}>
+          {players.map((player, index) =>  index < 3 ? <Text key={index} style={styles.nameText}>{player.full_name.split(' ')[0]}</Text> : null
+          )}
+        </View>)
       }
       <TouchableOpacity
         style={[styles.readyButton, isReady && styles.readyButtonActive]}
@@ -133,6 +140,6 @@ const styles = StyleSheet.create({
   readyButtonText: {
     fontSize: 18,
     fontWeight: "bold",
-    color: "#ffbb37",
+    color: 'black'  
   },
 });
