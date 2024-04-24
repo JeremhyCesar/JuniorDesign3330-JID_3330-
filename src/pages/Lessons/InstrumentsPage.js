@@ -14,7 +14,7 @@ export function InstrumentsPage({ navigation }) {
     { name: "Piano", image: require("../../../assets/instruments/piano.png") },
     { name: "Violin", image: require("../../../assets/instruments/violin.png") },
     { name: "Cello", image: require("../../../assets/instruments/cello.png") },
-    { name: "Flute", image: require("../../../assets/instruments/flute.png") },
+    { name: "Flute", image: require("../../../assets/instruments/Flute.png") },
     { name: "Clarinet", image: require("../../../assets/instruments/Clarinet.png") },
     { name: "French Horn", image: require("../../../assets/instruments/frenchhorn.png") },
     

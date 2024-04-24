@@ -39,7 +39,7 @@ const imageMap = {
   "piano.png": require("../../../assets/instruments/piano.png"),
   "violin.png": require("../../../assets/instruments/violin.png"),
   "cello.png": require("../../../assets/instruments/cello.png"),
-  "flute.png": require("../../../assets/instruments/flute.png"),
+  "flute.png": require("../../../assets/instruments/Flute.png"),
   "Clarinet.png": require("../../../assets/instruments/Clarinet.png"),
   "frenchhorn.png": require("../../../assets/instruments/frenchhorn.png"),
   "harp.png": require("../../../assets/instruments/harp.png"),
