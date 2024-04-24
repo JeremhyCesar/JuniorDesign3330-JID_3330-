@@ -5,7 +5,9 @@ import {
   Text,
   View,
   Image,
+  TouchableOpacity,
 } from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 export function ClassicalMusicPage({ navigation }) {
   const styles = StyleSheet.create({
@@ -21,10 +23,25 @@ export function ClassicalMusicPage({ navigation }) {
   });
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
+      <View
+        style={{
+          backgroundColor: "#e2480d",
+          paddingHorizontal: 10,
+          paddingTop: 55,
+          paddingBottom: 10,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrow-back" size={25} color="white" />
+        </TouchableOpacity>
+      </View>
       <Text
         style={{
           fontWeight: "bold",
-          top: 64,
+          top: 10,
           left: "8%",
           fontSize: 42,
           color: "#333",
@@ -34,7 +51,7 @@ export function ClassicalMusicPage({ navigation }) {
       </Text>
       <Text
         style={{
-          top: 68,
+          top: 20,
           left: "8%",
           fontSize: 20,
           textAlign: "left",
@@ -46,7 +63,7 @@ export function ClassicalMusicPage({ navigation }) {
       <Pressable
         onPress={() => navigation.navigate("ComposersHome")}
         style={[
-          { top: 94, left: "8%", backgroundColor: "#ffbb37" },
+          { top: 40, left: "8%", backgroundColor: "#ffbb37" },
           styles.button,
         ]}
       >
@@ -76,7 +93,7 @@ export function ClassicalMusicPage({ navigation }) {
       </Pressable>
       <View
         style={[
-          { top: 126, left: "8%", backgroundColor: "#e24808" },
+          { top: 55, left: "8%", backgroundColor: "#e24808" },
           styles.button,
         ]}
       >
@@ -107,7 +124,7 @@ export function ClassicalMusicPage({ navigation }) {
       <Pressable
         onPress={() => navigation.navigate("InstrumentsHome")}
         style={[
-          { top: 160, left: "8%", backgroundColor: "#00347f" },
+          { top: 70, left: "8%", backgroundColor: "#00347f" },
           styles.button,
         ]}
       >

@@ -7,7 +7,7 @@ import {
   Image,
 } from "react-native";
 
-export function LessonScreen({ navigation }) {
+export function LessonHome({ navigation }) {
   const styles = StyleSheet.create({
     button: {
       borderRadius: 31,

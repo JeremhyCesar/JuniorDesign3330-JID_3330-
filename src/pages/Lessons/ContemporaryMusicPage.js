@@ -75,7 +75,7 @@ export function ContemporaryMusicPage() {
       </View>
 
       <Pressable
-        onPress={() => navigation.navigate("ContrastDemo")}
+        // onPress={() => navigation.navigate("ContrastDemo")}
         style={[
           { top: 124, left: "8%", backgroundColor: "#e24808" },
           styles.button,

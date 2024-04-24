@@ -109,6 +109,90 @@ import {
             style={styles.instrumentImage}
           />
         </Pressable>
+
+        <Pressable
+          onPress={() => handleCompareContrastPress("Chopin's Ballade No. 1 and Liszt's Hungarian Rhapsody")}
+          style={[
+            { top: 120, left: "8%", backgroundColor: "#ffffff" },
+            styles.button,
+          ]}
+        >
+          <Text
+            style={{
+              top: 25,
+              left: "8%",
+              fontSize: 15,
+              textAlign: "left",
+              fontWeight: "bold",
+              color: "#dc7424",
+              width: 165,
+              flexWrap: "wrap",
+            }}
+          >
+            Chopin's Ballade No. 1 and Liszt's Hungarian Rhapsody
+          </Text>
+          <Image
+            source={require("../../../assets/compared/ChopinLiszt.png")}
+            style={styles.instrumentImage}
+          />
+        </Pressable>
+
+        <Pressable
+          onPress={() => handleCompareContrastPress("Debussy's Clair de Lune and Ravel's Bolero")}
+          style={[
+            { top: 130, left: "8%", backgroundColor: "#ffffff" },
+            styles.button,
+          ]}
+        >
+          <Text
+            style={{
+              top: 25,
+              left: "8%",
+              fontSize: 15,
+              textAlign: "left",
+              fontWeight: "bold",
+              color: "#dc7424",
+              width: 165,
+              flexWrap: "wrap",
+            }}
+          >
+            Debussy's Clair de Lune and Ravel's Bolero
+          </Text>
+          <Image
+            source={require("../../../assets/compared/DebussyRavel.png")}
+            style={styles.instrumentImage}
+          />
+        </Pressable>
+
+        <Pressable
+          onPress={() => handleCompareContrastPress("Stravinsky's The Rite of Spring and Schoenberg's Pierrot Lunaire")}
+          style={[
+            { top: 140, left: "8%", backgroundColor: "#ffffff" },
+            styles.button,
+          ]}
+        >
+          <Text
+            style={{
+              top: 25,
+              left: "8%",
+              fontSize: 15,
+              textAlign: "left",
+              fontWeight: "bold",
+              color: "#dc7424",
+              width: 165,
+              flexWrap: "wrap",
+            }}
+          >
+            Stravinsky's The Rite of Spring and Schoenberg's Pierrot Lunaire
+          </Text>
+          <Image
+            source={require("../../../assets/compared/StravinskySchoenberg.png")}
+            style={styles.instrumentImage}
+          />
+        </Pressable>
+
+
+
   
         <View style={{ height: 180 }} />
       </ScrollView>

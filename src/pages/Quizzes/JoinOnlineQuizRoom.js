@@ -1,7 +1,11 @@
 import React from "react";
 import { View, Text, TouchableOpacity, StyleSheet, FlatList } from "react-native";
+import { QuizRoom } from "../../models/QuizRoom";
+import { useObject, useUser, useRealm, useQuery } from "@realm/react";
+import { BSON } from "realm";
+import { User } from "../../models/User";
 
-const quizRooms = [
+/*const quizRooms = [
   {
     id: "1",
     roomName: "Music Trivia",
@@ -35,31 +39,50 @@ const quizRooms = [
     roomType: "Private",
     players: 3,
   },
-];
+];*/
 
 export function JoinOnlineQuizRoom({ navigation }) {
+  const realm = useRealm();
+  const user = useObject(User, BSON.ObjectId(useUser().id));
+
+  realm.subscriptions.update((mutableSubs) => {
+    mutableSubs.add(realm.objects("QuizRoom"), {name: 'quizSubscription'});
+  })
+
+  const quizRooms = useQuery(QuizRoom);
+  console.log(quizRooms[0]);
+
   const handleJoinRoom = (room) => {
-    // Handle joining the selected quiz room
-    console.log(`Joining room: ${room.roomName}`);
-    // Navigate to the OnlineQuizRoom component and pass the selected room details
-    navigation.navigate("OnlineQuizRoom", room);
+    if (room.players.findIndex((playerId) => user._id.toString() == playerId) === -1) {
+      if (room.players.length < room.roomCapacity) {
+      // Handle joining the selected quiz room
+      console.log(`Joining room: ${room.roomName}`);
+        realm.write(() => {
+          user.current_quiz_code = room.joinCode;
+          room.players.push(user._id);
+        })
+        navigation.navigate("OnlineQuizRoom", {joinCode: room.joinCode});
+      }
+      // Navigate to the OnlineQuizRoom component and pass the selected room details
+    } else navigation.navigate("OnlineQuizRoom", {joinCode: room.joinCode});
   };
 
-  const renderQuizRoom = ({ item }) => (
-    <TouchableOpacity style={styles.roomContainer} onPress={() => handleJoinRoom(item)}>
-      <Text style={styles.roomName}>{item.roomName}</Text>
+  const renderQuizRoom = (quizRoom) => {
+    console.log(quizRoom);
+    return (<TouchableOpacity style={styles.roomContainer} onPress={() => handleJoinRoom(quizRoom.item)}>
+      <Text style={styles.roomName}>{quizRoom.item.roomName}</Text>
       <View style={styles.roomDetails}>
-        <Text style={styles.detailText}>Music Type: {item.musicType}</Text>
-        <Text style={styles.detailText}>Category: {item.category}</Text>
-        <Text style={styles.detailText}>Difficulty: {item.difficulty}</Text>
-        <Text style={styles.detailText}>Questions: {item.numQuestions}</Text>
+        <Text style={styles.detailText}>Music Type: {quizRoom.item.musicType}</Text>
+        <Text style={styles.detailText}>Category: {quizRoom.item.category}</Text>
+        <Text style={styles.detailText}>Difficulty: {quizRoom.item.difficulty}</Text>
+        <Text style={styles.detailText}>Questions: {quizRoom.item.numQuestions}</Text>
         <Text style={styles.detailText}>
-          Players: {item.players}/{item.roomCapacity}
+          Players: {quizRoom.item.players.length}/{quizRoom.item.roomCapacity}
         </Text>
-        <Text style={styles.detailText}>Room Type: {item.roomType}</Text>
+        <Text style={styles.detailText}>Room Type: {quizRoom.item.private ? "Private" : "Public"}</Text>
       </View>
     </TouchableOpacity>
-  );
+  );}
 
   return (
     <View style={styles.container}>
@@ -67,7 +90,7 @@ export function JoinOnlineQuizRoom({ navigation }) {
       <FlatList
         data={quizRooms}
         renderItem={renderQuizRoom}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(quizRoom) => quizRoom.joinCode}
         contentContainerStyle={styles.listContainer}
       />
     </View>

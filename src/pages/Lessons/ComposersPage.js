@@ -5,8 +5,10 @@ import {
   View,
   Image,
   Pressable,
+  TouchableOpacity,
 } from "react-native";
 import Postcard from "./Postcard";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 export function ComposersPage({ navigation }) {
   const composers = [
@@ -79,6 +81,21 @@ export function ComposersPage({ navigation }) {
 
   return (
     <ScrollView style={{ backgroundColor: "white" }}>
+      <View
+        style={{
+          backgroundColor: "#e2480d",
+          paddingHorizontal: 10,
+          paddingTop: 55,
+          paddingBottom: 10,
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+        }}
+      >
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrow-back" size={25} color="white" />
+        </TouchableOpacity>
+      </View>
       <Text style={styles.title}>Composers</Text>
       <Text style={styles.subtitle}>The minds behind the music!</Text>
 
@@ -100,20 +117,20 @@ export function ComposersPage({ navigation }) {
 const styles = StyleSheet.create({
   title: {
     fontWeight: "bold",
-    top: 64,
+    top: 10,
     left: "8%",
     fontSize: 48,
     color: "#333",
   },
   subtitle: {
-    top: 68,
+    top: 20,
     left: "8%",
     fontSize: 20,
     textAlign: "left",
     color: "#717171",
   },
   composersContainer: {
-    marginTop: 94,
+    marginTop: 30,
     alignItems: "center",
   },
 });

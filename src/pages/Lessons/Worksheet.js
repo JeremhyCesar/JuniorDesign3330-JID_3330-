@@ -1,7 +1,8 @@
 import React from "react";
-import { ScrollView, Text, StyleSheet, View, Image } from "react-native";
+import { ScrollView, Text, StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
-export function Worksheet({ worksheetContent }) {
+export function Worksheet({ worksheetContent, navigation }) {
   if (!worksheetContent) {
     return (
       <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
@@ -13,78 +14,35 @@ export function Worksheet({ worksheetContent }) {
     <View style={{ flex: 1 }}>
       <View
         style={{
-          top: 110,
-          left: "12%",
-          borderRadius: 31,
-          backgroundColor: "#e3c565",
-          width: "40%",
-          height: 110,
+          backgroundColor: "#e2480d",
+          paddingHorizontal: 10,
+          paddingTop: 55,
+          paddingBottom: 10,
+          flexDirection: "row",
+          justifyContent: "space-between",
           alignItems: "center",
-          justifyContent: "center",
         }}
       >
-        <Image
-          source={require("../../../assets/teaching-icon.png")}
-          style={{
-            width: 130,
-            height: 130,
-            resizeMode: "contain",
-          }}
-        />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Icon name="arrow-back" size={25} color="white" />
+        </TouchableOpacity>
       </View>
-      <Text
-        style={{
-          fontWeight: "bold",
-          top: 0,
-          left: "63%",
-          fontSize: 20,
-          color: "#3e8ede",
-        }}
-      >
-        Worksheet
-      </Text>
-      <View
-        style={{
-          top: 0,
-          left: "61%",
-          borderRadius: 5,
-          padding: 10,
-          width: "40%",
-          height: 90,
-          elevation: 2,
-        }}
-      >
-        <Text
-          style={{
-            fontSize: 15,
-            color: "gray",
-          }}
-        >
-          practice your knowledge
-        </Text>
+      <View style={styles.titleContainer}>
+        <View style={styles.iconContainer}>
+          <Image
+            source={require("../../../assets/teaching-icon.png")}
+            style={styles.headerImage}
+          />
+        </View>
+        <View style={styles.textContainer}>
+          <Text style={styles.worksheetTitle}>Worksheet</Text>
+          <Text style={styles.subtitle}>practice your knowledge</Text>
+        </View>
       </View>
-      <View
-        style={{
-          top: 0,
-          left: "7%",
-          borderRadius: 5,
-          padding: 5,
-          width: "90%",
-          height: 90,
-          elevation: 2,
-        }}
-      >
-        <Text
-          style={{
-            fontWeight: "bold",
-            fontSize: 30,
-            color: "#3e8ede",
-          }}
-        >
-          Answer these questions on your own paper!
-        </Text>
+      <View style={styles.instructionContainer}>
+        <Text style={styles.instruction}>Answer these questions on your own paper!</Text>
       </View>
-      <ScrollView style={{ marginTop: 0 }}>
+      <ScrollView style={{ marginTop: 20 }}>
         {worksheetContent.sections.map((section, index) => (
           <View key={index} style={styles.section}>
             <Text style={styles.header}>{section.title}</Text>
@@ -106,19 +64,23 @@ export function Worksheet({ worksheetContent }) {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#FFFFFF",
-    paddingHorizontal: 25,
-  },
   titleContainer: {
     flexDirection: "row",
     alignItems: "center",
-    paddingVertical: 10,
+    paddingHorizontal: 25,
+    paddingVertical: 20,
   },
-  headerImage: {
+  iconContainer: {
+    backgroundColor: "#e3c565",
+    borderRadius: 31,
     width: 100,
     height: 100,
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  headerImage: {
+    width: 80,
+    height: 80,
     resizeMode: "contain",
   },
   textContainer: {
@@ -127,36 +89,34 @@ const styles = StyleSheet.create({
   worksheetTitle: {
     fontSize: 22,
     fontWeight: "bold",
-    color: "#07a3e0",
+    color: "#3e8ede",
   },
   subtitle: {
     fontSize: 16,
-    color: "#07a3e0",
-    fontStyle: "italic",
+    color: "gray",
+  },
+  instructionContainer: {
+    backgroundColor: "#FFFFFF",
+    borderRadius: 5,
+    padding: 10,
+    marginHorizontal: 25,
+    marginBottom: 10,
+    elevation: 2,
   },
   instruction: {
-    fontSize: 16,
+    fontSize: 18,
     fontWeight: "bold",
-    color: "#07a3e0",
-    marginVertical: -10,
+    color: "#3e8ede",
     textAlign: "center",
   },
   section: {
-    marginLeft: "8%",
-    marginRight: "5%",
+    marginHorizontal: 25,
     marginBottom: 20,
-    marginTop: 10,
   },
   header: {
     fontSize: 18,
     fontWeight: "bold",
     marginBottom: 10,
-    color: "#000",
-  },
-  question: {
-    fontSize: 16,
-    fontWeight: "600",
-    marginTop: 8,
     color: "#000",
   },
   detail: {

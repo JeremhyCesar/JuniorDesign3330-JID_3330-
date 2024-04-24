@@ -473,6 +473,57 @@
         }
       ]
     },
+    "Cello": {
+      "sections": [
+        {
+          "title": "Historical Roots and Early Makers",
+          "questions": [
+            {
+              "question": "Foundations of the Cello: Early Craftsman and Timelines:",
+              "details": [
+                "According to the Vienna Symphonic Library, when did renowned violin makers begin creating what would later become the modern cello?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 2: Evolution of Design",
+          "questions": [
+            {
+              "question": "Design Milestones: Early Luthiers and Instrument Variations",
+              "details": [
+                "Name the early luthiers credited with the first bass violin designs, and what were these designs called?",
+                "Before the 18th century, what were the two sizes of instruments with F2, C3, G3, and D4 tunings called?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 3: Standardization and Innovation",
+          "questions": [
+            {
+              "question": "Stradivari's Legacy: Standardizing the Modern Cello",
+              "details": [
+                "Who is credited with developing the cello size we know today, and what changes did he introduce to the instrument after 1710?"
+              ]
+            }
+          ]
+        },
+        {
+          "title": "Section 4: Cultural Influences and Modern Adaptations",
+          "questions": [
+            {
+              "question": "Evolving Through Time: Cultural Impacts and New Horizons in Cello Music",
+              "details": [
+                "What cultural changes in the 19th century influenced alterations to the cello's sound, and what specific changes were made to the instrument?",
+                "What was the first major work written for the cello, and who composed it?",
+                "How has the cello evolved in recent years in terms of musical genres, and can you name a specific subgenre it has influenced?"
+              ]
+            }
+          ]
+        }
+      ]
+    },
     "French Horn": {
       "sections": [
         {

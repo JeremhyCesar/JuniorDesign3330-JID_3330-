@@ -22,94 +22,92 @@ const HomeNavigator = () => {
   const user = useUser();
 
   const navigateToScreen = (screenName) => {
-    navigation.navigate("Home");
+    //navigation.navigate("Home");
     navigation.navigate(screenName);
   };
   let initialRoute = useObject(User, BSON.ObjectId(user.id)) === null ? "AccountInfo" : "Home";
 
   return (
     <View style={{ flex: 1 }}>
-      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        <Stack.Navigator initialRouteName={initialRoute} screenOptions={{headerShown: false}}>
-          <Stack.Screen
-            name="Home"
-            component={HomeScreen}
-            options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require('../../assets/home-icon.png')}
-                  style={styles.tabIcon}
-                />
-              ),
-            }}
-          />
-          <Stack.Screen
-            name="AccountInfo"
-            component={AccountInfoScreen}
-          />
-          <Stack.Screen 
-            name="ClassCreation"
-            component={ClassCreationScreen}/>
-          <Stack.Screen
-            name="ClassInfo"
-            component={ClassInfoScreen}/>
-          <Stack.Screen
-            name="Quizzes"
-            component={QuizNavigator}
-            options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require('../../assets/quiz-nav-icon.png')}
-                  style={styles.quizTabIcon}
-                />
-              ),
-            }}
-          />
-          <Stack.Screen
-            name="Lessons"
-            component={LessonNavigator}
-            options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require('../../assets/lesson-icon.png')}
-                  style={styles.tabIcon}
-                />
-              ),
-            }}
-          />
-         <Stack.Screen
-            name="Listen"
-            component={ListenNavigator}
-            options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require('../../assets/listen-nav-icon.png')}
-                  style={styles.quizTabIcon}
-                />
-              ),
-            }}
-          />
-          <Stack.Screen
-            name="UserPage"
-            component={UserPage}
-            options={{
-              title: 'User Page',
-            }}
-          />
-          <Stack.Screen
-            name="Social"
-            component={SocialNavigator}
-            options={{
-              tabBarIcon: () => (
-                <Image
-                  source={require('../../assets/social-icon.png')}
-                  style={styles.tabIcon}
-                />
-              ),
-            }}
-          />
-        </Stack.Navigator>
-      </ScrollView>
+      <Stack.Navigator initialRouteName={initialRoute} screenOptions={{headerShown: false}}>
+        <Stack.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: () => (
+              <Image
+                source={require('../../assets/home-icon.png')}
+                style={styles.tabIcon}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="AccountInfo"
+          component={AccountInfoScreen}
+        />
+        <Stack.Screen 
+          name="ClassCreation"
+          component={ClassCreationScreen}/>
+        <Stack.Screen
+          name="ClassInfo"
+          component={ClassInfoScreen}/>
+        <Stack.Screen
+          name="Quizzes"
+          component={QuizNavigator}
+          options={{
+            tabBarIcon: () => (
+              <Image
+                source={require('../../assets/quiz-nav-icon.png')}
+                style={styles.quizTabIcon}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="Lessons"
+          component={LessonNavigator}
+          options={{
+            tabBarIcon: () => (
+              <Image
+                source={require('../../assets/lesson-icon.png')}
+                style={styles.tabIcon}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="Listen"
+          component={ListenNavigator}
+          options={{
+            tabBarIcon: () => (
+              <Image
+                source={require('../../assets/listen-nav-icon.png')}
+                style={styles.quizTabIcon}
+              />
+            ),
+          }}
+        />
+        <Stack.Screen
+          name="UserPage"
+          component={UserPage}
+          options={{
+            title: 'User Page',
+          }}
+        />
+        <Stack.Screen
+          name="Social"
+          component={SocialNavigator}
+          options={{
+            tabBarIcon: () => (
+              <Image
+                source={require('../../assets/social-icon.png')}
+                style={styles.tabIcon}
+              />
+            ),
+          }}
+        />
+      </Stack.Navigator>
       {initialRoute == "Home" && 
       <SafeAreaView style={styles.bottomBar}>
         <View style={styles.boxContainer}>
